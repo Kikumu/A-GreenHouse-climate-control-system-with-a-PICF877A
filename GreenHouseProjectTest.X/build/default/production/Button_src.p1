@@ -1,0 +1,912 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"2229 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2229: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"1437
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1437: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"2704
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2704: extern volatile __bit RC0 __attribute__((address(0x38)));
+[v _RC0 `Vb ~T0 @X0 0 e@56 ]
+"2707
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2707: extern volatile __bit RC1 __attribute__((address(0x39)));
+[v _RC1 `Vb ~T0 @X0 0 e@57 ]
+"2710
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2710: extern volatile __bit RC2 __attribute__((address(0x3A)));
+[v _RC2 `Vb ~T0 @X0 0 e@58 ]
+"2713
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2713: extern volatile __bit RC3 __attribute__((address(0x3B)));
+[v _RC3 `Vb ~T0 @X0 0 e@59 ]
+"2716
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2716: extern volatile __bit RC4 __attribute__((address(0x3C)));
+[v _RC4 `Vb ~T0 @X0 0 e@60 ]
+"15 ./LCD_driver.h
+[; ;./LCD_driver.h: 15: void write_cmd(char x);
+[v _write_cmd `(v ~T0 @X0 0 ef1`uc ]
+"14
+[; ;./LCD_driver.h: 14: void write_char(char x);
+[v _write_char `(v ~T0 @X0 0 ef1`uc ]
+"9 ./Buzzer_driver.h
+[; ;./Buzzer_driver.h: 9: void set_beep_threshhold(char x);
+[v _set_beep_threshhold `(v ~T0 @X0 0 ef1`uc ]
+"2725 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2725: extern volatile __bit RC7 __attribute__((address(0x3F)));
+[v _RC7 `Vb ~T0 @X0 0 e@63 ]
+"2722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2722: extern volatile __bit RC6 __attribute__((address(0x3E)));
+[v _RC6 `Vb ~T0 @X0 0 e@62 ]
+"4 ./SystemHeader.h
+[p x FOSC = HS ]
+"5
+[p x WDTE = OFF ]
+"6
+[p x PWRTE = ON ]
+"7
+[p x BOREN = OFF ]
+"8
+[p x LVP = OFF ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 218: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 280: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"342
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 342: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 404: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 436: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 456: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 534: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 596: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 636: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 643: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 650: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 657: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"732
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 732: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"739
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 739: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"810
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 810: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 817: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"887
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 887: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 894: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 901: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 908: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 966: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1061: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1068
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1068: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1075: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1082: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1089: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1096: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1154: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1161: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1257: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1327: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1377
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1377: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1439
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1439: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1501: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1563
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1563: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1620
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1620: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1682: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1722: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1756: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1818: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1825
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1825: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1832: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2001: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2082: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2089: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2159: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2224: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2231: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2290: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2297: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2304: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2311: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2318: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"13 ./Thermometer_driver.h
+[; ;./Thermometer_driver.h: 13: unsigned char TLV=0 ;
+[v _TLV `uc ~T0 @X0 1 e ]
+[i _TLV
+-> -> 0 `i `uc
+]
+"14
+[; ;./Thermometer_driver.h: 14: unsigned char THV=0;
+[v _THV `uc ~T0 @X0 1 e ]
+[i _THV
+-> -> 0 `i `uc
+]
+"15
+[; ;./Thermometer_driver.h: 15: unsigned char TZ=0;
+[v _TZ `uc ~T0 @X0 1 e ]
+[i _TZ
+-> -> 0 `i `uc
+]
+"16
+[; ;./Thermometer_driver.h: 16: unsigned char TX=0;
+[v _TX `uc ~T0 @X0 1 e ]
+[i _TX
+-> -> 0 `i `uc
+]
+"17
+[; ;./Thermometer_driver.h: 17: unsigned int wd;
+[v _wd `ui ~T0 @X0 1 e ]
+"19
+[; ;./Thermometer_driver.h: 19: unsigned char shi;
+[v _shi `uc ~T0 @X0 1 e ]
+"20
+[; ;./Thermometer_driver.h: 20: unsigned char ge;
+[v _ge `uc ~T0 @X0 1 e ]
+"21
+[; ;./Thermometer_driver.h: 21: unsigned char shifen;
+[v _shifen `uc ~T0 @X0 1 e ]
+"22
+[; ;./Thermometer_driver.h: 22: unsigned char baifen;
+[v _baifen `uc ~T0 @X0 1 e ]
+"23
+[; ;./Thermometer_driver.h: 23: unsigned char qianfen;
+[v _qianfen `uc ~T0 @X0 1 e ]
+"24
+[; ;./Thermometer_driver.h: 24: unsigned char wanfen;
+[v _wanfen `uc ~T0 @X0 1 e ]
+"14 ./clock_driver.h
+[; ;./clock_driver.h: 14: const char table[]={0x00,0x43,0x07,0x24,0x11,0x06,0x09,0x00};
+[v _table `Cuc ~T0 @X0 -> 8 `i e ]
+[i _table
+:U ..
+-> -> 0 `i `uc
+-> -> 67 `i `uc
+-> -> 7 `i `uc
+-> -> 36 `i `uc
+-> -> 17 `i `uc
+-> -> 6 `i `uc
+-> -> 9 `i `uc
+-> -> 0 `i `uc
+..
+]
+"15
+[; ;./clock_driver.h: 15: char table1[7];
+[v _table1 `uc ~T0 @X0 -> 7 `i e ]
+"8 Button_src.c
+[; ;Button_src.c: 8: char var;
+[v _var `uc ~T0 @X0 1 e ]
+"11
+[; ;Button_src.c: 11: void initialise_buttons(){
+[v _initialise_buttons `(v ~T0 @X0 1 ef ]
+{
+[e :U _initialise_buttons ]
+[f ]
+"12
+[; ;Button_src.c: 12:     ADCON1 = 0x06;
+[e = _ADCON1 -> -> 6 `i `uc ]
+"13
+[; ;Button_src.c: 13:     TRISC = 0xf0;
+[e = _TRISC -> -> 240 `i `uc ]
+"15
+[; ;Button_src.c: 15:     var = '0';
+[e = _var -> -> 48 `ui `uc ]
+"16
+[; ;Button_src.c: 16: }
+[e :UE 95 ]
+}
+"18
+[; ;Button_src.c: 18: void thermometer_threshhold_settings(){
+[v _thermometer_threshhold_settings `(v ~T0 @X0 1 ef ]
+{
+[e :U _thermometer_threshhold_settings ]
+[f ]
+"19
+[; ;Button_src.c: 19:  RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"20
+[; ;Button_src.c: 20:  RC1 = 0;
+[e = _RC1 -> -> 0 `i `b ]
+"21
+[; ;Button_src.c: 21:  RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"22
+[; ;Button_src.c: 22:  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"23
+[; ;Button_src.c: 23:   if (RC4 == 0){
+[e $ ! == -> _RC4 `i -> 0 `i 97  ]
+{
+"24
+[; ;Button_src.c: 24:       write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"25
+[; ;Button_src.c: 25:       for(;;){
+{
+[e :U 98 ]
+{
+"26
+[; ;Button_src.c: 26:             write_cmd(0x80);
+[e ( _write_cmd (1 -> -> 128 `i `uc ]
+"27
+[; ;Button_src.c: 27:             write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"28
+[; ;Button_src.c: 28:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"29
+[; ;Button_src.c: 29:             write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
+"30
+[; ;Button_src.c: 30:             write_char('p');
+[e ( _write_char (1 -> -> 112 `ui `uc ]
+"31
+[; ;Button_src.c: 31:             write_char('_');
+[e ( _write_char (1 -> -> 95 `ui `uc ]
+"32
+[; ;Button_src.c: 32:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"33
+[; ;Button_src.c: 33:             write_char('h');
+[e ( _write_char (1 -> -> 104 `ui `uc ]
+"34
+[; ;Button_src.c: 34:             write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
+"35
+[; ;Button_src.c: 35:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"36
+[; ;Button_src.c: 36:             write_char('s');
+[e ( _write_char (1 -> -> 115 `ui `uc ]
+"37
+[; ;Button_src.c: 37:             write_char('h');
+[e ( _write_char (1 -> -> 104 `ui `uc ]
+"38
+[; ;Button_src.c: 38:             write_char('o');
+[e ( _write_char (1 -> -> 111 `ui `uc ]
+"39
+[; ;Button_src.c: 39:             write_char('l');
+[e ( _write_char (1 -> -> 108 `ui `uc ]
+"40
+[; ;Button_src.c: 40:             write_char('d');
+[e ( _write_char (1 -> -> 100 `ui `uc ]
+"41
+[; ;Button_src.c: 41:             write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
+"42
+[; ;Button_src.c: 42:             write_char('C');
+[e ( _write_char (1 -> -> 67 `ui `uc ]
+"43
+[; ;Button_src.c: 43:             write_char('u');
+[e ( _write_char (1 -> -> 117 `ui `uc ]
+"44
+[; ;Button_src.c: 44:             write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
+"45
+[; ;Button_src.c: 45:             write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
+"46
+[; ;Button_src.c: 46:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"47
+[; ;Button_src.c: 47:             write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
+"48
+[; ;Button_src.c: 48:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"49
+[; ;Button_src.c: 49:             write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"50
+[; ;Button_src.c: 50:             set_beep_threshhold(var);
+[e ( _set_beep_threshhold (1 _var ]
+"51
+[; ;Button_src.c: 51:             write_char(var);
+[e ( _write_char (1 _var ]
+"52
+[; ;Button_src.c: 52:             write_char('0');
+[e ( _write_char (1 -> -> 48 `ui `uc ]
+"54
+[; ;Button_src.c: 54:             write_cmd(0x88);
+[e ( _write_cmd (1 -> -> 136 `i `uc ]
+"55
+[; ;Button_src.c: 55:             write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
+"56
+[; ;Button_src.c: 56:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"57
+[; ;Button_src.c: 57:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"58
+[; ;Button_src.c: 58:             write_char('_');
+[e ( _write_char (1 -> -> 95 `ui `uc ]
+"59
+[; ;Button_src.c: 59:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"60
+[; ;Button_src.c: 60:             write_char('h');
+[e ( _write_char (1 -> -> 104 `ui `uc ]
+"61
+[; ;Button_src.c: 61:             write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
+"62
+[; ;Button_src.c: 62:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"63
+[; ;Button_src.c: 63:             write_char('s');
+[e ( _write_char (1 -> -> 115 `ui `uc ]
+"64
+[; ;Button_src.c: 64:             write_char('h');
+[e ( _write_char (1 -> -> 104 `ui `uc ]
+"65
+[; ;Button_src.c: 65:             write_char('o');
+[e ( _write_char (1 -> -> 111 `ui `uc ]
+"66
+[; ;Button_src.c: 66:             write_char('l');
+[e ( _write_char (1 -> -> 108 `ui `uc ]
+"67
+[; ;Button_src.c: 67:             write_char('d');
+[e ( _write_char (1 -> -> 100 `ui `uc ]
+"68
+[; ;Button_src.c: 68:             write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"70
+[; ;Button_src.c: 70:             write_cmd(0x98);
+[e ( _write_cmd (1 -> -> 152 `i `uc ]
+"71
+[; ;Button_src.c: 71:             RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"72
+[; ;Button_src.c: 72:             RC1 = 0;
+[e = _RC1 -> -> 0 `i `b ]
+"73
+[; ;Button_src.c: 73:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"74
+[; ;Button_src.c: 74:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"75
+[; ;Button_src.c: 75:             int x;
+[v _x `i ~T0 @X0 1 a ]
+"76
+[; ;Button_src.c: 76:             x = 0x00;
+[e = _x -> 0 `i ]
+"77
+[; ;Button_src.c: 77:             for(;;){
+{
+[e :U 101 ]
+{
+"78
+[; ;Button_src.c: 78:                  RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"79
+[; ;Button_src.c: 79:                  RC1 = 0;
+[e = _RC1 -> -> 0 `i `b ]
+"80
+[; ;Button_src.c: 80:                  RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"81
+[; ;Button_src.c: 81:                  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"82
+[; ;Button_src.c: 82:                 if(RC7==0){
+[e $ ! == -> _RC7 `i -> 0 `i 104  ]
+{
+"83
+[; ;Button_src.c: 83:                     write_cmd(0x98);
+[e ( _write_cmd (1 -> -> 152 `i `uc ]
+"84
+[; ;Button_src.c: 84:                     x++;
+[e ++ _x -> 1 `i ]
+"88
+[; ;Button_src.c: 88:                     x = x/16>10?55+x/16:48+x/16;
+[e = _x ? > / _x -> 16 `i -> 10 `i : + -> 55 `i / _x -> 16 `i + -> 48 `i / _x -> 16 `i ]
+"89
+[; ;Button_src.c: 89:                     write_char(x + '0');
+[e ( _write_char (1 -> + -> _x `ui -> 48 `ui `uc ]
+"90
+[; ;Button_src.c: 90:                     for(int i=0;i<10000;i++);
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10000 `i 105  ]
+[e $U 106  ]
+[e :U 105 ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10000 `i 105  ]
+[e :U 106 ]
+}
+"95
+[; ;Button_src.c: 95:                  RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"96
+[; ;Button_src.c: 96:                  RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"97
+[; ;Button_src.c: 97:                  RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"98
+[; ;Button_src.c: 98:                  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"99
+[; ;Button_src.c: 99:                  if(RC6 == 0){
+[e $ ! == -> _RC6 `i -> 0 `i 108  ]
+{
+"101
+[; ;Button_src.c: 101:                  }
+}
+[e :U 108 ]
+"102
+[; ;Button_src.c: 102:                 }
+}
+[e :U 104 ]
+"103
+[; ;Button_src.c: 103:                  RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"104
+[; ;Button_src.c: 104:                  RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"105
+[; ;Button_src.c: 105:                  RC2 = 0;
+[e = _RC2 -> -> 0 `i `b ]
+"106
+[; ;Button_src.c: 106:                  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"107
+[; ;Button_src.c: 107:                 if(RC7==0){
+[e $ ! == -> _RC7 `i -> 0 `i 109  ]
+{
+"109
+[; ;Button_src.c: 109:                     write_cmd(0x98);
+[e ( _write_cmd (1 -> -> 152 `i `uc ]
+"110
+[; ;Button_src.c: 110:                     write_char('2');
+[e ( _write_char (1 -> -> 50 `ui `uc ]
+"111
+[; ;Button_src.c: 111:                     write_char('0');
+[e ( _write_char (1 -> -> 48 `ui `uc ]
+"112
+[; ;Button_src.c: 112:                 }
+}
+[e :U 109 ]
+"113
+[; ;Button_src.c: 113:                  RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"114
+[; ;Button_src.c: 114:                  RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"115
+[; ;Button_src.c: 115:                  RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"116
+[; ;Button_src.c: 116:                  RC3 = 0;
+[e = _RC3 -> -> 0 `i `b ]
+"117
+[; ;Button_src.c: 117:                  if(RC7==0){
+[e $ ! == -> _RC7 `i -> 0 `i 110  ]
+{
+"118
+[; ;Button_src.c: 118:                     write_cmd(0x98);
+[e ( _write_cmd (1 -> -> 152 `i `uc ]
+"119
+[; ;Button_src.c: 119:                     write_char('3');
+[e ( _write_char (1 -> -> 51 `ui `uc ]
+"120
+[; ;Button_src.c: 120:                     write_char('0');
+[e ( _write_char (1 -> -> 48 `ui `uc ]
+"121
+[; ;Button_src.c: 121:                 }
+}
+[e :U 110 ]
+"122
+[; ;Button_src.c: 122:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"123
+[; ;Button_src.c: 123:             RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"124
+[; ;Button_src.c: 124:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"125
+[; ;Button_src.c: 125:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"126
+[; ;Button_src.c: 126:             if (RC7 == 0 ){
+[e $ ! == -> _RC7 `i -> 0 `i 111  ]
+{
+"127
+[; ;Button_src.c: 127:             write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"128
+[; ;Button_src.c: 128:             return;
+[e $UE 96  ]
+"129
+[; ;Button_src.c: 129:             }
+}
+[e :U 111 ]
+"130
+[; ;Button_src.c: 130:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"131
+[; ;Button_src.c: 131:             RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"132
+[; ;Button_src.c: 132:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"133
+[; ;Button_src.c: 133:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"134
+[; ;Button_src.c: 134:             if (RC7 == 0 ){
+[e $ ! == -> _RC7 `i -> 0 `i 112  ]
+{
+"135
+[; ;Button_src.c: 135:             write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"136
+[; ;Button_src.c: 136:             break;
+[e $U 102  ]
+"137
+[; ;Button_src.c: 137:             }
+}
+[e :U 112 ]
+"138
+[; ;Button_src.c: 138:             }
+}
+[e $U 101  ]
+[e :U 102 ]
+}
+"139
+[; ;Button_src.c: 139:       }
+}
+[e $U 98  ]
+[e :U 99 ]
+}
+"140
+[; ;Button_src.c: 140:   }
+}
+[e :U 97 ]
+"141
+[; ;Button_src.c: 141: }
+[e :UE 96 ]
+}
+"143
+[; ;Button_src.c: 143: void time_settings(){
+[v _time_settings `(v ~T0 @X0 1 ef ]
+{
+[e :U _time_settings ]
+[f ]
+"144
+[; ;Button_src.c: 144:  RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"145
+[; ;Button_src.c: 145:  RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"146
+[; ;Button_src.c: 146:  RC2 = 0;
+[e = _RC2 -> -> 0 `i `b ]
+"147
+[; ;Button_src.c: 147:  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"149
+[; ;Button_src.c: 149:   if (RC4 == 0){
+[e $ ! == -> _RC4 `i -> 0 `i 114  ]
+{
+"150
+[; ;Button_src.c: 150:       write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"151
+[; ;Button_src.c: 151:       for(;;){
+{
+[e :U 115 ]
+{
+"152
+[; ;Button_src.c: 152:             write_cmd(0x80);
+[e ( _write_cmd (1 -> -> 128 `i `uc ]
+"153
+[; ;Button_src.c: 153:             write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"154
+[; ;Button_src.c: 154:             write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"155
+[; ;Button_src.c: 155:             write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
+"156
+[; ;Button_src.c: 156:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"157
+[; ;Button_src.c: 157:             write_char('_');
+[e ( _write_char (1 -> -> 95 `ui `uc ]
+"158
+[; ;Button_src.c: 158:             write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
+"159
+[; ;Button_src.c: 159:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"160
+[; ;Button_src.c: 160:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"161
+[; ;Button_src.c: 161:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"162
+[; ;Button_src.c: 162:             write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"163
+[; ;Button_src.c: 163:             write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
+"164
+[; ;Button_src.c: 164:             write_char('g');
+[e ( _write_char (1 -> -> 103 `ui `uc ]
+"165
+[; ;Button_src.c: 165:             write_char('s');
+[e ( _write_char (1 -> -> 115 `ui `uc ]
+"166
+[; ;Button_src.c: 166:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"167
+[; ;Button_src.c: 167:             RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"168
+[; ;Button_src.c: 168:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"169
+[; ;Button_src.c: 169:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"170
+[; ;Button_src.c: 170:             if (RC7 == 0 ){
+[e $ ! == -> _RC7 `i -> 0 `i 118  ]
+{
+"171
+[; ;Button_src.c: 171:             write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"172
+[; ;Button_src.c: 172:             break;
+[e $U 116  ]
+"173
+[; ;Button_src.c: 173:             }
+}
+[e :U 118 ]
+"174
+[; ;Button_src.c: 174:       }
+}
+[e $U 115  ]
+[e :U 116 ]
+}
+"175
+[; ;Button_src.c: 175:   }
+}
+[e :U 114 ]
+"177
+[; ;Button_src.c: 177: }
+[e :UE 113 ]
+}
+"179
+[; ;Button_src.c: 179: void date_settings(){
+[v _date_settings `(v ~T0 @X0 1 ef ]
+{
+[e :U _date_settings ]
+[f ]
+"180
+[; ;Button_src.c: 180:  RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"181
+[; ;Button_src.c: 181:  RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"182
+[; ;Button_src.c: 182:  RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"183
+[; ;Button_src.c: 183:  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"184
+[; ;Button_src.c: 184:   if (RC4 == 0){
+[e $ ! == -> _RC4 `i -> 0 `i 120  ]
+{
+"185
+[; ;Button_src.c: 185:       write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"186
+[; ;Button_src.c: 186:       for(;;){
+{
+[e :U 121 ]
+{
+"187
+[; ;Button_src.c: 187:             write_cmd(0x80);
+[e ( _write_cmd (1 -> -> 128 `i `uc ]
+"188
+[; ;Button_src.c: 188:             write_char('D');
+[e ( _write_char (1 -> -> 68 `ui `uc ]
+"189
+[; ;Button_src.c: 189:             write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
+"190
+[; ;Button_src.c: 190:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"191
+[; ;Button_src.c: 191:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"192
+[; ;Button_src.c: 192:             write_char('_');
+[e ( _write_char (1 -> -> 95 `ui `uc ]
+"193
+[; ;Button_src.c: 193:             write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
+"194
+[; ;Button_src.c: 194:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"195
+[; ;Button_src.c: 195:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"196
+[; ;Button_src.c: 196:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"197
+[; ;Button_src.c: 197:             write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"198
+[; ;Button_src.c: 198:             write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
+"199
+[; ;Button_src.c: 199:             write_char('g');
+[e ( _write_char (1 -> -> 103 `ui `uc ]
+"200
+[; ;Button_src.c: 200:             write_char('s');
+[e ( _write_char (1 -> -> 115 `ui `uc ]
+"201
+[; ;Button_src.c: 201:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"202
+[; ;Button_src.c: 202:             RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"203
+[; ;Button_src.c: 203:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"204
+[; ;Button_src.c: 204:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"205
+[; ;Button_src.c: 205:             if (RC7 == 0 ){
+[e $ ! == -> _RC7 `i -> 0 `i 124  ]
+{
+"206
+[; ;Button_src.c: 206:             write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"207
+[; ;Button_src.c: 207:             break;
+[e $U 122  ]
+"208
+[; ;Button_src.c: 208:             }
+}
+[e :U 124 ]
+"209
+[; ;Button_src.c: 209:       }
+}
+[e $U 121  ]
+[e :U 122 ]
+}
+"210
+[; ;Button_src.c: 210:   }
+}
+[e :U 120 ]
+"211
+[; ;Button_src.c: 211: }
+[e :UE 119 ]
+}

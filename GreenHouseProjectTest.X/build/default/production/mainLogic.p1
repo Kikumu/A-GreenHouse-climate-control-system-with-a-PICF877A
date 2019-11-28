@@ -1,0 +1,432 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"1375 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1375: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"27 ./Thermometer_driver.h
+[; ;./Thermometer_driver.h: 27: void init_temp();
+[v _init_temp `(v ~T0 @X0 0 e? ]
+"20 ./clock_driver.h
+[; ;./clock_driver.h: 20: void set_time();
+[v _set_time `(v ~T0 @X0 0 e? ]
+"19
+[; ;./clock_driver.h: 19: void ds1302_init();
+[v _ds1302_init `(v ~T0 @X0 0 e? ]
+"12 ./LCD_driver.h
+[; ;./LCD_driver.h: 12: void init();
+[v _init `(v ~T0 @X0 0 e? ]
+"13
+[; ;./LCD_driver.h: 13: void lcd_init();
+[v _lcd_init `(v ~T0 @X0 0 e? ]
+"10 ./Button_driver.h
+[; ;./Button_driver.h: 10: void initialise_buttons();
+[v _initialise_buttons `(v ~T0 @X0 0 e? ]
+"32 ./Thermometer_driver.h
+[; ;./Thermometer_driver.h: 32: void get_temp();
+[v _get_temp `(v ~T0 @X0 0 e? ]
+"21 ./clock_driver.h
+[; ;./clock_driver.h: 21: void get_time();
+[v _get_time `(v ~T0 @X0 0 e? ]
+"15 ./LCD_driver.h
+[; ;./LCD_driver.h: 15: void write_cmd(char x);
+[v _write_cmd `(v ~T0 @X0 0 ef1`uc ]
+"14
+[; ;./LCD_driver.h: 14: void write_char(char x);
+[v _write_char `(v ~T0 @X0 0 ef1`uc ]
+"28 ./Thermometer_driver.h
+[; ;./Thermometer_driver.h: 28: void display_temp();
+[v _display_temp `(v ~T0 @X0 0 e? ]
+"23 ./clock_driver.h
+[; ;./clock_driver.h: 23: void display_date();
+[v _display_date `(v ~T0 @X0 0 e? ]
+"22
+[; ;./clock_driver.h: 22: void display_clock();
+[v _display_clock `(v ~T0 @X0 0 e? ]
+"7 ./Button_driver.h
+[; ;./Button_driver.h: 7: void thermometer_threshhold_settings();
+[v _thermometer_threshhold_settings `(v ~T0 @X0 0 e? ]
+"8
+[; ;./Button_driver.h: 8: void date_settings();
+[v _date_settings `(v ~T0 @X0 0 e? ]
+"9
+[; ;./Button_driver.h: 9: void time_settings();
+[v _time_settings `(v ~T0 @X0 0 e? ]
+"4 ./SystemHeader.h
+[p x FOSC = HS ]
+"5
+[p x WDTE = OFF ]
+"6
+[p x PWRTE = ON ]
+"7
+[p x BOREN = OFF ]
+"8
+[p x LVP = OFF ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 218: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 280: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"342
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 342: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 404: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 436: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 456: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 534: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 596: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 636: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 643: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 650: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 657: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"732
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 732: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"739
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 739: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"810
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 810: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 817: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"887
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 887: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 894: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 901: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 908: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 966: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1061: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1068
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1068: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1075: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1082: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1089: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1096: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1154: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1161: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1257: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1327: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1377
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1377: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1439
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1439: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1501: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1563
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1563: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1620
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1620: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1682: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1722: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1756: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1818: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1825
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1825: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 1832: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2001: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2082: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2089: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2159: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2224: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2231: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2290: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2297: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2304: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2311: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2318: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"13 ./Thermometer_driver.h
+[; ;./Thermometer_driver.h: 13: unsigned char TLV=0 ;
+[v _TLV `uc ~T0 @X0 1 e ]
+[i _TLV
+-> -> 0 `i `uc
+]
+"14
+[; ;./Thermometer_driver.h: 14: unsigned char THV=0;
+[v _THV `uc ~T0 @X0 1 e ]
+[i _THV
+-> -> 0 `i `uc
+]
+"15
+[; ;./Thermometer_driver.h: 15: unsigned char TZ=0;
+[v _TZ `uc ~T0 @X0 1 e ]
+[i _TZ
+-> -> 0 `i `uc
+]
+"16
+[; ;./Thermometer_driver.h: 16: unsigned char TX=0;
+[v _TX `uc ~T0 @X0 1 e ]
+[i _TX
+-> -> 0 `i `uc
+]
+"17
+[; ;./Thermometer_driver.h: 17: unsigned int wd;
+[v _wd `ui ~T0 @X0 1 e ]
+"19
+[; ;./Thermometer_driver.h: 19: unsigned char shi;
+[v _shi `uc ~T0 @X0 1 e ]
+"20
+[; ;./Thermometer_driver.h: 20: unsigned char ge;
+[v _ge `uc ~T0 @X0 1 e ]
+"21
+[; ;./Thermometer_driver.h: 21: unsigned char shifen;
+[v _shifen `uc ~T0 @X0 1 e ]
+"22
+[; ;./Thermometer_driver.h: 22: unsigned char baifen;
+[v _baifen `uc ~T0 @X0 1 e ]
+"23
+[; ;./Thermometer_driver.h: 23: unsigned char qianfen;
+[v _qianfen `uc ~T0 @X0 1 e ]
+"24
+[; ;./Thermometer_driver.h: 24: unsigned char wanfen;
+[v _wanfen `uc ~T0 @X0 1 e ]
+"14 ./clock_driver.h
+[; ;./clock_driver.h: 14: const char table[]={0x00,0x43,0x07,0x24,0x11,0x06,0x09,0x00};
+[v _table `Cuc ~T0 @X0 -> 8 `i e ]
+[i _table
+:U ..
+-> -> 0 `i `uc
+-> -> 67 `i `uc
+-> -> 7 `i `uc
+-> -> 36 `i `uc
+-> -> 17 `i `uc
+-> -> 6 `i `uc
+-> -> 9 `i `uc
+-> -> 0 `i `uc
+..
+]
+"15
+[; ;./clock_driver.h: 15: char table1[7];
+[v _table1 `uc ~T0 @X0 -> 7 `i e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"9 mainLogic.c
+[; ;mainLogic.c: 9: void main() {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"10
+[; ;mainLogic.c: 10:     TRISB=0X02;
+[e = _TRISB -> -> 2 `i `uc ]
+"11
+[; ;mainLogic.c: 11:     init_temp();
+[e ( _init_temp ..  ]
+"12
+[; ;mainLogic.c: 12:     set_time();
+[e ( _set_time ..  ]
+"13
+[; ;mainLogic.c: 13:     ds1302_init();
+[e ( _ds1302_init ..  ]
+"15
+[; ;mainLogic.c: 15:     init();
+[e ( _init ..  ]
+"16
+[; ;mainLogic.c: 16:     lcd_init();
+[e ( _lcd_init ..  ]
+"17
+[; ;mainLogic.c: 17:     init_temp();
+[e ( _init_temp ..  ]
+"18
+[; ;mainLogic.c: 18:     initialise_buttons();
+[e ( _initialise_buttons ..  ]
+"20
+[; ;mainLogic.c: 20:     while(1){
+[e :U 102 ]
+{
+"22
+[; ;mainLogic.c: 22:     get_temp();
+[e ( _get_temp ..  ]
+"23
+[; ;mainLogic.c: 23:     get_time();
+[e ( _get_time ..  ]
+"24
+[; ;mainLogic.c: 24:     write_cmd(0x80);
+[e ( _write_cmd (1 -> -> 128 `i `uc ]
+"25
+[; ;mainLogic.c: 25:     write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"26
+[; ;mainLogic.c: 26:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"27
+[; ;mainLogic.c: 27:     write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
+"28
+[; ;mainLogic.c: 28:     write_char('p');
+[e ( _write_char (1 -> -> 112 `ui `uc ]
+"29
+[; ;mainLogic.c: 29:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"30
+[; ;mainLogic.c: 30:     display_temp();
+[e ( _display_temp ..  ]
+"32
+[; ;mainLogic.c: 32:     write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
+"33
+[; ;mainLogic.c: 33:     write_char('D');
+[e ( _write_char (1 -> -> 68 `ui `uc ]
+"34
+[; ;mainLogic.c: 34:     write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
+"35
+[; ;mainLogic.c: 35:     write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"36
+[; ;mainLogic.c: 36:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"37
+[; ;mainLogic.c: 37:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"38
+[; ;mainLogic.c: 38:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"40
+[; ;mainLogic.c: 40:     display_date();
+[e ( _display_date ..  ]
+"42
+[; ;mainLogic.c: 42:     write_cmd(0x88);
+[e ( _write_cmd (1 -> -> 136 `i `uc ]
+"43
+[; ;mainLogic.c: 43:     write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"44
+[; ;mainLogic.c: 44:     write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"45
+[; ;mainLogic.c: 45:     write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
+"46
+[; ;mainLogic.c: 46:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"47
+[; ;mainLogic.c: 47:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"48
+[; ;mainLogic.c: 48:     display_clock();
+[e ( _display_clock ..  ]
+"49
+[; ;mainLogic.c: 49:     thermometer_threshhold_settings();
+[e ( _thermometer_threshhold_settings ..  ]
+"50
+[; ;mainLogic.c: 50:     date_settings();
+[e ( _date_settings ..  ]
+"51
+[; ;mainLogic.c: 51:     time_settings();
+[e ( _time_settings ..  ]
+"52
+[; ;mainLogic.c: 52:     }
+}
+[e :U 101 ]
+[e $U 102  ]
+[e :U 103 ]
+"54
+[; ;mainLogic.c: 54: }
+[e :UE 100 ]
+}
