@@ -85,7 +85,6 @@ void thermometer_threshhold_settings(){
                     //x= (x &0x0f);
                     //x=((x>>4)&0x0f);
                     //x=(x<<8);
-                    x = x/16>10?55+x/16:48+x/16;
                     write_char(x + '0');
                     for(int i=0;i<10000;i++);
 //                    write_cmd(0x98);
