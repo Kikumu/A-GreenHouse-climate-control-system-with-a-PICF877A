@@ -6,6 +6,7 @@
 #include "clock_driver.h"
 #include "Button_driver.h"
 
+
 void main() {
     TRISB=0X02; 
     init_temp(); 

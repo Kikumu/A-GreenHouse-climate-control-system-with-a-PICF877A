@@ -70,6 +70,7 @@ OBJECTFILES=${OBJECTDIR}/mainLogic.p1 ${OBJECTDIR}/LCD_src.p1 ${OBJECTDIR}/Therm
 SOURCEFILES=mainLogic.c LCD_src.c Thermometer_src.c clock_src.c buzzer_src.c Button_src.c
 
 
+
 CFLAGS=
 ASFLAGS=
 LDLIBSOPTIONS=

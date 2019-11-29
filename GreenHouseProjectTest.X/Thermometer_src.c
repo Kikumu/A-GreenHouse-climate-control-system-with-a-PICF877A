@@ -1,6 +1,7 @@
 #include "Thermometer_driver.h"
 #include "LCD_driver.h"
 #include "Buzzer_driver.h"
+#include "Button_driver.h"
 
 void init_temp()                            //access and load thermometer
 {
@@ -17,8 +18,7 @@ void display_temp()                           //display thermometer to screen
  //delay_temp(10,70);                                                                          
  write_char(shifen + '0');                    //display decimal ten cent bit                                                                              
  //delay_temp(10,70);                                                                          
- write_char(baifen + '0');                    //display decimal hundred cent bit               
-                                                                        
+ write_char(baifen + '0');                    //display decimal hundred cent bit   
  //delay_temp(10,70);
  
 }

@@ -5,7 +5,10 @@
 
 
 #define beep_alert RE1
+char var1;
+char var2;
 
-void set_beep_threshhold(char x);
+
+void set_beep_threshhold(char x, char y);
 
 #endif
