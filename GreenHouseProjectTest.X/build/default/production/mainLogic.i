@@ -1964,8 +1964,8 @@ void delay2();
 # 5 "mainLogic.c" 2
 
 # 1 "./clock_driver.h" 1
-# 14 "./clock_driver.h"
-const char table[]={0x00,0x43,0x07,0x24,0x11,0x06,0x09,0x00};
+# 19 "./clock_driver.h"
+char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00};
 char table1[7];
 
 
@@ -1987,10 +1987,19 @@ void delay_time();
 
 
 
+unsigned char a;
+unsigned char b;
+unsigned char c;
+unsigned int t;
+unsigned int w;
+unsigned int x;
+unsigned int y;
+unsigned int z;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
 void initialise_buttons();
+void button_delay();
 # 7 "mainLogic.c" 2
 
 

@@ -10,6 +10,7 @@
       <itemPath>SystemHeader.h</itemPath>
       <itemPath>clock_driver.h</itemPath>
       <itemPath>Button_driver.h</itemPath>
+      <itemPath>math_driver.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +25,7 @@
       <itemPath>clock_src.c</itemPath>
       <itemPath>buzzer_src.c</itemPath>
       <itemPath>Button_src.c</itemPath>
+      <itemPath>math_src.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

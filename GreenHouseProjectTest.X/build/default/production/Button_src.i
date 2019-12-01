@@ -1738,10 +1738,19 @@ extern __bank0 __bit __timeout;
 # 5 "./Button_driver.h" 2
 
 
+unsigned char a;
+unsigned char b;
+unsigned char c;
+unsigned int t;
+unsigned int w;
+unsigned int x;
+unsigned int y;
+unsigned int z;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
 void initialise_buttons();
+void button_delay();
 # 1 "Button_src.c" 2
 
 # 1 "./LCD_driver.h" 1
@@ -1782,8 +1791,8 @@ void delay2();
 # 4 "Button_src.c" 2
 
 # 1 "./clock_driver.h" 1
-# 14 "./clock_driver.h"
-const char table[]={0x00,0x43,0x07,0x24,0x11,0x06,0x09,0x00};
+# 19 "./clock_driver.h"
+char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00};
 char table1[7];
 
 
@@ -1813,11 +1822,23 @@ char var2;
 void set_beep_threshhold(char x, char y);
 # 6 "Button_src.c" 2
 
+# 1 "./math_driver.h" 1
+
+
+
+int modulus_func(int,int);
+char incrementor(int,int,char);
+char decrementor(int,int,char);
+# 7 "Button_src.c" 2
+
 
 
 void initialise_buttons(){
     ADCON1 = 0x06;
     TRISC = 0xf0;
+    a = 0x00;
+    b = 0x00;
+    z = 0;
 }
 
 void thermometer_threshhold_settings(){
@@ -1873,10 +1894,10 @@ void thermometer_threshhold_settings(){
             RC1 = 0;
             RC2 = 1;
             RC3 = 1;
-            int t = 0;
-            int w = 0;
-            int x = 0;
-            int y = 0;
+            t = 0;
+            w = 0;
+            x = 0;
+            y = 0;
             x = 0x00;
             for(;;){
                  RC0 = 1;
@@ -1887,29 +1908,24 @@ void thermometer_threshhold_settings(){
                 if(RC7==0){
                     write_cmd(0x98);
                     x++;
-                    x = (unsigned char )(x % 10);
+                    y = (unsigned char )y;
+                    x = (unsigned char )(modulus_func(x,10));
                     write_char(y + '0');
                     write_char(x + '0');
-                    if('9' == (x + '0')){
-                        y++;
-                        y = (unsigned char )(y % 10);
-                    }
+                    y = incrementor(y,x,'9');
                     t = x;
                     w = y;
-                    for(int i=0;i<10000;i++);
+                    button_delay();
                 }
                   RC0 = 0;
                     RC1 = 1;
                     RC2 = 1;
                     RC3 = 1;
                     if(RC6 == 0){
-
-
                         var1 = y;
                         var2 = x;
                         set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
-
                         write_char('S');
                         write_char('A');
                         write_char('V');
@@ -1925,18 +1941,19 @@ void thermometer_threshhold_settings(){
 
                  if(RC7 == 0){
                     write_cmd(0x98);
-                    t--;
-                    t = (unsigned char)(t % 10);
+                      t--;
+                    w = (unsigned char )w;
+                    t = (unsigned char )(modulus_func(t,10));
                     write_char(w + '0');
                     write_char(t + '0');
-                    if('0' == (t + '0')){
-                        w--;
-                        w = (unsigned char)(w % 10);
+                    w = decrementor(w,t,'0');
+                    if((t + '0')=='0'){
                         t = 10;
                     }
+
                     x = t;
                     y = w;
-                    for(int i=0;i<10000;i++);
+                    button_delay();
                  }
                 RC0 = 0;
                 RC1 = 1;
@@ -1952,7 +1969,7 @@ void thermometer_threshhold_settings(){
                         write_char('V');
                         write_char('E');
                         write_char('D');
-                        for(int i=0;i<10000;i++);
+                        button_delay();
                         return;
                     }
             RC0 = 0;
@@ -1973,7 +1990,6 @@ void time_settings(){
  RC1 = 1;
  RC2 = 0;
  RC3 = 1;
-
   if (RC4 == 0){
       write_cmd(0x1);
       for(;;){
@@ -1991,6 +2007,109 @@ void time_settings(){
             write_char('n');
             write_char('g');
             write_char('s');
+
+            RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+
+            if(RC7 == 0 && b =='x'){
+                    a++;
+                    x++ ;
+                    x = modulus_func(x,10);
+                    y = incrementor(y,x,'9');
+                    button_delay();
+            }
+            else if(RC7==0 && b == 'y'){
+                    t++;
+                    t = modulus_func(t,10);
+                    w = incrementor(w,x,'9');
+                    button_delay();
+            }
+
+             write_cmd(0x88);
+                    (table[1]) = a;
+
+
+
+                    write_char(a + '0');
+
+                    if((a + '0') == '9'){
+                        a = 0x11;
+                        a--;
+                    }
+                    if((a + '0')=='J'){
+                        a = 0x21;
+                        a--;
+                    }
+
+                    if((a + '0')== 'Y'){
+                        a = 0x31;
+                        a--;
+                    }
+                    if((a + '0')== 'j'){
+                        a = 0x41;
+                        a--;
+                    }
+
+                    if((a + '0')== 'z'){
+                        a = 0x51;
+                        a--;
+                    }
+                    if(a == 0x59){
+                        a =0x00;
+                    }
+# 248 "Button_src.c"
+                  RC0 = 0;
+                  RC1 = 1;
+                  RC2 = 1;
+                  RC3 = 1;
+                    if (RC6 == 0 ){
+                          write_cmd(0x1);
+                          set_time();
+                          return;
+                            }
+                  RC0 = 1;
+                  RC1 = 1;
+                  RC2 = 0;
+                  RC3 = 1;
+                  z = modulus_func(z,2);
+                  if(RC4 == 0 && z ==0){
+
+                      write_cmd(0x90);
+                      x = 0;
+                      y = 0;
+
+                      write_char('H');
+                      write_char('o');
+                      write_char('u');
+                      write_char('r');
+                      write_char(':');
+                      b = 'x';
+                      button_delay();
+                      z++;
+                  }
+                  RC0 = 1;
+                  RC1 = 1;
+                  RC2 = 0;
+                  RC3 = 1;
+
+                  if(RC4 == 0&& z ==1){
+                      z++;
+                      button_delay();
+                      write_cmd(0x90);
+                      write_char('M');
+                      write_char('i');
+                      write_char('n');
+                      write_char('s');
+                      write_char(':');
+                       b = 'y';
+                  }
+                  RC0 = 1;
+                  RC1 = 1;
+                  RC2 = 0;
+                  RC3 = 1;
+
             RC0 = 0;
             RC1 = 1;
             RC2 = 1;
@@ -2001,7 +2120,6 @@ void time_settings(){
             }
       }
   }
-
 }
 
 void date_settings(){
@@ -2026,6 +2144,101 @@ void date_settings(){
             write_char('n');
             write_char('g');
             write_char('s');
+            RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+
+            if(RC7 == 0 && b =='x'){
+                    a++;
+                    button_delay();
+            }
+            else if(RC7==0 && b == 'y'){
+
+                    button_delay();
+            }
+            else if(RC7==0 && b == 'z'){
+
+                    button_delay();
+            }
+
+
+             write_cmd(0x88);
+                    (table[2]) = a;
+                    write_char(a + '0');
+                    if((a + '0') == '9'){
+                        a = 0x11;
+                        a--;
+                    }
+                    if((a + '0')=='J'){
+                        a = 0x21;
+                        a--;
+                    }
+                    if((a + '0')=='T'){
+                        a = 0x00;
+                    }
+
+                  RC0 = 0;
+                  RC1 = 1;
+                  RC2 = 1;
+                  RC3 = 1;
+                    if (RC6 == 0 ){
+                          write_cmd(0x1);
+                          set_time();
+                          return;
+                            }
+                  RC0 = 0;
+                  RC1 = 1;
+                  RC2 = 1;
+                  RC3 = 1;
+                  z = modulus_func(z,3);
+                  if(RC4 == 0 && z ==0){
+                      write_cmd(0x90);
+                      write_char('D');
+                      write_char('a');
+                      write_char('y');
+                      write_char(':');
+                      b = 'x';
+                      write_cmd(0x88);
+                      button_delay();
+                      z++;
+                  }
+                  RC0 = 0;
+                  RC1 = 1;
+                  RC2 = 1;
+                  RC3 = 1;
+                  if(RC4 == 0&& z ==1){
+                      z++;
+                      button_delay();
+
+                      write_cmd(0x90);
+                      write_char('M');
+                      write_char('o');
+                      write_char('n');
+                      write_char('t');
+                      write_char('h');
+                      write_char(':');
+                      b = 'y';
+                      write_cmd(0x88);
+                  }
+                  RC0 = 0;
+                  RC1 = 1;
+                  RC2 = 1;
+                  RC3 = 1;
+                  if(RC4 == 0&& z ==2){
+                      button_delay();
+                      z++;
+
+                      write_cmd(0x90);
+                      write_char('Y');
+                      write_char('e');
+                      write_char('a');
+                      write_char('r');
+                      write_char(':');
+                      b = 'z';
+                      write_cmd(0x88);
+                  }
+
             RC0 = 0;
             RC1 = 1;
             RC2 = 1;
@@ -2037,3 +2250,7 @@ void date_settings(){
       }
   }
   }
+
+void button_delay(){
+    for(int i=0;i<10000;i++);
+}

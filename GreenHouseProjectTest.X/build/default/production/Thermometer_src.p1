@@ -264,6 +264,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOREN = OFF ]
 "8
 [p x LVP = OFF ]
+"7 ./Button_driver.h
+[; ;./Button_driver.h: 7: unsigned char a;
+[v _a `uc ~T0 @X0 1 e ]
+"8
+[; ;./Button_driver.h: 8: unsigned char b;
+[v _b `uc ~T0 @X0 1 e ]
+"9
+[; ;./Button_driver.h: 9: unsigned char c;
+[v _c `uc ~T0 @X0 1 e ]
+"10
+[; ;./Button_driver.h: 10: unsigned int t;
+[v _t `ui ~T0 @X0 1 e ]
+"11
+[; ;./Button_driver.h: 11: unsigned int w;
+[v _w `ui ~T0 @X0 1 e ]
+"12
+[; ;./Button_driver.h: 12: unsigned int x;
+[v _x `ui ~T0 @X0 1 e ]
+"13
+[; ;./Button_driver.h: 13: unsigned int y;
+[v _y `ui ~T0 @X0 1 e ]
+"14
+[; ;./Button_driver.h: 14: unsigned int z;
+[v _z `ui ~T0 @X0 1 e ]
 "6 Thermometer_src.c
 [; ;Thermometer_src.c: 6: void init_temp()
 [v _init_temp `(v ~T0 @X0 1 ef ]
@@ -465,7 +489,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _value -> -> 0 `i `uc ]
 "66
 [; ;Thermometer_src.c: 66:  static _Bool j;
-[v F900 `a ~T0 @X0 1 s j ]
+[v F909 `a ~T0 @X0 1 s j ]
 "67
 [; ;Thermometer_src.c: 67:  for(i=8;i>0;i--)
 {
@@ -521,10 +545,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( ___nop ..  ]
 "83
 [; ;Thermometer_src.c: 83:    j=RE0;
-[e = F900 -> _RE0 `a ]
+[e = F909 -> _RE0 `a ]
 "84
 [; ;Thermometer_src.c: 84:    if(j) value|=0x80;
-[e $ ! != -> F900 `i -> 0 `i 112  ]
+[e $ ! != -> F909 `i -> 0 `i 112  ]
 [e =| _value -> -> 128 `i `uc ]
 [e :U 112 ]
 "85

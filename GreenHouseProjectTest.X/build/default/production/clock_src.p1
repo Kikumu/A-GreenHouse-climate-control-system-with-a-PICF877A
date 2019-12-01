@@ -5,11 +5,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2689
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2689: extern volatile __bit RB5 __attribute__((address(0x35)));
 [v _RB5 `Vb ~T0 @X0 0 e@53 ]
-"24 ./clock_driver.h
-[; ;./clock_driver.h: 24: void time_write_1(unsigned char time_tx);
+"29 ./clock_driver.h
+[; ;./clock_driver.h: 29: void time_write_1(unsigned char time_tx);
 [v _time_write_1 `(v ~T0 @X0 0 ef1`uc ]
-"25
-[; ;./clock_driver.h: 25: unsigned char time_read_1();
+"30
+[; ;./clock_driver.h: 30: unsigned char time_read_1();
 [v _time_read_1 `(uc ~T0 @X0 0 e? ]
 "2677 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2677: extern volatile __bit RB1 __attribute__((address(0x31)));
@@ -203,14 +203,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"14 ./clock_driver.h
-[; ;./clock_driver.h: 14: const char table[]={0x00,0x43,0x07,0x24,0x11,0x06,0x09,0x00};
-[v _table `Cuc ~T0 @X0 -> 8 `i e ]
+"19 ./clock_driver.h
+[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00};
+[v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
 -> -> 0 `i `uc
--> -> 67 `i `uc
--> -> 7 `i `uc
+-> -> 0 `i `uc
+-> -> 64 `i `uc
 -> -> 36 `i `uc
 -> -> 17 `i `uc
 -> -> 6 `i `uc
@@ -218,8 +218,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"15
-[; ;./clock_driver.h: 15: char table1[7];
+"20
+[; ;./clock_driver.h: 20: char table1[7];
 [v _table1 `uc ~T0 @X0 -> 7 `i e ]
 "6 clock_src.c
 [; ;clock_src.c: 6: void ds1302_init()

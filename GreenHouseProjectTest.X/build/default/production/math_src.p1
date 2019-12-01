@@ -1,0 +1,82 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"5 math_src.c
+[; ;math_src.c: 5: int modulus_func(int x,int y){
+[v _modulus_func `(i ~T0 @X0 1 ef2`i`i ]
+{
+[e :U _modulus_func ]
+[v _x `i ~T0 @X0 1 r1 ]
+[v _y `i ~T0 @X0 1 r2 ]
+[f ]
+"6
+[; ;math_src.c: 6:     x = x % y;
+[e = _x % _x _y ]
+"7
+[; ;math_src.c: 7:     return x;
+[e ) _x ]
+[e $UE 1  ]
+"8
+[; ;math_src.c: 8: }
+[e :UE 1 ]
+}
+"10
+[; ;math_src.c: 10: char incrementor(int y,int x,char z){
+[v _incrementor `(uc ~T0 @X0 1 ef3`i`i`uc ]
+{
+[e :U _incrementor ]
+[v _y `i ~T0 @X0 1 r1 ]
+[v _x `i ~T0 @X0 1 r2 ]
+[v _z `uc ~T0 @X0 1 r3 ]
+[f ]
+"11
+[; ;math_src.c: 11:      if(z == (x + '0')){
+[e $ ! == -> _z `ui + -> _x `ui -> 48 `ui 3  ]
+{
+"12
+[; ;math_src.c: 12:      y++;
+[e ++ _y -> 1 `i ]
+"13
+[; ;math_src.c: 13:      y =(modulus_func(y,10));
+[e = _y ( _modulus_func (2 , _y -> 10 `i ]
+"14
+[; ;math_src.c: 14:    }
+}
+[e :U 3 ]
+"15
+[; ;math_src.c: 15:      return y;
+[e ) -> _y `uc ]
+[e $UE 2  ]
+"16
+[; ;math_src.c: 16: }
+[e :UE 2 ]
+}
+"18
+[; ;math_src.c: 18: char decrementor(int w,int t ,char z){
+[v _decrementor `(uc ~T0 @X0 1 ef3`i`i`uc ]
+{
+[e :U _decrementor ]
+[v _w `i ~T0 @X0 1 r1 ]
+[v _t `i ~T0 @X0 1 r2 ]
+[v _z `uc ~T0 @X0 1 r3 ]
+[f ]
+"19
+[; ;math_src.c: 19:      if(z == (t + '0')){
+[e $ ! == -> _z `ui + -> _t `ui -> 48 `ui 5  ]
+{
+"21
+[; ;math_src.c: 21:         w--;
+[e -- _w -> 1 `i ]
+"22
+[; ;math_src.c: 22:         w = (modulus_func(w,10));
+[e = _w ( _modulus_func (2 , _w -> 10 `i ]
+"23
+[; ;math_src.c: 23:         }
+}
+[e :U 5 ]
+"24
+[; ;math_src.c: 24:      return w;
+[e ) -> _w `uc ]
+[e $UE 4  ]
+"25
+[; ;math_src.c: 25: }
+[e :UE 4 ]
+}

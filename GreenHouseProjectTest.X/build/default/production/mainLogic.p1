@@ -6,11 +6,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 27: void init_temp();
 [v _init_temp `(v ~T0 @X0 0 e? ]
-"20 ./clock_driver.h
-[; ;./clock_driver.h: 20: void set_time();
+"25 ./clock_driver.h
+[; ;./clock_driver.h: 25: void set_time();
 [v _set_time `(v ~T0 @X0 0 e? ]
-"19
-[; ;./clock_driver.h: 19: void ds1302_init();
+"24
+[; ;./clock_driver.h: 24: void ds1302_init();
 [v _ds1302_init `(v ~T0 @X0 0 e? ]
 "12 ./LCD_driver.h
 [; ;./LCD_driver.h: 12: void init();
@@ -18,14 +18,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;./LCD_driver.h: 13: void lcd_init();
 [v _lcd_init `(v ~T0 @X0 0 e? ]
-"10 ./Button_driver.h
-[; ;./Button_driver.h: 10: void initialise_buttons();
+"18 ./Button_driver.h
+[; ;./Button_driver.h: 18: void initialise_buttons();
 [v _initialise_buttons `(v ~T0 @X0 0 e? ]
 "32 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 32: void get_temp();
 [v _get_temp `(v ~T0 @X0 0 e? ]
-"21 ./clock_driver.h
-[; ;./clock_driver.h: 21: void get_time();
+"26 ./clock_driver.h
+[; ;./clock_driver.h: 26: void get_time();
 [v _get_time `(v ~T0 @X0 0 e? ]
 "15 ./LCD_driver.h
 [; ;./LCD_driver.h: 15: void write_cmd(char x);
@@ -36,20 +36,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 28: void display_temp();
 [v _display_temp `(v ~T0 @X0 0 e? ]
-"23 ./clock_driver.h
-[; ;./clock_driver.h: 23: void display_date();
+"28 ./clock_driver.h
+[; ;./clock_driver.h: 28: void display_date();
 [v _display_date `(v ~T0 @X0 0 e? ]
-"22
-[; ;./clock_driver.h: 22: void display_clock();
+"27
+[; ;./clock_driver.h: 27: void display_clock();
 [v _display_clock `(v ~T0 @X0 0 e? ]
-"7 ./Button_driver.h
-[; ;./Button_driver.h: 7: void thermometer_threshhold_settings();
+"15 ./Button_driver.h
+[; ;./Button_driver.h: 15: void thermometer_threshhold_settings();
 [v _thermometer_threshhold_settings `(v ~T0 @X0 0 e? ]
-"8
-[; ;./Button_driver.h: 8: void date_settings();
+"16
+[; ;./Button_driver.h: 16: void date_settings();
 [v _date_settings `(v ~T0 @X0 0 e? ]
-"9
-[; ;./Button_driver.h: 9: void time_settings();
+"17
+[; ;./Button_driver.h: 17: void time_settings();
 [v _time_settings `(v ~T0 @X0 0 e? ]
 "4 ./SystemHeader.h
 [p x FOSC = HS ]
@@ -286,14 +286,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./Thermometer_driver.h: 24: unsigned char wanfen;
 [v _wanfen `uc ~T0 @X0 1 e ]
-"14 ./clock_driver.h
-[; ;./clock_driver.h: 14: const char table[]={0x00,0x43,0x07,0x24,0x11,0x06,0x09,0x00};
-[v _table `Cuc ~T0 @X0 -> 8 `i e ]
+"19 ./clock_driver.h
+[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00};
+[v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
 -> -> 0 `i `uc
--> -> 67 `i `uc
--> -> 7 `i `uc
+-> -> 0 `i `uc
+-> -> 64 `i `uc
 -> -> 36 `i `uc
 -> -> 17 `i `uc
 -> -> 6 `i `uc
@@ -301,9 +301,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"15
-[; ;./clock_driver.h: 15: char table1[7];
+"20
+[; ;./clock_driver.h: 20: char table1[7];
 [v _table1 `uc ~T0 @X0 -> 7 `i e ]
+"7 ./Button_driver.h
+[; ;./Button_driver.h: 7: unsigned char a;
+[v _a `uc ~T0 @X0 1 e ]
+"8
+[; ;./Button_driver.h: 8: unsigned char b;
+[v _b `uc ~T0 @X0 1 e ]
+"9
+[; ;./Button_driver.h: 9: unsigned char c;
+[v _c `uc ~T0 @X0 1 e ]
+"10
+[; ;./Button_driver.h: 10: unsigned int t;
+[v _t `ui ~T0 @X0 1 e ]
+"11
+[; ;./Button_driver.h: 11: unsigned int w;
+[v _w `ui ~T0 @X0 1 e ]
+"12
+[; ;./Button_driver.h: 12: unsigned int x;
+[v _x `ui ~T0 @X0 1 e ]
+"13
+[; ;./Button_driver.h: 13: unsigned int y;
+[v _y `ui ~T0 @X0 1 e ]
+"14
+[; ;./Button_driver.h: 14: unsigned int z;
+[v _z `ui ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "10 mainLogic.c
 [; ;mainLogic.c: 10: void main() {
