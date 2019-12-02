@@ -13,22 +13,21 @@ void main() {
     set_time();
     ds1302_init();
     
-    init();          //I/O init
-    lcd_init();      //LCD init
-    init_temp(); 
-    initialise_buttons();
-    //Button drivers
-    while(1){
+    init();                               //I/O init
+    lcd_init();                           //LCD init
+    init_temp();                          //Initialise temperature variables
+    initialise_buttons();                 //Initialise button variables
     
-    get_temp(); 
-    get_time();
+    while(1){
+    get_temp();                           //get temperature variables from device
+    get_time();                           //get time variables from hardware
     write_cmd(0x80);
     write_char('T');
     write_char('e');
     write_char('m');
     write_char('p');
     write_char(':');
-    display_temp();
+    display_temp();                       //Display tempperature to screen
     
     write_cmd(0x90);
     write_char('D');
@@ -38,7 +37,7 @@ void main() {
     write_char(':');
     write_char(' ');
     
-    display_date();
+    display_date();                      //Display date to screen
     
     write_cmd(0x88);
     write_char('T');
@@ -46,10 +45,10 @@ void main() {
     write_char('m');
     write_char('e');
     write_char(':');
-    display_clock();
-    thermometer_threshhold_settings();
-    date_settings();
-    time_settings();
+    display_clock();                     //Display clock settings
+    thermometer_threshhold_settings();   //access thermometer settings
+    date_settings();                     //access date settings
+    time_settings();                     //access time settings
     }
     
 }

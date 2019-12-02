@@ -19,64 +19,122 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1 ]
 }
 "10
-[; ;math_src.c: 10: char incrementor(int y,int x,char z){
+[; ;math_src.c: 10: char incrementor(int upper_val,int lower_val,char z){
 [v _incrementor `(uc ~T0 @X0 1 ef3`i`i`uc ]
 {
 [e :U _incrementor ]
-[v _y `i ~T0 @X0 1 r1 ]
-[v _x `i ~T0 @X0 1 r2 ]
+[v _upper_val `i ~T0 @X0 1 r1 ]
+[v _lower_val `i ~T0 @X0 1 r2 ]
 [v _z `uc ~T0 @X0 1 r3 ]
 [f ]
 "11
-[; ;math_src.c: 11:      if(z == (x + '0')){
-[e $ ! == -> _z `ui + -> _x `ui -> 48 `ui 3  ]
+[; ;math_src.c: 11:      if(z == (lower_val + '0')){
+[e $ ! == -> _z `ui + -> _lower_val `ui -> 48 `ui 3  ]
 {
 "12
-[; ;math_src.c: 12:      y++;
-[e ++ _y -> 1 `i ]
+[; ;math_src.c: 12:      upper_val++;
+[e ++ _upper_val -> 1 `i ]
 "13
-[; ;math_src.c: 13:      y =(modulus_func(y,10));
-[e = _y ( _modulus_func (2 , _y -> 10 `i ]
+[; ;math_src.c: 13:      upper_val =(modulus_func(upper_val,10));
+[e = _upper_val ( _modulus_func (2 , _upper_val -> 10 `i ]
 "14
 [; ;math_src.c: 14:    }
 }
 [e :U 3 ]
 "15
-[; ;math_src.c: 15:      return y;
-[e ) -> _y `uc ]
+[; ;math_src.c: 15:      return upper_val;
+[e ) -> _upper_val `uc ]
 [e $UE 2  ]
 "16
 [; ;math_src.c: 16: }
 [e :UE 2 ]
 }
-"18
-[; ;math_src.c: 18: char decrementor(int w,int t ,char z){
+"19
+[; ;math_src.c: 19: char decrementor(int lower_val,int upper_val ,char z){
 [v _decrementor `(uc ~T0 @X0 1 ef3`i`i`uc ]
 {
 [e :U _decrementor ]
-[v _w `i ~T0 @X0 1 r1 ]
-[v _t `i ~T0 @X0 1 r2 ]
+[v _lower_val `i ~T0 @X0 1 r1 ]
+[v _upper_val `i ~T0 @X0 1 r2 ]
 [v _z `uc ~T0 @X0 1 r3 ]
 [f ]
-"19
-[; ;math_src.c: 19:      if(z == (t + '0')){
-[e $ ! == -> _z `ui + -> _t `ui -> 48 `ui 5  ]
+"20
+[; ;math_src.c: 20:      if(z == (upper_val + '0')){
+[e $ ! == -> _z `ui + -> _upper_val `ui -> 48 `ui 5  ]
 {
 "21
-[; ;math_src.c: 21:         w--;
-[e -- _w -> 1 `i ]
+[; ;math_src.c: 21:         lower_val--;
+[e -- _lower_val -> 1 `i ]
 "22
-[; ;math_src.c: 22:         w = (modulus_func(w,10));
-[e = _w ( _modulus_func (2 , _w -> 10 `i ]
+[; ;math_src.c: 22:         lower_val = (modulus_func(lower_val,10));
+[e = _lower_val ( _modulus_func (2 , _lower_val -> 10 `i ]
 "23
 [; ;math_src.c: 23:         }
 }
 [e :U 5 ]
 "24
-[; ;math_src.c: 24:      return w;
-[e ) -> _w `uc ]
+[; ;math_src.c: 24:      return lower_val;
+[e ) -> _lower_val `uc ]
 [e $UE 4  ]
 "25
 [; ;math_src.c: 25: }
 [e :UE 4 ]
+}
+"27
+[; ;math_src.c: 27: char time_date_delimiter(char val,char hex,char limiter){
+[v _time_date_delimiter `(uc ~T0 @X0 1 ef3`uc`uc`uc ]
+{
+[e :U _time_date_delimiter ]
+[v _val `uc ~T0 @X0 1 r1 ]
+[v _hex `uc ~T0 @X0 1 r2 ]
+[v _limiter `uc ~T0 @X0 1 r3 ]
+[f ]
+"28
+[; ;math_src.c: 28:     if((val + '0') == limiter){
+[e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 7  ]
+{
+"29
+[; ;math_src.c: 29:     val = hex;
+[e = _val _hex ]
+"30
+[; ;math_src.c: 30:     val--;
+[e -- _val -> -> 1 `i `uc ]
+"31
+[; ;math_src.c: 31:     }
+}
+[e :U 7 ]
+"32
+[; ;math_src.c: 32:     return val;
+[e ) _val ]
+[e $UE 6  ]
+"33
+[; ;math_src.c: 33: }
+[e :UE 6 ]
+}
+"35
+[; ;math_src.c: 35: char time_date_hex_terminator(char val, char limiter){
+[v _time_date_hex_terminator `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _time_date_hex_terminator ]
+[v _val `uc ~T0 @X0 1 r1 ]
+[v _limiter `uc ~T0 @X0 1 r2 ]
+[f ]
+"36
+[; ;math_src.c: 36:     if((val + '0') == limiter){
+[e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 9  ]
+{
+"37
+[; ;math_src.c: 37:     val = 0x00;
+[e = _val -> -> 0 `i `uc ]
+"38
+[; ;math_src.c: 38:     }
+}
+[e :U 9 ]
+"39
+[; ;math_src.c: 39:     return val;
+[e ) _val ]
+[e $UE 8  ]
+"40
+[; ;math_src.c: 40: }
+[e :UE 8 ]
 }

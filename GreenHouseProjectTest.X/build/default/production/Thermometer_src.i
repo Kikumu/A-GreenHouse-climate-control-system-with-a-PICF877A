@@ -1795,6 +1795,7 @@ void set_beep_threshhold(char x, char y);
 unsigned char a;
 unsigned char b;
 unsigned char c;
+unsigned char hrs_limiter;
 unsigned int t;
 unsigned int w;
 unsigned int x;

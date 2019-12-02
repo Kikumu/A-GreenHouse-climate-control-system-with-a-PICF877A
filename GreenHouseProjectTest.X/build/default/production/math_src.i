@@ -14,6 +14,8 @@
 int modulus_func(int,int);
 char incrementor(int,int,char);
 char decrementor(int,int,char);
+char time_date_delimiter(char,char,char);
+char time_date_hex_terminator(char,char);
 # 1 "math_src.c" 2
 
 
@@ -24,19 +26,34 @@ int modulus_func(int x,int y){
     return x;
 }
 
-char incrementor(int y,int x,char z){
-     if(z == (x + '0')){
-     y++;
-     y =(modulus_func(y,10));
+char incrementor(int upper_val,int lower_val,char z){
+     if(z == (lower_val + '0')){
+     upper_val++;
+     upper_val =(modulus_func(upper_val,10));
    }
-     return y;
+     return upper_val;
 }
 
-char decrementor(int w,int t ,char z){
-     if(z == (t + '0')){
 
-        w--;
-        w = (modulus_func(w,10));
+char decrementor(int lower_val,int upper_val ,char z){
+     if(z == (upper_val + '0')){
+        lower_val--;
+        lower_val = (modulus_func(lower_val,10));
         }
-     return w;
+     return lower_val;
+}
+
+char time_date_delimiter(char val,char hex,char limiter){
+    if((val + '0') == limiter){
+    val = hex;
+    val--;
+    }
+    return val;
+}
+
+char time_date_hex_terminator(char val, char limiter){
+    if((val + '0') == limiter){
+    val = 0x00;
+    }
+    return val;
 }

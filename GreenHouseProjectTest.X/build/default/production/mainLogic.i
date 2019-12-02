@@ -1990,6 +1990,7 @@ void delay_time();
 unsigned char a;
 unsigned char b;
 unsigned char c;
+unsigned char hrs_limiter;
 unsigned int t;
 unsigned int w;
 unsigned int x;
@@ -2016,7 +2017,6 @@ void main() {
     initialise_buttons();
 
     while(1){
-
     get_temp();
     get_time();
     write_cmd(0x80);

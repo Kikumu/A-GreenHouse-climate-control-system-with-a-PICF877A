@@ -7,6 +7,7 @@
 unsigned char a; //hrs incrementor
 unsigned char b; //button chooser
 unsigned char c; //mins incrementor
+unsigned char hrs_limiter;
 unsigned int t;
 unsigned int w;
 unsigned int x;

@@ -18,8 +18,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;./LCD_driver.h: 13: void lcd_init();
 [v _lcd_init `(v ~T0 @X0 0 e? ]
-"18 ./Button_driver.h
-[; ;./Button_driver.h: 18: void initialise_buttons();
+"19 ./Button_driver.h
+[; ;./Button_driver.h: 19: void initialise_buttons();
 [v _initialise_buttons `(v ~T0 @X0 0 e? ]
 "32 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 32: void get_temp();
@@ -42,14 +42,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;./clock_driver.h: 27: void display_clock();
 [v _display_clock `(v ~T0 @X0 0 e? ]
-"15 ./Button_driver.h
-[; ;./Button_driver.h: 15: void thermometer_threshhold_settings();
+"16 ./Button_driver.h
+[; ;./Button_driver.h: 16: void thermometer_threshhold_settings();
 [v _thermometer_threshhold_settings `(v ~T0 @X0 0 e? ]
-"16
-[; ;./Button_driver.h: 16: void date_settings();
-[v _date_settings `(v ~T0 @X0 0 e? ]
 "17
-[; ;./Button_driver.h: 17: void time_settings();
+[; ;./Button_driver.h: 17: void date_settings();
+[v _date_settings `(v ~T0 @X0 0 e? ]
+"18
+[; ;./Button_driver.h: 18: void time_settings();
 [v _time_settings `(v ~T0 @X0 0 e? ]
 "4 ./SystemHeader.h
 [p x FOSC = HS ]
@@ -314,19 +314,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Button_driver.h: 9: unsigned char c;
 [v _c `uc ~T0 @X0 1 e ]
 "10
-[; ;./Button_driver.h: 10: unsigned int t;
-[v _t `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 10: unsigned char hrs_limiter;
+[v _hrs_limiter `uc ~T0 @X0 1 e ]
 "11
-[; ;./Button_driver.h: 11: unsigned int w;
-[v _w `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 11: unsigned int t;
+[v _t `ui ~T0 @X0 1 e ]
 "12
-[; ;./Button_driver.h: 12: unsigned int x;
-[v _x `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 12: unsigned int w;
+[v _w `ui ~T0 @X0 1 e ]
 "13
-[; ;./Button_driver.h: 13: unsigned int y;
-[v _y `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 13: unsigned int x;
+[v _x `ui ~T0 @X0 1 e ]
 "14
-[; ;./Button_driver.h: 14: unsigned int z;
+[; ;./Button_driver.h: 14: unsigned int y;
+[v _y `ui ~T0 @X0 1 e ]
+"15
+[; ;./Button_driver.h: 15: unsigned int z;
 [v _z `ui ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "10 mainLogic.c
@@ -363,94 +366,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainLogic.c: 21:     while(1){
 [e :U 102 ]
 {
-"23
-[; ;mainLogic.c: 23:     get_temp();
+"22
+[; ;mainLogic.c: 22:     get_temp();
 [e ( _get_temp ..  ]
-"24
-[; ;mainLogic.c: 24:     get_time();
+"23
+[; ;mainLogic.c: 23:     get_time();
 [e ( _get_time ..  ]
-"25
-[; ;mainLogic.c: 25:     write_cmd(0x80);
+"24
+[; ;mainLogic.c: 24:     write_cmd(0x80);
 [e ( _write_cmd (1 -> -> 128 `i `uc ]
+"25
+[; ;mainLogic.c: 25:     write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
 "26
-[; ;mainLogic.c: 26:     write_char('T');
-[e ( _write_char (1 -> -> 84 `ui `uc ]
+[; ;mainLogic.c: 26:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
 "27
-[; ;mainLogic.c: 27:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
+[; ;mainLogic.c: 27:     write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
 "28
-[; ;mainLogic.c: 28:     write_char('m');
-[e ( _write_char (1 -> -> 109 `ui `uc ]
-"29
-[; ;mainLogic.c: 29:     write_char('p');
+[; ;mainLogic.c: 28:     write_char('p');
 [e ( _write_char (1 -> -> 112 `ui `uc ]
+"29
+[; ;mainLogic.c: 29:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "30
-[; ;mainLogic.c: 30:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"31
-[; ;mainLogic.c: 31:     display_temp();
+[; ;mainLogic.c: 30:     display_temp();
 [e ( _display_temp ..  ]
-"33
-[; ;mainLogic.c: 33:     write_cmd(0x90);
+"32
+[; ;mainLogic.c: 32:     write_cmd(0x90);
 [e ( _write_cmd (1 -> -> 144 `i `uc ]
-"34
-[; ;mainLogic.c: 34:     write_char('D');
+"33
+[; ;mainLogic.c: 33:     write_char('D');
 [e ( _write_char (1 -> -> 68 `ui `uc ]
-"35
-[; ;mainLogic.c: 35:     write_char('a');
+"34
+[; ;mainLogic.c: 34:     write_char('a');
 [e ( _write_char (1 -> -> 97 `ui `uc ]
-"36
-[; ;mainLogic.c: 36:     write_char('t');
+"35
+[; ;mainLogic.c: 35:     write_char('t');
 [e ( _write_char (1 -> -> 116 `ui `uc ]
+"36
+[; ;mainLogic.c: 36:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
 "37
-[; ;mainLogic.c: 37:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
+[; ;mainLogic.c: 37:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "38
-[; ;mainLogic.c: 38:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"39
-[; ;mainLogic.c: 39:     write_char(' ');
+[; ;mainLogic.c: 38:     write_char(' ');
 [e ( _write_char (1 -> -> 32 `ui `uc ]
-"41
-[; ;mainLogic.c: 41:     display_date();
+"40
+[; ;mainLogic.c: 40:     display_date();
 [e ( _display_date ..  ]
-"43
-[; ;mainLogic.c: 43:     write_cmd(0x88);
+"42
+[; ;mainLogic.c: 42:     write_cmd(0x88);
 [e ( _write_cmd (1 -> -> 136 `i `uc ]
-"44
-[; ;mainLogic.c: 44:     write_char('T');
+"43
+[; ;mainLogic.c: 43:     write_char('T');
 [e ( _write_char (1 -> -> 84 `ui `uc ]
-"45
-[; ;mainLogic.c: 45:     write_char('i');
+"44
+[; ;mainLogic.c: 44:     write_char('i');
 [e ( _write_char (1 -> -> 105 `ui `uc ]
-"46
-[; ;mainLogic.c: 46:     write_char('m');
+"45
+[; ;mainLogic.c: 45:     write_char('m');
 [e ( _write_char (1 -> -> 109 `ui `uc ]
-"47
-[; ;mainLogic.c: 47:     write_char('e');
+"46
+[; ;mainLogic.c: 46:     write_char('e');
 [e ( _write_char (1 -> -> 101 `ui `uc ]
-"48
-[; ;mainLogic.c: 48:     write_char(':');
+"47
+[; ;mainLogic.c: 47:     write_char(':');
 [e ( _write_char (1 -> -> 58 `ui `uc ]
-"49
-[; ;mainLogic.c: 49:     display_clock();
+"48
+[; ;mainLogic.c: 48:     display_clock();
 [e ( _display_clock ..  ]
-"50
-[; ;mainLogic.c: 50:     thermometer_threshhold_settings();
+"49
+[; ;mainLogic.c: 49:     thermometer_threshhold_settings();
 [e ( _thermometer_threshhold_settings ..  ]
-"51
-[; ;mainLogic.c: 51:     date_settings();
+"50
+[; ;mainLogic.c: 50:     date_settings();
 [e ( _date_settings ..  ]
-"52
-[; ;mainLogic.c: 52:     time_settings();
+"51
+[; ;mainLogic.c: 51:     time_settings();
 [e ( _time_settings ..  ]
-"53
-[; ;mainLogic.c: 53:     }
+"52
+[; ;mainLogic.c: 52:     }
 }
 [e :U 101 ]
 [e $U 102  ]
 [e :U 103 ]
-"55
-[; ;mainLogic.c: 55: }
+"54
+[; ;mainLogic.c: 54: }
 [e :UE 100 ]
 }
