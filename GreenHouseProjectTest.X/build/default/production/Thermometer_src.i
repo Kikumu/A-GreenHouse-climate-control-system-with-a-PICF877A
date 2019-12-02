@@ -1772,7 +1772,8 @@ char var1;
 char var2;
 
 
-void set_beep_threshhold(char x, char y);
+
+void set_beep_threshhold(char x);
 # 3 "Thermometer_src.c" 2
 
 # 1 "./Button_driver.h" 1

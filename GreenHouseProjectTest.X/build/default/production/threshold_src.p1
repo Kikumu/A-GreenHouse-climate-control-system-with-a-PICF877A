@@ -1,75 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"1375 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1375: extern volatile unsigned char TRISB __attribute__((address(0x086)));
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"27 ./Thermometer_driver.h
-[; ;./Thermometer_driver.h: 27: void init_temp();
-[v _init_temp `(v ~T0 @X0 0 e? ]
-"25 ./clock_driver.h
-[; ;./clock_driver.h: 25: void set_time();
-[v _set_time `(v ~T0 @X0 0 e? ]
-"24
-[; ;./clock_driver.h: 24: void ds1302_init();
-[v _ds1302_init `(v ~T0 @X0 0 e? ]
-"12 ./LCD_driver.h
-[; ;./LCD_driver.h: 12: void init();
-[v _init `(v ~T0 @X0 0 e? ]
-"13
-[; ;./LCD_driver.h: 13: void lcd_init();
-[v _lcd_init `(v ~T0 @X0 0 e? ]
-"23 ./Button_driver.h
-[; ;./Button_driver.h: 23: void initialise_buttons();
-[v _initialise_buttons `(v ~T0 @X0 0 e? ]
-"32 ./Thermometer_driver.h
-[; ;./Thermometer_driver.h: 32: void get_temp();
-[v _get_temp `(v ~T0 @X0 0 e? ]
-"26 ./clock_driver.h
-[; ;./clock_driver.h: 26: void get_time();
-[v _get_time `(v ~T0 @X0 0 e? ]
-"15 ./LCD_driver.h
-[; ;./LCD_driver.h: 15: void write_cmd(char x);
-[v _write_cmd `(v ~T0 @X0 0 ef1`uc ]
-"14
+"14 ./LCD_driver.h
 [; ;./LCD_driver.h: 14: void write_char(char x);
 [v _write_char `(v ~T0 @X0 0 ef1`uc ]
-"28 ./Thermometer_driver.h
-[; ;./Thermometer_driver.h: 28: void display_temp();
-[v _display_temp `(v ~T0 @X0 0 e? ]
-"28 ./clock_driver.h
-[; ;./clock_driver.h: 28: void display_date();
-[v _display_date `(v ~T0 @X0 0 e? ]
-"27
-[; ;./clock_driver.h: 27: void display_clock();
-[v _display_clock `(v ~T0 @X0 0 e? ]
-"20 ./Button_driver.h
-[; ;./Button_driver.h: 20: void thermometer_threshhold_settings();
-[v _thermometer_threshhold_settings `(v ~T0 @X0 0 e? ]
-"21
-[; ;./Button_driver.h: 21: void date_settings();
-[v _date_settings `(v ~T0 @X0 0 e? ]
-"22
-[; ;./Button_driver.h: 22: void time_settings();
-[v _time_settings `(v ~T0 @X0 0 e? ]
-"10 ./Threshold_driver.h
-[; ;./Threshold_driver.h: 10: void set_lower_threshold(int,int);
-[v _set_lower_threshold `(v ~T0 @X0 0 ef2`i`i ]
-"9
-[; ;./Threshold_driver.h: 9: void set_upper_threshold(int,int);
-[v _set_upper_threshold `(v ~T0 @X0 0 ef2`i`i ]
-"13 ./Buzzer_driver.h
-[; ;./Buzzer_driver.h: 13: void set_beep_threshhold(char x);
-[v _set_beep_threshhold `(v ~T0 @X0 0 ef1`uc ]
-"4 ./SystemHeader.h
-[p x FOSC = HS ]
-"5
-[p x WDTE = OFF ]
-"6
-[p x PWRTE = ON ]
-"7
-[p x BOREN = OFF ]
-"8
-[p x LVP = OFF ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -295,63 +227,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./Thermometer_driver.h: 24: unsigned char wanfen;
 [v _wanfen `uc ~T0 @X0 1 e ]
-"19 ./clock_driver.h
-[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
-[v _table `uc ~T0 @X0 -> 8 `i e ]
-[i _table
-:U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 64 `i `uc
--> -> 36 `i `uc
--> -> 17 `i `uc
--> -> 6 `i `uc
--> -> 34 `i `uc
--> -> 0 `i `uc
-..
-]
-"20
-[; ;./clock_driver.h: 20: char table1[7];
-[v _table1 `uc ~T0 @X0 -> 7 `i e ]
-"7 ./Button_driver.h
-[; ;./Button_driver.h: 7: unsigned char a;
-[v _a `uc ~T0 @X0 1 e ]
-"8
-[; ;./Button_driver.h: 8: unsigned char b;
-[v _b `uc ~T0 @X0 1 e ]
-"9
-[; ;./Button_driver.h: 9: unsigned char c;
-[v _c `uc ~T0 @X0 1 e ]
-"10
-[; ;./Button_driver.h: 10: unsigned char day_hex;
-[v _day_hex `uc ~T0 @X0 1 e ]
-"11
-[; ;./Button_driver.h: 11: unsigned char hrs_limiter;
-[v _hrs_limiter `uc ~T0 @X0 1 e ]
-"12
-[; ;./Button_driver.h: 12: unsigned int t;
-[v _t `ui ~T0 @X0 1 e ]
-"13
-[; ;./Button_driver.h: 13: unsigned int w;
-[v _w `ui ~T0 @X0 1 e ]
-"14
-[; ;./Button_driver.h: 14: unsigned int x;
-[v _x `ui ~T0 @X0 1 e ]
-"15
-[; ;./Button_driver.h: 15: unsigned int y;
-[v _y `ui ~T0 @X0 1 e ]
-"16
-[; ;./Button_driver.h: 16: unsigned int z;
-[v _z `ui ~T0 @X0 1 e ]
-"17
-[; ;./Button_driver.h: 17: unsigned int day_low;
-[v _day_low `ui ~T0 @X0 1 e ]
-"18
-[; ;./Button_driver.h: 18: unsigned int day_high;
-[v _day_high `ui ~T0 @X0 1 e ]
-"19
-[; ;./Button_driver.h: 19: unsigned int day_of_week_var;
-[v _day_of_week_var `ui ~T0 @X0 1 e ]
 "6 ./Threshold_driver.h
 [; ;./Threshold_driver.h: 6: unsigned char upper_t;
 [v _upper_t `uc ~T0 @X0 1 e ]
@@ -361,147 +236,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8
 [; ;./Threshold_driver.h: 8: char buzzer_watcher;
 [v _buzzer_watcher `uc ~T0 @X0 1 e ]
-"8 ./Buzzer_driver.h
-[; ;./Buzzer_driver.h: 8: char var1;
-[v _var1 `uc ~T0 @X0 1 e ]
-"9
-[; ;./Buzzer_driver.h: 9: char var2;
-[v _var2 `uc ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"8 mainLogic.c
-[; ;mainLogic.c: 8: void main() {
-[v _main `(v ~T0 @X0 1 ef ]
+"5 threshold_src.c
+[; ;threshold_src.c: 5: void set_upper_threshold(int upper_val,int lower_val){
+[v _set_upper_threshold `(v ~T0 @X0 1 ef2`i`i ]
 {
-[e :U _main ]
+[e :U _set_upper_threshold ]
+[v _upper_val `i ~T0 @X0 1 r1 ]
+[v _lower_val `i ~T0 @X0 1 r2 ]
 [f ]
-"9
-[; ;mainLogic.c: 9:     TRISB=0X02;
-[e = _TRISB -> -> 2 `i `uc ]
-"10
-[; ;mainLogic.c: 10:     init_temp();
-[e ( _init_temp ..  ]
-"11
-[; ;mainLogic.c: 11:     set_time();
-[e ( _set_time ..  ]
-"12
-[; ;mainLogic.c: 12:     ds1302_init();
-[e ( _ds1302_init ..  ]
-"14
-[; ;mainLogic.c: 14:     init();
-[e ( _init ..  ]
-"15
-[; ;mainLogic.c: 15:     lcd_init();
-[e ( _lcd_init ..  ]
-"16
-[; ;mainLogic.c: 16:     init_temp();
-[e ( _init_temp ..  ]
-"17
-[; ;mainLogic.c: 17:     initialise_buttons();
-[e ( _initialise_buttons ..  ]
-"21
-[; ;mainLogic.c: 21:     while(1){
-[e :U 97 ]
+"6
+[; ;threshold_src.c: 6:     if(shi == upper_val && ge > lower_val){
+[e $ ! && == -> _shi `i _upper_val > -> _ge `i _lower_val 96  ]
 {
-"22
-[; ;mainLogic.c: 22:     get_temp();
-[e ( _get_temp ..  ]
-"23
-[; ;mainLogic.c: 23:     get_time();
-[e ( _get_time ..  ]
-"24
-[; ;mainLogic.c: 24:     write_cmd(0x80);
-[e ( _write_cmd (1 -> -> 128 `i `uc ]
-"25
-[; ;mainLogic.c: 25:     write_char('T');
-[e ( _write_char (1 -> -> 84 `ui `uc ]
-"26
-[; ;mainLogic.c: 26:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"27
-[; ;mainLogic.c: 27:     write_char('m');
-[e ( _write_char (1 -> -> 109 `ui `uc ]
-"28
-[; ;mainLogic.c: 28:     write_char('p');
-[e ( _write_char (1 -> -> 112 `ui `uc ]
-"29
-[; ;mainLogic.c: 29:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"30
-[; ;mainLogic.c: 30:     display_temp();
-[e ( _display_temp ..  ]
-"32
-[; ;mainLogic.c: 32:     write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
-"33
-[; ;mainLogic.c: 33:     write_char('D');
-[e ( _write_char (1 -> -> 68 `ui `uc ]
-"34
-[; ;mainLogic.c: 34:     write_char('a');
-[e ( _write_char (1 -> -> 97 `ui `uc ]
-"35
-[; ;mainLogic.c: 35:     write_char('t');
-[e ( _write_char (1 -> -> 116 `ui `uc ]
-"36
-[; ;mainLogic.c: 36:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"37
-[; ;mainLogic.c: 37:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"38
-[; ;mainLogic.c: 38:     write_char(' ');
-[e ( _write_char (1 -> -> 32 `ui `uc ]
-"40
-[; ;mainLogic.c: 40:     display_date();
-[e ( _display_date ..  ]
-"42
-[; ;mainLogic.c: 42:     write_cmd(0x88);
-[e ( _write_cmd (1 -> -> 136 `i `uc ]
-"43
-[; ;mainLogic.c: 43:     write_char('T');
-[e ( _write_char (1 -> -> 84 `ui `uc ]
-"44
-[; ;mainLogic.c: 44:     write_char('i');
-[e ( _write_char (1 -> -> 105 `ui `uc ]
-"45
-[; ;mainLogic.c: 45:     write_char('m');
-[e ( _write_char (1 -> -> 109 `ui `uc ]
-"46
-[; ;mainLogic.c: 46:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"47
-[; ;mainLogic.c: 47:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"48
-[; ;mainLogic.c: 48:     display_clock();
-[e ( _display_clock ..  ]
-"49
-[; ;mainLogic.c: 49:     thermometer_threshhold_settings();
-[e ( _thermometer_threshhold_settings ..  ]
-"50
-[; ;mainLogic.c: 50:     date_settings();
-[e ( _date_settings ..  ]
-"51
-[; ;mainLogic.c: 51:     time_settings();
-[e ( _time_settings ..  ]
-"52
-[; ;mainLogic.c: 52:     write_cmd(0x98);
-[e ( _write_cmd (1 -> -> 152 `i `uc ]
-"53
-[; ;mainLogic.c: 53:     set_lower_threshold(2,4);
-[e ( _set_lower_threshold (2 , -> 2 `i -> 4 `i ]
-"54
-[; ;mainLogic.c: 54:     set_upper_threshold(2,5);
-[e ( _set_upper_threshold (2 , -> 2 `i -> 5 `i ]
-"55
-[; ;mainLogic.c: 55:     set_beep_threshhold(buzzer_watcher);
-[e ( _set_beep_threshhold (1 _buzzer_watcher ]
-"56
-[; ;mainLogic.c: 56:     }
+"7
+[; ;threshold_src.c: 7:     buzzer_watcher = 'w';
+[e = _buzzer_watcher -> -> 119 `ui `uc ]
+"8
+[; ;threshold_src.c: 8:     write_char('W');
+[e ( _write_char (1 -> -> 87 `ui `uc ]
+"9
+[; ;threshold_src.c: 9:     write_char('A');
+[e ( _write_char (1 -> -> 65 `ui `uc ]
+"10
+[; ;threshold_src.c: 10:     write_char('R');
+[e ( _write_char (1 -> -> 82 `ui `uc ]
+"11
+[; ;threshold_src.c: 11:     write_char('M');
+[e ( _write_char (1 -> -> 77 `ui `uc ]
+"12
+[; ;threshold_src.c: 12:     }
 }
 [e :U 96 ]
-[e $U 97  ]
-[e :U 98 ]
-"58
-[; ;mainLogic.c: 58: }
+"13
+[; ;threshold_src.c: 13: }
 [e :UE 95 ]
+}
+"16
+[; ;threshold_src.c: 16: void set_lower_threshold(int upper_val,int lower_val){
+[v _set_lower_threshold `(v ~T0 @X0 1 ef2`i`i ]
+{
+[e :U _set_lower_threshold ]
+[v _upper_val `i ~T0 @X0 1 r1 ]
+[v _lower_val `i ~T0 @X0 1 r2 ]
+[f ]
+"17
+[; ;threshold_src.c: 17:     if(shi == upper_val && ge < lower_val){
+[e $ ! && == -> _shi `i _upper_val < -> _ge `i _lower_val 98  ]
+{
+"18
+[; ;threshold_src.c: 18:     buzzer_watcher = 'x';
+[e = _buzzer_watcher -> -> 120 `ui `uc ]
+"19
+[; ;threshold_src.c: 19:     write_char('O');
+[e ( _write_char (1 -> -> 79 `ui `uc ]
+"20
+[; ;threshold_src.c: 20:     write_char('K');
+[e ( _write_char (1 -> -> 75 `ui `uc ]
+"21
+[; ;threshold_src.c: 21:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"22
+[; ;threshold_src.c: 22:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"23
+[; ;threshold_src.c: 23:     }
+}
+[e :U 98 ]
+"24
+[; ;threshold_src.c: 24: }
+[e :UE 97 ]
 }

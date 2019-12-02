@@ -10,10 +10,10 @@
 void initialise_buttons(){
     ADCON1 = 0x06;
     TRISC = 0xf0;//11110000
-    a = 0x00; //hours increments
-    b = 0x00; //b utton chooser
-    c = 0x00; //m ins increments
-    z = 0;  //base increment
+    a = 0x00;    //hours increments
+    b = 0x00;    //b utton chooser
+    c = 0x00;    //m ins increments
+    z = 0;       //base increment
 }
 
 void thermometer_threshhold_settings(){
@@ -99,7 +99,7 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){ 
                         var1 = y;
                         var2 = x;
-                        set_beep_threshhold(var1,var2);
+                        //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
                         write_char('S');
                         write_char('A');
@@ -137,7 +137,7 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){
                         var1 = w;
                         var2 = t;
-                        set_beep_threshhold(var1,var2);
+                        //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
                         write_char('S');
                         write_char('A');
@@ -364,7 +364,7 @@ void date_settings(){
                     day_low++;
                     day_low = modulus_func(day_low,10);
                     day_high = incrementor(day_high,day_low,'9');
-                    day_hex = time_date_hex_terminator(day_hex,'d'); //resets hex value to 0 depending on limiter
+                    day_hex = time_date_hex_terminator(day_hex,'c'); //resets hex value to 0 depending on limiter
                     if(day_high == 3 && day_low==2 ){
                         day_high = 0;
                         day_low = 0;

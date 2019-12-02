@@ -4,11 +4,12 @@
 #include <pic.h>
 
 
-#define beep_alert RE1
+#define beep_alert RE2
 char var1;
 char var2;
 
 
-void set_beep_threshhold(char x, char y);
+
+void set_beep_threshhold(char x);
 
 #endif

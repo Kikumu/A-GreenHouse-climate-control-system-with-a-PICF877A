@@ -1762,17 +1762,60 @@ char var1;
 char var2;
 
 
-void set_beep_threshhold(char x, char y);
+
+void set_beep_threshhold(char x);
 # 2 "buzzer_src.c" 2
 
+# 1 "./Button_driver.h" 1
 
 
-void set_beep_threshhold(char x, char y){
-    if (shi + '0' == x && ge + '0' == y){
-        RE1 = 1;
+
+# 1 "./SystemHeader.h" 1
+
+
+
+#pragma config FOSC = HS
+#pragma config WDTE = OFF
+#pragma config PWRTE = ON
+#pragma config BOREN = OFF
+#pragma config LVP = OFF
+# 4 "./Button_driver.h" 2
+
+
+
+unsigned char a;
+unsigned char b;
+unsigned char c;
+unsigned char day_hex;
+unsigned char hrs_limiter;
+unsigned int t;
+unsigned int w;
+unsigned int x;
+unsigned int y;
+unsigned int z;
+unsigned int day_low;
+unsigned int day_high;
+unsigned int day_of_week_var;
+void thermometer_threshhold_settings();
+void date_settings();
+void time_settings();
+void initialise_buttons();
+void button_delay();
+# 3 "buzzer_src.c" 2
+
+
+void set_beep_threshhold(char x){
+    if (x == 'w'){
+        RE2 = 1;
+        button_delay();
+        RE2 = 0;
+        button_delay();
+        RE2 = 1;
+        button_delay();
+        RE2 = 0;
         return;
     }
     else{
-        RE1 = 0;
+        RE2 = 0;
     }
 }

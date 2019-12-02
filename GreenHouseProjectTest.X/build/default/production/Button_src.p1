@@ -41,9 +41,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2722 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2722: extern volatile __bit RC6 __attribute__((address(0x3E)));
 [v _RC6 `Vb ~T0 @X0 0 e@62 ]
-"12 ./Buzzer_driver.h
-[; ;./Buzzer_driver.h: 12: void set_beep_threshhold(char x, char y);
-[v _set_beep_threshhold `(v ~T0 @X0 0 ef2`uc`uc ]
 "6 ./math_driver.h
 [; ;./math_driver.h: 6: char decrementor(int,int,char);
 [v _decrementor `(uc ~T0 @X0 0 ef3`i`i`uc ]
@@ -627,9 +624,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "101
 [; ;Button_src.c: 101:                         var2 = x;
 [e = _var2 -> _x `uc ]
-"102
-[; ;Button_src.c: 102:                         set_beep_threshhold(var1,var2);
-[e ( _set_beep_threshhold (2 , _var1 _var2 ]
 "103
 [; ;Button_src.c: 103:                         write_cmd(0x1);
 [e ( _write_cmd (1 -> -> 1 `i `uc ]
@@ -750,9 +744,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "139
 [; ;Button_src.c: 139:                         var2 = t;
 [e = _var2 -> _t `uc ]
-"140
-[; ;Button_src.c: 140:                         set_beep_threshhold(var1,var2);
-[e ( _set_beep_threshhold (2 , _var1 _var2 ]
 "141
 [; ;Button_src.c: 141:                         write_cmd(0x1);
 [e ( _write_cmd (1 -> -> 1 `i `uc ]
@@ -1420,8 +1411,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Button_src.c: 366:                     day_high = incrementor(day_high,day_low,'9');
 [e = _day_high -> ( _incrementor (3 , , -> _day_high `i -> _day_low `i -> -> 57 `ui `uc `ui ]
 "367
-[; ;Button_src.c: 367:                     day_hex = time_date_hex_terminator(day_hex,'d');
-[e = _day_hex -> ( _time_date_hex_terminator (2 , -> _day_hex `uc -> -> 100 `ui `uc `uc ]
+[; ;Button_src.c: 367:                     day_hex = time_date_hex_terminator(day_hex,'c');
+[e = _day_hex -> ( _time_date_hex_terminator (2 , -> _day_hex `uc -> -> 99 `ui `uc `uc ]
 "368
 [; ;Button_src.c: 368:                     if(day_high == 3 && day_low==2 ){
 [e $ ! && == _day_high -> -> 3 `i `ui == _day_low -> -> 2 `i `ui 135  ]

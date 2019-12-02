@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "SystemHeader.h"
 #include "LCD_driver.h"
 #include "Thermometer_driver.h"
 #include "clock_driver.h"
 #include "Button_driver.h"
-
-
+#include "Threshold_driver.h"
+#include "Buzzer_driver.h"
 void main() {
     TRISB=0X02; 
     init_temp(); 
@@ -17,6 +15,8 @@ void main() {
     lcd_init();                           //LCD init
     init_temp();                          //Initialise temperature variables
     initialise_buttons();                 //Initialise button variables
+    
+    
     
     while(1){
     get_temp();                           //get temperature variables from device
@@ -49,6 +49,10 @@ void main() {
     thermometer_threshhold_settings();   //access thermometer settings
     date_settings();                     //access date settings
     time_settings();                     //access time settings
+    write_cmd(0x98);
+    set_lower_threshold(2,4);
+    set_upper_threshold(2,5);
+    set_beep_threshhold(buzzer_watcher);
     }
     
 }

@@ -1,4 +1,4 @@
-# 1 "clock_src.c"
+# 1 "threshold_src.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "clock_src.c" 2
+# 1 "threshold_src.c" 2
+# 1 "./Threshold_driver.h" 1
+
+
+
+# 1 "./Thermometer_driver.h" 1
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 1 3
 
 
@@ -1720,7 +1728,31 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
-# 1 "clock_src.c" 2
+# 4 "./Thermometer_driver.h" 2
+# 13 "./Thermometer_driver.h"
+unsigned char TLV=0 ;
+unsigned char THV=0;
+unsigned char TZ=0;
+unsigned char TX=0;
+unsigned int wd;
+
+unsigned char shi;
+unsigned char ge;
+unsigned char shifen;
+unsigned char baifen;
+unsigned char qianfen;
+unsigned char wanfen;
+
+
+void init_temp();
+void display_temp();
+void reset_temp(void);
+void write_byte(unsigned char val);
+unsigned char read_byte(void);
+void get_temp();
+void delay_temp(char , char );
+void delay2();
+# 4 "./Threshold_driver.h" 2
 
 # 1 "./LCD_driver.h" 1
 # 12 "./LCD_driver.h"
@@ -1730,172 +1762,35 @@ void write_char(char x);
 void write_cmd(char x);
 void delay_lcd();
 void delay_screen();
-# 2 "clock_src.c" 2
+# 5 "./Threshold_driver.h" 2
 
-# 1 "./clock_driver.h" 1
-# 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
-char table1[7];
-
-
-
-void ds1302_init();
-void set_time();
-void get_time();
-void display_clock();
-void display_date();
-void time_write_1(unsigned char time_tx);
-unsigned char time_read_1();
-void delay_time();
-# 3 "clock_src.c" 2
+unsigned char upper_t;
+unsigned char lower_t;
+char buzzer_watcher;
+void set_upper_threshold(int,int);
+void set_lower_threshold(int,int);
+# 1 "threshold_src.c" 2
 
 
 
-void ds1302_init()
-{
-   RB0=0;
-   RB5 =0;
-   RB5=1;
-   time_write_1(0x8e);
-   time_write_1(0);
-   RB5=0;
-}
-void set_time()
-{
-   int i;
-   RB5=1;
-   time_write_1(0xbe);
-   for(i=0;i<8;i++)
-     {
-       time_write_1(table[i]);
-     }
-   RB5=0;
-}
-void get_time()
-{
-   int i;
-   RB5=1;
-   time_write_1(0xbf);
-   for(i=0;i<7;i++)
-     {
-        table1[i]=time_read_1();
-     }
-   RB5=0;
-}
-void display_clock()
-{
-     int i;
-     if(RB1==0)
-       {
-          table1[0]=table1[3];
-          table1[1]=table1[4];
-       }
 
-     i=table1[2]&0xf0;
-     i=i>>4;
-     write_char(i + '0');
-
-
-
-     i=table1[2]&0x0f;
-     write_char(i + '0');
-     write_char(':');
-
-
-
-     i=table1[1]&0xf0;
-     i=i>>4;
-     write_char(i + '0');
-
-
-     i=table1[1]&0x0f;
-     write_char(i + '0');
-     write_char(':');
-
-
-     i=table1[0]&0xf0;
-     i=i>>4;
-     write_char(i + '0');
-
-
-     i=table1[0]&0x0f;
-     write_char(i + '0');
-
-
-
-}
-void display_date()
-{
-     int i;
-     if(RB1==0)
-       {
-          table1[0]=table1[3];
-          table1[1]=table1[4];
-       }
-     i=table1[3]&0xf0;
-     i=i>>4;
-     write_char(i + '0');
-
-     i=table1[3]&0x0f;
-     write_char(i + '0');
-     write_char('/');
-
-
-
-     i=table1[4]&0xf0;
-     i=i>>4;
-     write_char(i + '0');
-
-     i=table1[4]&0x0f;
-     write_char(i + '0');
-     write_char('/');
-
-
-
-     i=table1[6]&0xf0;
-     i=i>>4;
-     write_char(i + '0');
-
-     i=table1[6]&0x0f;
-     write_char(i + '0');
-
-
-}
-void time_write_1(unsigned char time_tx)
-{
-    int j;
-    for(j=0;j<8;j++)
-   {
-        RB4=0;
-        RB0=0;
-        if(time_tx&0x01)
-          {
-            RB4=1;
-          }
-        time_tx=time_tx>>1;
-        RB0=1;
+void set_upper_threshold(int upper_val,int lower_val){
+    if(shi == upper_val && ge > lower_val){
+    buzzer_watcher = 'w';
+    write_char('W');
+    write_char('A');
+    write_char('R');
+    write_char('M');
     }
-      RB0=0;
 }
-unsigned char time_read_1()
-{
-   unsigned char time_rx=0;
-   int j;
-   TRISB4=1;
-   for(j=0;j<8;j++)
-      {
-        RB0=0;
-        time_rx=time_rx>>1;
-        if(RB4)time_rx=time_rx|0x80;
 
-       RB0=1;
-      }
-    TRISB4=0;
-    RB0=0;
-    return(time_rx);
-}
-void delay_time()
-{
-     int i;
-     for(i=0x64;i--;);
+
+void set_lower_threshold(int upper_val,int lower_val){
+    if(shi == upper_val && ge < lower_val){
+    buzzer_watcher = 'x';
+    write_char('O');
+    write_char('K');
+    write_char(' ');
+    write_char(' ');
+    }
 }

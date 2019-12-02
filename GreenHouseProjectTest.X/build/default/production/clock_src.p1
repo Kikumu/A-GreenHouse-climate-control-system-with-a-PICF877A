@@ -488,159 +488,162 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;clock_src.c: 107:      i=table1[6]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
 "108
-[; ;clock_src.c: 108:      write_char(i + '0');
+[; ;clock_src.c: 108:      i=i>>4;
+[e = _i >> _i -> 4 `i ]
+"109
+[; ;clock_src.c: 109:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"110
-[; ;clock_src.c: 110:      i=table1[6]&0x0f;
-[e = _i & -> *U + &U _table1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
 "111
-[; ;clock_src.c: 111:      write_char(i + '0');
+[; ;clock_src.c: 111:      i=table1[6]&0x0f;
+[e = _i & -> *U + &U _table1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
+"112
+[; ;clock_src.c: 112:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"114
-[; ;clock_src.c: 114: }
+"115
+[; ;clock_src.c: 115: }
 [e :UE 106 ]
 }
-"115
-[; ;clock_src.c: 115: void time_write_1(unsigned char time_tx)
-[v _time_write_1 `(v ~T0 @X0 1 ef1`uc ]
 "116
-[; ;clock_src.c: 116: {
+[; ;clock_src.c: 116: void time_write_1(unsigned char time_tx)
+[v _time_write_1 `(v ~T0 @X0 1 ef1`uc ]
+"117
+[; ;clock_src.c: 117: {
 {
 [e :U _time_write_1 ]
-"115
-[; ;clock_src.c: 115: void time_write_1(unsigned char time_tx)
-[v _time_tx `uc ~T0 @X0 1 r1 ]
 "116
-[; ;clock_src.c: 116: {
-[f ]
+[; ;clock_src.c: 116: void time_write_1(unsigned char time_tx)
+[v _time_tx `uc ~T0 @X0 1 r1 ]
 "117
-[; ;clock_src.c: 117:     int j;
-[v _j `i ~T0 @X0 1 a ]
+[; ;clock_src.c: 117: {
+[f ]
 "118
-[; ;clock_src.c: 118:     for(j=0;j<8;j++)
+[; ;clock_src.c: 118:     int j;
+[v _j `i ~T0 @X0 1 a ]
+"119
+[; ;clock_src.c: 119:     for(j=0;j<8;j++)
 {
 [e = _j -> 0 `i ]
 [e $ < _j -> 8 `i 109  ]
 [e $U 110  ]
 [e :U 109 ]
-"119
-[; ;clock_src.c: 119:    {
-{
 "120
-[; ;clock_src.c: 120:         RB4=0;
-[e = _RB4 -> -> 0 `i `b ]
-"121
-[; ;clock_src.c: 121:         RB0=0;
-[e = _RB0 -> -> 0 `i `b ]
-"122
-[; ;clock_src.c: 122:         if(time_tx&0x01)
-[e $ ! != & -> _time_tx `i -> 1 `i -> 0 `i 112  ]
-"123
-[; ;clock_src.c: 123:           {
+[; ;clock_src.c: 120:    {
 {
+"121
+[; ;clock_src.c: 121:         RB4=0;
+[e = _RB4 -> -> 0 `i `b ]
+"122
+[; ;clock_src.c: 122:         RB0=0;
+[e = _RB0 -> -> 0 `i `b ]
+"123
+[; ;clock_src.c: 123:         if(time_tx&0x01)
+[e $ ! != & -> _time_tx `i -> 1 `i -> 0 `i 112  ]
 "124
-[; ;clock_src.c: 124:             RB4=1;
-[e = _RB4 -> -> 1 `i `b ]
+[; ;clock_src.c: 124:           {
+{
 "125
-[; ;clock_src.c: 125:           }
+[; ;clock_src.c: 125:             RB4=1;
+[e = _RB4 -> -> 1 `i `b ]
+"126
+[; ;clock_src.c: 126:           }
 }
 [e :U 112 ]
-"126
-[; ;clock_src.c: 126:         time_tx=time_tx>>1;
-[e = _time_tx -> >> -> _time_tx `i -> 1 `i `uc ]
 "127
-[; ;clock_src.c: 127:         RB0=1;
-[e = _RB0 -> -> 1 `i `b ]
+[; ;clock_src.c: 127:         time_tx=time_tx>>1;
+[e = _time_tx -> >> -> _time_tx `i -> 1 `i `uc ]
 "128
-[; ;clock_src.c: 128:     }
+[; ;clock_src.c: 128:         RB0=1;
+[e = _RB0 -> -> 1 `i `b ]
+"129
+[; ;clock_src.c: 129:     }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 8 `i 109  ]
 [e :U 110 ]
 }
-"129
-[; ;clock_src.c: 129:       RB0=0;
-[e = _RB0 -> -> 0 `i `b ]
 "130
-[; ;clock_src.c: 130: }
+[; ;clock_src.c: 130:       RB0=0;
+[e = _RB0 -> -> 0 `i `b ]
+"131
+[; ;clock_src.c: 131: }
 [e :UE 108 ]
 }
-"131
-[; ;clock_src.c: 131: unsigned char time_read_1()
-[v _time_read_1 `(uc ~T0 @X0 1 ef ]
 "132
-[; ;clock_src.c: 132: {
+[; ;clock_src.c: 132: unsigned char time_read_1()
+[v _time_read_1 `(uc ~T0 @X0 1 ef ]
+"133
+[; ;clock_src.c: 133: {
 {
 [e :U _time_read_1 ]
 [f ]
-"133
-[; ;clock_src.c: 133:    unsigned char time_rx=0;
+"134
+[; ;clock_src.c: 134:    unsigned char time_rx=0;
 [v _time_rx `uc ~T0 @X0 1 a ]
 [e = _time_rx -> -> 0 `i `uc ]
-"134
-[; ;clock_src.c: 134:    int j;
-[v _j `i ~T0 @X0 1 a ]
 "135
-[; ;clock_src.c: 135:    TRISB4=1;
-[e = _TRISB4 -> -> 1 `i `b ]
+[; ;clock_src.c: 135:    int j;
+[v _j `i ~T0 @X0 1 a ]
 "136
-[; ;clock_src.c: 136:    for(j=0;j<8;j++)
+[; ;clock_src.c: 136:    TRISB4=1;
+[e = _TRISB4 -> -> 1 `i `b ]
+"137
+[; ;clock_src.c: 137:    for(j=0;j<8;j++)
 {
 [e = _j -> 0 `i ]
 [e $ < _j -> 8 `i 114  ]
 [e $U 115  ]
 [e :U 114 ]
-"137
-[; ;clock_src.c: 137:       {
-{
 "138
-[; ;clock_src.c: 138:         RB0=0;
-[e = _RB0 -> -> 0 `i `b ]
+[; ;clock_src.c: 138:       {
+{
 "139
-[; ;clock_src.c: 139:         time_rx=time_rx>>1;
-[e = _time_rx -> >> -> _time_rx `i -> 1 `i `uc ]
+[; ;clock_src.c: 139:         RB0=0;
+[e = _RB0 -> -> 0 `i `b ]
 "140
-[; ;clock_src.c: 140:         if(RB4)time_rx=time_rx|0x80;
+[; ;clock_src.c: 140:         time_rx=time_rx>>1;
+[e = _time_rx -> >> -> _time_rx `i -> 1 `i `uc ]
+"141
+[; ;clock_src.c: 141:         if(RB4)time_rx=time_rx|0x80;
 [e $ ! _RB4 117  ]
 [e = _time_rx -> | -> _time_rx `i -> 128 `i `uc ]
 [e :U 117 ]
-"142
-[; ;clock_src.c: 142:        RB0=1;
-[e = _RB0 -> -> 1 `i `b ]
 "143
-[; ;clock_src.c: 143:       }
+[; ;clock_src.c: 143:        RB0=1;
+[e = _RB0 -> -> 1 `i `b ]
+"144
+[; ;clock_src.c: 144:       }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 8 `i 114  ]
 [e :U 115 ]
 }
-"144
-[; ;clock_src.c: 144:     TRISB4=0;
-[e = _TRISB4 -> -> 0 `i `b ]
 "145
-[; ;clock_src.c: 145:     RB0=0;
-[e = _RB0 -> -> 0 `i `b ]
+[; ;clock_src.c: 145:     TRISB4=0;
+[e = _TRISB4 -> -> 0 `i `b ]
 "146
-[; ;clock_src.c: 146:     return(time_rx);
+[; ;clock_src.c: 146:     RB0=0;
+[e = _RB0 -> -> 0 `i `b ]
+"147
+[; ;clock_src.c: 147:     return(time_rx);
 [e ) _time_rx ]
 [e $UE 113  ]
-"147
-[; ;clock_src.c: 147: }
+"148
+[; ;clock_src.c: 148: }
 [e :UE 113 ]
 }
-"148
-[; ;clock_src.c: 148: void delay_time()
-[v _delay_time `(v ~T0 @X0 1 ef ]
 "149
-[; ;clock_src.c: 149: {
+[; ;clock_src.c: 149: void delay_time()
+[v _delay_time `(v ~T0 @X0 1 ef ]
+"150
+[; ;clock_src.c: 150: {
 {
 [e :U _delay_time ]
 [f ]
-"150
-[; ;clock_src.c: 150:      int i;
-[v _i `i ~T0 @X0 1 a ]
 "151
-[; ;clock_src.c: 151:      for(i=0x64;i--;);
+[; ;clock_src.c: 151:      int i;
+[v _i `i ~T0 @X0 1 a ]
+"152
+[; ;clock_src.c: 152:      for(i=0x64;i--;);
 {
 [e = _i -> 100 `i ]
 [e $U 122  ]
@@ -649,7 +652,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ != -- _i -> 1 `i -> 0 `i 119  ]
 [e :U 120 ]
 }
-"152
-[; ;clock_src.c: 152: }
+"153
+[; ;clock_src.c: 153: }
 [e :UE 118 ]
 }

@@ -46,33 +46,33 @@ void display_clock()                  //display subroutine.
      i=table1[2]&0xf0;                //sec's high
      i=i>>4;                          //rotate right for 4 bits.
      write_char(i + '0');
-     //delay_time();                    //delay some times. 
+     
      
      
      i=table1[2]&0x0f;                //sec's low.
      write_char(i + '0');
      write_char(':');
-     //delay_time();      
+        
      
                                        
      i=table1[1]&0xf0;                //min's high                 
      i=i>>4;                          //rotate right for 4 bits.  
      write_char(i + '0');   
-     //delay_time();                    //delay some times.       
+         
      
      i=table1[1]&0x0f;                //min's low.                 
      write_char(i + '0');
      write_char(':');
-    // delay_time();            
+                
      
      i=table1[0]&0xf0;                //hour's high                 
      i=i>>4;                          //rotate right for 4 bits.   
      write_char(i + '0');
-    // delay_time();                    //delay some times.         
+           
      
      i=table1[0]&0x0f;                //hour's low.             
      write_char(i + '0');    
-    // delay_time();                    //delay some times.   
+                       
      
      
 }
@@ -87,29 +87,30 @@ void display_date()                   //disply date subroutine
      i=table1[3]&0xf0;     
      i=i>>4;
      write_char(i + '0');
-    // delay_time(); 
+    
      i=table1[3]&0x0f;                                  
      write_char(i + '0');
      write_char('/');
-    // delay_time();   
+     
     
                     
      i=table1[4]&0xf0; 
      i=i>>4;
      write_char(i + '0');
-    // delay_time();      
+    
      i=table1[4]&0x0f; 
      write_char(i + '0');
      write_char('/');
-   //  delay_time();      
+   
                                                   
      
-     i=table1[6]&0xf0;                                                             
+     i=table1[6]&0xf0;   
+     i=i>>4;
      write_char(i + '0');   
-   //  delay_time(); 
+  
      i=table1[6]&0x0f;                                   
      write_char(i + '0');   
-    // delay_time();       
+       
    
 }
 void time_write_1(unsigned char time_tx)       //write one byte subroutine.
