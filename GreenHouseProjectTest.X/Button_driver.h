@@ -4,15 +4,19 @@
 #include "SystemHeader.h"
 #include <pic.h>
 
-unsigned char a; //hrs incrementor
-unsigned char b; //button chooser
-unsigned char c; //mins incrementor
+unsigned char a;               //hrs/YEAR incrementor          
+unsigned char b;               //button chooser
+unsigned char c;               //mins/MONTH incrementor
+unsigned char day_hex;         //Day incrementor
 unsigned char hrs_limiter;
 unsigned int t;
 unsigned int w;
 unsigned int x;
 unsigned int y;
 unsigned int z;
+unsigned int day_low;          //day lower value(display)
+unsigned int day_high;         //day upper value(display)
+unsigned int day_of_week_var;  //monitor day of week
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();

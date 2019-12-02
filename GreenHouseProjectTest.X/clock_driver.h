@@ -16,7 +16,7 @@
 //const char c = 'x';
 //const char d = '0';
 //const char my_string[] = { '0','x','1', '3', '\0' };
-char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00}; //date time set up
+char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00}; //date time set up
 char table1[7];
 
 

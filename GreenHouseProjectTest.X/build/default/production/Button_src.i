@@ -1741,12 +1741,16 @@ extern __bank0 __bit __timeout;
 unsigned char a;
 unsigned char b;
 unsigned char c;
+unsigned char day_hex;
 unsigned char hrs_limiter;
 unsigned int t;
 unsigned int w;
 unsigned int x;
 unsigned int y;
 unsigned int z;
+unsigned int day_low;
+unsigned int day_high;
+unsigned int day_of_week_var;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1793,7 +1797,7 @@ void delay2();
 
 # 1 "./clock_driver.h" 1
 # 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00};
+char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
 char table1[7];
 
 
@@ -2055,13 +2059,11 @@ void time_settings(){
                     a = time_date_delimiter(a,0x11,'9');
                     a = time_date_delimiter(a,0x21,'J');
 
-
                     c = time_date_delimiter(c,0x11,'9');
                     c = time_date_delimiter(c,0x21,'J');
                     c = time_date_delimiter(c,0x31,'Y');
                     c = time_date_delimiter(c,0x41,'j');
                     c = time_date_delimiter(c,0x51,'z');
-
 
                   RC0 = 0;
                   RC1 = 1;
@@ -2109,7 +2111,6 @@ void time_settings(){
                     write_char('s');
                     write_char(':');
                     b = 'y';
-
                   }
                    write_cmd(0x88);
 
@@ -2134,6 +2135,7 @@ void time_settings(){
              write_char(':');
              write_char(w + '0');
              write_char(t + '0');
+
             RC0 = 0;
             RC1 = 1;
             RC2 = 1;
@@ -2178,20 +2180,65 @@ void date_settings(){
             RC1 = 0;
             RC2 = 1;
             RC3 = 1;
-
             if(RC7 == 0 && b =='x'){
                     a++;
+                    x++ ;
+                    x = modulus_func(x,10);
+                    y = incrementor(y,x,'9');
+                    a = time_date_hex_terminator(a,'C');
+                    if(y == 1 && x == 3){
+                        x = 0;
+                        y = 0;
+                    }
                     button_delay();
             }
-            else if(RC7==0 && b == 'y'){
-
+            if(RC7==0 && b == 'y'){
+                    day_hex++;
+                    day_low++;
+                    day_low = modulus_func(day_low,10);
+                    day_high = incrementor(day_high,day_low,'9');
+                    day_hex = time_date_hex_terminator(day_hex,'d');
+                    if(day_high == 3 && day_low==2 ){
+                        day_high = 0;
+                        day_low = 0;
+                    }
                     button_delay();
             }
-            else if(RC7==0 && b == 'z'){
-
+            if(RC7==0 && b == 'z'){
+                    c++;
+                    t++;
+                    t = modulus_func(t,10);
+                    w = incrementor(w,t,'9');
+                     if(c == (0x59 + 1)){
+                        c = 0x00;
+                    }
+                    if(w == 6){
+                        w = 0;
+                        t = 0;
+                    }
                     button_delay();
             }
 
+
+             table[4] = a;
+             table[6] = c;
+             table[3] = day_hex;
+
+                    a = time_date_delimiter(a,0x11,'9');
+
+                    day_hex = time_date_delimiter(day_hex,0x11,'9');
+                    day_hex = time_date_delimiter(day_hex,0x21,'J');
+                    day_hex = time_date_delimiter(day_hex,0x11,'9');
+                    day_hex = time_date_delimiter(day_hex,0x21,'J');
+                    day_hex = time_date_delimiter(day_hex,0x31,'Y');
+
+                    c = time_date_delimiter(c,0x11,'9');
+                    c = time_date_delimiter(c,0x21,'J');
+                    c = time_date_delimiter(c,0x11,'9');
+                    c = time_date_delimiter(c,0x21,'J');
+                    c = time_date_delimiter(c,0x31,'Y');
+                    c = time_date_delimiter(c,0x41,'j');
+                    c = time_date_delimiter(c,0x51,'z');
 
              write_cmd(0x88);
 
@@ -2199,7 +2246,15 @@ void date_settings(){
                   RC1 = 1;
                   RC2 = 1;
                   RC3 = 1;
+
                     if (RC6 == 0 ){
+                          a = 0x00;
+                          c = 0x00;
+                          day_hex = 0x00;
+                          x = 0;
+                          y = 0;
+                          w = 0;
+                          t = 0;
                           write_cmd(0x1);
                           set_time();
                           return;
@@ -2217,8 +2272,8 @@ void date_settings(){
                       write_char(':');
                       write_char(' ');
                       write_char(' ');
-                      b = 'x';
-                      write_cmd(0x88);
+                      b = 'y';
+
                       button_delay();
                       z++;
                   }
@@ -2237,8 +2292,8 @@ void date_settings(){
                       write_char('t');
                       write_char('h');
                       write_char(':');
-                      b = 'y';
-                      write_cmd(0x88);
+                      b = 'x';
+
                   }
                   RC0 = 0;
                   RC1 = 1;
@@ -2256,8 +2311,18 @@ void date_settings(){
                       write_char(':');
                       write_char(' ');
                       b = 'z';
-                      write_cmd(0x88);
+
                   }
+              write_cmd(0x88);
+              write_char(day_high + '0');
+              write_char(day_low + '0');
+              write_char('/');
+              write_char(y + '0');
+              write_char(x + '0');
+              write_char('/');
+              write_char(w+ '0');
+              write_char(t+ '0');
+
 
             RC0 = 0;
             RC1 = 1;
@@ -2266,6 +2331,11 @@ void date_settings(){
             if (RC7 == 0 ){
             a = 0x00;
             c = 0x00;
+            day_hex = 0x00;
+            x = 0;
+            y = 0;
+            w = 0;
+            t = 0;
             write_cmd(0x1);
             break;
             }

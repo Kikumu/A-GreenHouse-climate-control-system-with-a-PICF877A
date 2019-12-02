@@ -1965,7 +1965,7 @@ void delay2();
 
 # 1 "./clock_driver.h" 1
 # 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x24,0x11,0x06,0x09,0x00};
+char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
 char table1[7];
 
 
@@ -1990,12 +1990,16 @@ void delay_time();
 unsigned char a;
 unsigned char b;
 unsigned char c;
+unsigned char day_hex;
 unsigned char hrs_limiter;
 unsigned int t;
 unsigned int w;
 unsigned int x;
 unsigned int y;
 unsigned int z;
+unsigned int day_low;
+unsigned int day_high;
+unsigned int day_of_week_var;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
