@@ -53,6 +53,7 @@ void main() {
     set_lower_threshold(2,4);
     set_upper_threshold(2,5);
     set_beep_threshhold(buzzer_watcher);
+    reset_alarm();
     }
     
 }
