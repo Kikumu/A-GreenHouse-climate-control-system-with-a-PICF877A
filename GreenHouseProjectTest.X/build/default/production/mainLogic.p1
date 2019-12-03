@@ -51,15 +51,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;./Button_driver.h: 22: void time_settings();
 [v _time_settings `(v ~T0 @X0 0 e? ]
-"10 ./Threshold_driver.h
-[; ;./Threshold_driver.h: 10: void set_lower_threshold(int,int);
+"14 ./Threshold_driver.h
+[; ;./Threshold_driver.h: 14: void set_lower_threshold(int,int);
 [v _set_lower_threshold `(v ~T0 @X0 0 ef2`i`i ]
-"9
-[; ;./Threshold_driver.h: 9: void set_upper_threshold(int,int);
+"13
+[; ;./Threshold_driver.h: 13: void set_upper_threshold(int,int);
 [v _set_upper_threshold `(v ~T0 @X0 0 ef2`i`i ]
 "13 ./Buzzer_driver.h
 [; ;./Buzzer_driver.h: 13: void set_beep_threshhold(char x);
 [v _set_beep_threshhold `(v ~T0 @X0 0 ef1`uc ]
+"15 ./Threshold_driver.h
+[; ;./Threshold_driver.h: 15: void reset_alarm();
+[v _reset_alarm `(v ~T0 @X0 0 e? ]
 "4 ./SystemHeader.h
 [p x FOSC = HS ]
 "5
@@ -352,15 +355,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19
 [; ;./Button_driver.h: 19: unsigned int day_of_week_var;
 [v _day_of_week_var `ui ~T0 @X0 1 e ]
-"6 ./Threshold_driver.h
-[; ;./Threshold_driver.h: 6: unsigned char upper_t;
+"8 ./Threshold_driver.h
+[; ;./Threshold_driver.h: 8: unsigned char upper_t;
 [v _upper_t `uc ~T0 @X0 1 e ]
-"7
-[; ;./Threshold_driver.h: 7: unsigned char lower_t;
+"9
+[; ;./Threshold_driver.h: 9: unsigned char lower_t;
 [v _lower_t `uc ~T0 @X0 1 e ]
-"8
-[; ;./Threshold_driver.h: 8: char buzzer_watcher;
+"10
+[; ;./Threshold_driver.h: 10: char buzzer_watcher;
 [v _buzzer_watcher `uc ~T0 @X0 1 e ]
+"11
+[; ;./Threshold_driver.h: 11: char buzzer_watcher1;
+[v _buzzer_watcher1 `uc ~T0 @X0 1 e ]
+"12
+[; ;./Threshold_driver.h: 12: int count;
+[v _count `i ~T0 @X0 1 e ]
 "8 ./Buzzer_driver.h
 [; ;./Buzzer_driver.h: 8: char var1;
 [v _var1 `uc ~T0 @X0 1 e ]
@@ -496,12 +505,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainLogic.c: 55:     set_beep_threshhold(buzzer_watcher);
 [e ( _set_beep_threshhold (1 _buzzer_watcher ]
 "56
-[; ;mainLogic.c: 56:     }
+[; ;mainLogic.c: 56:     reset_alarm();
+[e ( _reset_alarm ..  ]
+"57
+[; ;mainLogic.c: 57:     }
 }
 [e :U 96 ]
 [e $U 97  ]
 [e :U 98 ]
-"58
-[; ;mainLogic.c: 58: }
+"59
+[; ;mainLogic.c: 59: }
 [e :UE 95 ]
 }

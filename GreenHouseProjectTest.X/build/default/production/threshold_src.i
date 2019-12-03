@@ -1764,18 +1764,24 @@ void delay_lcd();
 void delay_screen();
 # 5 "./Threshold_driver.h" 2
 
+
+
 unsigned char upper_t;
 unsigned char lower_t;
 char buzzer_watcher;
+char buzzer_watcher1;
+int count;
 void set_upper_threshold(int,int);
 void set_lower_threshold(int,int);
+void reset_alarm();
 # 1 "threshold_src.c" 2
 
 
 
 
 void set_upper_threshold(int upper_val,int lower_val){
-    if(shi == upper_val && ge > lower_val){
+    if(shi == upper_val && ge > lower_val && count == 2){
+
     buzzer_watcher = 'w';
     write_char('W');
     write_char('A');
@@ -1786,11 +1792,24 @@ void set_upper_threshold(int upper_val,int lower_val){
 
 
 void set_lower_threshold(int upper_val,int lower_val){
-    if(shi == upper_val && ge < lower_val){
+    if(shi == upper_val && ge < lower_val)
+    {
+    count = 2;
     buzzer_watcher = 'x';
     write_char('O');
     write_char('K');
     write_char(' ');
     write_char(' ');
+    }
+}
+
+void reset_alarm(){
+    RC0 = 1;
+    RC1 = 1;
+    RC2 = 1;
+    RC3 = 0;
+    if(RC4 == 0){
+        count = 0;
+        buzzer_watcher = 'x';
     }
 }

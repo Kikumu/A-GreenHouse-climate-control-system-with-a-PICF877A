@@ -85,8 +85,10 @@
 [v _delay2 delay2 `(v  1 e 1 0 ]
 "5 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\threshold_src.c
 [v _set_upper_threshold set_upper_threshold `(v  1 e 1 0 ]
-"16
+"17
 [v _set_lower_threshold set_lower_threshold `(v  1 e 1 0 ]
+"29
+[v _reset_alarm reset_alarm `(v  1 e 1 0 ]
 "7 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Button_driver.h
 [v _a a `uc  1 e 1 0 ]
 "8
@@ -139,8 +141,10 @@
 [v _qianfen qianfen `uc  1 e 1 0 ]
 "24
 [v _wanfen wanfen `uc  1 e 1 0 ]
-"8 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Threshold_driver.h
+"10 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Threshold_driver.h
 [v _buzzer_watcher buzzer_watcher `uc  1 e 1 0 ]
+"12
+[v _count count `i  1 e 2 0 ]
 "340 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "402
@@ -204,7 +208,7 @@
 "8 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\mainLogic.c
 [v _main main `(v  1 e 1 0 ]
 {
-"58
+"59
 } 0
 "163 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _time_settings time_settings `(v  1 e 1 0 ]
@@ -231,14 +235,14 @@
 {
 [v set_upper_threshold@upper_val upper_val `i  1 p 2 3 ]
 [v set_upper_threshold@lower_val lower_val `i  1 p 2 5 ]
-"13
+"14
 } 0
-"16
+"17
 [v _set_lower_threshold set_lower_threshold `(v  1 e 1 0 ]
 {
 [v set_lower_threshold@upper_val upper_val `i  1 p 2 3 ]
 [v set_lower_threshold@lower_val lower_val `i  1 p 2 5 ]
-"24
+"27
 } 0
 "5 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\buzzer_src.c
 [v _set_beep_threshhold set_beep_threshhold `(v  1 e 1 0 ]
@@ -247,6 +251,11 @@
 [v set_beep_threshhold@x x `uc  1 a 1 wreg ]
 [v set_beep_threshhold@x x `uc  1 a 1 2 ]
 "19
+} 0
+"29 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\threshold_src.c
+[v _reset_alarm reset_alarm `(v  1 e 1 0 ]
+{
+"38
 } 0
 "14 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\LCD_src.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]

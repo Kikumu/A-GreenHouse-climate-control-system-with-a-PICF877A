@@ -1821,11 +1821,16 @@ void button_delay();
 
 
 
+
+
 unsigned char upper_t;
 unsigned char lower_t;
 char buzzer_watcher;
+char buzzer_watcher1;
+int count;
 void set_upper_threshold(int,int);
 void set_lower_threshold(int,int);
+void reset_alarm();
 # 6 "mainLogic.c" 2
 
 # 1 "./Buzzer_driver.h" 1
@@ -1892,6 +1897,7 @@ void main() {
     set_lower_threshold(2,4);
     set_upper_threshold(2,5);
     set_beep_threshhold(buzzer_watcher);
+    reset_alarm();
     }
 
 }

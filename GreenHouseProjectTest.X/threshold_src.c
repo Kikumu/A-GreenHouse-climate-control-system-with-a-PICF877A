@@ -3,8 +3,9 @@
 
 
 void set_upper_threshold(int upper_val,int lower_val){
-    if(shi ==  upper_val && ge  > lower_val){
-    buzzer_watcher = 'w';
+    if(shi ==  upper_val && ge  > lower_val && count == 2){
+    
+    buzzer_watcher = 'w';  //alets sounder
     write_char('W');
     write_char('A');
     write_char('R');
@@ -14,8 +15,10 @@ void set_upper_threshold(int upper_val,int lower_val){
 //0x98
 
 void set_lower_threshold(int upper_val,int lower_val){
-    if(shi == upper_val && ge  < lower_val ){
-    buzzer_watcher = 'x';
+    if(shi == upper_val && ge  < lower_val)
+    {
+    count = 2;
+    buzzer_watcher = 'x'; //silence sounder
     write_char('O');
     write_char('K');
     write_char(' ');
@@ -24,12 +27,14 @@ void set_lower_threshold(int upper_val,int lower_val){
 }
 //needs to be persistant
 void reset_alarm(){
-    RC0 = 0;
+    RC0 = 1;
     RC1 = 1;
     RC2 = 1;
-    RC3 = 1;
+    RC3 = 0;
     if(RC4 == 0){
-        buzzer_watcher ='x';
+        count = 0;
+        buzzer_watcher = 'x';
     }
 }
 
+//3 states, upper, lower, persistance
