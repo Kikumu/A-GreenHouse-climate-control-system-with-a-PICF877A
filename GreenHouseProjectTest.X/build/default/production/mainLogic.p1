@@ -63,6 +63,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./Threshold_driver.h
 [; ;./Threshold_driver.h: 15: void reset_alarm();
 [v _reset_alarm `(v ~T0 @X0 0 e? ]
+"4 ./math_driver.h
+[; ;./math_driver.h: 4: int modulus_func(int,int);
+[v _modulus_func `(i ~T0 @X0 0 ef2`i`i ]
+"7 ./Day_of_week_driver.h
+[; ;./Day_of_week_driver.h: 7: void display_day(int);
+[v _display_day `(v ~T0 @X0 0 ef1`i ]
 "4 ./SystemHeader.h
 [p x FOSC = HS ]
 "5
@@ -299,17 +305,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Thermometer_driver.h: 24: unsigned char wanfen;
 [v _wanfen `uc ~T0 @X0 1 e ]
 "19 ./clock_driver.h
-[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
+[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
 [v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 64 `i `uc
--> -> 36 `i `uc
--> -> 17 `i `uc
+-> -> 18 `i `uc
+-> -> 18 `i `uc
 -> -> 6 `i `uc
--> -> 34 `i `uc
+-> -> 25 `i `uc
 -> -> 0 `i `uc
 ..
 ]
@@ -376,144 +382,168 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9
 [; ;./Buzzer_driver.h: 9: char var2;
 [v _var2 `uc ~T0 @X0 1 e ]
+"6 ./Day_of_week_driver.h
+[; ;./Day_of_week_driver.h: 6: int day_counter;
+[v _day_counter `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"8 mainLogic.c
-[; ;mainLogic.c: 8: void main() {
+"10 mainLogic.c
+[; ;mainLogic.c: 10: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"9
-[; ;mainLogic.c: 9:     TRISB=0X02;
-[e = _TRISB -> -> 2 `i `uc ]
-"10
-[; ;mainLogic.c: 10:     init_temp();
-[e ( _init_temp ..  ]
 "11
-[; ;mainLogic.c: 11:     set_time();
-[e ( _set_time ..  ]
+[; ;mainLogic.c: 11:     TRISB=0X02;
+[e = _TRISB -> -> 2 `i `uc ]
 "12
-[; ;mainLogic.c: 12:     ds1302_init();
-[e ( _ds1302_init ..  ]
-"14
-[; ;mainLogic.c: 14:     init();
-[e ( _init ..  ]
-"15
-[; ;mainLogic.c: 15:     lcd_init();
-[e ( _lcd_init ..  ]
-"16
-[; ;mainLogic.c: 16:     init_temp();
+[; ;mainLogic.c: 12:     init_temp();
 [e ( _init_temp ..  ]
+"13
+[; ;mainLogic.c: 13:     set_time();
+[e ( _set_time ..  ]
+"14
+[; ;mainLogic.c: 14:     ds1302_init();
+[e ( _ds1302_init ..  ]
+"16
+[; ;mainLogic.c: 16:     init();
+[e ( _init ..  ]
 "17
-[; ;mainLogic.c: 17:     initialise_buttons();
+[; ;mainLogic.c: 17:     lcd_init();
+[e ( _lcd_init ..  ]
+"18
+[; ;mainLogic.c: 18:     init_temp();
+[e ( _init_temp ..  ]
+"19
+[; ;mainLogic.c: 19:     initialise_buttons();
 [e ( _initialise_buttons ..  ]
-"21
-[; ;mainLogic.c: 21:     while(1){
+"23
+[; ;mainLogic.c: 23:     while(1){
 [e :U 97 ]
 {
-"22
-[; ;mainLogic.c: 22:     get_temp();
-[e ( _get_temp ..  ]
-"23
-[; ;mainLogic.c: 23:     get_time();
-[e ( _get_time ..  ]
 "24
-[; ;mainLogic.c: 24:     write_cmd(0x80);
-[e ( _write_cmd (1 -> -> 128 `i `uc ]
+[; ;mainLogic.c: 24:     get_temp();
+[e ( _get_temp ..  ]
 "25
-[; ;mainLogic.c: 25:     write_char('T');
-[e ( _write_char (1 -> -> 84 `ui `uc ]
+[; ;mainLogic.c: 25:     get_time();
+[e ( _get_time ..  ]
 "26
-[; ;mainLogic.c: 26:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
+[; ;mainLogic.c: 26:     write_cmd(0x80);
+[e ( _write_cmd (1 -> -> 128 `i `uc ]
 "27
-[; ;mainLogic.c: 27:     write_char('m');
-[e ( _write_char (1 -> -> 109 `ui `uc ]
-"28
-[; ;mainLogic.c: 28:     write_char('p');
-[e ( _write_char (1 -> -> 112 `ui `uc ]
-"29
-[; ;mainLogic.c: 29:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"30
-[; ;mainLogic.c: 30:     display_temp();
-[e ( _display_temp ..  ]
-"32
-[; ;mainLogic.c: 32:     write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
-"33
-[; ;mainLogic.c: 33:     write_char('D');
-[e ( _write_char (1 -> -> 68 `ui `uc ]
-"34
-[; ;mainLogic.c: 34:     write_char('a');
-[e ( _write_char (1 -> -> 97 `ui `uc ]
-"35
-[; ;mainLogic.c: 35:     write_char('t');
-[e ( _write_char (1 -> -> 116 `ui `uc ]
-"36
-[; ;mainLogic.c: 36:     write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"37
-[; ;mainLogic.c: 37:     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"38
-[; ;mainLogic.c: 38:     write_char(' ');
-[e ( _write_char (1 -> -> 32 `ui `uc ]
-"40
-[; ;mainLogic.c: 40:     display_date();
-[e ( _display_date ..  ]
-"42
-[; ;mainLogic.c: 42:     write_cmd(0x88);
-[e ( _write_cmd (1 -> -> 136 `i `uc ]
-"43
-[; ;mainLogic.c: 43:     write_char('T');
+[; ;mainLogic.c: 27:     write_char('T');
 [e ( _write_char (1 -> -> 84 `ui `uc ]
-"44
-[; ;mainLogic.c: 44:     write_char('i');
-[e ( _write_char (1 -> -> 105 `ui `uc ]
-"45
-[; ;mainLogic.c: 45:     write_char('m');
-[e ( _write_char (1 -> -> 109 `ui `uc ]
-"46
-[; ;mainLogic.c: 46:     write_char('e');
+"28
+[; ;mainLogic.c: 28:     write_char('e');
 [e ( _write_char (1 -> -> 101 `ui `uc ]
-"47
-[; ;mainLogic.c: 47:     write_char(':');
+"29
+[; ;mainLogic.c: 29:     write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
+"30
+[; ;mainLogic.c: 30:     write_char('p');
+[e ( _write_char (1 -> -> 112 `ui `uc ]
+"31
+[; ;mainLogic.c: 31:     write_char(':');
 [e ( _write_char (1 -> -> 58 `ui `uc ]
+"32
+[; ;mainLogic.c: 32:     display_temp();
+[e ( _display_temp ..  ]
+"34
+[; ;mainLogic.c: 34:     write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
+"35
+[; ;mainLogic.c: 35:     write_char('D');
+[e ( _write_char (1 -> -> 68 `ui `uc ]
+"36
+[; ;mainLogic.c: 36:     write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
+"37
+[; ;mainLogic.c: 37:     write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"38
+[; ;mainLogic.c: 38:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"39
+[; ;mainLogic.c: 39:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"40
+[; ;mainLogic.c: 40:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"42
+[; ;mainLogic.c: 42:     display_date();
+[e ( _display_date ..  ]
+"44
+[; ;mainLogic.c: 44:     write_cmd(0x88);
+[e ( _write_cmd (1 -> -> 136 `i `uc ]
+"45
+[; ;mainLogic.c: 45:     write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"46
+[; ;mainLogic.c: 46:     write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"47
+[; ;mainLogic.c: 47:     write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
 "48
-[; ;mainLogic.c: 48:     display_clock();
-[e ( _display_clock ..  ]
+[; ;mainLogic.c: 48:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
 "49
-[; ;mainLogic.c: 49:     thermometer_threshhold_settings();
-[e ( _thermometer_threshhold_settings ..  ]
+[; ;mainLogic.c: 49:     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "50
-[; ;mainLogic.c: 50:     date_settings();
-[e ( _date_settings ..  ]
+[; ;mainLogic.c: 50:     display_clock();
+[e ( _display_clock ..  ]
 "51
-[; ;mainLogic.c: 51:     time_settings();
-[e ( _time_settings ..  ]
+[; ;mainLogic.c: 51:     thermometer_threshhold_settings();
+[e ( _thermometer_threshhold_settings ..  ]
 "52
-[; ;mainLogic.c: 52:     write_cmd(0x98);
-[e ( _write_cmd (1 -> -> 152 `i `uc ]
+[; ;mainLogic.c: 52:     date_settings();
+[e ( _date_settings ..  ]
 "53
-[; ;mainLogic.c: 53:     set_lower_threshold(2,4);
-[e ( _set_lower_threshold (2 , -> 2 `i -> 4 `i ]
+[; ;mainLogic.c: 53:     time_settings();
+[e ( _time_settings ..  ]
 "54
-[; ;mainLogic.c: 54:     set_upper_threshold(2,5);
-[e ( _set_upper_threshold (2 , -> 2 `i -> 5 `i ]
+[; ;mainLogic.c: 54:     write_cmd(0x98);
+[e ( _write_cmd (1 -> -> 152 `i `uc ]
 "55
-[; ;mainLogic.c: 55:     set_beep_threshhold(buzzer_watcher);
-[e ( _set_beep_threshhold (1 _buzzer_watcher ]
+[; ;mainLogic.c: 55:     set_lower_threshold(2,7);
+[e ( _set_lower_threshold (2 , -> 2 `i -> 7 `i ]
 "56
-[; ;mainLogic.c: 56:     reset_alarm();
-[e ( _reset_alarm ..  ]
+[; ;mainLogic.c: 56:     set_upper_threshold(2,7);
+[e ( _set_upper_threshold (2 , -> 2 `i -> 7 `i ]
 "57
-[; ;mainLogic.c: 57:     }
+[; ;mainLogic.c: 57:     set_beep_threshhold(buzzer_watcher);
+[e ( _set_beep_threshhold (1 _buzzer_watcher ]
+"58
+[; ;mainLogic.c: 58:     reset_alarm();
+[e ( _reset_alarm ..  ]
+"59
+[; ;mainLogic.c: 59:     for(int i = 0; i < 7; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 7 `i 99  ]
+[e $U 100  ]
+[e :U 99 ]
+"60
+[; ;mainLogic.c: 60:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 7 `i 99  ]
+[e :U 100 ]
+}
+"61
+[; ;mainLogic.c: 61:     day_counter = modulus_func(day_low,8);
+[e = _day_counter ( _modulus_func (2 , -> _day_low `i -> 8 `i ]
+"62
+[; ;mainLogic.c: 62:     display_day(day_counter);
+[e ( _display_day (1 _day_counter ]
+"63
+[; ;mainLogic.c: 63: }
 }
 [e :U 96 ]
 [e $U 97  ]
 [e :U 98 ]
-"59
-[; ;mainLogic.c: 59: }
+"64
+[; ;mainLogic.c: 64: }
 [e :UE 95 ]
 }

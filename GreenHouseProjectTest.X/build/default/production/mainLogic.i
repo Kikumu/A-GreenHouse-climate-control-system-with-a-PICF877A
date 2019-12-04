@@ -1773,7 +1773,7 @@ void delay2();
 
 # 1 "./clock_driver.h" 1
 # 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
+char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
 char table1[7];
 
 
@@ -1849,6 +1849,27 @@ char var2;
 void set_beep_threshhold(char x);
 # 7 "mainLogic.c" 2
 
+# 1 "./Day_of_week_driver.h" 1
+
+
+
+
+
+int day_counter;
+void display_day(int);
+# 8 "mainLogic.c" 2
+
+# 1 "./math_driver.h" 1
+
+
+
+int modulus_func(int,int);
+char incrementor(int,int,char);
+char decrementor(int,int,char);
+char time_date_delimiter(char,char,char);
+char time_date_hex_terminator(char,char);
+# 9 "mainLogic.c" 2
+
 void main() {
     TRISB=0X02;
     init_temp();
@@ -1894,10 +1915,13 @@ void main() {
     date_settings();
     time_settings();
     write_cmd(0x98);
-    set_lower_threshold(2,4);
-    set_upper_threshold(2,5);
+    set_lower_threshold(2,7);
+    set_upper_threshold(2,7);
     set_beep_threshhold(buzzer_watcher);
     reset_alarm();
-    }
-
+    for(int i = 0; i < 7; i++)
+    write_char(' ');
+    day_counter = modulus_func(day_low,8);
+    display_day(day_counter);
+}
 }

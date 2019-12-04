@@ -1797,7 +1797,7 @@ void delay2();
 
 # 1 "./clock_driver.h" 1
 # 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
+char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
 char table1[7];
 
 
@@ -1839,6 +1839,16 @@ char time_date_delimiter(char,char,char);
 char time_date_hex_terminator(char,char);
 # 7 "Button_src.c" 2
 
+# 1 "./Day_of_week_driver.h" 1
+
+
+
+
+
+int day_counter;
+void display_day(int);
+# 8 "Button_src.c" 2
+
 
 
 void initialise_buttons(){
@@ -1848,6 +1858,7 @@ void initialise_buttons(){
     b = 0x00;
     c = 0x00;
     z = 0;
+    day_low = 12;
 }
 
 void thermometer_threshhold_settings(){
@@ -2197,6 +2208,7 @@ void date_settings(){
                     day_hex++;
                     day_low++;
                     day_low = modulus_func(day_low,10);
+
                     day_high = incrementor(day_high,day_low,'9');
                     day_hex = time_date_hex_terminator(day_hex,'c');
                     if(day_high == 3 && day_low==2 ){

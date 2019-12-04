@@ -5,6 +5,8 @@
 #include "Button_driver.h"
 #include "Threshold_driver.h"
 #include "Buzzer_driver.h"
+#include "Day_of_week_driver.h"
+#include "math_driver.h"
 void main() {
     TRISB=0X02; 
     init_temp(); 
@@ -50,11 +52,13 @@ void main() {
     date_settings();                     //access date settings
     time_settings();                     //access time settings
     write_cmd(0x98);
-    set_lower_threshold(2,4);
-    set_upper_threshold(2,5);
+    set_lower_threshold(2,7);
+    set_upper_threshold(2,7);
     set_beep_threshhold(buzzer_watcher);
     reset_alarm();
-    }
-    
+    for(int i = 0; i < 7; i++)
+    write_char(' ');
+    day_counter = modulus_func(day_low,8);
+    display_day(day_counter);
 }
-
+}

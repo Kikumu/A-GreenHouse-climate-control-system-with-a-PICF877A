@@ -269,9 +269,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;threshold_src.c: 6:     if(shi == upper_val && ge > lower_val && count == 2){
 [e $ ! && && == -> _shi `i _upper_val > -> _ge `i _lower_val == _count -> 2 `i 96  ]
 {
-"8
-[; ;threshold_src.c: 8:     buzzer_watcher = 'w';
-[e = _buzzer_watcher -> -> 119 `ui `uc ]
 "9
 [; ;threshold_src.c: 9:     write_char('W');
 [e ( _write_char (1 -> -> 87 `ui `uc ]
@@ -301,8 +298,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _lower_val `i ~T0 @X0 1 r2 ]
 [f ]
 "18
-[; ;threshold_src.c: 18:     if(shi == upper_val && ge < lower_val)
-[e $ ! && == -> _shi `i _upper_val < -> _ge `i _lower_val 98  ]
+[; ;threshold_src.c: 18:     if((shi == upper_val && ge < lower_val)|| ge == lower_val)
+[e $ ! || && == -> _shi `i _upper_val < -> _ge `i _lower_val == -> _ge `i _lower_val 98  ]
 "19
 [; ;threshold_src.c: 19:     {
 {

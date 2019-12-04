@@ -204,17 +204,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "19 ./clock_driver.h
-[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x24,0x11,0x06,0x22,0x00};
+[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
 [v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 64 `i `uc
--> -> 36 `i `uc
--> -> 17 `i `uc
+-> -> 18 `i `uc
+-> -> 18 `i `uc
 -> -> 6 `i `uc
--> -> 34 `i `uc
+-> -> 25 `i `uc
 -> -> 0 `i `uc
 ..
 ]

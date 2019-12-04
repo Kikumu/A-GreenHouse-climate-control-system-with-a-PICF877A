@@ -12,6 +12,7 @@
       <itemPath>Button_driver.h</itemPath>
       <itemPath>math_driver.h</itemPath>
       <itemPath>Threshold_driver.h</itemPath>
+      <itemPath>Day_of_week_driver.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -28,6 +29,7 @@
       <itemPath>Button_src.c</itemPath>
       <itemPath>math_src.c</itemPath>
       <itemPath>threshold_src.c</itemPath>
+      <itemPath>Day_of_week_src.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

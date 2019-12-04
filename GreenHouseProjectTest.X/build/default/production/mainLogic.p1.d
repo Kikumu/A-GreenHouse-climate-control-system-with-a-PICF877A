@@ -6,4 +6,6 @@ Thermometer_driver.h  \
 clock_driver.h  \
 Button_driver.h  \
 Threshold_driver.h  \
-Buzzer_driver.h 
+Buzzer_driver.h  \
+Day_of_week_driver.h  \
+math_driver.h 

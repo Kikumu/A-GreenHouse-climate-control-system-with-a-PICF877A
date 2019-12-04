@@ -5,7 +5,7 @@
 void set_upper_threshold(int upper_val,int lower_val){
     if(shi ==  upper_val && ge  > lower_val && count == 2){
     
-    buzzer_watcher = 'w';  //alets sounder
+    //buzzer_watcher = 'w';  //alets sounder
     write_char('W');
     write_char('A');
     write_char('R');
@@ -15,7 +15,7 @@ void set_upper_threshold(int upper_val,int lower_val){
 //0x98
 
 void set_lower_threshold(int upper_val,int lower_val){
-    if(shi == upper_val && ge  < lower_val)
+    if((shi == upper_val && ge  < lower_val)|| ge == lower_val)
     {
     count = 2;
     buzzer_watcher = 'x'; //silence sounder

@@ -1,0 +1,137 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"14 ./LCD_driver.h
+[; ;./LCD_driver.h: 14: void write_char(char x);
+[v _write_char `(v ~T0 @X0 0 ef1`uc ]
+"6 ./Day_of_week_driver.h
+[; ;./Day_of_week_driver.h: 6: int day_counter;
+[v _day_counter `i ~T0 @X0 1 e ]
+"4 Day_of_week_src.c
+[; ;Day_of_week_src.c: 4: void display_day(int num){
+[v _display_day `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _display_day ]
+[v _num `i ~T0 @X0 1 r1 ]
+[f ]
+"5
+[; ;Day_of_week_src.c: 5:     if(num == 1 || num == 0){
+[e $ ! || == _num -> 1 `i == _num -> 0 `i 2  ]
+{
+"6
+[; ;Day_of_week_src.c: 6:     write_char('M');
+[e ( _write_char (1 -> -> 77 `ui `uc ]
+"7
+[; ;Day_of_week_src.c: 7:     write_char('o');
+[e ( _write_char (1 -> -> 111 `ui `uc ]
+"8
+[; ;Day_of_week_src.c: 8:     write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
+"9
+[; ;Day_of_week_src.c: 9:     }
+}
+[e :U 2 ]
+"10
+[; ;Day_of_week_src.c: 10:     if(num == 2){
+[e $ ! == _num -> 2 `i 3  ]
+{
+"11
+[; ;Day_of_week_src.c: 11:     write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"12
+[; ;Day_of_week_src.c: 12:     write_char('u');
+[e ( _write_char (1 -> -> 117 `ui `uc ]
+"13
+[; ;Day_of_week_src.c: 13:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"14
+[; ;Day_of_week_src.c: 14:     }
+}
+[e :U 3 ]
+"15
+[; ;Day_of_week_src.c: 15:     if(num == 3){
+[e $ ! == _num -> 3 `i 4  ]
+{
+"16
+[; ;Day_of_week_src.c: 16:     write_char('W');
+[e ( _write_char (1 -> -> 87 `ui `uc ]
+"17
+[; ;Day_of_week_src.c: 17:     write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"18
+[; ;Day_of_week_src.c: 18:     write_char('d');
+[e ( _write_char (1 -> -> 100 `ui `uc ]
+"19
+[; ;Day_of_week_src.c: 19:     }
+}
+[e :U 4 ]
+"20
+[; ;Day_of_week_src.c: 20:     if(num == 4){
+[e $ ! == _num -> 4 `i 5  ]
+{
+"21
+[; ;Day_of_week_src.c: 21:     write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"22
+[; ;Day_of_week_src.c: 22:     write_char('h');
+[e ( _write_char (1 -> -> 104 `ui `uc ]
+"23
+[; ;Day_of_week_src.c: 23:     write_char('u');
+[e ( _write_char (1 -> -> 117 `ui `uc ]
+"24
+[; ;Day_of_week_src.c: 24:     }
+}
+[e :U 5 ]
+"25
+[; ;Day_of_week_src.c: 25:     if(num == 5){
+[e $ ! == _num -> 5 `i 6  ]
+{
+"26
+[; ;Day_of_week_src.c: 26:     write_char('F');
+[e ( _write_char (1 -> -> 70 `ui `uc ]
+"27
+[; ;Day_of_week_src.c: 27:     write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
+"28
+[; ;Day_of_week_src.c: 28:     write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"29
+[; ;Day_of_week_src.c: 29:     }
+}
+[e :U 6 ]
+"30
+[; ;Day_of_week_src.c: 30:     if(num == 6){
+[e $ ! == _num -> 6 `i 7  ]
+{
+"31
+[; ;Day_of_week_src.c: 31:     write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
+"32
+[; ;Day_of_week_src.c: 32:     write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
+"33
+[; ;Day_of_week_src.c: 33:     write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
+"34
+[; ;Day_of_week_src.c: 34:     }
+}
+[e :U 7 ]
+"35
+[; ;Day_of_week_src.c: 35:     if(num == 7){
+[e $ ! == _num -> 7 `i 8  ]
+{
+"36
+[; ;Day_of_week_src.c: 36:     write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
+"37
+[; ;Day_of_week_src.c: 37:     write_char('u');
+[e ( _write_char (1 -> -> 117 `ui `uc ]
+"38
+[; ;Day_of_week_src.c: 38:     write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
+"39
+[; ;Day_of_week_src.c: 39:     }
+}
+[e :U 8 ]
+"40
+[; ;Day_of_week_src.c: 40: }
+[e :UE 1 ]
+}

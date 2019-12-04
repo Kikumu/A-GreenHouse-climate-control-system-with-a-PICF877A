@@ -5,6 +5,7 @@
 #include "clock_driver.h"
 #include "Buzzer_driver.h"
 #include "math_driver.h"
+#include "Day_of_week_driver.h"
 
 
 void initialise_buttons(){
@@ -14,6 +15,7 @@ void initialise_buttons(){
     b = 0x00;    //b utton chooser
     c = 0x00;    //m ins increments
     z = 0;       //base increment
+    day_low = 12;
 }
 
 void thermometer_threshhold_settings(){
@@ -363,6 +365,7 @@ void date_settings(){
                     day_hex++;                                       //date incrementor
                     day_low++;
                     day_low = modulus_func(day_low,10);
+                    //day_counter = modulus_func(day_low,8);
                     day_high = incrementor(day_high,day_low,'9');
                     day_hex = time_date_hex_terminator(day_hex,'c'); //resets hex value to 0 depending on limiter
                     if(day_high == 3 && day_low==2 ){
