@@ -1808,6 +1808,7 @@ unsigned int z;
 unsigned int day_low;
 unsigned int day_high;
 unsigned int day_of_week_var;
+unsigned int stats;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1860,6 +1861,8 @@ void display_day(int);
 # 8 "mainLogic.c" 2
 
 # 1 "./math_driver.h" 1
+
+
 
 
 

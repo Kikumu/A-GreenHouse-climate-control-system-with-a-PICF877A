@@ -27,6 +27,7 @@ char decrementor(int lower_val,int upper_val ,char z){
 char time_date_delimiter(char val,char hex,char limiter){
     if((val + '0') == limiter){
     val = hex;
+    stats=0;
     val--;
     }
     return val;

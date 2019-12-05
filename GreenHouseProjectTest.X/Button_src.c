@@ -16,6 +16,7 @@ void initialise_buttons(){
     c = 0x00;    //m ins increments
     z = 0;       //base increment
     day_low = 12;
+    stats = 1;
 }
 
 void thermometer_threshhold_settings(){
@@ -350,7 +351,11 @@ void date_settings(){
             RC2 = 1;
             RC3 = 1;
             if(RC7 == 0 && b =='x'){
-                    a++;                                            //month incrementor
+                if(stats == 1)
+                    a++;
+                if(stats == 0)
+                    stats = 1;
+                       //month incrementor
                     x++ ;
                     x = modulus_func(x,10);
                     y = incrementor(y,x,'9');

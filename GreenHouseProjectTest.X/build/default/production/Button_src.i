@@ -1751,6 +1751,7 @@ unsigned int z;
 unsigned int day_low;
 unsigned int day_high;
 unsigned int day_of_week_var;
+unsigned int stats;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1832,6 +1833,8 @@ void set_beep_threshhold(char x);
 
 
 
+
+
 int modulus_func(int,int);
 char incrementor(int,int,char);
 char decrementor(int,int,char);
@@ -1859,6 +1862,7 @@ void initialise_buttons(){
     c = 0x00;
     z = 0;
     day_low = 12;
+    stats = 1;
 }
 
 void thermometer_threshhold_settings(){
@@ -2193,7 +2197,11 @@ void date_settings(){
             RC2 = 1;
             RC3 = 1;
             if(RC7 == 0 && b =='x'){
+                if(stats == 1)
                     a++;
+                if(stats == 0)
+                    stats = 1;
+
                     x++ ;
                     x = modulus_func(x,10);
                     y = incrementor(y,x,'9');
