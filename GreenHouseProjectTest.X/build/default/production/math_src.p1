@@ -231,6 +231,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./Button_driver.h: 20: unsigned int stats;
 [v _stats `ui ~T0 @X0 1 e ]
+"21
+[; ;./Button_driver.h: 21: unsigned char prev_hex;
+[v _prev_hex `uc ~T0 @X0 1 e ]
 "5 math_src.c
 [; ;math_src.c: 5: int modulus_func(int x,int y){
 [v _modulus_func `(i ~T0 @X0 1 ef2`i`i ]
@@ -332,44 +335,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;math_src.c: 30:     stats=0;
 [e = _stats -> -> 0 `i `ui ]
 "31
-[; ;math_src.c: 31:     val--;
-[e -- _val -> -> 1 `i `uc ]
+[; ;math_src.c: 31:     prev_hex= 0x09;
+[e = _prev_hex -> -> 9 `i `uc ]
 "32
-[; ;math_src.c: 32:     }
+[; ;math_src.c: 32:     val--;
+[e -- _val -> -> 1 `i `uc ]
+"33
+[; ;math_src.c: 33:     }
 }
 [e :U 101 ]
-"33
-[; ;math_src.c: 33:     return val;
+"34
+[; ;math_src.c: 34:     return val;
 [e ) _val ]
 [e $UE 100  ]
-"34
-[; ;math_src.c: 34: }
+"35
+[; ;math_src.c: 35: }
 [e :UE 100 ]
 }
-"36
-[; ;math_src.c: 36: char time_date_hex_terminator(char val, char limiter){
+"37
+[; ;math_src.c: 37: char time_date_hex_terminator(char val, char limiter){
 [v _time_date_hex_terminator `(uc ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _time_date_hex_terminator ]
 [v _val `uc ~T0 @X0 1 r1 ]
 [v _limiter `uc ~T0 @X0 1 r2 ]
 [f ]
-"37
-[; ;math_src.c: 37:     if((val + '0') == limiter){
+"38
+[; ;math_src.c: 38:     if((val + '0') == limiter){
 [e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 103  ]
 {
-"38
-[; ;math_src.c: 38:     val = 0x00;
-[e = _val -> -> 0 `i `uc ]
 "39
-[; ;math_src.c: 39:     }
+[; ;math_src.c: 39:     val = 0x00;
+[e = _val -> -> 0 `i `uc ]
+"40
+[; ;math_src.c: 40:     }
 }
 [e :U 103 ]
-"40
-[; ;math_src.c: 40:     return val;
+"41
+[; ;math_src.c: 41:     return val;
 [e ) _val ]
 [e $UE 102  ]
-"41
-[; ;math_src.c: 41: }
+"42
+[; ;math_src.c: 42: }
 [e :UE 102 ]
 }

@@ -1752,6 +1752,7 @@ unsigned int day_low;
 unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
+unsigned char prev_hex;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -2199,8 +2200,11 @@ void date_settings(){
             if(RC7 == 0 && b =='x'){
                 if(stats == 1)
                     a++;
-                if(stats == 0)
+                if(stats == 0){
                     stats = 1;
+                }
+
+
 
                     x++ ;
                     x = modulus_func(x,10);
@@ -2241,9 +2245,8 @@ void date_settings(){
             }
 
 
-             table[4] = a;
-             table[6] = c;
-             table[3] = day_hex;
+
+
 
                     a = time_date_delimiter(a,0x11,'9');
 
@@ -2260,7 +2263,12 @@ void date_settings(){
                     c = time_date_delimiter(c,0x31,'Y');
                     c = time_date_delimiter(c,0x41,'j');
                     c = time_date_delimiter(c,0x51,'z');
-
+                    if(stats==0)
+                        table[4] = prev_hex;
+                    else if(stats==1)
+                        table[4]= a;
+             table[6] = c;
+             table[3] = day_hex;
              write_cmd(0x88);
 
                   RC0 = 0;

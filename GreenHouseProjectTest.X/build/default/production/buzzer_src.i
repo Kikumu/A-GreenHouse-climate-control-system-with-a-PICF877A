@@ -1797,6 +1797,7 @@ unsigned int day_low;
 unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
+unsigned char prev_hex;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();

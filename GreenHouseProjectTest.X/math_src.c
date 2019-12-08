@@ -28,6 +28,7 @@ char time_date_delimiter(char val,char hex,char limiter){
     if((val + '0') == limiter){
     val = hex;
     stats=0;
+    prev_hex= 0x09;
     val--;
     }
     return val;

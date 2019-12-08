@@ -353,9 +353,12 @@ void date_settings(){
             if(RC7 == 0 && b =='x'){
                 if(stats == 1)
                     a++;
-                if(stats == 0)
+                if(stats == 0){
                     stats = 1;
+                }
+                    
                        //month incrementor
+                
                     x++ ;
                     x = modulus_func(x,10);
                     y = incrementor(y,x,'9');
@@ -395,9 +398,8 @@ void date_settings(){
             }
             //-----------------------table-set---------------------------------//
             //3,4,6
-             table[4] = a;          //month
-             table[6] = c;          //year
-             table[3] = day_hex;    //day
+            //if(stats ==0)
+             
             //--------MONTH----HEX--------------------------------------------//
                     a = time_date_delimiter(a,0x11,'9');//ABOVE 9
             //--------DATE-----HEX--------------------------------------------//
@@ -414,7 +416,13 @@ void date_settings(){
                     c = time_date_delimiter(c,0x31,'Y'); //ABOVE 29
                     c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
                     c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
-            
+            //holding state== done. saving state............fuk
+                    if(stats==0)
+                        table[4] = prev_hex;          //month
+                    else if(stats==1)
+                        table[4]= a;
+             table[6] = c;          //year
+             table[3] = day_hex;    //day
              write_cmd(0x88);
                    
                   RC0 = 0;

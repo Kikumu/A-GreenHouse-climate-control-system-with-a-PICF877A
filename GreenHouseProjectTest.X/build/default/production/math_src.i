@@ -1756,6 +1756,7 @@ unsigned int day_low;
 unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
+unsigned char prev_hex;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1800,6 +1801,7 @@ char time_date_delimiter(char val,char hex,char limiter){
     if((val + '0') == limiter){
     val = hex;
     stats=0;
+    prev_hex= 0x09;
     val--;
     }
     return val;
