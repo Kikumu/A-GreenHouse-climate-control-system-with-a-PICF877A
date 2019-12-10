@@ -1753,6 +1753,7 @@ unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
 unsigned char prev_hex;
+unsigned int p;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1864,6 +1865,7 @@ void initialise_buttons(){
     z = 0;
     day_low = 12;
     stats = 1;
+    p = 0;
 }
 
 void thermometer_threshhold_settings(){
@@ -2039,10 +2041,22 @@ void time_settings(){
             RC3 = 1;
 
             if(RC7 == 0 && b =='x'){
-                    a++;
+                if(stats == 1)
+                   a++;
+                if(stats == 0){
+                   stats = 1;
+                }
+
                     x++ ;
                     x = modulus_func(x,10);
-                    y = incrementor(y,x,'9');
+                    if (p == 1){
+                        y = incrementor(y,x,'0');
+                        p = 0;
+                    }
+                    if (x == 9){
+                        p = 1;
+                    }
+
 
                     a = time_date_hex_terminator(a,'T');
                     if(y == 2 && x == 4){
@@ -2052,9 +2066,21 @@ void time_settings(){
                     button_delay();
             }
             if(RC7==0 && b == 'y'){
-                    c++;
+                 if(stats == 1)
+                   c++;
+                if(stats == 0){
+                    stats = 1;
+                }
+
                     t++;
                     t = modulus_func(t,10);
+                      if (p == 1){
+                        w = incrementor(w,t,'0');
+                        p = 0;
+                    }
+                    if (t == 9){
+                        p = 1;
+                    }
                     w = incrementor(w,t,'9');
                     if(c == (0x59 + 1)){
                         c = 0x00;
@@ -2204,12 +2230,17 @@ void date_settings(){
                     stats = 1;
                 }
 
-
-
                     x++ ;
                     x = modulus_func(x,10);
-                    y = incrementor(y,x,'9');
+                     if (p == 1){
+                        y = incrementor(y,x,'0');
+                        p = 0;
+                    }
+                    if (x == 9){
+                        p = 1;
+                    }
                     a = time_date_hex_terminator(a,'C');
+
                     if(y == 1 && x == 3){
                         x = 0;
                         y = 0;
@@ -2217,11 +2248,22 @@ void date_settings(){
                     button_delay();
             }
             if(RC7==0 && b == 'y'){
+                 if(stats == 1)
                     day_hex++;
+                if(stats == 0){
+                    stats = 1;
+                }
+
                     day_low++;
                     day_low = modulus_func(day_low,10);
-
-                    day_high = incrementor(day_high,day_low,'9');
+                    day_counter = modulus_func(day_low,8);
+                    if (p == 1){
+                        day_high = incrementor(day_high,day_low,'0');
+                        p = 0;
+                    }
+                    if (day_low == 9){
+                        p = 1;
+                    }
                     day_hex = time_date_hex_terminator(day_hex,'c');
                     if(day_high == 3 && day_low==2 ){
                         day_high = 0;
@@ -2230,10 +2272,22 @@ void date_settings(){
                     button_delay();
             }
             if(RC7==0 && b == 'z'){
-                    c++;
+                if(stats == 1)
+                   c++;
+                if(stats == 0){
+                    stats = 1;
+                }
+
                     t++;
                     t = modulus_func(t,10);
-                    w = incrementor(w,t,'9');
+                     if (p == 1){
+                        w = incrementor(w,t,'0');
+                        p = 0;
+                    }
+                    if (t == 9){
+                        p = 1;
+                    }
+
                      if(c == (0x59 + 1)){
                         c = 0x00;
                     }
@@ -2263,6 +2317,7 @@ void date_settings(){
                     c = time_date_delimiter(c,0x31,'Y');
                     c = time_date_delimiter(c,0x41,'j');
                     c = time_date_delimiter(c,0x51,'z');
+
                     if(stats==0)
                         table[4] = prev_hex;
                     else if(stats==1)
@@ -2280,6 +2335,8 @@ void date_settings(){
                           a = 0x00;
                           c = 0x00;
                           day_hex = 0x00;
+                          day_high = 0;
+                          day_low = 0;
                           x = 0;
                           y = 0;
                           w = 0;
@@ -2365,6 +2422,8 @@ void date_settings(){
             y = 0;
             w = 0;
             t = 0;
+            day_high = 0;
+            day_low = 0;
             write_cmd(0x1);
             break;
             }

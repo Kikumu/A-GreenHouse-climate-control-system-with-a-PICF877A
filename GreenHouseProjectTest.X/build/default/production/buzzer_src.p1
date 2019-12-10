@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2779 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2779: extern volatile __bit RE2 __attribute__((address(0x4A)));
 [v _RE2 `Vb ~T0 @X0 0 e@74 ]
-"26 ./Button_driver.h
-[; ;./Button_driver.h: 26: void button_delay();
+"27 ./Button_driver.h
+[; ;./Button_driver.h: 27: void button_delay();
 [v _button_delay `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 54: __asm("INDF equ 00h");
@@ -291,6 +291,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;./Button_driver.h: 21: unsigned char prev_hex;
 [v _prev_hex `uc ~T0 @X0 1 e ]
+"22
+[; ;./Button_driver.h: 22: unsigned int p;
+[v _p `ui ~T0 @X0 1 e ]
 "5 buzzer_src.c
 [; ;buzzer_src.c: 5: void set_beep_threshhold(char x){
 [v _set_beep_threshhold `(v ~T0 @X0 1 ef1`uc ]

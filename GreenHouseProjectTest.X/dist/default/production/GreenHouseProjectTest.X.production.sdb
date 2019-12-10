@@ -5,20 +5,22 @@
 [d frameptr 0 ]
 "11 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _initialise_buttons initialise_buttons `(v  1 e 1 0 ]
-"22
+"23
 [v _thermometer_threshhold_settings thermometer_threshhold_settings `(v  1 e 1 0 ]
-"166
+"167
 [v _time_settings time_settings `(v  1 e 1 0 ]
-"327
+"352
 [v _date_settings date_settings `(v  1 e 1 0 ]
-"528
+"586
 [v _button_delay button_delay `(v  1 e 1 0 ]
 "5 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\buzzer_src.c
 [v _set_beep_threshhold set_beep_threshhold `(v  1 e 1 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
@@ -117,6 +119,8 @@
 [v _stats stats `ui  1 e 2 0 ]
 "21
 [v _prev_hex prev_hex `uc  1 e 1 0 ]
+"22
+[v _p p `ui  1 e 2 0 ]
 "8 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Buzzer_driver.h
 [v _var1 var1 `uc  1 e 1 0 ]
 "9
@@ -220,17 +224,17 @@
 [v main@i i `i  1 a 2 10 ]
 "64
 } 0
-"166 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
+"167 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _time_settings time_settings `(v  1 e 1 0 ]
 {
-"325
+"350
 } 0
-"22
+"23
 [v _thermometer_threshhold_settings thermometer_threshhold_settings `(v  1 e 1 0 ]
 {
-"112
+"113
 [v thermometer_threshhold_settings@i i `i  1 a 2 8 ]
-"164
+"165
 } 0
 "19 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\math_src.c
 [v _decrementor decrementor `(uc  1 e 1 0 ]
@@ -275,7 +279,7 @@
 "11 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _initialise_buttons initialise_buttons `(v  1 e 1 0 ]
 {
-"20
+"21
 } 0
 "6 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Thermometer_src.c
 [v _init_temp init_temp `(v  1 e 1 0 ]
@@ -381,18 +385,35 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 8 ]
 "30
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
 {
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 7 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 6 ]
-[v ___awdiv@counter counter `uc  1 a 1 5 ]
-"5
-[v ___awdiv@divisor divisor `i  1 p 2 0 ]
-[v ___awdiv@dividend dividend `i  1 p 2 2 ]
-"41
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 6 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 5 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 0 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 a 1 4 ]
+"18
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+{
+[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbdiv@quotient quotient `uc  1 a 1 4 ]
+"7
+[v ___lbdiv@counter counter `uc  1 a 1 3 ]
+"4
+[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbdiv@divisor divisor `uc  1 p 1 0 ]
+"9
+[v ___lbdiv@dividend dividend `uc  1 a 1 2 ]
+"26
 } 0
 "6 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\clock_src.c
 [v _ds1302_init ds1302_init `(v  1 e 1 0 ]
@@ -424,10 +445,10 @@
 [v display_clock@i i `i  1 a 2 5 ]
 "78
 } 0
-"327 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
+"352 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _date_settings date_settings `(v  1 e 1 0 ]
 {
-"526
+"584
 } 0
 "41 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\LCD_src.c
 [v _write_cmd write_cmd `(v  1 e 1 0 ]
@@ -518,10 +539,10 @@
 [v ___awmod@dividend dividend `i  1 p 2 2 ]
 "34
 } 0
-"528 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
+"586 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _button_delay button_delay `(v  1 e 1 0 ]
 {
-"529
+"587
 [v button_delay@i i `i  1 a 2 0 ]
-"530
+"588
 } 0

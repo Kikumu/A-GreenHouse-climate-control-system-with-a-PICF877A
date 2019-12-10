@@ -234,6 +234,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;./Button_driver.h: 21: unsigned char prev_hex;
 [v _prev_hex `uc ~T0 @X0 1 e ]
+"22
+[; ;./Button_driver.h: 22: unsigned int p;
+[v _p `ui ~T0 @X0 1 e ]
 "5 math_src.c
 [; ;math_src.c: 5: int modulus_func(int x,int y){
 [v _modulus_func `(i ~T0 @X0 1 ef2`i`i ]

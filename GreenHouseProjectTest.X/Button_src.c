@@ -5,15 +5,18 @@
 #include "clock_driver.h"
 #include "Buzzer_driver.h"
 #include "math_driver.h"
+#include "Day_of_week_driver.h"
 
 
 void initialise_buttons(){
     ADCON1 = 0x06;
     TRISC = 0xf0;//11110000
-    a = 0x00; //hours increments
-    b = 0x00; //b utton chooser
-    c = 0x00; //m ins increments
-    z = 0;  //base increment
+    a = 0x00;    //hours increments
+    b = 0x00;    //b utton chooser
+    c = 0x00;    //m ins increments
+    z = 0;       //base increment
+    day_low = 12;
+    stats = 1;
     p = 0;
 }
 
@@ -100,7 +103,7 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){ 
                         var1 = y;
                         var2 = x;
-                        set_beep_threshhold(var1,var2);
+                        //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
                         write_char('S');
                         write_char('A');
@@ -138,7 +141,7 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){
                         var1 = w;
                         var2 = t;
-                        set_beep_threshhold(var1,var2);
+                        //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
                         write_char('S');
                         write_char('A');
@@ -190,10 +193,22 @@ void time_settings(){
             RC3 = 1;
             //--------TIME----INCREMENTOR---------------------------//
             if(RC7 == 0 && b =='x'){
-                    a++;//hrs incrementor
+                if(stats == 1)
+                   a++;
+                if(stats == 0){
+                   stats = 1;
+                }
+                   // a++;//hrs incrementor
                     x++ ;
                     x = modulus_func(x,10);
-                    y = incrementor(y,x,'9');
+                    if (p == 1){
+                        y = incrementor(y,x,'0');
+                        p = 0;
+                    }
+                    if (x == 9){
+                        p = 1;
+                    }
+                    //y = incrementor(y,x,'9');
                     //hrs_limiter = (a + '0');
                     a = time_date_hex_terminator(a,'T'); //resets hex value to 0 depending on limiter
                     if(y == 2 && x  == 4){
@@ -203,9 +218,21 @@ void time_settings(){
                     button_delay();
             }
             if(RC7==0 && b == 'y'){ 
-                    c++; //mins incrementor
+                 if(stats == 1)
+                   c++;
+                if(stats == 0){
+                    stats = 1;
+                }
+                    //c++; //mins incrementor
                     t++;
                     t = modulus_func(t,10);
+                      if (p == 1){
+                        w = incrementor(w,t,'0');
+                        p = 0;
+                    }
+                    if (t == 9){
+                        p = 1;
+                    }
                     w = incrementor(w,t,'9');
                     if(c == (0x59 + 1)){               //different terminator due to hex val
                         c = 0x00; 
@@ -224,7 +251,7 @@ void time_settings(){
                     //write_char(x + '0');
                    // write_char(a + '0');
             //--------------HOURS-CONTROL-HEX---------------------------------//
-                    a = time_date_delimiter(a,0x11,':');//ABOVE 9
+                    a = time_date_delimiter(a,0x11,'9');//ABOVE 9
                     a = time_date_delimiter(a,0x21,'J');//ABOVE 19
            //--------------------MINS LIMITER-HEX-----------------------------//      
                     c = time_date_delimiter(c,0x11,'9');//ABOVE 9
@@ -349,18 +376,23 @@ void date_settings(){
             RC2 = 1;
             RC3 = 1;
             if(RC7 == 0 && b =='x'){
-                    a++;                                            //month incrementor
+                if(stats == 1)
+                    a++;
+                if(stats == 0){
+                    stats = 1;
+                }
+                //month incrementor
                     x++ ;
-                    x = modulus_func(x,10);//0-9
-                    
-                    if (p == 1){
-                      y = incrementor(y,x,'0');  
-                      p = 0;
+                    x = modulus_func(x,10);
+                     if (p == 1){
+                        y = incrementor(y,x,'0');
+                        p = 0;
                     }
                     if (x == 9){
-                        p++;
+                        p = 1;
                     }
-                    //a = time_date_hex_terminator(a,'C');            //resets hex value to 0 depending on limiter
+                    a = time_date_hex_terminator(a,'C');            //resets hex value to 0 depending on limiter
+                    
                     if(y == 1 && x  == 3){
                         x = 0;
                         y = 0;
@@ -368,10 +400,15 @@ void date_settings(){
                     button_delay();
             }
             if(RC7==0 && b == 'y'){ 
-                    day_hex++;                                       //date incrementor
+                 if(stats == 1)
+                    day_hex++;
+                if(stats == 0){
+                    stats = 1;
+                }
+                    //day_hex++;                                       //date incrementor
                     day_low++;
                     day_low = modulus_func(day_low,10);
-                    
+                    day_counter = modulus_func(day_low,8);
                     if (p == 1){
                         day_high = incrementor(day_high,day_low,'0');
                         p = 0;
@@ -379,18 +416,30 @@ void date_settings(){
                     if (day_low == 9){
                         p = 1;
                     }
-                    day_hex = time_date_hex_terminator(day_hex,'d'); //resets hex value to 0 depending on limiter
+                    day_hex = time_date_hex_terminator(day_hex,'c'); //resets hex value to 0 depending on limiter
                     if(day_high == 3 && day_low==2 ){
-                       day_high = 0;
-                       day_low = 0;
+                        day_high = 0;
+                        day_low = 0;
                     }
                     button_delay();
             }
             if(RC7==0 && b == 'z'){ 
-                    c++;                                            //year incrementor
+                if(stats == 1)
+                   c++;
+                if(stats == 0){
+                    stats = 1;
+                }
+                    //c++;                                            //year incrementor
                     t++;
                     t = modulus_func(t,10);
-                    w = incrementor(w,t,'9');
+                     if (p == 1){
+                        w = incrementor(w,t,'0');
+                        p = 0;
+                    }
+                    if (t == 9){
+                        p = 1;
+                    }
+                    //w = incrementor(w,t,'9');
                      if(c == (0x59 + 1)){                            //different terminator due to hex val
                         c = 0x00; 
                     }
@@ -402,29 +451,31 @@ void date_settings(){
             }
             //-----------------------table-set---------------------------------//
             //3,4,6
-             table[4] = a;          //month
-             table[6] = c;          //year
-             table[3] = day_hex;    //day
+            //if(stats ==0)
+             
             //--------MONTH----HEX--------------------------------------------//
-                     
-                    //a = time_date_delimiter(a,0x11,':');//ABOVE 9
-                    
-                  
+                    a = time_date_delimiter(a,0x11,'9');//ABOVE 9
             //--------DATE-----HEX--------------------------------------------//
-//                    day_hex = time_date_delimiter(day_hex,0x11,':');//ABOVE 9
-//                    day_hex = time_date_delimiter(day_hex,0x21,'D');//ABOVE 19
-//                    day_hex = time_date_delimiter(day_hex,0x31,'N');//ABOVE 9
-//                    day_hex = time_date_delimiter(day_hex,0x41,'X');//ABOVE 19
-//                    day_hex = time_date_delimiter(day_hex,0x51,'b'); //ABOVE 29
+                    day_hex = time_date_delimiter(day_hex,0x11,'9');//ABOVE 9
+                    day_hex = time_date_delimiter(day_hex,0x21,'J');//ABOVE 19
+                    day_hex = time_date_delimiter(day_hex,0x11,'9');//ABOVE 9
+                    day_hex = time_date_delimiter(day_hex,0x21,'J');//ABOVE 19
+                    day_hex = time_date_delimiter(day_hex,0x31,'Y'); //ABOVE 29
             //--------YEAR-----HEX--------------------------------------------//
-                    c = time_date_delimiter(c,0x11,':');//ABOVE 9
+                    c = time_date_delimiter(c,0x11,'9');//ABOVE 9
                     c = time_date_delimiter(c,0x21,'J');//ABOVE 19
                     c = time_date_delimiter(c,0x11,'9');//ABOVE 9
                     c = time_date_delimiter(c,0x21,'J');//ABOVE 19
                     c = time_date_delimiter(c,0x31,'Y'); //ABOVE 29
                     c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
                     c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
-            
+            //holding state== done. saving state............fuk
+                    if(stats==0)
+                        table[4] = prev_hex;          //month
+                    else if(stats==1)
+                        table[4]= a;
+             table[6] = c;          //year
+             table[3] = day_hex;    //day
              write_cmd(0x88);
                    
                   RC0 = 0;
@@ -436,6 +487,8 @@ void date_settings(){
                           a = 0x00;
                           c = 0x00;
                           day_hex = 0x00;
+                          day_high = 0;
+                          day_low = 0;
                           x = 0;
                           y = 0;
                           w = 0;
@@ -478,7 +531,6 @@ void date_settings(){
                       write_char('h');
                       write_char(':');
                       b = 'x';
-                
                       //write_cmd(0x88);
                   }
                   RC0 = 0;
@@ -505,12 +557,10 @@ void date_settings(){
               write_char('/');
               write_char(y + '0');
               write_char(x + '0');
-              write_char(day_hex + '0');
               write_char('/');
               write_char(w+ '0');
               write_char(t+ '0');
-              
-          
+            
             //-------note: think of reusing variables to save space----------// 
             RC0 = 0;
             RC1 = 1;
@@ -524,6 +574,8 @@ void date_settings(){
             y = 0;
             w = 0;
             t = 0;
+            day_high = 0;
+            day_low = 0;
             write_cmd(0x1);
             break;
             }

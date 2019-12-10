@@ -19,6 +19,7 @@ unsigned int day_high;         //day upper value(display)
 unsigned int day_of_week_var;  //monitor day of week
 unsigned int stats;
 unsigned char prev_hex;
+unsigned int p;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
