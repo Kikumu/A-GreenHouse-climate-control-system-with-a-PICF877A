@@ -13,6 +13,7 @@
       <itemPath>math_driver.h</itemPath>
       <itemPath>Threshold_driver.h</itemPath>
       <itemPath>Day_of_week_driver.h</itemPath>
+      <itemPath>Sanity_driver.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

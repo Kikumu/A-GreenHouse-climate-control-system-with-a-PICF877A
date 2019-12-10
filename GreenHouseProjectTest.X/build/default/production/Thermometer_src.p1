@@ -312,6 +312,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;./Button_driver.h: 22: unsigned int p;
 [v _p `ui ~T0 @X0 1 e ]
+"23
+[; ;./Button_driver.h: 23: unsigned int var_night_low;
+[v _var_night_low `ui ~T0 @X0 1 e ]
+"24
+[; ;./Button_driver.h: 24: unsigned int var_night_high;
+[v _var_night_high `ui ~T0 @X0 1 e ]
 "6 Thermometer_src.c
 [; ;Thermometer_src.c: 6: void init_temp()
 [v _init_temp `(v ~T0 @X0 1 ef ]
@@ -513,7 +519,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _value -> -> 0 `i `uc ]
 "66
 [; ;Thermometer_src.c: 66:  static _Bool j;
-[v F916 `a ~T0 @X0 1 s j ]
+[v F918 `a ~T0 @X0 1 s j ]
 "67
 [; ;Thermometer_src.c: 67:  for(i=8;i>0;i--)
 {
@@ -569,10 +575,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( ___nop ..  ]
 "83
 [; ;Thermometer_src.c: 83:    j=RE0;
-[e = F916 -> _RE0 `a ]
+[e = F918 -> _RE0 `a ]
 "84
 [; ;Thermometer_src.c: 84:    if(j) value|=0x80;
-[e $ ! != -> F916 `i -> 0 `i 112  ]
+[e $ ! != -> F918 `i -> 0 `i 112  ]
 [e =| _value -> -> 128 `i `uc ]
 [e :U 112 ]
 "85

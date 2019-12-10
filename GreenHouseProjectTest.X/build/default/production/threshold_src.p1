@@ -257,111 +257,114 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;./Threshold_driver.h: 12: int count;
 [v _count `i ~T0 @X0 1 e ]
-"5 threshold_src.c
-[; ;threshold_src.c: 5: void set_upper_threshold(int upper_val,int lower_val){
+"4 threshold_src.c
+[; ;threshold_src.c: 4: void set_upper_threshold(int upper_val,int lower_val){
 [v _set_upper_threshold `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _set_upper_threshold ]
 [v _upper_val `i ~T0 @X0 1 r1 ]
 [v _lower_val `i ~T0 @X0 1 r2 ]
 [f ]
-"6
-[; ;threshold_src.c: 6:     if(shi == upper_val && ge > lower_val && count == 2){
+"5
+[; ;threshold_src.c: 5:     if(shi == upper_val && ge > lower_val && count == 2){
 [e $ ! && && == -> _shi `i _upper_val > -> _ge `i _lower_val == _count -> 2 `i 96  ]
 {
-"9
-[; ;threshold_src.c: 9:     write_char('W');
+"6
+[; ;threshold_src.c: 6:     buzzer_watcher = 'w';
+[e = _buzzer_watcher -> -> 119 `ui `uc ]
+"7
+[; ;threshold_src.c: 7:     write_char('W');
 [e ( _write_char (1 -> -> 87 `ui `uc ]
-"10
-[; ;threshold_src.c: 10:     write_char('A');
+"8
+[; ;threshold_src.c: 8:     write_char('A');
 [e ( _write_char (1 -> -> 65 `ui `uc ]
-"11
-[; ;threshold_src.c: 11:     write_char('R');
+"9
+[; ;threshold_src.c: 9:     write_char('R');
 [e ( _write_char (1 -> -> 82 `ui `uc ]
-"12
-[; ;threshold_src.c: 12:     write_char('M');
+"10
+[; ;threshold_src.c: 10:     write_char('M');
 [e ( _write_char (1 -> -> 77 `ui `uc ]
-"13
-[; ;threshold_src.c: 13:     }
+"11
+[; ;threshold_src.c: 11:     }
 }
 [e :U 96 ]
-"14
-[; ;threshold_src.c: 14: }
+"12
+[; ;threshold_src.c: 12: }
 [e :UE 95 ]
 }
-"17
-[; ;threshold_src.c: 17: void set_lower_threshold(int upper_val,int lower_val){
+"14
+[; ;threshold_src.c: 14: void set_lower_threshold(int upper_val,int lower_val){
 [v _set_lower_threshold `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _set_lower_threshold ]
 [v _upper_val `i ~T0 @X0 1 r1 ]
 [v _lower_val `i ~T0 @X0 1 r2 ]
 [f ]
-"18
-[; ;threshold_src.c: 18:     if((shi == upper_val && ge < lower_val)|| ge == lower_val)
-[e $ ! || && == -> _shi `i _upper_val < -> _ge `i _lower_val == -> _ge `i _lower_val 98  ]
-"19
-[; ;threshold_src.c: 19:     {
+"15
+[; ;threshold_src.c: 15:     if((shi == upper_val && ge <= lower_val)|| ge == lower_val)
+[e $ ! || && == -> _shi `i _upper_val <= -> _ge `i _lower_val == -> _ge `i _lower_val 98  ]
+"16
+[; ;threshold_src.c: 16:     {
 {
-"20
-[; ;threshold_src.c: 20:     count = 2;
+"17
+[; ;threshold_src.c: 17:     count = 2;
 [e = _count -> 2 `i ]
-"21
-[; ;threshold_src.c: 21:     buzzer_watcher = 'x';
+"18
+[; ;threshold_src.c: 18:     buzzer_watcher = 'x';
 [e = _buzzer_watcher -> -> 120 `ui `uc ]
-"22
-[; ;threshold_src.c: 22:     write_char('O');
+"19
+[; ;threshold_src.c: 19:     write_char('O');
 [e ( _write_char (1 -> -> 79 `ui `uc ]
-"23
-[; ;threshold_src.c: 23:     write_char('K');
+"20
+[; ;threshold_src.c: 20:     write_char('K');
 [e ( _write_char (1 -> -> 75 `ui `uc ]
-"24
-[; ;threshold_src.c: 24:     write_char(' ');
+"21
+[; ;threshold_src.c: 21:     write_char(' ');
 [e ( _write_char (1 -> -> 32 `ui `uc ]
-"25
-[; ;threshold_src.c: 25:     write_char(' ');
+"22
+[; ;threshold_src.c: 22:     write_char(' ');
 [e ( _write_char (1 -> -> 32 `ui `uc ]
-"26
-[; ;threshold_src.c: 26:     }
+"23
+[; ;threshold_src.c: 23:     }
 }
 [e :U 98 ]
-"27
-[; ;threshold_src.c: 27: }
+"24
+[; ;threshold_src.c: 24: }
 [e :UE 97 ]
 }
-"29
-[; ;threshold_src.c: 29: void reset_alarm(){
+"26
+[; ;threshold_src.c: 26: void reset_alarm(){
 [v _reset_alarm `(v ~T0 @X0 1 ef ]
 {
 [e :U _reset_alarm ]
 [f ]
-"30
-[; ;threshold_src.c: 30:     RC0 = 1;
+"27
+[; ;threshold_src.c: 27:     RC0 = 1;
 [e = _RC0 -> -> 1 `i `b ]
-"31
-[; ;threshold_src.c: 31:     RC1 = 1;
+"28
+[; ;threshold_src.c: 28:     RC1 = 1;
 [e = _RC1 -> -> 1 `i `b ]
-"32
-[; ;threshold_src.c: 32:     RC2 = 1;
+"29
+[; ;threshold_src.c: 29:     RC2 = 1;
 [e = _RC2 -> -> 1 `i `b ]
-"33
-[; ;threshold_src.c: 33:     RC3 = 0;
+"30
+[; ;threshold_src.c: 30:     RC3 = 0;
 [e = _RC3 -> -> 0 `i `b ]
-"34
-[; ;threshold_src.c: 34:     if(RC4 == 0){
+"31
+[; ;threshold_src.c: 31:     if(RC4 == 0){
 [e $ ! == -> _RC4 `i -> 0 `i 100  ]
 {
-"35
-[; ;threshold_src.c: 35:         count = 0;
+"32
+[; ;threshold_src.c: 32:         count = 0;
 [e = _count -> 0 `i ]
-"36
-[; ;threshold_src.c: 36:         buzzer_watcher = 'x';
+"33
+[; ;threshold_src.c: 33:         buzzer_watcher = 'x';
 [e = _buzzer_watcher -> -> 120 `ui `uc ]
-"37
-[; ;threshold_src.c: 37:     }
+"34
+[; ;threshold_src.c: 34:     }
 }
 [e :U 100 ]
-"38
-[; ;threshold_src.c: 38: }
+"35
+[; ;threshold_src.c: 35: }
 [e :UE 99 ]
 }

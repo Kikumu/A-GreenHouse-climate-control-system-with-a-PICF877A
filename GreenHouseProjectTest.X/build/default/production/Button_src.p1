@@ -35,8 +35,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7
 [; ;./math_driver.h: 7: char incrementor(int,int,char);
 [v _incrementor `(uc ~T0 @X0 0 ef3`i`i`uc ]
-"27 ./Button_driver.h
-[; ;./Button_driver.h: 27: void button_delay();
+"29 ./Button_driver.h
+[; ;./Button_driver.h: 29: void button_delay();
 [v _button_delay `(v ~T0 @X0 0 e? ]
 "2722 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2722: extern volatile __bit RC6 __attribute__((address(0x3E)));
@@ -291,6 +291,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;./Button_driver.h: 22: unsigned int p;
 [v _p `ui ~T0 @X0 1 e ]
+"23
+[; ;./Button_driver.h: 23: unsigned int var_night_low;
+[v _var_night_low `ui ~T0 @X0 1 e ]
+"24
+[; ;./Button_driver.h: 24: unsigned int var_night_high;
+[v _var_night_high `ui ~T0 @X0 1 e ]
 "13 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 13: unsigned char TLV=0 ;
 [v _TLV `uc ~T0 @X0 1 e ]

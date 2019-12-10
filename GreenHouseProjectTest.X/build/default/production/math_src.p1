@@ -237,6 +237,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;./Button_driver.h: 22: unsigned int p;
 [v _p `ui ~T0 @X0 1 e ]
+"23
+[; ;./Button_driver.h: 23: unsigned int var_night_low;
+[v _var_night_low `ui ~T0 @X0 1 e ]
+"24
+[; ;./Button_driver.h: 24: unsigned int var_night_high;
+[v _var_night_high `ui ~T0 @X0 1 e ]
 "5 math_src.c
 [; ;math_src.c: 5: int modulus_func(int x,int y){
 [v _modulus_func `(i ~T0 @X0 1 ef2`i`i ]

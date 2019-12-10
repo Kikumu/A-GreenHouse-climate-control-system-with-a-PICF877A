@@ -198,7 +198,7 @@ void time_settings(){
                 if(stats == 0){
                    stats = 1;
                 }
-                   // a++;//hrs incrementor
+                // a++;//hrs incrementor
                     x++ ;
                     x = modulus_func(x,10);
                     if (p == 1){
