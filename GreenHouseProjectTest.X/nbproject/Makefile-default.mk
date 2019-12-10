@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mainLogic.c LCD_src.c Thermometer_src.c clock_src.c buzzer_src.c Button_src.c math_src.c threshold_src.c Day_of_week_src.c
+SOURCEFILES_QUOTED_IF_SPACED=mainLogic.c LCD_src.c Thermometer_src.c clock_src.c buzzer_src.c Button_src.c math_src.c threshold_src.c Day_of_week_src.c sanity_src.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mainLogic.p1 ${OBJECTDIR}/LCD_src.p1 ${OBJECTDIR}/Thermometer_src.p1 ${OBJECTDIR}/clock_src.p1 ${OBJECTDIR}/buzzer_src.p1 ${OBJECTDIR}/Button_src.p1 ${OBJECTDIR}/math_src.p1 ${OBJECTDIR}/threshold_src.p1 ${OBJECTDIR}/Day_of_week_src.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/mainLogic.p1.d ${OBJECTDIR}/LCD_src.p1.d ${OBJECTDIR}/Thermometer_src.p1.d ${OBJECTDIR}/clock_src.p1.d ${OBJECTDIR}/buzzer_src.p1.d ${OBJECTDIR}/Button_src.p1.d ${OBJECTDIR}/math_src.p1.d ${OBJECTDIR}/threshold_src.p1.d ${OBJECTDIR}/Day_of_week_src.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mainLogic.p1 ${OBJECTDIR}/LCD_src.p1 ${OBJECTDIR}/Thermometer_src.p1 ${OBJECTDIR}/clock_src.p1 ${OBJECTDIR}/buzzer_src.p1 ${OBJECTDIR}/Button_src.p1 ${OBJECTDIR}/math_src.p1 ${OBJECTDIR}/threshold_src.p1 ${OBJECTDIR}/Day_of_week_src.p1 ${OBJECTDIR}/sanity_src.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/mainLogic.p1.d ${OBJECTDIR}/LCD_src.p1.d ${OBJECTDIR}/Thermometer_src.p1.d ${OBJECTDIR}/clock_src.p1.d ${OBJECTDIR}/buzzer_src.p1.d ${OBJECTDIR}/Button_src.p1.d ${OBJECTDIR}/math_src.p1.d ${OBJECTDIR}/threshold_src.p1.d ${OBJECTDIR}/Day_of_week_src.p1.d ${OBJECTDIR}/sanity_src.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mainLogic.p1 ${OBJECTDIR}/LCD_src.p1 ${OBJECTDIR}/Thermometer_src.p1 ${OBJECTDIR}/clock_src.p1 ${OBJECTDIR}/buzzer_src.p1 ${OBJECTDIR}/Button_src.p1 ${OBJECTDIR}/math_src.p1 ${OBJECTDIR}/threshold_src.p1 ${OBJECTDIR}/Day_of_week_src.p1
+OBJECTFILES=${OBJECTDIR}/mainLogic.p1 ${OBJECTDIR}/LCD_src.p1 ${OBJECTDIR}/Thermometer_src.p1 ${OBJECTDIR}/clock_src.p1 ${OBJECTDIR}/buzzer_src.p1 ${OBJECTDIR}/Button_src.p1 ${OBJECTDIR}/math_src.p1 ${OBJECTDIR}/threshold_src.p1 ${OBJECTDIR}/Day_of_week_src.p1 ${OBJECTDIR}/sanity_src.p1
 
 # Source Files
-SOURCEFILES=mainLogic.c LCD_src.c Thermometer_src.c clock_src.c buzzer_src.c Button_src.c math_src.c threshold_src.c Day_of_week_src.c
+SOURCEFILES=mainLogic.c LCD_src.c Thermometer_src.c clock_src.c buzzer_src.c Button_src.c math_src.c threshold_src.c Day_of_week_src.c sanity_src.c
 
 
 
@@ -166,6 +166,14 @@ ${OBJECTDIR}/Day_of_week_src.p1: Day_of_week_src.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/Day_of_week_src.d ${OBJECTDIR}/Day_of_week_src.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Day_of_week_src.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/sanity_src.p1: sanity_src.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/sanity_src.p1.d 
+	@${RM} ${OBJECTDIR}/sanity_src.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -Os -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/sanity_src.p1 sanity_src.c 
+	@-${MV} ${OBJECTDIR}/sanity_src.d ${OBJECTDIR}/sanity_src.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sanity_src.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/mainLogic.p1: mainLogic.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -238,6 +246,14 @@ ${OBJECTDIR}/Day_of_week_src.p1: Day_of_week_src.c  nbproject/Makefile-${CND_CON
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -Os -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Day_of_week_src.p1 Day_of_week_src.c 
 	@-${MV} ${OBJECTDIR}/Day_of_week_src.d ${OBJECTDIR}/Day_of_week_src.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Day_of_week_src.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/sanity_src.p1: sanity_src.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/sanity_src.p1.d 
+	@${RM} ${OBJECTDIR}/sanity_src.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -Os -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/sanity_src.p1 sanity_src.c 
+	@-${MV} ${OBJECTDIR}/sanity_src.d ${OBJECTDIR}/sanity_src.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/sanity_src.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -61,7 +61,7 @@ bssBANK0 BANK0 1 20 20 3C 1
 idataBANK0 CODE 0 1631 1631 8 2
 dataBANK0 BANK0 1 68 68 8 1
 clrtext CODE 0 1629 1629 8 2
-$C:\Users\scowt\AppData\Local\Temp\s3us.o
+$C:\Users\scowt\AppData\Local\Temp\sek4.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 1 2
 # %UNUSED Section
@@ -112,25 +112,25 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\GreenHouseProjectTest.X.production.o
-7E8 cinit CODE >1365:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7E8 cinit CODE >1368:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7E8 cinit CODE >1529:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7E9 cinit CODE >1530:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7EA cinit CODE >1531:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7EB cinit CODE >1532:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7EC cinit CODE >1533:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7ED cinit CODE >1534:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7EE cinit CODE >1535:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7EF cinit CODE >1536:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7F0 cinit CODE >1537:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7F1 cinit CODE >1538:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7F6 cinit CODE >1557:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7F7 cinit CODE >1558:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7F8 cinit CODE >1559:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7F9 cinit CODE >1560:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7FC cinit CODE >1566:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7FC cinit CODE >1568:C:\Users\scowt\AppData\Local\Temp\s3us.s
-7FD cinit CODE >1569:C:\Users\scowt\AppData\Local\Temp\s3us.s
+7E8 cinit CODE >1485:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7E8 cinit CODE >1488:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7E8 cinit CODE >1649:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7E9 cinit CODE >1650:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7EA cinit CODE >1651:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7EB cinit CODE >1652:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7EC cinit CODE >1653:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7ED cinit CODE >1654:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7EE cinit CODE >1655:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7EF cinit CODE >1656:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7F0 cinit CODE >1657:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7F1 cinit CODE >1658:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7F6 cinit CODE >1677:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7F7 cinit CODE >1678:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7F8 cinit CODE >1679:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7F9 cinit CODE >1680:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7FC cinit CODE >1686:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7FC cinit CODE >1688:C:\Users\scowt\AppData\Local\Temp\sek4.s
+7FD cinit CODE >1689:C:\Users\scowt\AppData\Local\Temp\sek4.s
 1693 text40 CODE >586:C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 1693 text40 CODE >587:C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 A09 text39 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
@@ -1047,33 +1047,33 @@ D74 maintext CODE >59:C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\main
 D76 maintext CODE >60:C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\mainLogic.c
 D8D maintext CODE >61:C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\mainLogic.c
 DA0 maintext CODE >62:C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\mainLogic.c
-1629 clrtext CODE >1544:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1629 clrtext CODE >1545:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162A clrtext CODE >1546:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162A clrtext CODE >1547:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162B clrtext CODE >1548:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162C clrtext CODE >1549:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162D clrtext CODE >1550:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162E clrtext CODE >1551:C:\Users\scowt\AppData\Local\Temp\s3us.s
-162F clrtext CODE >1552:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1630 clrtext CODE >1553:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1682 inittext CODE >1503:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1682 inittext CODE >1504:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1683 inittext CODE >1505:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1684 inittext CODE >1506:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1685 inittext CODE >1507:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1686 inittext CODE >1514:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1686 inittext CODE >1515:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1689 inittext CODE >1516:C:\Users\scowt\AppData\Local\Temp\s3us.s
-168A inittext CODE >1517:C:\Users\scowt\AppData\Local\Temp\s3us.s
-168B inittext CODE >1518:C:\Users\scowt\AppData\Local\Temp\s3us.s
-168C inittext CODE >1519:C:\Users\scowt\AppData\Local\Temp\s3us.s
-168D inittext CODE >1520:C:\Users\scowt\AppData\Local\Temp\s3us.s
-168E inittext CODE >1521:C:\Users\scowt\AppData\Local\Temp\s3us.s
-168F inittext CODE >1522:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1690 inittext CODE >1523:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1691 inittext CODE >1524:C:\Users\scowt\AppData\Local\Temp\s3us.s
-1692 inittext CODE >1525:C:\Users\scowt\AppData\Local\Temp\s3us.s
+1629 clrtext CODE >1664:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1629 clrtext CODE >1665:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162A clrtext CODE >1666:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162A clrtext CODE >1667:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162B clrtext CODE >1668:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162C clrtext CODE >1669:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162D clrtext CODE >1670:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162E clrtext CODE >1671:C:\Users\scowt\AppData\Local\Temp\sek4.s
+162F clrtext CODE >1672:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1630 clrtext CODE >1673:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1682 inittext CODE >1623:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1682 inittext CODE >1624:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1683 inittext CODE >1625:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1684 inittext CODE >1626:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1685 inittext CODE >1627:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1686 inittext CODE >1634:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1686 inittext CODE >1635:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1689 inittext CODE >1636:C:\Users\scowt\AppData\Local\Temp\sek4.s
+168A inittext CODE >1637:C:\Users\scowt\AppData\Local\Temp\sek4.s
+168B inittext CODE >1638:C:\Users\scowt\AppData\Local\Temp\sek4.s
+168C inittext CODE >1639:C:\Users\scowt\AppData\Local\Temp\sek4.s
+168D inittext CODE >1640:C:\Users\scowt\AppData\Local\Temp\sek4.s
+168E inittext CODE >1641:C:\Users\scowt\AppData\Local\Temp\sek4.s
+168F inittext CODE >1642:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1690 inittext CODE >1643:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1691 inittext CODE >1644:C:\Users\scowt\AppData\Local\Temp\sek4.s
+1692 inittext CODE >1645:C:\Users\scowt\AppData\Local\Temp\sek4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1119,7 +1119,7 @@ _wd 43 0 BANK0 1 bssBANK0 dist/default/production\GreenHouseProjectTest.X.produc
 __end_of_delay_temp 2CA8 0 CODE 0 text18 dist/default/production\GreenHouseProjectTest.X.production.o
 main@i 66 0 BANK0 1 cstackBANK0 dist/default/production\GreenHouseProjectTest.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\scowt\AppData\Local\Temp\s3us.o
+___sp 0 0 STACK 2 stack C:\Users\scowt\AppData\Local\Temp\sek4.o
 _init 2C42 0 CODE 0 text11 dist/default/production\GreenHouseProjectTest.X.production.o
 _main 190E 0 CODE 0 maintext dist/default/production\GreenHouseProjectTest.X.production.o
 _var1 47 0 BANK0 1 bssBANK0 dist/default/production\GreenHouseProjectTest.X.production.o
@@ -1128,7 +1128,7 @@ btemp 7E 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 __size_of_time_write_1 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 display_clock@i 75 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProjectTest.X.production.o
 set_lower_threshold@lower_val 75 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProjectTest.X.production.o
-start 0 0 CODE 0 init C:\Users\scowt\AppData\Local\Temp\s3us.o
+start 0 0 CODE 0 init C:\Users\scowt\AppData\Local\Temp\sek4.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 __size_of_init 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
@@ -1147,12 +1147,12 @@ ___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProje
 _qianfen 53 0 BANK0 1 bssBANK0 dist/default/production\GreenHouseProjectTest.X.production.o
 __end_of_time_write_1 1082 0 CODE 0 text36 dist/default/production\GreenHouseProjectTest.X.production.o
 __size_of_time_date_hex_terminator 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\s3us.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\s3us.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\s3us.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\s3us.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\s3us.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\s3us.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\sek4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\sek4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\sek4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\sek4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\sek4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\scowt\AppData\Local\Temp\sek4.o
 set_beep_threshhold@x 72 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProjectTest.X.production.o
 _day_hex 4E 0 BANK0 1 bssBANK0 dist/default/production\GreenHouseProjectTest.X.production.o
 _day_low 37 0 BANK0 1 bssBANK0 dist/default/production\GreenHouseProjectTest.X.production.o
@@ -1185,8 +1185,8 @@ __size_of_incrementor 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.
 __end_of_delay2 2D9E 0 CODE 0 text19 dist/default/production\GreenHouseProjectTest.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 _time_settings 1DC 0 CODE 0 text1 dist/default/production\GreenHouseProjectTest.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\scowt\AppData\Local\Temp\s3us.o
-___stacklo 0 0 ABS 0 - C:\Users\scowt\AppData\Local\Temp\s3us.o
+___stackhi 0 0 ABS 0 - C:\Users\scowt\AppData\Local\Temp\sek4.o
+___stacklo 0 0 ABS 0 - C:\Users\scowt\AppData\Local\Temp\sek4.o
 _modulus_func 2CE4 0 CODE 0 text38 dist/default/production\GreenHouseProjectTest.X.production.o
 ___lwdiv@quotient 7B 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProjectTest.X.production.o
 __end_of_time_date_hex_terminator 2CC6 0 CODE 0 text33 dist/default/production\GreenHouseProjectTest.X.production.o
@@ -1211,7 +1211,7 @@ _TRISE0 448 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production
 __size_of_ds1302_init 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 __size_of_modulus_func 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 ___lbdiv@counter 73 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProjectTest.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\scowt\AppData\Local\Temp\s3us.o
+___int_sp 0 0 STACK 2 stack C:\Users\scowt\AppData\Local\Temp\sek4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1301,7 +1301,7 @@ _lcd_init 2F2A 0 CODE 0 text8 dist/default/production\GreenHouseProjectTest.X.pr
 __Lintentry 0 0 CODE 0 intentry -
 __size_of_get_temp 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
 __size_of_get_time 0 0 ABS 0 - dist/default/production\GreenHouseProjectTest.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\scowt\AppData\Local\Temp\s3us.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\scowt\AppData\Local\Temp\sek4.o
 time_read_1@j 72 0 COMMON 1 cstackCOMMON dist/default/production\GreenHouseProjectTest.X.production.o
 __pdataBANK0 68 0 BANK0 1 dataBANK0 dist/default/production\GreenHouseProjectTest.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -

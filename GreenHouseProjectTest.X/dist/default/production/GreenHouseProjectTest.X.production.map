@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\GreenHouseProjectTest.X.production.sym \
   --cmf=dist/default/production\GreenHouseProjectTest.X.production.cmf -z \
-  -Q16F877A -oC:\Users\scowt\AppData\Local\Temp\s3us.2 \
+  -Q16F877A -oC:\Users\scowt\AppData\Local\Temp\sek4.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/GreenHouseProjectTest.X.production.map -E1 \
   -ver=XC8 --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\scowt\AppData\Local\Temp\s3us.o \
+  -DENTRY=2 -k C:\Users\scowt\AppData\Local\Temp\sek4.o \
   dist/default/production\GreenHouseProjectTest.X.production.o 
 
 Object code version is 3.11
@@ -29,7 +29,7 @@ Machine type is 16F877A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\scowt\AppData\Local\Temp\s3us.o
+C:\Users\scowt\AppData\Local\Temp\sek4.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        1     400E       0
 dist/default/production\GreenHouseProjectTest.X.production.o

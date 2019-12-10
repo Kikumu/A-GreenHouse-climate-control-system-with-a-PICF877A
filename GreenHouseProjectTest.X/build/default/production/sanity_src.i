@@ -1,4 +1,4 @@
-# 1 "mainLogic.c"
+# 1 "sanity_src.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,19 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mainLogic.c" 2
+# 1 "sanity_src.c" 2
+# 1 "./Sanity_driver.h" 1
+
+
+
+# 1 "./math_driver.h" 1
+
+
+
+# 1 "./Button_driver.h" 1
+
+
+
 # 1 "./SystemHeader.h" 1
 
 
@@ -16,21 +28,7 @@
 #pragma config PWRTE = ON
 #pragma config BOREN = OFF
 #pragma config LVP = OFF
-# 1 "mainLogic.c" 2
-
-# 1 "./LCD_driver.h" 1
-# 12 "./LCD_driver.h"
-void init();
-void lcd_init();
-void write_char(char x);
-void write_cmd(char x);
-void delay_lcd();
-void delay_screen();
-# 2 "mainLogic.c" 2
-
-# 1 "./Thermometer_driver.h" 1
-
-
+# 4 "./Button_driver.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 1 3
 
@@ -1745,54 +1743,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
-# 4 "./Thermometer_driver.h" 2
-# 13 "./Thermometer_driver.h"
-unsigned char TLV=0 ;
-unsigned char THV=0;
-unsigned char TZ=0;
-unsigned char TX=0;
-unsigned int wd;
-
-unsigned char shi;
-unsigned char ge;
-unsigned char shifen;
-unsigned char baifen;
-unsigned char qianfen;
-unsigned char wanfen;
-
-
-void init_temp();
-void display_temp();
-void reset_temp(void);
-void write_byte(unsigned char val);
-unsigned char read_byte(void);
-void get_temp();
-void delay_temp(char , char );
-void delay2();
-# 3 "mainLogic.c" 2
-
-# 1 "./clock_driver.h" 1
-# 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
-char table1[7];
-
-
-
-void ds1302_init();
-void set_time();
-void get_time();
-void display_clock();
-void display_date();
-void time_write_1(unsigned char time_tx);
-unsigned char time_read_1();
-void delay_time();
-# 4 "mainLogic.c" 2
-
-# 1 "./Button_driver.h" 1
-
-
-
-
+# 5 "./Button_driver.h" 2
 
 
 unsigned char a;
@@ -1818,56 +1769,7 @@ void date_settings();
 void time_settings();
 void initialise_buttons();
 void button_delay();
-# 5 "mainLogic.c" 2
-
-# 1 "./Threshold_driver.h" 1
-
-
-
-
-
-
-
-unsigned char upper_t;
-unsigned char lower_t;
-char buzzer_watcher;
-char buzzer_watcher1;
-int count;
-void set_upper_threshold(int,int);
-void set_lower_threshold(int,int);
-void reset_alarm();
-# 6 "mainLogic.c" 2
-
-# 1 "./Buzzer_driver.h" 1
-
-
-
-
-
-
-
-char var1;
-char var2;
-
-
-
-void set_beep_threshhold(char x);
-# 7 "mainLogic.c" 2
-
-# 1 "./Day_of_week_driver.h" 1
-
-
-
-
-
-int day_counter;
-void display_day(int);
-# 8 "mainLogic.c" 2
-
-# 1 "./math_driver.h" 1
-
-
-
+# 4 "./math_driver.h" 2
 
 
 int modulus_func(int,int);
@@ -1875,60 +1777,6 @@ char incrementor(int,int,char);
 char decrementor(int,int,char);
 char time_date_delimiter(char,char,char);
 char time_date_hex_terminator(char,char);
-# 9 "mainLogic.c" 2
+# 4 "./Sanity_driver.h" 2
+# 1 "sanity_src.c" 2
 
-void main() {
-    TRISB=0X02;
-    init_temp();
-    set_time();
-    ds1302_init();
-
-    init();
-    lcd_init();
-    init_temp();
-    initialise_buttons();
-
-
-
-    while(1){
-    get_temp();
-    get_time();
-    write_cmd(0x80);
-    write_char('T');
-    write_char('e');
-    write_char('m');
-    write_char('p');
-    write_char(':');
-    display_temp();
-
-    write_cmd(0x90);
-    write_char('D');
-    write_char('a');
-    write_char('t');
-    write_char('e');
-    write_char(':');
-    write_char(' ');
-
-    display_date();
-
-    write_cmd(0x88);
-    write_char('T');
-    write_char('i');
-    write_char('m');
-    write_char('e');
-    write_char(':');
-    display_clock();
-    thermometer_threshhold_settings();
-    date_settings();
-    time_settings();
-    write_cmd(0x98);
-    set_lower_threshold(2,4);
-    set_upper_threshold(2,4);
-    set_beep_threshhold(buzzer_watcher);
-    reset_alarm();
-    for(int i = 0; i < 7; i++)
-    write_char(' ');
-    day_counter = modulus_func(day_low,8);
-    display_day(day_counter);
-}
-}
