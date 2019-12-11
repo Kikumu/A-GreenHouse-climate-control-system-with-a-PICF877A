@@ -235,14 +235,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Button_driver.h: 21: unsigned char prev_hex;
 [v _prev_hex `uc ~T0 @X0 1 e ]
 "22
-[; ;./Button_driver.h: 22: unsigned int p;
-[v _p `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 22: unsigned char prev_hex_day;
+[v _prev_hex_day `uc ~T0 @X0 1 e ]
 "23
-[; ;./Button_driver.h: 23: unsigned int var_night_low;
-[v _var_night_low `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 23: unsigned char prev_hex_year;
+[v _prev_hex_year `uc ~T0 @X0 1 e ]
 "24
-[; ;./Button_driver.h: 24: unsigned int var_night_high;
-[v _var_night_high `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 24: unsigned char prev_hex_hours;
+[v _prev_hex_hours `uc ~T0 @X0 1 e ]
+"25
+[; ;./Button_driver.h: 25: unsigned char prev_hex_mins;
+[v _prev_hex_mins `uc ~T0 @X0 1 e ]
+"26
+[; ;./Button_driver.h: 26: unsigned int d_type;
+[v _d_type `ui ~T0 @X0 1 e ]
+"27
+[; ;./Button_driver.h: 27: unsigned int p;
+[v _p `ui ~T0 @X0 1 e ]
 "5 math_src.c
 [; ;math_src.c: 5: int modulus_func(int x,int y){
 [v _modulus_func `(i ~T0 @X0 1 ef2`i`i ]
@@ -324,8 +333,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;math_src.c: 25: }
 [e :UE 98 ]
 }
-"27
-[; ;math_src.c: 27: char time_date_delimiter(char val,char hex,char limiter){
+"32
+[; ;math_src.c: 32: char time_date_delimiter(char val,char hex,char limiter){
 [v _time_date_delimiter `(uc ~T0 @X0 1 ef3`uc`uc`uc ]
 {
 [e :U _time_date_delimiter ]
@@ -333,58 +342,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _hex `uc ~T0 @X0 1 r2 ]
 [v _limiter `uc ~T0 @X0 1 r3 ]
 [f ]
-"28
-[; ;math_src.c: 28:     if((val + '0') == limiter){
+"33
+[; ;math_src.c: 33:     if((val + '0') == limiter){
 [e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 101  ]
 {
-"29
-[; ;math_src.c: 29:     val = hex;
+"34
+[; ;math_src.c: 34:     val = hex;
 [e = _val _hex ]
-"30
-[; ;math_src.c: 30:     stats=0;
+"35
+[; ;math_src.c: 35:     stats=0;
 [e = _stats -> -> 0 `i `ui ]
-"31
-[; ;math_src.c: 31:     prev_hex= 0x09;
+"36
+[; ;math_src.c: 36:     if(limiter == '9')
+[e $ ! == -> _limiter `ui -> 57 `ui 102  ]
+"37
+[; ;math_src.c: 37:     prev_hex= 0x09;
 [e = _prev_hex -> -> 9 `i `uc ]
-"32
-[; ;math_src.c: 32:     val--;
+[e :U 102 ]
+"38
+[; ;math_src.c: 38:     if(limiter == 'J')
+[e $ ! == -> _limiter `ui -> 74 `ui 103  ]
+"39
+[; ;math_src.c: 39:         prev_hex = 0x19;
+[e = _prev_hex -> -> 25 `i `uc ]
+[e :U 103 ]
+"40
+[; ;math_src.c: 40:     if(limiter == 'Y')
+[e $ ! == -> _limiter `ui -> 89 `ui 104  ]
+"41
+[; ;math_src.c: 41:         prev_hex = 0x29;
+[e = _prev_hex -> -> 41 `i `uc ]
+[e :U 104 ]
+"42
+[; ;math_src.c: 42:     if(limiter == 'j')
+[e $ ! == -> _limiter `ui -> 106 `ui 105  ]
+"43
+[; ;math_src.c: 43:         prev_hex =0x39;
+[e = _prev_hex -> -> 57 `i `uc ]
+[e :U 105 ]
+"44
+[; ;math_src.c: 44:     if(limiter == 'z')
+[e $ ! == -> _limiter `ui -> 122 `ui 106  ]
+"45
+[; ;math_src.c: 45:         prev_hex = 0x49;
+[e = _prev_hex -> -> 73 `i `uc ]
+[e :U 106 ]
+"46
+[; ;math_src.c: 46:     val--;
 [e -- _val -> -> 1 `i `uc ]
-"33
-[; ;math_src.c: 33:     }
+"47
+[; ;math_src.c: 47:     }
 }
 [e :U 101 ]
-"34
-[; ;math_src.c: 34:     return val;
+"48
+[; ;math_src.c: 48:     return val;
 [e ) _val ]
 [e $UE 100  ]
-"35
-[; ;math_src.c: 35: }
+"49
+[; ;math_src.c: 49: }
 [e :UE 100 ]
 }
-"37
-[; ;math_src.c: 37: char time_date_hex_terminator(char val, char limiter){
+"51
+[; ;math_src.c: 51: char time_date_hex_terminator(char val, char limiter){
 [v _time_date_hex_terminator `(uc ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _time_date_hex_terminator ]
 [v _val `uc ~T0 @X0 1 r1 ]
 [v _limiter `uc ~T0 @X0 1 r2 ]
 [f ]
-"38
-[; ;math_src.c: 38:     if((val + '0') == limiter){
-[e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 103  ]
+"52
+[; ;math_src.c: 52:     if((val + '0') == limiter){
+[e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 108  ]
 {
-"39
-[; ;math_src.c: 39:     val = 0x00;
+"53
+[; ;math_src.c: 53:     val = 0x00;
 [e = _val -> -> 0 `i `uc ]
-"40
-[; ;math_src.c: 40:     }
+"54
+[; ;math_src.c: 54:     }
 }
-[e :U 103 ]
-"41
-[; ;math_src.c: 41:     return val;
+[e :U 108 ]
+"55
+[; ;math_src.c: 55:     return val;
 [e ) _val ]
-[e $UE 102  ]
-"42
-[; ;math_src.c: 42: }
-[e :UE 102 ]
+[e $UE 107  ]
+"56
+[; ;math_src.c: 56: }
+[e :UE 107 ]
 }

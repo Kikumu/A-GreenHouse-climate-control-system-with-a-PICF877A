@@ -35,8 +35,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7
 [; ;./math_driver.h: 7: char incrementor(int,int,char);
 [v _incrementor `(uc ~T0 @X0 0 ef3`i`i`uc ]
-"29 ./Button_driver.h
-[; ;./Button_driver.h: 29: void button_delay();
+"32 ./Button_driver.h
+[; ;./Button_driver.h: 32: void button_delay();
 [v _button_delay `(v ~T0 @X0 0 e? ]
 "2722 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2722: extern volatile __bit RC6 __attribute__((address(0x3E)));
@@ -289,14 +289,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Button_driver.h: 21: unsigned char prev_hex;
 [v _prev_hex `uc ~T0 @X0 1 e ]
 "22
-[; ;./Button_driver.h: 22: unsigned int p;
-[v _p `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 22: unsigned char prev_hex_day;
+[v _prev_hex_day `uc ~T0 @X0 1 e ]
 "23
-[; ;./Button_driver.h: 23: unsigned int var_night_low;
-[v _var_night_low `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 23: unsigned char prev_hex_year;
+[v _prev_hex_year `uc ~T0 @X0 1 e ]
 "24
-[; ;./Button_driver.h: 24: unsigned int var_night_high;
-[v _var_night_high `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 24: unsigned char prev_hex_hours;
+[v _prev_hex_hours `uc ~T0 @X0 1 e ]
+"25
+[; ;./Button_driver.h: 25: unsigned char prev_hex_mins;
+[v _prev_hex_mins `uc ~T0 @X0 1 e ]
+"26
+[; ;./Button_driver.h: 26: unsigned int d_type;
+[v _d_type `ui ~T0 @X0 1 e ]
+"27
+[; ;./Button_driver.h: 27: unsigned int p;
+[v _p `ui ~T0 @X0 1 e ]
 "13 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 13: unsigned char TLV=0 ;
 [v _TLV `uc ~T0 @X0 1 e ]
@@ -366,6 +375,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9
 [; ;./Buzzer_driver.h: 9: char var2;
 [v _var2 `uc ~T0 @X0 1 e ]
+"10
+[; ;./Buzzer_driver.h: 10: unsigned int var_night_low;
+[v _var_night_low `ui ~T0 @X0 1 e ]
+"11
+[; ;./Buzzer_driver.h: 11: unsigned int var_night_high;
+[v _var_night_high `ui ~T0 @X0 1 e ]
 "6 ./Day_of_week_driver.h
 [; ;./Day_of_week_driver.h: 6: int day_counter;
 [v _day_counter `i ~T0 @X0 1 e ]
@@ -1740,26 +1755,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Button_src.c: 471:                     c = time_date_delimiter(c,0x51,'z');
 [e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 81 `i `uc -> -> 122 `ui `uc `uc ]
 "473
-[; ;Button_src.c: 473:                     if(stats==0)
+[; ;Button_src.c: 473:               if(stats==0)
 [e $ ! == _stats -> -> 0 `i `ui 159  ]
 "474
-[; ;Button_src.c: 474:                         table[4] = prev_hex;
+[; ;Button_src.c: 474:                  table[4] = prev_hex;
 [e = *U + &U _table * -> -> -> 4 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex `uc ]
 [e $U 160  ]
 "475
-[; ;Button_src.c: 475:                     else if(stats==1)
+[; ;Button_src.c: 475:               else if(stats==1)
 [e :U 159 ]
 [e $ ! == _stats -> -> 1 `i `ui 161  ]
 "476
-[; ;Button_src.c: 476:                         table[4]= a;
+[; ;Button_src.c: 476:                  table[4]= a;
 [e = *U + &U _table * -> -> -> 4 `i `ui `ux -> -> # *U &U _table `ui `ux -> _a `uc ]
 [e :U 161 ]
 [e :U 160 ]
 "477
-[; ;Button_src.c: 477:              table[6] = c;
+[; ;Button_src.c: 477:               table[6] = c;
 [e = *U + &U _table * -> -> -> 6 `i `ui `ux -> -> # *U &U _table `ui `ux -> _c `uc ]
 "478
-[; ;Button_src.c: 478:              table[3] = day_hex;
+[; ;Button_src.c: 478:               table[3] = day_hex;
 [e = *U + &U _table * -> -> -> 3 `i `ui `ux -> -> # *U &U _table `ui `ux -> _day_hex `uc ]
 "479
 [; ;Button_src.c: 479:              write_cmd(0x88);

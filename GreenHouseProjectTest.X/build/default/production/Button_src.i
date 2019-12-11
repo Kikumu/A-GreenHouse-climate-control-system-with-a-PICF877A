@@ -1753,9 +1753,12 @@ unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
 unsigned char prev_hex;
+unsigned char prev_hex_day;
+unsigned char prev_hex_year;
+unsigned char prev_hex_hours;
+unsigned char prev_hex_mins;
+unsigned int d_type;
 unsigned int p;
-unsigned int var_night_low;
-unsigned int var_night_high;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1827,7 +1830,8 @@ void delay_time();
 
 char var1;
 char var2;
-
+unsigned int var_night_low;
+unsigned int var_night_high;
 
 
 void set_beep_threshhold(char x);
@@ -2320,12 +2324,12 @@ void date_settings(){
                     c = time_date_delimiter(c,0x41,'j');
                     c = time_date_delimiter(c,0x51,'z');
 
-                    if(stats==0)
-                        table[4] = prev_hex;
-                    else if(stats==1)
-                        table[4]= a;
-             table[6] = c;
-             table[3] = day_hex;
+              if(stats==0)
+                 table[4] = prev_hex;
+              else if(stats==1)
+                 table[4]= a;
+              table[6] = c;
+              table[3] = day_hex;
              write_cmd(0x88);
 
                   RC0 = 0;

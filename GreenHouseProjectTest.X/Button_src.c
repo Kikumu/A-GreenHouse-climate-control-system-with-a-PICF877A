@@ -470,12 +470,12 @@ void date_settings(){
                     c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
                     c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
             //holding state== done. saving state............fuk
-                    if(stats==0)
-                        table[4] = prev_hex;          //month
-                    else if(stats==1)
-                        table[4]= a;
-             table[6] = c;          //year
-             table[3] = day_hex;    //day
+              if(stats==0)
+                 table[4] = prev_hex;          //month
+              else if(stats==1)
+                 table[4]= a;
+              table[6] = c;          //year
+              table[3] = day_hex;    //day
              write_cmd(0x88);
                    
                   RC0 = 0;

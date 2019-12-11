@@ -1757,9 +1757,12 @@ unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
 unsigned char prev_hex;
+unsigned char prev_hex_day;
+unsigned char prev_hex_year;
+unsigned char prev_hex_hours;
+unsigned char prev_hex_mins;
+unsigned int d_type;
 unsigned int p;
-unsigned int var_night_low;
-unsigned int var_night_high;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();
@@ -1800,11 +1803,25 @@ char decrementor(int lower_val,int upper_val ,char z){
      return lower_val;
 }
 
+
+
+
+
+
 char time_date_delimiter(char val,char hex,char limiter){
     if((val + '0') == limiter){
     val = hex;
     stats=0;
+    if(limiter == '9')
     prev_hex= 0x09;
+    if(limiter == 'J')
+        prev_hex = 0x19;
+    if(limiter == 'Y')
+        prev_hex = 0x29;
+    if(limiter == 'j')
+        prev_hex =0x39;
+    if(limiter == 'z')
+        prev_hex = 0x49;
     val--;
     }
     return val;

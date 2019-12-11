@@ -254,6 +254,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9
 [; ;./Buzzer_driver.h: 9: char var2;
 [v _var2 `uc ~T0 @X0 1 e ]
+"10
+[; ;./Buzzer_driver.h: 10: unsigned int var_night_low;
+[v _var_night_low `ui ~T0 @X0 1 e ]
+"11
+[; ;./Buzzer_driver.h: 11: unsigned int var_night_high;
+[v _var_night_high `ui ~T0 @X0 1 e ]
 "4 ./SystemHeader.h
 [p x FOSC = HS ]
 "5
@@ -310,14 +316,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Button_driver.h: 21: unsigned char prev_hex;
 [v _prev_hex `uc ~T0 @X0 1 e ]
 "22
-[; ;./Button_driver.h: 22: unsigned int p;
-[v _p `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 22: unsigned char prev_hex_day;
+[v _prev_hex_day `uc ~T0 @X0 1 e ]
 "23
-[; ;./Button_driver.h: 23: unsigned int var_night_low;
-[v _var_night_low `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 23: unsigned char prev_hex_year;
+[v _prev_hex_year `uc ~T0 @X0 1 e ]
 "24
-[; ;./Button_driver.h: 24: unsigned int var_night_high;
-[v _var_night_high `ui ~T0 @X0 1 e ]
+[; ;./Button_driver.h: 24: unsigned char prev_hex_hours;
+[v _prev_hex_hours `uc ~T0 @X0 1 e ]
+"25
+[; ;./Button_driver.h: 25: unsigned char prev_hex_mins;
+[v _prev_hex_mins `uc ~T0 @X0 1 e ]
+"26
+[; ;./Button_driver.h: 26: unsigned int d_type;
+[v _d_type `ui ~T0 @X0 1 e ]
+"27
+[; ;./Button_driver.h: 27: unsigned int p;
+[v _p `ui ~T0 @X0 1 e ]
 "6 Thermometer_src.c
 [; ;Thermometer_src.c: 6: void init_temp()
 [v _init_temp `(v ~T0 @X0 1 ef ]
@@ -519,7 +534,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _value -> -> 0 `i `uc ]
 "66
 [; ;Thermometer_src.c: 66:  static _Bool j;
-[v F918 `a ~T0 @X0 1 s j ]
+[v F923 `a ~T0 @X0 1 s j ]
 "67
 [; ;Thermometer_src.c: 67:  for(i=8;i>0;i--)
 {
@@ -575,10 +590,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( ___nop ..  ]
 "83
 [; ;Thermometer_src.c: 83:    j=RE0;
-[e = F918 -> _RE0 `a ]
+[e = F923 -> _RE0 `a ]
 "84
 [; ;Thermometer_src.c: 84:    if(j) value|=0x80;
-[e $ ! != -> F918 `i -> 0 `i 112  ]
+[e $ ! != -> F923 `i -> 0 `i 112  ]
 [e =| _value -> -> 128 `i `uc ]
 [e :U 112 ]
 "85

@@ -1760,7 +1760,8 @@ void delay2();
 
 char var1;
 char var2;
-
+unsigned int var_night_low;
+unsigned int var_night_high;
 
 
 void set_beep_threshhold(char x);
@@ -1798,9 +1799,12 @@ unsigned int day_high;
 unsigned int day_of_week_var;
 unsigned int stats;
 unsigned char prev_hex;
+unsigned char prev_hex_day;
+unsigned char prev_hex_year;
+unsigned char prev_hex_hours;
+unsigned char prev_hex_mins;
+unsigned int d_type;
 unsigned int p;
-unsigned int var_night_low;
-unsigned int var_night_high;
 void thermometer_threshhold_settings();
 void date_settings();
 void time_settings();

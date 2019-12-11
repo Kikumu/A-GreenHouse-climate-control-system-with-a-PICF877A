@@ -7,7 +7,8 @@
 #define beep_alert RE2
 char var1;
 char var2;
-
+unsigned int var_night_low;
+unsigned int var_night_high;
 
 
 void set_beep_threshhold(char x);
