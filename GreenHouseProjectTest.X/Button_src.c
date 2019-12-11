@@ -245,8 +245,15 @@ void time_settings(){
             }
             //---------------24HR-LIMIT-TIME-CODE-AND-DISPLAY-----------------//
              write_cmd(0x88);
-                    table[2] = a; 
-                    table[1] = c;
+              if(stats==0){
+                  table[2] = prev_hex_hours;               //month
+                  table[1] = prev_hex_mins;          //year
+              }     
+              else if(stats==1)
+              {
+                 table[2]=  a;          //month
+                 table[1] = c;          //year
+              }
                     //write_char(y + '0');
                     //write_char(x + '0');
                    // write_char(a + '0');

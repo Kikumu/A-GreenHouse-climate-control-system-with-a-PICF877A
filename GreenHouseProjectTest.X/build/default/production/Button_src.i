@@ -2099,8 +2099,15 @@ void time_settings(){
             }
 
              write_cmd(0x88);
-                    table[2] = a;
-                    table[1] = c;
+              if(stats==0){
+                  table[2] = prev_hex_hours;
+                  table[1] = prev_hex_mins;
+              }
+              else if(stats==1)
+              {
+                 table[2]= a;
+                 table[1] = c;
+              }
 
 
 
@@ -2162,9 +2169,6 @@ void time_settings(){
                     b = 'y';
                   }
                    write_cmd(0x88);
-
-
-
 
 
 
@@ -2324,12 +2328,18 @@ void date_settings(){
                     c = time_date_delimiter(c,0x41,'j',3);
                     c = time_date_delimiter(c,0x51,'z',3);
 
-              if(stats==0)
-                 table[4] = prev_hex;
+              if(stats==0){
+                  table[4] = prev_hex;
+                  table[6] = prev_hex_year;
+                  table[3] = prev_hex_day;
+              }
               else if(stats==1)
+              {
                  table[4]= a;
-              table[6] = c;
-              table[3] = day_hex;
+                 table[6] = c;
+                 table[3] = day_hex;
+              }
+
              write_cmd(0x88);
 
                   RC0 = 0;
