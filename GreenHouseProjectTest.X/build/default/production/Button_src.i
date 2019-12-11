@@ -1804,21 +1804,33 @@ void delay2();
 # 4 "Button_src.c" 2
 
 # 1 "./clock_driver.h" 1
-# 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
-char table1[7];
 
 
 
-void ds1302_init();
-void set_time();
-void get_time();
-void display_clock();
-void display_date();
-void time_write_1(unsigned char time_tx);
-unsigned char time_read_1();
-void delay_time();
-# 5 "Button_src.c" 2
+
+
+# 1 "./clock_driver.h" 1
+# 6 "./clock_driver.h" 2
+
+# 1 "./Threshold_driver.h" 1
+
+
+
+
+
+
+
+unsigned char upper_t;
+unsigned char lower_t;
+char buzzer_watcher;
+char buzzer_watcher1;
+int count;
+unsigned char heater_state;
+unsigned char cooler_state;
+char set_upper_threshold(int,int);
+char set_lower_threshold(int,int);
+char reset_alarm();
+# 7 "./clock_driver.h" 2
 
 # 1 "./Buzzer_driver.h" 1
 
@@ -1832,10 +1844,27 @@ char var1;
 char var2;
 unsigned int var_night_low;
 unsigned int var_night_high;
-
+unsigned char alarm__;
 
 void set_beep_threshhold(char x);
-# 6 "Button_src.c" 2
+# 8 "./clock_driver.h" 2
+# 23 "./clock_driver.h"
+char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
+char table1[7];
+char temp_low;
+char temp_high;
+
+
+void ds1302_init();
+void set_time();
+void get_time();
+void display_clock();
+void display_date();
+void time_write_1(unsigned char time_tx);
+unsigned char time_read_1();
+void delay_time();
+# 5 "Button_src.c" 2
+
 
 # 1 "./math_driver.h" 1
 
@@ -1869,7 +1898,7 @@ void initialise_buttons(){
     b = 0x00;
     c = 0x00;
     z = 0;
-    day_low = 12;
+    day_low = 0;
     stats = 1;
     p = 0;
 }
@@ -1957,6 +1986,10 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){
                         var1 = y;
                         var2 = x;
+                        x = 0;
+                        y = 0;
+                        w = 0;
+                        t = 0;
 
                         write_cmd(0x1);
                         write_char('S');
@@ -1995,6 +2028,10 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){
                         var1 = w;
                         var2 = t;
+                        x = 0;
+                        y = 0;
+                        w = 0;
+                        t = 0;
 
                         write_cmd(0x1);
                         write_char('S');
@@ -2010,6 +2047,10 @@ void thermometer_threshhold_settings(){
             RC2 = 1;
             RC3 = 1;
             if (RC7 == 0 ){
+                        x = 0;
+                        y = 0;
+                        w = 0;
+                        t = 0;
             write_cmd(0x1);
             return;
             }
@@ -2108,8 +2149,6 @@ void time_settings(){
                  table[2]= a;
                  table[1] = c;
               }
-
-
 
 
                     a = time_date_delimiter(a,0x11,'9',4);

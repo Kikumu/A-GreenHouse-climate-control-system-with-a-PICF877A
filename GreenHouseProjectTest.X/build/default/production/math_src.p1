@@ -333,8 +333,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;math_src.c: 25: }
 [e :UE 98 ]
 }
-"32
-[; ;math_src.c: 32: char time_date_delimiter(char val,char hex,char limiter, int type){
+"28
+[; ;math_src.c: 28: char time_date_delimiter(char val,char hex,char limiter, int type){
 [v _time_date_delimiter `(uc ~T0 @X0 1 ef4`uc`uc`uc`i ]
 {
 [e :U _time_date_delimiter ]
@@ -343,230 +343,230 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _limiter `uc ~T0 @X0 1 r3 ]
 [v _type `i ~T0 @X0 1 r4 ]
 [f ]
-"33
-[; ;math_src.c: 33:     if((val + '0') == limiter){
+"29
+[; ;math_src.c: 29:     if((val + '0') == limiter){
 [e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 101  ]
 {
-"34
-[; ;math_src.c: 34:     val = hex;
+"30
+[; ;math_src.c: 30:     val = hex;
 [e = _val _hex ]
-"35
-[; ;math_src.c: 35:     stats=0;
+"31
+[; ;math_src.c: 31:     stats=0;
 [e = _stats -> -> 0 `i `ui ]
-"36
-[; ;math_src.c: 36:     if(limiter == '9' && type ==1)
+"32
+[; ;math_src.c: 32:     if(limiter == '9' && type ==1)
 [e $ ! && == -> _limiter `ui -> 57 `ui == _type -> 1 `i 102  ]
-"37
-[; ;math_src.c: 37:         prev_hex= 0x09;
+"33
+[; ;math_src.c: 33:         prev_hex= 0x09;
 [e = _prev_hex -> -> 9 `i `uc ]
 [e :U 102 ]
-"38
-[; ;math_src.c: 38:     if(limiter == 'J'&& type ==1)
+"34
+[; ;math_src.c: 34:     if(limiter == 'J'&& type ==1)
 [e $ ! && == -> _limiter `ui -> 74 `ui == _type -> 1 `i 103  ]
-"39
-[; ;math_src.c: 39:         prev_hex = 0x19;
+"35
+[; ;math_src.c: 35:         prev_hex = 0x19;
 [e = _prev_hex -> -> 25 `i `uc ]
 [e :U 103 ]
-"40
-[; ;math_src.c: 40:     if(limiter == 'Y'&& type ==1)
+"36
+[; ;math_src.c: 36:     if(limiter == 'Y'&& type ==1)
 [e $ ! && == -> _limiter `ui -> 89 `ui == _type -> 1 `i 104  ]
-"41
-[; ;math_src.c: 41:         prev_hex = 0x29;
+"37
+[; ;math_src.c: 37:         prev_hex = 0x29;
 [e = _prev_hex -> -> 41 `i `uc ]
 [e :U 104 ]
-"42
-[; ;math_src.c: 42:     if(limiter == 'j'&& type ==1)
+"38
+[; ;math_src.c: 38:     if(limiter == 'j'&& type ==1)
 [e $ ! && == -> _limiter `ui -> 106 `ui == _type -> 1 `i 105  ]
-"43
-[; ;math_src.c: 43:         prev_hex =0x39;
+"39
+[; ;math_src.c: 39:         prev_hex =0x39;
 [e = _prev_hex -> -> 57 `i `uc ]
 [e :U 105 ]
-"44
-[; ;math_src.c: 44:     if(limiter == 'z'&& type ==1)
+"40
+[; ;math_src.c: 40:     if(limiter == 'z'&& type ==1)
 [e $ ! && == -> _limiter `ui -> 122 `ui == _type -> 1 `i 106  ]
-"45
-[; ;math_src.c: 45:         prev_hex = 0x49;
+"41
+[; ;math_src.c: 41:         prev_hex = 0x49;
 [e = _prev_hex -> -> 73 `i `uc ]
 [e :U 106 ]
-"46
-[; ;math_src.c: 46:     if(limiter == '9' && type ==2)
+"42
+[; ;math_src.c: 42:     if(limiter == '9' && type ==2)
 [e $ ! && == -> _limiter `ui -> 57 `ui == _type -> 2 `i 107  ]
-"47
-[; ;math_src.c: 47:         prev_hex_day= 0x09;
+"43
+[; ;math_src.c: 43:         prev_hex_day= 0x09;
 [e = _prev_hex_day -> -> 9 `i `uc ]
 [e :U 107 ]
-"48
-[; ;math_src.c: 48:     if(limiter == 'J'&& type ==2)
+"44
+[; ;math_src.c: 44:     if(limiter == 'J'&& type ==2)
 [e $ ! && == -> _limiter `ui -> 74 `ui == _type -> 2 `i 108  ]
-"49
-[; ;math_src.c: 49:         prev_hex_day = 0x19;
+"45
+[; ;math_src.c: 45:         prev_hex_day = 0x19;
 [e = _prev_hex_day -> -> 25 `i `uc ]
 [e :U 108 ]
-"50
-[; ;math_src.c: 50:     if(limiter == 'Y'&& type ==2)
+"46
+[; ;math_src.c: 46:     if(limiter == 'Y'&& type ==2)
 [e $ ! && == -> _limiter `ui -> 89 `ui == _type -> 2 `i 109  ]
-"51
-[; ;math_src.c: 51:         prev_hex_day = 0x29;
+"47
+[; ;math_src.c: 47:         prev_hex_day = 0x29;
 [e = _prev_hex_day -> -> 41 `i `uc ]
 [e :U 109 ]
-"52
-[; ;math_src.c: 52:     if(limiter == 'j'&& type ==2)
+"48
+[; ;math_src.c: 48:     if(limiter == 'j'&& type ==2)
 [e $ ! && == -> _limiter `ui -> 106 `ui == _type -> 2 `i 110  ]
-"53
-[; ;math_src.c: 53:         prev_hex_day =0x39;
+"49
+[; ;math_src.c: 49:         prev_hex_day =0x39;
 [e = _prev_hex_day -> -> 57 `i `uc ]
 [e :U 110 ]
-"54
-[; ;math_src.c: 54:     if(limiter == 'z'&& type ==2)
+"50
+[; ;math_src.c: 50:     if(limiter == 'z'&& type ==2)
 [e $ ! && == -> _limiter `ui -> 122 `ui == _type -> 2 `i 111  ]
-"55
-[; ;math_src.c: 55:         prev_hex_day = 0x49;
+"51
+[; ;math_src.c: 51:         prev_hex_day = 0x49;
 [e = _prev_hex_day -> -> 73 `i `uc ]
 [e :U 111 ]
-"56
-[; ;math_src.c: 56:     if(limiter == '9' && type ==3)
+"52
+[; ;math_src.c: 52:     if(limiter == '9' && type ==3)
 [e $ ! && == -> _limiter `ui -> 57 `ui == _type -> 3 `i 112  ]
-"57
-[; ;math_src.c: 57:         prev_hex_year= 0x09;
+"53
+[; ;math_src.c: 53:         prev_hex_year= 0x09;
 [e = _prev_hex_year -> -> 9 `i `uc ]
 [e :U 112 ]
-"58
-[; ;math_src.c: 58:     if(limiter == 'J'&& type ==3)
+"54
+[; ;math_src.c: 54:     if(limiter == 'J'&& type ==3)
 [e $ ! && == -> _limiter `ui -> 74 `ui == _type -> 3 `i 113  ]
-"59
-[; ;math_src.c: 59:         prev_hex_year = 0x19;
+"55
+[; ;math_src.c: 55:         prev_hex_year = 0x19;
 [e = _prev_hex_year -> -> 25 `i `uc ]
 [e :U 113 ]
-"60
-[; ;math_src.c: 60:     if(limiter == 'Y'&& type ==3)
+"56
+[; ;math_src.c: 56:     if(limiter == 'Y'&& type ==3)
 [e $ ! && == -> _limiter `ui -> 89 `ui == _type -> 3 `i 114  ]
-"61
-[; ;math_src.c: 61:         prev_hex_year = 0x29;
+"57
+[; ;math_src.c: 57:         prev_hex_year = 0x29;
 [e = _prev_hex_year -> -> 41 `i `uc ]
 [e :U 114 ]
-"62
-[; ;math_src.c: 62:     if(limiter == 'j'&& type ==3)
+"58
+[; ;math_src.c: 58:     if(limiter == 'j'&& type ==3)
 [e $ ! && == -> _limiter `ui -> 106 `ui == _type -> 3 `i 115  ]
-"63
-[; ;math_src.c: 63:         prev_hex_year =0x39;
+"59
+[; ;math_src.c: 59:         prev_hex_year =0x39;
 [e = _prev_hex_year -> -> 57 `i `uc ]
 [e :U 115 ]
-"64
-[; ;math_src.c: 64:     if(limiter == 'z'&& type ==3)
+"60
+[; ;math_src.c: 60:     if(limiter == 'z'&& type ==3)
 [e $ ! && == -> _limiter `ui -> 122 `ui == _type -> 3 `i 116  ]
-"65
-[; ;math_src.c: 65:         prev_hex_year = 0x49;
+"61
+[; ;math_src.c: 61:         prev_hex_year = 0x49;
 [e = _prev_hex_year -> -> 73 `i `uc ]
 [e :U 116 ]
-"66
-[; ;math_src.c: 66:      if(limiter == '9' && type ==4)
+"62
+[; ;math_src.c: 62:      if(limiter == '9' && type ==4)
 [e $ ! && == -> _limiter `ui -> 57 `ui == _type -> 4 `i 117  ]
-"67
-[; ;math_src.c: 67:         prev_hex_hours= 0x09;
+"63
+[; ;math_src.c: 63:         prev_hex_hours= 0x09;
 [e = _prev_hex_hours -> -> 9 `i `uc ]
 [e :U 117 ]
-"68
-[; ;math_src.c: 68:     if(limiter == 'J'&& type ==4)
+"64
+[; ;math_src.c: 64:     if(limiter == 'J'&& type ==4)
 [e $ ! && == -> _limiter `ui -> 74 `ui == _type -> 4 `i 118  ]
-"69
-[; ;math_src.c: 69:         prev_hex_hours = 0x19;
+"65
+[; ;math_src.c: 65:         prev_hex_hours = 0x19;
 [e = _prev_hex_hours -> -> 25 `i `uc ]
 [e :U 118 ]
-"70
-[; ;math_src.c: 70:     if(limiter == 'Y'&& type ==4)
+"66
+[; ;math_src.c: 66:     if(limiter == 'Y'&& type ==4)
 [e $ ! && == -> _limiter `ui -> 89 `ui == _type -> 4 `i 119  ]
-"71
-[; ;math_src.c: 71:         prev_hex_hours = 0x29;
+"67
+[; ;math_src.c: 67:         prev_hex_hours = 0x29;
 [e = _prev_hex_hours -> -> 41 `i `uc ]
 [e :U 119 ]
-"72
-[; ;math_src.c: 72:     if(limiter == 'j'&& type ==4)
+"68
+[; ;math_src.c: 68:     if(limiter == 'j'&& type ==4)
 [e $ ! && == -> _limiter `ui -> 106 `ui == _type -> 4 `i 120  ]
-"73
-[; ;math_src.c: 73:         prev_hex_hours =0x39;
+"69
+[; ;math_src.c: 69:         prev_hex_hours =0x39;
 [e = _prev_hex_hours -> -> 57 `i `uc ]
 [e :U 120 ]
-"74
-[; ;math_src.c: 74:     if(limiter == 'z'&& type ==4)
+"70
+[; ;math_src.c: 70:     if(limiter == 'z'&& type ==4)
 [e $ ! && == -> _limiter `ui -> 122 `ui == _type -> 4 `i 121  ]
-"75
-[; ;math_src.c: 75:         prev_hex_hours = 0x49;
+"71
+[; ;math_src.c: 71:         prev_hex_hours = 0x49;
 [e = _prev_hex_hours -> -> 73 `i `uc ]
 [e :U 121 ]
-"76
-[; ;math_src.c: 76:      if(limiter == '9' && type ==5)
+"72
+[; ;math_src.c: 72:      if(limiter == '9' && type ==5)
 [e $ ! && == -> _limiter `ui -> 57 `ui == _type -> 5 `i 122  ]
-"77
-[; ;math_src.c: 77:         prev_hex_mins= 0x09;
+"73
+[; ;math_src.c: 73:         prev_hex_mins= 0x09;
 [e = _prev_hex_mins -> -> 9 `i `uc ]
 [e :U 122 ]
-"78
-[; ;math_src.c: 78:     if(limiter == 'J'&& type ==5)
+"74
+[; ;math_src.c: 74:     if(limiter == 'J'&& type ==5)
 [e $ ! && == -> _limiter `ui -> 74 `ui == _type -> 5 `i 123  ]
-"79
-[; ;math_src.c: 79:         prev_hex_mins = 0x19;
+"75
+[; ;math_src.c: 75:         prev_hex_mins = 0x19;
 [e = _prev_hex_mins -> -> 25 `i `uc ]
 [e :U 123 ]
-"80
-[; ;math_src.c: 80:     if(limiter == 'Y'&& type ==5)
+"76
+[; ;math_src.c: 76:     if(limiter == 'Y'&& type ==5)
 [e $ ! && == -> _limiter `ui -> 89 `ui == _type -> 5 `i 124  ]
-"81
-[; ;math_src.c: 81:         prev_hex_mins = 0x29;
+"77
+[; ;math_src.c: 77:         prev_hex_mins = 0x29;
 [e = _prev_hex_mins -> -> 41 `i `uc ]
 [e :U 124 ]
-"82
-[; ;math_src.c: 82:     if(limiter == 'j'&& type ==5)
+"78
+[; ;math_src.c: 78:     if(limiter == 'j'&& type ==5)
 [e $ ! && == -> _limiter `ui -> 106 `ui == _type -> 5 `i 125  ]
-"83
-[; ;math_src.c: 83:         prev_hex_mins =0x39;
+"79
+[; ;math_src.c: 79:         prev_hex_mins =0x39;
 [e = _prev_hex_mins -> -> 57 `i `uc ]
 [e :U 125 ]
-"84
-[; ;math_src.c: 84:     if(limiter == 'z'&& type ==5)
+"80
+[; ;math_src.c: 80:     if(limiter == 'z'&& type ==5)
 [e $ ! && == -> _limiter `ui -> 122 `ui == _type -> 5 `i 126  ]
-"85
-[; ;math_src.c: 85:         prev_hex_mins = 0x49;
+"81
+[; ;math_src.c: 81:         prev_hex_mins = 0x49;
 [e = _prev_hex_mins -> -> 73 `i `uc ]
 [e :U 126 ]
-"86
-[; ;math_src.c: 86:     val--;
+"82
+[; ;math_src.c: 82:     val--;
 [e -- _val -> -> 1 `i `uc ]
-"87
-[; ;math_src.c: 87:     }
+"83
+[; ;math_src.c: 83:     }
 }
 [e :U 101 ]
-"88
-[; ;math_src.c: 88:     return val;
+"84
+[; ;math_src.c: 84:     return val;
 [e ) _val ]
 [e $UE 100  ]
-"89
-[; ;math_src.c: 89: }
+"85
+[; ;math_src.c: 85: }
 [e :UE 100 ]
 }
-"91
-[; ;math_src.c: 91: char time_date_hex_terminator(char val, char limiter){
+"87
+[; ;math_src.c: 87: char time_date_hex_terminator(char val, char limiter){
 [v _time_date_hex_terminator `(uc ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _time_date_hex_terminator ]
 [v _val `uc ~T0 @X0 1 r1 ]
 [v _limiter `uc ~T0 @X0 1 r2 ]
 [f ]
-"92
-[; ;math_src.c: 92:     if((val + '0') == limiter){
+"88
+[; ;math_src.c: 88:     if((val + '0') == limiter){
 [e $ ! == + -> _val `ui -> 48 `ui -> _limiter `ui 128  ]
 {
-"93
-[; ;math_src.c: 93:     val = 0x00;
+"89
+[; ;math_src.c: 89:     val = 0x00;
 [e = _val -> -> 0 `i `uc ]
-"94
-[; ;math_src.c: 94:     }
+"90
+[; ;math_src.c: 90:     }
 }
 [e :U 128 ]
-"95
-[; ;math_src.c: 95:     return val;
+"91
+[; ;math_src.c: 91:     return val;
 [e ) _val ]
 [e $UE 127  ]
-"96
-[; ;math_src.c: 96: }
+"92
+[; ;math_src.c: 92: }
 [e :UE 127 ]
 }

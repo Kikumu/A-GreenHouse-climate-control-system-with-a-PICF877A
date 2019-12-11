@@ -1771,36 +1771,45 @@ unsigned char lower_t;
 char buzzer_watcher;
 char buzzer_watcher1;
 int count;
-void set_upper_threshold(int,int);
-void set_lower_threshold(int,int);
-void reset_alarm();
+unsigned char heater_state;
+unsigned char cooler_state;
+char set_upper_threshold(int,int);
+char set_lower_threshold(int,int);
+char reset_alarm();
 # 1 "threshold_src.c" 2
 
 
 
-void set_upper_threshold(int upper_val,int lower_val){
-    if(shi == upper_val && ge > lower_val && count == 2){
-    buzzer_watcher = 'w';
+char set_upper_threshold(int upper_val,int lower_val){
+    if(shi >= upper_val && ge >= lower_val && count == 2){
+
+    heater_state = '0';
+    cooler_state = '1';
     write_char('W');
     write_char('A');
     write_char('R');
     write_char('M');
+
     }
+    return buzzer_watcher;
 }
 
-void set_lower_threshold(int upper_val,int lower_val){
-    if((shi == upper_val && ge <= lower_val)|| ge == lower_val)
+char set_lower_threshold(int upper_val,int lower_val){
+    if((shi <= upper_val && ge < lower_val))
     {
     count = 2;
     buzzer_watcher = 'x';
+    heater_state = '0';
+    cooler_state = '0';
     write_char('O');
     write_char('K');
     write_char(' ');
     write_char(' ');
     }
+    return buzzer_watcher;
 }
 
-void reset_alarm(){
+char reset_alarm(){
     RC0 = 1;
     RC1 = 1;
     RC2 = 1;
@@ -1808,5 +1817,11 @@ void reset_alarm(){
     if(RC4 == 0){
         count = 0;
         buzzer_watcher = 'x';
+        write_char('R');
+        write_char('E');
+        write_char('S');
+        write_char('E');
+        write_char('T');
     }
+    return buzzer_watcher;
 }

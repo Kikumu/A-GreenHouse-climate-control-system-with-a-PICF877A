@@ -242,6 +242,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;./Buzzer_driver.h: 11: unsigned int var_night_high;
 [v _var_night_high `ui ~T0 @X0 1 e ]
+"12
+[; ;./Buzzer_driver.h: 12: unsigned char alarm__;
+[v _alarm__ `uc ~T0 @X0 1 e ]
 "4 ./SystemHeader.h
 [p x FOSC = HS ]
 "5

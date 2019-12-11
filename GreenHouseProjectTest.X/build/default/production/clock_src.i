@@ -7,6 +7,10 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "clock_src.c" 2
+# 1 "./clock_driver.h" 1
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 1 3
 
 
@@ -1720,7 +1724,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
-# 1 "clock_src.c" 2
+# 4 "./clock_driver.h" 2
 
 # 1 "./LCD_driver.h" 1
 # 12 "./LCD_driver.h"
@@ -1730,13 +1734,77 @@ void write_char(char x);
 void write_cmd(char x);
 void delay_lcd();
 void delay_screen();
-# 2 "clock_src.c" 2
+# 5 "./clock_driver.h" 2
 
 # 1 "./clock_driver.h" 1
-# 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
-char table1[7];
+# 6 "./clock_driver.h" 2
 
+# 1 "./Threshold_driver.h" 1
+
+
+
+# 1 "./Thermometer_driver.h" 1
+# 13 "./Thermometer_driver.h"
+unsigned char TLV=0 ;
+unsigned char THV=0;
+unsigned char TZ=0;
+unsigned char TX=0;
+unsigned int wd;
+
+unsigned char shi;
+unsigned char ge;
+unsigned char shifen;
+unsigned char baifen;
+unsigned char qianfen;
+unsigned char wanfen;
+
+
+void init_temp();
+void display_temp();
+void reset_temp(void);
+void write_byte(unsigned char val);
+unsigned char read_byte(void);
+void get_temp();
+void delay_temp(char , char );
+void delay2();
+# 4 "./Threshold_driver.h" 2
+
+
+
+
+unsigned char upper_t;
+unsigned char lower_t;
+char buzzer_watcher;
+char buzzer_watcher1;
+int count;
+unsigned char heater_state;
+unsigned char cooler_state;
+char set_upper_threshold(int,int);
+char set_lower_threshold(int,int);
+char reset_alarm();
+# 7 "./clock_driver.h" 2
+
+# 1 "./Buzzer_driver.h" 1
+
+
+
+
+
+
+
+char var1;
+char var2;
+unsigned int var_night_low;
+unsigned int var_night_high;
+unsigned char alarm__;
+
+void set_beep_threshhold(char x);
+# 8 "./clock_driver.h" 2
+# 23 "./clock_driver.h"
+char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
+char table1[7];
+char temp_low;
+char temp_high;
 
 
 void ds1302_init();
@@ -1747,8 +1815,7 @@ void display_date();
 void time_write_1(unsigned char time_tx);
 unsigned char time_read_1();
 void delay_time();
-# 3 "clock_src.c" 2
-
+# 1 "clock_src.c" 2
 
 
 void ds1302_init()
@@ -1794,13 +1861,13 @@ void display_clock()
      i=table1[2]&0xf0;
      i=i>>4;
      write_char(i + '0');
-
+     temp_high = i;
 
 
      i=table1[2]&0x0f;
      write_char(i + '0');
      write_char(':');
-
+     temp_low = i;
 
 
      i=table1[1]&0xf0;
@@ -1820,6 +1887,7 @@ void display_clock()
 
      i=table1[0]&0x0f;
      write_char(i + '0');
+
 
 
 

@@ -17,7 +17,8 @@ void main() {
     lcd_init();                           //LCD init
     init_temp();                          //Initialise temperature variables
     initialise_buttons();                 //Initialise button variables
-    
+    var1 = 2;
+    var2 = 4;
     
     
     while(1){
@@ -52,11 +53,20 @@ void main() {
     date_settings();                     //access date settings
     time_settings();                     //access time settings
     write_cmd(0x98);
-    set_lower_threshold(2,4);
-    set_upper_threshold(2,4);
-    set_beep_threshhold(buzzer_watcher);
-    reset_alarm();
-    for(int i = 0; i < 7; i++)
+     if((temp_high+'0') == '0' && (temp_low + '0') == '0'){
+    alarm__ = set_lower_threshold(var1,var2);
+    alarm__ = set_upper_threshold(var1,var2);
+    }
+    alarm__ = reset_alarm();
+    set_beep_threshhold(alarm__);
+    write_char(' ');
+    write_char('H');
+    write_char(':');
+    write_char(heater_state);
+    write_char('C');
+    write_char(':');
+    write_char(cooler_state);
+    for(int i = 0; i < 3; i++)
     write_char(' ');
     day_counter = modulus_func(day_low,8);
     display_day(day_counter);

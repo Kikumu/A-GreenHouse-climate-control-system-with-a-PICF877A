@@ -10,7 +10,9 @@ unsigned char lower_t;
 char buzzer_watcher;
 char buzzer_watcher1;
 int count;
-void set_upper_threshold(int,int);
-void set_lower_threshold(int,int);
-void reset_alarm();
+unsigned char heater_state;
+unsigned char cooler_state;
+char set_upper_threshold(int,int);
+char set_lower_threshold(int,int);
+char reset_alarm();
 #endif

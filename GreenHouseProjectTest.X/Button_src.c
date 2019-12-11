@@ -15,7 +15,7 @@ void initialise_buttons(){
     b = 0x00;    //b utton chooser
     c = 0x00;    //m ins increments
     z = 0;       //base increment
-    day_low = 12;
+    day_low = 0;
     stats = 1;
     p = 0;
 }
@@ -103,6 +103,10 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){ 
                         var1 = y;
                         var2 = x;
+                        x = 0;
+                        y = 0;
+                        w = 0;
+                        t = 0;
                         //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
                         write_char('S');
@@ -141,6 +145,10 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){
                         var1 = w;
                         var2 = t;
+                        x = 0;
+                        y = 0;
+                        w = 0;
+                        t = 0;
                         //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
                         write_char('S');
@@ -156,6 +164,10 @@ void thermometer_threshhold_settings(){
             RC2 = 1;
             RC3 = 1;
             if (RC7 == 0 ){
+                        x = 0;
+                        y = 0;
+                        w = 0;
+                        t = 0;
             write_cmd(0x1);
             return;   
             }
@@ -246,18 +258,16 @@ void time_settings(){
             //---------------24HR-LIMIT-TIME-CODE-AND-DISPLAY-----------------//
              write_cmd(0x88);
               if(stats==0){
-                  table[2] = prev_hex_hours;               //month
-                  table[1] = prev_hex_mins;          //year
+                  table[2] = prev_hex_hours;               //hrs
+                  table[1] = prev_hex_mins;                //mins
               }     
               else if(stats==1)
               {
-                 table[2]=  a;          //month
-                 table[1] = c;          //year
+                 table[2]=  a;                            //hrs
+                 table[1] = c;                            //mins
               }
-                    //write_char(y + '0');
-                    //write_char(x + '0');
-                   // write_char(a + '0');
-            //--------------HOURS-CONTROL-HEX---------------------------------//
+     
+           //--------------HOURS-CONTROL-HEX-----------------------------------//
                     a = time_date_delimiter(a,0x11,'9',4);//ABOVE 9
                     a = time_date_delimiter(a,0x21,'J',4);//ABOVE 19
            //--------------------MINS LIMITER-HEX-----------------------------//      

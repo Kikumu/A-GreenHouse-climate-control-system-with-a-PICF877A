@@ -24,11 +24,7 @@ char decrementor(int lower_val,int upper_val ,char z){
      return lower_val;
 }
 
-//                    c = time_date_delimiter(c,0x11,'9');//ABOVE 9
-//                    c = time_date_delimiter(c,0x21,'J');//ABOVE 19
-//                    c = time_date_delimiter(c,0x31,'Y'); //ABOVE 29
-//                    c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
-//                    c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
+
 char time_date_delimiter(char val,char hex,char limiter, int type){
     if((val + '0') == limiter){
     val = hex;

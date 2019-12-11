@@ -1,7 +1,4 @@
-#include <pic.h>
-#include "LCD_driver.h"
 #include "clock_driver.h"
-
 
 void ds1302_init()                    //DS1302 initilize subroutine.
 {
@@ -46,13 +43,13 @@ void display_clock()                  //display subroutine.
      i=table1[2]&0xf0;                //sec's high
      i=i>>4;                          //rotate right for 4 bits.
      write_char(i + '0');
-     
+     temp_high = i;
      
      
      i=table1[2]&0x0f;                //sec's low.
      write_char(i + '0');
      write_char(':');
-        
+     temp_low = i;     
      
                                        
      i=table1[1]&0xf0;                //min's high                 
@@ -68,12 +65,13 @@ void display_clock()                  //display subroutine.
      i=table1[0]&0xf0;                //hour's high                 
      i=i>>4;                          //rotate right for 4 bits.   
      write_char(i + '0');
-           
+            
      
      i=table1[0]&0x0f;                //hour's low.             
      write_char(i + '0');    
-                       
+                     
      
+    
      
 }
 void display_date()                   //disply date subroutine

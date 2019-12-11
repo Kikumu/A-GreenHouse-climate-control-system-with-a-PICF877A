@@ -1772,10 +1772,55 @@ void delay2();
 # 3 "mainLogic.c" 2
 
 # 1 "./clock_driver.h" 1
-# 19 "./clock_driver.h"
-char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
-char table1[7];
 
+
+
+
+
+# 1 "./clock_driver.h" 1
+# 6 "./clock_driver.h" 2
+
+# 1 "./Threshold_driver.h" 1
+
+
+
+
+
+
+
+unsigned char upper_t;
+unsigned char lower_t;
+char buzzer_watcher;
+char buzzer_watcher1;
+int count;
+unsigned char heater_state;
+unsigned char cooler_state;
+char set_upper_threshold(int,int);
+char set_lower_threshold(int,int);
+char reset_alarm();
+# 7 "./clock_driver.h" 2
+
+# 1 "./Buzzer_driver.h" 1
+
+
+
+
+
+
+
+char var1;
+char var2;
+unsigned int var_night_low;
+unsigned int var_night_high;
+unsigned char alarm__;
+
+void set_beep_threshhold(char x);
+# 8 "./clock_driver.h" 2
+# 23 "./clock_driver.h"
+char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
+char table1[7];
+char temp_low;
+char temp_high;
 
 
 void ds1302_init();
@@ -1823,40 +1868,7 @@ void initialise_buttons();
 void button_delay();
 # 5 "mainLogic.c" 2
 
-# 1 "./Threshold_driver.h" 1
 
-
-
-
-
-
-
-unsigned char upper_t;
-unsigned char lower_t;
-char buzzer_watcher;
-char buzzer_watcher1;
-int count;
-void set_upper_threshold(int,int);
-void set_lower_threshold(int,int);
-void reset_alarm();
-# 6 "mainLogic.c" 2
-
-# 1 "./Buzzer_driver.h" 1
-
-
-
-
-
-
-
-char var1;
-char var2;
-unsigned int var_night_low;
-unsigned int var_night_high;
-
-
-void set_beep_threshhold(char x);
-# 7 "mainLogic.c" 2
 
 # 1 "./Day_of_week_driver.h" 1
 
@@ -1891,7 +1903,8 @@ void main() {
     lcd_init();
     init_temp();
     initialise_buttons();
-
+    var1 = 2;
+    var2 = 4;
 
 
     while(1){
@@ -1926,11 +1939,20 @@ void main() {
     date_settings();
     time_settings();
     write_cmd(0x98);
-    set_lower_threshold(2,4);
-    set_upper_threshold(2,4);
-    set_beep_threshhold(buzzer_watcher);
-    reset_alarm();
-    for(int i = 0; i < 7; i++)
+     if((temp_high+'0') == '0' && (temp_low + '0') == '0'){
+    alarm__ = set_lower_threshold(var1,var2);
+    alarm__ = set_upper_threshold(var1,var2);
+    }
+    alarm__ = reset_alarm();
+    set_beep_threshhold(alarm__);
+    write_char(' ');
+    write_char('H');
+    write_char(':');
+    write_char(heater_state);
+    write_char('C');
+    write_char(':');
+    write_char(cooler_state);
+    for(int i = 0; i < 3; i++)
     write_char(' ');
     day_counter = modulus_func(day_low,8);
     display_day(day_counter);

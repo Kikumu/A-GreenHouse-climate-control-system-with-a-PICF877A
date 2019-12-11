@@ -5,11 +5,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2689
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2689: extern volatile __bit RB5 __attribute__((address(0x35)));
 [v _RB5 `Vb ~T0 @X0 0 e@53 ]
-"29 ./clock_driver.h
-[; ;./clock_driver.h: 29: void time_write_1(unsigned char time_tx);
+"34 ./clock_driver.h
+[; ;./clock_driver.h: 34: void time_write_1(unsigned char time_tx);
 [v _time_write_1 `(v ~T0 @X0 0 ef1`uc ]
-"30
-[; ;./clock_driver.h: 30: unsigned char time_read_1();
+"35
+[; ;./clock_driver.h: 35: unsigned char time_read_1();
 [v _time_read_1 `(uc ~T0 @X0 0 e? ]
 "2677 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2677: extern volatile __bit RB1 __attribute__((address(0x31)));
@@ -203,14 +203,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"19 ./clock_driver.h
-[; ;./clock_driver.h: 19: char table[]={0,0x00,0x40,0x12,0x12,0x06,0x19,0x00};
+"13 ./Thermometer_driver.h
+[; ;./Thermometer_driver.h: 13: unsigned char TLV=0 ;
+[v _TLV `uc ~T0 @X0 1 e ]
+[i _TLV
+-> -> 0 `i `uc
+]
+"14
+[; ;./Thermometer_driver.h: 14: unsigned char THV=0;
+[v _THV `uc ~T0 @X0 1 e ]
+[i _THV
+-> -> 0 `i `uc
+]
+"15
+[; ;./Thermometer_driver.h: 15: unsigned char TZ=0;
+[v _TZ `uc ~T0 @X0 1 e ]
+[i _TZ
+-> -> 0 `i `uc
+]
+"16
+[; ;./Thermometer_driver.h: 16: unsigned char TX=0;
+[v _TX `uc ~T0 @X0 1 e ]
+[i _TX
+-> -> 0 `i `uc
+]
+"17
+[; ;./Thermometer_driver.h: 17: unsigned int wd;
+[v _wd `ui ~T0 @X0 1 e ]
+"19
+[; ;./Thermometer_driver.h: 19: unsigned char shi;
+[v _shi `uc ~T0 @X0 1 e ]
+"20
+[; ;./Thermometer_driver.h: 20: unsigned char ge;
+[v _ge `uc ~T0 @X0 1 e ]
+"21
+[; ;./Thermometer_driver.h: 21: unsigned char shifen;
+[v _shifen `uc ~T0 @X0 1 e ]
+"22
+[; ;./Thermometer_driver.h: 22: unsigned char baifen;
+[v _baifen `uc ~T0 @X0 1 e ]
+"23
+[; ;./Thermometer_driver.h: 23: unsigned char qianfen;
+[v _qianfen `uc ~T0 @X0 1 e ]
+"24
+[; ;./Thermometer_driver.h: 24: unsigned char wanfen;
+[v _wanfen `uc ~T0 @X0 1 e ]
+"8 ./Threshold_driver.h
+[; ;./Threshold_driver.h: 8: unsigned char upper_t;
+[v _upper_t `uc ~T0 @X0 1 e ]
+"9
+[; ;./Threshold_driver.h: 9: unsigned char lower_t;
+[v _lower_t `uc ~T0 @X0 1 e ]
+"10
+[; ;./Threshold_driver.h: 10: char buzzer_watcher;
+[v _buzzer_watcher `uc ~T0 @X0 1 e ]
+"11
+[; ;./Threshold_driver.h: 11: char buzzer_watcher1;
+[v _buzzer_watcher1 `uc ~T0 @X0 1 e ]
+"12
+[; ;./Threshold_driver.h: 12: int count;
+[v _count `i ~T0 @X0 1 e ]
+"13
+[; ;./Threshold_driver.h: 13: unsigned char heater_state;
+[v _heater_state `uc ~T0 @X0 1 e ]
+"14
+[; ;./Threshold_driver.h: 14: unsigned char cooler_state;
+[v _cooler_state `uc ~T0 @X0 1 e ]
+"8 ./Buzzer_driver.h
+[; ;./Buzzer_driver.h: 8: char var1;
+[v _var1 `uc ~T0 @X0 1 e ]
+"9
+[; ;./Buzzer_driver.h: 9: char var2;
+[v _var2 `uc ~T0 @X0 1 e ]
+"10
+[; ;./Buzzer_driver.h: 10: unsigned int var_night_low;
+[v _var_night_low `ui ~T0 @X0 1 e ]
+"11
+[; ;./Buzzer_driver.h: 11: unsigned int var_night_high;
+[v _var_night_high `ui ~T0 @X0 1 e ]
+"12
+[; ;./Buzzer_driver.h: 12: unsigned char alarm__;
+[v _alarm__ `uc ~T0 @X0 1 e ]
+"23 ./clock_driver.h
+[; ;./clock_driver.h: 23: char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
 [v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
 -> -> 0 `i `uc
+-> -> 2 `i `uc
 -> -> 0 `i `uc
--> -> 64 `i `uc
 -> -> 18 `i `uc
 -> -> 18 `i `uc
 -> -> 6 `i `uc
@@ -218,432 +299,444 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"20
-[; ;./clock_driver.h: 20: char table1[7];
+"24
+[; ;./clock_driver.h: 24: char table1[7];
 [v _table1 `uc ~T0 @X0 -> 7 `i e ]
-"6 clock_src.c
-[; ;clock_src.c: 6: void ds1302_init()
+"25
+[; ;./clock_driver.h: 25: char temp_low;
+[v _temp_low `uc ~T0 @X0 1 e ]
+"26
+[; ;./clock_driver.h: 26: char temp_high;
+[v _temp_high `uc ~T0 @X0 1 e ]
+"3 clock_src.c
+[; ;clock_src.c: 3: void ds1302_init()
 [v _ds1302_init `(v ~T0 @X0 1 ef ]
-"7
-[; ;clock_src.c: 7: {
+"4
+[; ;clock_src.c: 4: {
 {
 [e :U _ds1302_init ]
 [f ]
-"8
-[; ;clock_src.c: 8:    RB0=0;
+"5
+[; ;clock_src.c: 5:    RB0=0;
 [e = _RB0 -> -> 0 `i `b ]
-"9
-[; ;clock_src.c: 9:    RB5 =0;
+"6
+[; ;clock_src.c: 6:    RB5 =0;
 [e = _RB5 -> -> 0 `i `b ]
-"10
-[; ;clock_src.c: 10:    RB5=1;
+"7
+[; ;clock_src.c: 7:    RB5=1;
 [e = _RB5 -> -> 1 `i `b ]
-"11
-[; ;clock_src.c: 11:    time_write_1(0x8e);
+"8
+[; ;clock_src.c: 8:    time_write_1(0x8e);
 [e ( _time_write_1 (1 -> -> 142 `i `uc ]
-"12
-[; ;clock_src.c: 12:    time_write_1(0);
+"9
+[; ;clock_src.c: 9:    time_write_1(0);
 [e ( _time_write_1 (1 -> -> 0 `i `uc ]
-"13
-[; ;clock_src.c: 13:    RB5=0;
+"10
+[; ;clock_src.c: 10:    RB5=0;
 [e = _RB5 -> -> 0 `i `b ]
-"14
-[; ;clock_src.c: 14: }
+"11
+[; ;clock_src.c: 11: }
 [e :UE 95 ]
 }
-"15
-[; ;clock_src.c: 15: void set_time()
+"12
+[; ;clock_src.c: 12: void set_time()
 [v _set_time `(v ~T0 @X0 1 ef ]
-"16
-[; ;clock_src.c: 16: {
+"13
+[; ;clock_src.c: 13: {
 {
 [e :U _set_time ]
 [f ]
-"17
-[; ;clock_src.c: 17:    int i;
+"14
+[; ;clock_src.c: 14:    int i;
 [v _i `i ~T0 @X0 1 a ]
-"18
-[; ;clock_src.c: 18:    RB5=1;
+"15
+[; ;clock_src.c: 15:    RB5=1;
 [e = _RB5 -> -> 1 `i `b ]
-"19
-[; ;clock_src.c: 19:    time_write_1(0xbe);
+"16
+[; ;clock_src.c: 16:    time_write_1(0xbe);
 [e ( _time_write_1 (1 -> -> 190 `i `uc ]
-"20
-[; ;clock_src.c: 20:    for(i=0;i<8;i++)
+"17
+[; ;clock_src.c: 17:    for(i=0;i<8;i++)
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 8 `i 97  ]
 [e $U 98  ]
 [e :U 97 ]
-"21
-[; ;clock_src.c: 21:      {
+"18
+[; ;clock_src.c: 18:      {
 {
-"22
-[; ;clock_src.c: 22:        time_write_1(table[i]);
+"19
+[; ;clock_src.c: 19:        time_write_1(table[i]);
 [e ( _time_write_1 (1 -> *U + &U _table * -> -> _i `ui `ux -> -> # *U &U _table `ui `ux `uc ]
-"23
-[; ;clock_src.c: 23:      }
+"20
+[; ;clock_src.c: 20:      }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 97  ]
 [e :U 98 ]
 }
-"24
-[; ;clock_src.c: 24:    RB5=0;
+"21
+[; ;clock_src.c: 21:    RB5=0;
 [e = _RB5 -> -> 0 `i `b ]
-"25
-[; ;clock_src.c: 25: }
+"22
+[; ;clock_src.c: 22: }
 [e :UE 96 ]
 }
-"26
-[; ;clock_src.c: 26: void get_time()
+"23
+[; ;clock_src.c: 23: void get_time()
 [v _get_time `(v ~T0 @X0 1 ef ]
-"27
-[; ;clock_src.c: 27: {
+"24
+[; ;clock_src.c: 24: {
 {
 [e :U _get_time ]
 [f ]
-"28
-[; ;clock_src.c: 28:    int i;
+"25
+[; ;clock_src.c: 25:    int i;
 [v _i `i ~T0 @X0 1 a ]
-"29
-[; ;clock_src.c: 29:    RB5=1;
+"26
+[; ;clock_src.c: 26:    RB5=1;
 [e = _RB5 -> -> 1 `i `b ]
-"30
-[; ;clock_src.c: 30:    time_write_1(0xbf);
+"27
+[; ;clock_src.c: 27:    time_write_1(0xbf);
 [e ( _time_write_1 (1 -> -> 191 `i `uc ]
-"31
-[; ;clock_src.c: 31:    for(i=0;i<7;i++)
+"28
+[; ;clock_src.c: 28:    for(i=0;i<7;i++)
 {
 [e = _i -> 0 `i ]
 [e $ < _i -> 7 `i 101  ]
 [e $U 102  ]
 [e :U 101 ]
-"32
-[; ;clock_src.c: 32:      {
+"29
+[; ;clock_src.c: 29:      {
 {
-"33
-[; ;clock_src.c: 33:         table1[i]=time_read_1();
+"30
+[; ;clock_src.c: 30:         table1[i]=time_read_1();
 [e = *U + &U _table1 * -> -> _i `ui `ux -> -> # *U &U _table1 `ui `ux -> ( _time_read_1 ..  `uc ]
-"34
-[; ;clock_src.c: 34:      }
+"31
+[; ;clock_src.c: 31:      }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 7 `i 101  ]
 [e :U 102 ]
 }
-"35
-[; ;clock_src.c: 35:    RB5=0;
+"32
+[; ;clock_src.c: 32:    RB5=0;
 [e = _RB5 -> -> 0 `i `b ]
-"36
-[; ;clock_src.c: 36: }
+"33
+[; ;clock_src.c: 33: }
 [e :UE 100 ]
 }
-"37
-[; ;clock_src.c: 37: void display_clock()
+"34
+[; ;clock_src.c: 34: void display_clock()
 [v _display_clock `(v ~T0 @X0 1 ef ]
-"38
-[; ;clock_src.c: 38: {
+"35
+[; ;clock_src.c: 35: {
 {
 [e :U _display_clock ]
 [f ]
-"39
-[; ;clock_src.c: 39:      int i;
+"36
+[; ;clock_src.c: 36:      int i;
 [v _i `i ~T0 @X0 1 a ]
-"40
-[; ;clock_src.c: 40:      if(RB1==0)
+"37
+[; ;clock_src.c: 37:      if(RB1==0)
 [e $ ! == -> _RB1 `i -> 0 `i 105  ]
-"41
-[; ;clock_src.c: 41:        {
+"38
+[; ;clock_src.c: 38:        {
 {
-"42
-[; ;clock_src.c: 42:           table1[0]=table1[3];
+"39
+[; ;clock_src.c: 39:           table1[0]=table1[3];
 [e = *U + &U _table1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _table1 `ui `ux *U + &U _table1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _table1 `ui `ux ]
-"43
-[; ;clock_src.c: 43:           table1[1]=table1[4];
+"40
+[; ;clock_src.c: 40:           table1[1]=table1[4];
 [e = *U + &U _table1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _table1 `ui `ux *U + &U _table1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _table1 `ui `ux ]
-"44
-[; ;clock_src.c: 44:        }
+"41
+[; ;clock_src.c: 41:        }
 }
 [e :U 105 ]
-"46
-[; ;clock_src.c: 46:      i=table1[2]&0xf0;
+"43
+[; ;clock_src.c: 43:      i=table1[2]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
-"47
-[; ;clock_src.c: 47:      i=i>>4;
+"44
+[; ;clock_src.c: 44:      i=i>>4;
 [e = _i >> _i -> 4 `i ]
-"48
-[; ;clock_src.c: 48:      write_char(i + '0');
+"45
+[; ;clock_src.c: 45:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"52
-[; ;clock_src.c: 52:      i=table1[2]&0x0f;
+"46
+[; ;clock_src.c: 46:      temp_high = i;
+[e = _temp_high -> _i `uc ]
+"49
+[; ;clock_src.c: 49:      i=table1[2]&0x0f;
 [e = _i & -> *U + &U _table1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
-"53
-[; ;clock_src.c: 53:      write_char(i + '0');
+"50
+[; ;clock_src.c: 50:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"54
-[; ;clock_src.c: 54:      write_char(':');
+"51
+[; ;clock_src.c: 51:      write_char(':');
 [e ( _write_char (1 -> -> 58 `ui `uc ]
-"58
-[; ;clock_src.c: 58:      i=table1[1]&0xf0;
+"52
+[; ;clock_src.c: 52:      temp_low = i;
+[e = _temp_low -> _i `uc ]
+"55
+[; ;clock_src.c: 55:      i=table1[1]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
-"59
-[; ;clock_src.c: 59:      i=i>>4;
+"56
+[; ;clock_src.c: 56:      i=i>>4;
 [e = _i >> _i -> 4 `i ]
+"57
+[; ;clock_src.c: 57:      write_char(i + '0');
+[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "60
-[; ;clock_src.c: 60:      write_char(i + '0');
-[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"63
-[; ;clock_src.c: 63:      i=table1[1]&0x0f;
+[; ;clock_src.c: 60:      i=table1[1]&0x0f;
 [e = _i & -> *U + &U _table1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
-"64
-[; ;clock_src.c: 64:      write_char(i + '0');
+"61
+[; ;clock_src.c: 61:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"65
-[; ;clock_src.c: 65:      write_char(':');
+"62
+[; ;clock_src.c: 62:      write_char(':');
 [e ( _write_char (1 -> -> 58 `ui `uc ]
-"68
-[; ;clock_src.c: 68:      i=table1[0]&0xf0;
+"65
+[; ;clock_src.c: 65:      i=table1[0]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
-"69
-[; ;clock_src.c: 69:      i=i>>4;
+"66
+[; ;clock_src.c: 66:      i=i>>4;
 [e = _i >> _i -> 4 `i ]
+"67
+[; ;clock_src.c: 67:      write_char(i + '0');
+[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "70
-[; ;clock_src.c: 70:      write_char(i + '0');
-[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"73
-[; ;clock_src.c: 73:      i=table1[0]&0x0f;
+[; ;clock_src.c: 70:      i=table1[0]&0x0f;
 [e = _i & -> *U + &U _table1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
-"74
-[; ;clock_src.c: 74:      write_char(i + '0');
+"71
+[; ;clock_src.c: 71:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"78
-[; ;clock_src.c: 78: }
+"76
+[; ;clock_src.c: 76: }
 [e :UE 104 ]
 }
-"79
-[; ;clock_src.c: 79: void display_date()
+"77
+[; ;clock_src.c: 77: void display_date()
 [v _display_date `(v ~T0 @X0 1 ef ]
-"80
-[; ;clock_src.c: 80: {
+"78
+[; ;clock_src.c: 78: {
 {
 [e :U _display_date ]
 [f ]
-"81
-[; ;clock_src.c: 81:      int i;
+"79
+[; ;clock_src.c: 79:      int i;
 [v _i `i ~T0 @X0 1 a ]
-"82
-[; ;clock_src.c: 82:      if(RB1==0)
+"80
+[; ;clock_src.c: 80:      if(RB1==0)
 [e $ ! == -> _RB1 `i -> 0 `i 107  ]
-"83
-[; ;clock_src.c: 83:        {
+"81
+[; ;clock_src.c: 81:        {
 {
-"84
-[; ;clock_src.c: 84:           table1[0]=table1[3];
+"82
+[; ;clock_src.c: 82:           table1[0]=table1[3];
 [e = *U + &U _table1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _table1 `ui `ux *U + &U _table1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _table1 `ui `ux ]
-"85
-[; ;clock_src.c: 85:           table1[1]=table1[4];
+"83
+[; ;clock_src.c: 83:           table1[1]=table1[4];
 [e = *U + &U _table1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _table1 `ui `ux *U + &U _table1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _table1 `ui `ux ]
-"86
-[; ;clock_src.c: 86:        }
+"84
+[; ;clock_src.c: 84:        }
 }
 [e :U 107 ]
-"87
-[; ;clock_src.c: 87:      i=table1[3]&0xf0;
+"85
+[; ;clock_src.c: 85:      i=table1[3]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
-"88
-[; ;clock_src.c: 88:      i=i>>4;
+"86
+[; ;clock_src.c: 86:      i=i>>4;
 [e = _i >> _i -> 4 `i ]
+"87
+[; ;clock_src.c: 87:      write_char(i + '0');
+[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "89
-[; ;clock_src.c: 89:      write_char(i + '0');
+[; ;clock_src.c: 89:      i=table1[3]&0x0f;
+[e = _i & -> *U + &U _table1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
+"90
+[; ;clock_src.c: 90:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "91
-[; ;clock_src.c: 91:      i=table1[3]&0x0f;
-[e = _i & -> *U + &U _table1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
-"92
-[; ;clock_src.c: 92:      write_char(i + '0');
-[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"93
-[; ;clock_src.c: 93:      write_char('/');
+[; ;clock_src.c: 91:      write_char('/');
 [e ( _write_char (1 -> -> 47 `ui `uc ]
-"97
-[; ;clock_src.c: 97:      i=table1[4]&0xf0;
+"95
+[; ;clock_src.c: 95:      i=table1[4]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
-"98
-[; ;clock_src.c: 98:      i=i>>4;
+"96
+[; ;clock_src.c: 96:      i=i>>4;
 [e = _i >> _i -> 4 `i ]
+"97
+[; ;clock_src.c: 97:      write_char(i + '0');
+[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "99
-[; ;clock_src.c: 99:      write_char(i + '0');
+[; ;clock_src.c: 99:      i=table1[4]&0x0f;
+[e = _i & -> *U + &U _table1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
+"100
+[; ;clock_src.c: 100:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "101
-[; ;clock_src.c: 101:      i=table1[4]&0x0f;
-[e = _i & -> *U + &U _table1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
-"102
-[; ;clock_src.c: 102:      write_char(i + '0');
-[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"103
-[; ;clock_src.c: 103:      write_char('/');
+[; ;clock_src.c: 101:      write_char('/');
 [e ( _write_char (1 -> -> 47 `ui `uc ]
-"107
-[; ;clock_src.c: 107:      i=table1[6]&0xf0;
+"105
+[; ;clock_src.c: 105:      i=table1[6]&0xf0;
 [e = _i & -> *U + &U _table1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 240 `i ]
-"108
-[; ;clock_src.c: 108:      i=i>>4;
+"106
+[; ;clock_src.c: 106:      i=i>>4;
 [e = _i >> _i -> 4 `i ]
+"107
+[; ;clock_src.c: 107:      write_char(i + '0');
+[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
 "109
-[; ;clock_src.c: 109:      write_char(i + '0');
-[e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"111
-[; ;clock_src.c: 111:      i=table1[6]&0x0f;
+[; ;clock_src.c: 109:      i=table1[6]&0x0f;
 [e = _i & -> *U + &U _table1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _table1 `ui `ux `i -> 15 `i ]
-"112
-[; ;clock_src.c: 112:      write_char(i + '0');
+"110
+[; ;clock_src.c: 110:      write_char(i + '0');
 [e ( _write_char (1 -> + -> _i `ui -> 48 `ui `uc ]
-"115
-[; ;clock_src.c: 115: }
+"113
+[; ;clock_src.c: 113: }
 [e :UE 106 ]
 }
-"116
-[; ;clock_src.c: 116: void time_write_1(unsigned char time_tx)
+"114
+[; ;clock_src.c: 114: void time_write_1(unsigned char time_tx)
 [v _time_write_1 `(v ~T0 @X0 1 ef1`uc ]
-"117
-[; ;clock_src.c: 117: {
+"115
+[; ;clock_src.c: 115: {
 {
 [e :U _time_write_1 ]
-"116
-[; ;clock_src.c: 116: void time_write_1(unsigned char time_tx)
+"114
+[; ;clock_src.c: 114: void time_write_1(unsigned char time_tx)
 [v _time_tx `uc ~T0 @X0 1 r1 ]
-"117
-[; ;clock_src.c: 117: {
+"115
+[; ;clock_src.c: 115: {
 [f ]
-"118
-[; ;clock_src.c: 118:     int j;
+"116
+[; ;clock_src.c: 116:     int j;
 [v _j `i ~T0 @X0 1 a ]
-"119
-[; ;clock_src.c: 119:     for(j=0;j<8;j++)
+"117
+[; ;clock_src.c: 117:     for(j=0;j<8;j++)
 {
 [e = _j -> 0 `i ]
 [e $ < _j -> 8 `i 109  ]
 [e $U 110  ]
 [e :U 109 ]
-"120
-[; ;clock_src.c: 120:    {
+"118
+[; ;clock_src.c: 118:    {
 {
-"121
-[; ;clock_src.c: 121:         RB4=0;
+"119
+[; ;clock_src.c: 119:         RB4=0;
 [e = _RB4 -> -> 0 `i `b ]
-"122
-[; ;clock_src.c: 122:         RB0=0;
+"120
+[; ;clock_src.c: 120:         RB0=0;
 [e = _RB0 -> -> 0 `i `b ]
-"123
-[; ;clock_src.c: 123:         if(time_tx&0x01)
+"121
+[; ;clock_src.c: 121:         if(time_tx&0x01)
 [e $ ! != & -> _time_tx `i -> 1 `i -> 0 `i 112  ]
-"124
-[; ;clock_src.c: 124:           {
+"122
+[; ;clock_src.c: 122:           {
 {
-"125
-[; ;clock_src.c: 125:             RB4=1;
+"123
+[; ;clock_src.c: 123:             RB4=1;
 [e = _RB4 -> -> 1 `i `b ]
-"126
-[; ;clock_src.c: 126:           }
+"124
+[; ;clock_src.c: 124:           }
 }
 [e :U 112 ]
-"127
-[; ;clock_src.c: 127:         time_tx=time_tx>>1;
+"125
+[; ;clock_src.c: 125:         time_tx=time_tx>>1;
 [e = _time_tx -> >> -> _time_tx `i -> 1 `i `uc ]
-"128
-[; ;clock_src.c: 128:         RB0=1;
+"126
+[; ;clock_src.c: 126:         RB0=1;
 [e = _RB0 -> -> 1 `i `b ]
-"129
-[; ;clock_src.c: 129:     }
+"127
+[; ;clock_src.c: 127:     }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 8 `i 109  ]
 [e :U 110 ]
 }
-"130
-[; ;clock_src.c: 130:       RB0=0;
+"128
+[; ;clock_src.c: 128:       RB0=0;
 [e = _RB0 -> -> 0 `i `b ]
-"131
-[; ;clock_src.c: 131: }
+"129
+[; ;clock_src.c: 129: }
 [e :UE 108 ]
 }
-"132
-[; ;clock_src.c: 132: unsigned char time_read_1()
+"130
+[; ;clock_src.c: 130: unsigned char time_read_1()
 [v _time_read_1 `(uc ~T0 @X0 1 ef ]
-"133
-[; ;clock_src.c: 133: {
+"131
+[; ;clock_src.c: 131: {
 {
 [e :U _time_read_1 ]
 [f ]
-"134
-[; ;clock_src.c: 134:    unsigned char time_rx=0;
+"132
+[; ;clock_src.c: 132:    unsigned char time_rx=0;
 [v _time_rx `uc ~T0 @X0 1 a ]
 [e = _time_rx -> -> 0 `i `uc ]
-"135
-[; ;clock_src.c: 135:    int j;
+"133
+[; ;clock_src.c: 133:    int j;
 [v _j `i ~T0 @X0 1 a ]
-"136
-[; ;clock_src.c: 136:    TRISB4=1;
+"134
+[; ;clock_src.c: 134:    TRISB4=1;
 [e = _TRISB4 -> -> 1 `i `b ]
-"137
-[; ;clock_src.c: 137:    for(j=0;j<8;j++)
+"135
+[; ;clock_src.c: 135:    for(j=0;j<8;j++)
 {
 [e = _j -> 0 `i ]
 [e $ < _j -> 8 `i 114  ]
 [e $U 115  ]
 [e :U 114 ]
-"138
-[; ;clock_src.c: 138:       {
+"136
+[; ;clock_src.c: 136:       {
 {
-"139
-[; ;clock_src.c: 139:         RB0=0;
+"137
+[; ;clock_src.c: 137:         RB0=0;
 [e = _RB0 -> -> 0 `i `b ]
-"140
-[; ;clock_src.c: 140:         time_rx=time_rx>>1;
+"138
+[; ;clock_src.c: 138:         time_rx=time_rx>>1;
 [e = _time_rx -> >> -> _time_rx `i -> 1 `i `uc ]
-"141
-[; ;clock_src.c: 141:         if(RB4)time_rx=time_rx|0x80;
+"139
+[; ;clock_src.c: 139:         if(RB4)time_rx=time_rx|0x80;
 [e $ ! _RB4 117  ]
 [e = _time_rx -> | -> _time_rx `i -> 128 `i `uc ]
 [e :U 117 ]
-"143
-[; ;clock_src.c: 143:        RB0=1;
+"141
+[; ;clock_src.c: 141:        RB0=1;
 [e = _RB0 -> -> 1 `i `b ]
-"144
-[; ;clock_src.c: 144:       }
+"142
+[; ;clock_src.c: 142:       }
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 8 `i 114  ]
 [e :U 115 ]
 }
-"145
-[; ;clock_src.c: 145:     TRISB4=0;
+"143
+[; ;clock_src.c: 143:     TRISB4=0;
 [e = _TRISB4 -> -> 0 `i `b ]
-"146
-[; ;clock_src.c: 146:     RB0=0;
+"144
+[; ;clock_src.c: 144:     RB0=0;
 [e = _RB0 -> -> 0 `i `b ]
-"147
-[; ;clock_src.c: 147:     return(time_rx);
+"145
+[; ;clock_src.c: 145:     return(time_rx);
 [e ) _time_rx ]
 [e $UE 113  ]
-"148
-[; ;clock_src.c: 148: }
+"146
+[; ;clock_src.c: 146: }
 [e :UE 113 ]
 }
-"149
-[; ;clock_src.c: 149: void delay_time()
+"147
+[; ;clock_src.c: 147: void delay_time()
 [v _delay_time `(v ~T0 @X0 1 ef ]
-"150
-[; ;clock_src.c: 150: {
+"148
+[; ;clock_src.c: 148: {
 {
 [e :U _delay_time ]
 [f ]
-"151
-[; ;clock_src.c: 151:      int i;
+"149
+[; ;clock_src.c: 149:      int i;
 [v _i `i ~T0 @X0 1 a ]
-"152
-[; ;clock_src.c: 152:      for(i=0x64;i--;);
+"150
+[; ;clock_src.c: 150:      for(i=0x64;i--;);
 {
 [e = _i -> 100 `i ]
 [e $U 122  ]
@@ -652,7 +745,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ != -- _i -> 1 `i -> 0 `i 119  ]
 [e :U 120 ]
 }
-"153
-[; ;clock_src.c: 153: }
+"151
+[; ;clock_src.c: 151: }
 [e :UE 118 ]
 }

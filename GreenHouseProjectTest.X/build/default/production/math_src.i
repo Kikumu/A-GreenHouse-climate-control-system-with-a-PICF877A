@@ -1804,10 +1804,6 @@ char decrementor(int lower_val,int upper_val ,char z){
 }
 
 
-
-
-
-
 char time_date_delimiter(char val,char hex,char limiter, int type){
     if((val + '0') == limiter){
     val = hex;

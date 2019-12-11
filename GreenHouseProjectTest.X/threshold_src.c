@@ -1,29 +1,36 @@
 #include "Threshold_driver.h"
 
 
-void set_upper_threshold(int upper_val,int lower_val){
-    if(shi ==  upper_val && ge  > lower_val && count == 2){
-    buzzer_watcher = 'w';  //alets sounder
+char set_upper_threshold(int upper_val,int lower_val){
+    if(shi >=  upper_val && ge  >= lower_val && count == 2){
+   // buzzer_watcher = 'w';  //alets sounder
+    heater_state = '0';
+    cooler_state = '1';
     write_char('W');
     write_char('A');
     write_char('R');
     write_char('M');
+    
     }
+    return buzzer_watcher;
 }
 
-void set_lower_threshold(int upper_val,int lower_val){
-    if((shi == upper_val && ge  <= lower_val)|| ge == lower_val)
+char set_lower_threshold(int upper_val,int lower_val){
+    if((shi <= upper_val && ge  < lower_val))
     {
     count = 2;
     buzzer_watcher = 'x'; //silence sounder
+    heater_state = '0';
+    cooler_state = '0';
     write_char('O');
     write_char('K');
     write_char(' ');
     write_char(' ');
     }
+    return buzzer_watcher;
 }
 //needs to be persistant
-void reset_alarm(){
+char reset_alarm(){
     RC0 = 1;
     RC1 = 1;
     RC2 = 1;
@@ -31,7 +38,13 @@ void reset_alarm(){
     if(RC4 == 0){
         count = 0;
         buzzer_watcher = 'x';
+        write_char('R');
+        write_char('E');
+        write_char('S');
+        write_char('E');
+        write_char('T');
     }
+    return buzzer_watcher;
 }
 
 //3 states, upper, lower, persistance
