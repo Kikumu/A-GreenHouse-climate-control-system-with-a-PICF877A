@@ -1846,7 +1846,7 @@ void set_beep_threshhold(char x);
 int modulus_func(int,int);
 char incrementor(int,int,char);
 char decrementor(int,int,char);
-char time_date_delimiter(char,char,char);
+char time_date_delimiter(char,char,char,int);
 char time_date_hex_terminator(char,char);
 # 7 "Button_src.c" 2
 
@@ -2105,14 +2105,14 @@ void time_settings(){
 
 
 
-                    a = time_date_delimiter(a,0x11,'9');
-                    a = time_date_delimiter(a,0x21,'J');
+                    a = time_date_delimiter(a,0x11,'9',4);
+                    a = time_date_delimiter(a,0x21,'J',4);
 
-                    c = time_date_delimiter(c,0x11,'9');
-                    c = time_date_delimiter(c,0x21,'J');
-                    c = time_date_delimiter(c,0x31,'Y');
-                    c = time_date_delimiter(c,0x41,'j');
-                    c = time_date_delimiter(c,0x51,'z');
+                    c = time_date_delimiter(c,0x11,'9',5);
+                    c = time_date_delimiter(c,0x21,'J',5);
+                    c = time_date_delimiter(c,0x31,'Y',5);
+                    c = time_date_delimiter(c,0x41,'j',5);
+                    c = time_date_delimiter(c,0x51,'z',5);
 
                   RC0 = 0;
                   RC1 = 1;
@@ -2308,21 +2308,21 @@ void date_settings(){
 
 
 
-                    a = time_date_delimiter(a,0x11,'9');
+                    a = time_date_delimiter(a,0x11,'9',1);
 
-                    day_hex = time_date_delimiter(day_hex,0x11,'9');
-                    day_hex = time_date_delimiter(day_hex,0x21,'J');
-                    day_hex = time_date_delimiter(day_hex,0x11,'9');
-                    day_hex = time_date_delimiter(day_hex,0x21,'J');
-                    day_hex = time_date_delimiter(day_hex,0x31,'Y');
+                    day_hex = time_date_delimiter(day_hex,0x11,'9',2);
+                    day_hex = time_date_delimiter(day_hex,0x21,'J',2);
+                    day_hex = time_date_delimiter(day_hex,0x11,'9',2);
+                    day_hex = time_date_delimiter(day_hex,0x21,'J',2);
+                    day_hex = time_date_delimiter(day_hex,0x31,'Y',2);
 
-                    c = time_date_delimiter(c,0x11,'9');
-                    c = time_date_delimiter(c,0x21,'J');
-                    c = time_date_delimiter(c,0x11,'9');
-                    c = time_date_delimiter(c,0x21,'J');
-                    c = time_date_delimiter(c,0x31,'Y');
-                    c = time_date_delimiter(c,0x41,'j');
-                    c = time_date_delimiter(c,0x51,'z');
+                    c = time_date_delimiter(c,0x11,'9',3);
+                    c = time_date_delimiter(c,0x21,'J',3);
+                    c = time_date_delimiter(c,0x11,'9',3);
+                    c = time_date_delimiter(c,0x21,'J',3);
+                    c = time_date_delimiter(c,0x31,'Y',3);
+                    c = time_date_delimiter(c,0x41,'j',3);
+                    c = time_date_delimiter(c,0x51,'z',3);
 
               if(stats==0)
                  table[4] = prev_hex;

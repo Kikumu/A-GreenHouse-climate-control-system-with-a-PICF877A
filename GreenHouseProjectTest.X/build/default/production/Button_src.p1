@@ -48,8 +48,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./math_driver.h: 10: char time_date_hex_terminator(char,char);
 [v _time_date_hex_terminator `(uc ~T0 @X0 0 ef2`uc`uc ]
 "9
-[; ;./math_driver.h: 9: char time_date_delimiter(char,char,char);
-[v _time_date_delimiter `(uc ~T0 @X0 0 ef3`uc`uc`uc ]
+[; ;./math_driver.h: 9: char time_date_delimiter(char,char,char,int);
+[v _time_date_delimiter `(uc ~T0 @X0 0 ef4`uc`uc`uc`i ]
 "25 ./clock_driver.h
 [; ;./clock_driver.h: 25: void set_time();
 [v _set_time `(v ~T0 @X0 0 e? ]
@@ -1119,26 +1119,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Button_src.c: 249:                     table[1] = c;
 [e = *U + &U _table * -> -> -> 1 `i `ui `ux -> -> # *U &U _table `ui `ux -> _c `uc ]
 "254
-[; ;Button_src.c: 254:                     a = time_date_delimiter(a,0x11,'9');
-[e = _a -> ( _time_date_delimiter (3 , , -> _a `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 254:                     a = time_date_delimiter(a,0x11,'9',4);
+[e = _a -> ( _time_date_delimiter (4 , , , -> _a `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 4 `i `uc ]
 "255
-[; ;Button_src.c: 255:                     a = time_date_delimiter(a,0x21,'J');
-[e = _a -> ( _time_date_delimiter (3 , , -> _a `uc -> -> 33 `i `uc -> -> 74 `ui `uc `uc ]
+[; ;Button_src.c: 255:                     a = time_date_delimiter(a,0x21,'J',4);
+[e = _a -> ( _time_date_delimiter (4 , , , -> _a `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 4 `i `uc ]
 "257
-[; ;Button_src.c: 257:                     c = time_date_delimiter(c,0x11,'9');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 257:                     c = time_date_delimiter(c,0x11,'9',5);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 5 `i `uc ]
 "258
-[; ;Button_src.c: 258:                     c = time_date_delimiter(c,0x21,'J');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc `uc ]
+[; ;Button_src.c: 258:                     c = time_date_delimiter(c,0x21,'J',5);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 5 `i `uc ]
 "259
-[; ;Button_src.c: 259:                     c = time_date_delimiter(c,0x31,'Y');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 49 `i `uc -> -> 89 `ui `uc `uc ]
+[; ;Button_src.c: 259:                     c = time_date_delimiter(c,0x31,'Y',5);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 49 `i `uc -> -> 89 `ui `uc -> 5 `i `uc ]
 "260
-[; ;Button_src.c: 260:                     c = time_date_delimiter(c,0x41,'j');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 65 `i `uc -> -> 106 `ui `uc `uc ]
+[; ;Button_src.c: 260:                     c = time_date_delimiter(c,0x41,'j',5);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 65 `i `uc -> -> 106 `ui `uc -> 5 `i `uc ]
 "261
-[; ;Button_src.c: 261:                     c = time_date_delimiter(c,0x51,'z');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 81 `i `uc -> -> 122 `ui `uc `uc ]
+[; ;Button_src.c: 261:                     c = time_date_delimiter(c,0x51,'z',5);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 81 `i `uc -> -> 122 `ui `uc -> 5 `i `uc ]
 "263
 [; ;Button_src.c: 263:                   RC0 = 0;
 [e = _RC0 -> -> 0 `i `b ]
@@ -1716,44 +1716,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 152 ]
 "457
-[; ;Button_src.c: 457:                     a = time_date_delimiter(a,0x11,'9');
-[e = _a -> ( _time_date_delimiter (3 , , -> _a `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 457:                     a = time_date_delimiter(a,0x11,'9',1);
+[e = _a -> ( _time_date_delimiter (4 , , , -> _a `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 1 `i `uc ]
 "459
-[; ;Button_src.c: 459:                     day_hex = time_date_delimiter(day_hex,0x11,'9');
-[e = _day_hex -> ( _time_date_delimiter (3 , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 459:                     day_hex = time_date_delimiter(day_hex,0x11,'9',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 2 `i `uc ]
 "460
-[; ;Button_src.c: 460:                     day_hex = time_date_delimiter(day_hex,0x21,'J');
-[e = _day_hex -> ( _time_date_delimiter (3 , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc `uc ]
+[; ;Button_src.c: 460:                     day_hex = time_date_delimiter(day_hex,0x21,'J',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 2 `i `uc ]
 "461
-[; ;Button_src.c: 461:                     day_hex = time_date_delimiter(day_hex,0x11,'9');
-[e = _day_hex -> ( _time_date_delimiter (3 , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 461:                     day_hex = time_date_delimiter(day_hex,0x11,'9',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 2 `i `uc ]
 "462
-[; ;Button_src.c: 462:                     day_hex = time_date_delimiter(day_hex,0x21,'J');
-[e = _day_hex -> ( _time_date_delimiter (3 , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc `uc ]
+[; ;Button_src.c: 462:                     day_hex = time_date_delimiter(day_hex,0x21,'J',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 2 `i `uc ]
 "463
-[; ;Button_src.c: 463:                     day_hex = time_date_delimiter(day_hex,0x31,'Y');
-[e = _day_hex -> ( _time_date_delimiter (3 , , -> _day_hex `uc -> -> 49 `i `uc -> -> 89 `ui `uc `uc ]
+[; ;Button_src.c: 463:                     day_hex = time_date_delimiter(day_hex,0x31,'Y',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 49 `i `uc -> -> 89 `ui `uc -> 2 `i `uc ]
 "465
-[; ;Button_src.c: 465:                     c = time_date_delimiter(c,0x11,'9');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 465:                     c = time_date_delimiter(c,0x11,'9',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 3 `i `uc ]
 "466
-[; ;Button_src.c: 466:                     c = time_date_delimiter(c,0x21,'J');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc `uc ]
+[; ;Button_src.c: 466:                     c = time_date_delimiter(c,0x21,'J',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 3 `i `uc ]
 "467
-[; ;Button_src.c: 467:                     c = time_date_delimiter(c,0x11,'9');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc `uc ]
+[; ;Button_src.c: 467:                     c = time_date_delimiter(c,0x11,'9',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 3 `i `uc ]
 "468
-[; ;Button_src.c: 468:                     c = time_date_delimiter(c,0x21,'J');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc `uc ]
+[; ;Button_src.c: 468:                     c = time_date_delimiter(c,0x21,'J',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 3 `i `uc ]
 "469
-[; ;Button_src.c: 469:                     c = time_date_delimiter(c,0x31,'Y');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 49 `i `uc -> -> 89 `ui `uc `uc ]
+[; ;Button_src.c: 469:                     c = time_date_delimiter(c,0x31,'Y',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 49 `i `uc -> -> 89 `ui `uc -> 3 `i `uc ]
 "470
-[; ;Button_src.c: 470:                     c = time_date_delimiter(c,0x41,'j');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 65 `i `uc -> -> 106 `ui `uc `uc ]
+[; ;Button_src.c: 470:                     c = time_date_delimiter(c,0x41,'j',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 65 `i `uc -> -> 106 `ui `uc -> 3 `i `uc ]
 "471
-[; ;Button_src.c: 471:                     c = time_date_delimiter(c,0x51,'z');
-[e = _c -> ( _time_date_delimiter (3 , , -> _c `uc -> -> 81 `i `uc -> -> 122 `ui `uc `uc ]
+[; ;Button_src.c: 471:                     c = time_date_delimiter(c,0x51,'z',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 81 `i `uc -> -> 122 `ui `uc -> 3 `i `uc ]
 "473
 [; ;Button_src.c: 473:               if(stats==0)
 [e $ ! == _stats -> -> 0 `i `ui 159  ]

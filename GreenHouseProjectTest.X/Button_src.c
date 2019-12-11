@@ -251,14 +251,14 @@ void time_settings(){
                     //write_char(x + '0');
                    // write_char(a + '0');
             //--------------HOURS-CONTROL-HEX---------------------------------//
-                    a = time_date_delimiter(a,0x11,'9');//ABOVE 9
-                    a = time_date_delimiter(a,0x21,'J');//ABOVE 19
+                    a = time_date_delimiter(a,0x11,'9',4);//ABOVE 9
+                    a = time_date_delimiter(a,0x21,'J',4);//ABOVE 19
            //--------------------MINS LIMITER-HEX-----------------------------//      
-                    c = time_date_delimiter(c,0x11,'9');//ABOVE 9
-                    c = time_date_delimiter(c,0x21,'J');//ABOVE 19
-                    c = time_date_delimiter(c,0x31,'Y'); //ABOVE 29
-                    c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
-                    c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
+                    c = time_date_delimiter(c,0x11,'9',5);//ABOVE 9
+                    c = time_date_delimiter(c,0x21,'J',5);//ABOVE 19
+                    c = time_date_delimiter(c,0x31,'Y',5); //ABOVE 29
+                    c = time_date_delimiter(c,0x41,'j',5); //ABOVE 39
+                    c = time_date_delimiter(c,0x51,'z',5); //ABOVE 49
             //---------------------SAVER---------------------------------------//
                   RC0 = 0;
                   RC1 = 1;
@@ -308,10 +308,7 @@ void time_settings(){
                     b = 'y';
                   }
                    write_cmd(0x88);
-                   //write_char(c + '0');
-                   //write_char(w + '0');
-                  // write_char(t + '0');
-                  //--------MINS CONTROL HEX-----------------------------------//
+            //--------MINS CONTROL HEX----------------------------------------//
                     
                     
                   RC0 = 1;
@@ -454,28 +451,34 @@ void date_settings(){
             //if(stats ==0)
              
             //--------MONTH----HEX--------------------------------------------//
-                    a = time_date_delimiter(a,0x11,'9');//ABOVE 9
+                    a = time_date_delimiter(a,0x11,'9',1);//ABOVE 9
             //--------DATE-----HEX--------------------------------------------//
-                    day_hex = time_date_delimiter(day_hex,0x11,'9');//ABOVE 9
-                    day_hex = time_date_delimiter(day_hex,0x21,'J');//ABOVE 19
-                    day_hex = time_date_delimiter(day_hex,0x11,'9');//ABOVE 9
-                    day_hex = time_date_delimiter(day_hex,0x21,'J');//ABOVE 19
-                    day_hex = time_date_delimiter(day_hex,0x31,'Y'); //ABOVE 29
+                    day_hex = time_date_delimiter(day_hex,0x11,'9',2);//ABOVE 9
+                    day_hex = time_date_delimiter(day_hex,0x21,'J',2);//ABOVE 19
+                    day_hex = time_date_delimiter(day_hex,0x11,'9',2);//ABOVE 9
+                    day_hex = time_date_delimiter(day_hex,0x21,'J',2);//ABOVE 19
+                    day_hex = time_date_delimiter(day_hex,0x31,'Y',2); //ABOVE 29
             //--------YEAR-----HEX--------------------------------------------//
-                    c = time_date_delimiter(c,0x11,'9');//ABOVE 9
-                    c = time_date_delimiter(c,0x21,'J');//ABOVE 19
-                    c = time_date_delimiter(c,0x11,'9');//ABOVE 9
-                    c = time_date_delimiter(c,0x21,'J');//ABOVE 19
-                    c = time_date_delimiter(c,0x31,'Y'); //ABOVE 29
-                    c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
-                    c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
+                    c = time_date_delimiter(c,0x11,'9',3);//ABOVE 9
+                    c = time_date_delimiter(c,0x21,'J',3);//ABOVE 19
+                    c = time_date_delimiter(c,0x11,'9',3);//ABOVE 9
+                    c = time_date_delimiter(c,0x21,'J',3);//ABOVE 19
+                    c = time_date_delimiter(c,0x31,'Y',3); //ABOVE 29
+                    c = time_date_delimiter(c,0x41,'j',3); //ABOVE 39
+                    c = time_date_delimiter(c,0x51,'z',3); //ABOVE 49
             //holding state== done. saving state............fuk
-              if(stats==0)
-                 table[4] = prev_hex;          //month
+              if(stats==0){
+                  table[4] = prev_hex;               //month
+                  table[6] = prev_hex_year;          //year
+                  table[3] = prev_hex_day;           //day
+              }     
               else if(stats==1)
-                 table[4]= a;
-              table[6] = c;          //year
-              table[3] = day_hex;    //day
+              {
+                 table[4]=  a;          //month
+                 table[6] = c;          //year
+                 table[3] = day_hex;    //day
+              }
+                
              write_cmd(0x88);
                    
                   RC0 = 0;

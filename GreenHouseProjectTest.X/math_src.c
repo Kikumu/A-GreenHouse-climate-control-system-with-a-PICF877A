@@ -29,20 +29,60 @@ char decrementor(int lower_val,int upper_val ,char z){
 //                    c = time_date_delimiter(c,0x31,'Y'); //ABOVE 29
 //                    c = time_date_delimiter(c,0x41,'j'); //ABOVE 39
 //                    c = time_date_delimiter(c,0x51,'z'); //ABOVE 49
-char time_date_delimiter(char val,char hex,char limiter){
+char time_date_delimiter(char val,char hex,char limiter, int type){
     if((val + '0') == limiter){
     val = hex;
     stats=0;
-    if(limiter == '9')
-    prev_hex= 0x09;
-    if(limiter == 'J')
+    if(limiter == '9' && type ==1)
+        prev_hex= 0x09;
+    if(limiter == 'J'&& type ==1)
         prev_hex = 0x19;
-    if(limiter == 'Y')
+    if(limiter == 'Y'&& type ==1)
         prev_hex = 0x29;
-    if(limiter == 'j')
+    if(limiter == 'j'&& type ==1)
         prev_hex =0x39;
-    if(limiter == 'z')
+    if(limiter == 'z'&& type ==1)
         prev_hex = 0x49;
+    if(limiter == '9' && type ==2)
+        prev_hex_day= 0x09;
+    if(limiter == 'J'&& type ==2)
+        prev_hex_day = 0x19;
+    if(limiter == 'Y'&& type ==2)
+        prev_hex_day = 0x29;
+    if(limiter == 'j'&& type ==2)
+        prev_hex_day =0x39;
+    if(limiter == 'z'&& type ==2)
+        prev_hex_day = 0x49;
+    if(limiter == '9' && type ==3)
+        prev_hex_year= 0x09;
+    if(limiter == 'J'&& type ==3)
+        prev_hex_year = 0x19;
+    if(limiter == 'Y'&& type ==3)
+        prev_hex_year = 0x29;
+    if(limiter == 'j'&& type ==3)
+        prev_hex_year =0x39;
+    if(limiter == 'z'&& type ==3)
+        prev_hex_year = 0x49;
+     if(limiter == '9' && type ==4)
+        prev_hex_hours= 0x09;
+    if(limiter == 'J'&& type ==4)
+        prev_hex_hours = 0x19;
+    if(limiter == 'Y'&& type ==4)
+        prev_hex_hours = 0x29;
+    if(limiter == 'j'&& type ==4)
+        prev_hex_hours =0x39;
+    if(limiter == 'z'&& type ==4)
+        prev_hex_hours = 0x49;
+     if(limiter == '9' && type ==5)
+        prev_hex_mins= 0x09;
+    if(limiter == 'J'&& type ==5)
+        prev_hex_mins = 0x19;
+    if(limiter == 'Y'&& type ==5)
+        prev_hex_mins = 0x29;
+    if(limiter == 'j'&& type ==5)
+        prev_hex_mins =0x39;
+    if(limiter == 'z'&& type ==5)
+        prev_hex_mins = 0x49;
     val--;
     }
     return val;
