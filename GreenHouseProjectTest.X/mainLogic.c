@@ -17,8 +17,10 @@ void main() {
     lcd_init();                           //LCD init
     init_temp();                          //Initialise temperature variables
     initialise_buttons();                 //Initialise button variables
-    var1 = 2;
+    var1 = 3;
     var2 = 4;
+    var_night_low = 4;
+    var_night_high = 2;
     
     
     while(1){
@@ -53,9 +55,15 @@ void main() {
     date_settings();                     //access date settings
     time_settings();                     //access time settings
     write_cmd(0x98);
-     if((temp_high+'0') == '0' && (temp_low + '0') == '0'){
+    //day_threshhold
+     if((temp_high+'0')<= 1 && (temp_low + '0') < 8){
     alarm__ = set_lower_threshold(var1,var2);
     alarm__ = set_upper_threshold(var1,var2);
+    }
+    //night_threshhold
+    if((temp_high+'0') >= 1 && (temp_low + '0') >= 8){
+    alarm__ = set_lower_threshold(var_night_high,var_night_low);
+    alarm__ = set_upper_threshold(var_night_high,var_night_low);
     }
     alarm__ = reset_alarm();
     set_beep_threshhold(alarm__);

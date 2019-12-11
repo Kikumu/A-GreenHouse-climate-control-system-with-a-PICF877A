@@ -1850,7 +1850,7 @@ unsigned char alarm__;
 void set_beep_threshhold(char x);
 # 8 "./clock_driver.h" 2
 # 23 "./clock_driver.h"
-char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
+char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
 char table1[7];
 char temp_low;
 char temp_high;

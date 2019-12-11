@@ -133,6 +133,10 @@
 [v _var1 var1 `uc  1 e 1 0 ]
 "9
 [v _var2 var2 `uc  1 e 1 0 ]
+"10
+[v _var_night_low var_night_low `ui  1 e 2 0 ]
+"11
+[v _var_night_high var_night_high `ui  1 e 2 0 ]
 "12
 [v _alarm__ alarm__ `uc  1 e 1 0 ]
 "23 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/clock_driver.h
@@ -240,9 +244,9 @@
 "10 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\mainLogic.c
 [v _main main `(v  1 e 1 0 ]
 {
-"69
+"77
 [v main@i i `i  1 a 2 15 ]
-"74
+"82
 } 0
 "179 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\Button_src.c
 [v _time_settings time_settings `(v  1 e 1 0 ]

@@ -1818,7 +1818,7 @@ unsigned char alarm__;
 void set_beep_threshhold(char x);
 # 8 "./clock_driver.h" 2
 # 23 "./clock_driver.h"
-char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
+char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
 char table1[7];
 char temp_low;
 char temp_high;
@@ -1904,8 +1904,10 @@ void main() {
     lcd_init();
     init_temp();
     initialise_buttons();
-    var1 = 2;
+    var1 = 3;
     var2 = 4;
+    var_night_low = 4;
+    var_night_high = 2;
 
 
     while(1){
@@ -1940,9 +1942,15 @@ void main() {
     date_settings();
     time_settings();
     write_cmd(0x98);
-     if((temp_high+'0') == '0' && (temp_low + '0') == '0'){
+
+     if((temp_high+'0')<= 1 && (temp_low + '0') < 8){
     alarm__ = set_lower_threshold(var1,var2);
     alarm__ = set_upper_threshold(var1,var2);
+    }
+
+    if((temp_high+'0') >= 1 && (temp_low + '0') >= 8){
+    alarm__ = set_lower_threshold(var_night_high,var_night_low);
+    alarm__ = set_upper_threshold(var_night_high,var_night_low);
     }
     alarm__ = reset_alarm();
     set_beep_threshhold(alarm__);

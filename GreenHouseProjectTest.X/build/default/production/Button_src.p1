@@ -394,12 +394,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Buzzer_driver.h: 12: unsigned char alarm__;
 [v _alarm__ `uc ~T0 @X0 1 e ]
 "23 ./clock_driver.h
-[; ;./clock_driver.h: 23: char table[]={0,0x02,0x00,0x12,0x12,0x06,0x19,0x00};
+[; ;./clock_driver.h: 23: char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
 [v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
 -> -> 0 `i `uc
--> -> 2 `i `uc
+-> -> 24 `i `uc
 -> -> 0 `i `uc
 -> -> 18 `i `uc
 -> -> 18 `i `uc
