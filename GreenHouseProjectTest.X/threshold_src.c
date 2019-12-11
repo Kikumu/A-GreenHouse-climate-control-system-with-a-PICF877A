@@ -2,8 +2,9 @@
 
 
 char set_upper_threshold(int upper_val,int lower_val){
-    if(shi >=  upper_val && ge  >= lower_val && count == 2){
-   // buzzer_watcher = 'w';  //alets sounder
+    if(shi >=  upper_val && ge  >= lower_val ){
+        if(count == 2)
+    buzzer_watcher = 'w';  //alets sounder
     heater_state = '0';
     cooler_state = '1';
     write_char('W');
