@@ -89,9 +89,9 @@
 [v _delay2 delay2 `(v  1 e 1 0 ]
 "4 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\threshold_src.c
 [v _set_upper_threshold set_upper_threshold `(uc  1 e 1 0 ]
-"19
+"22
 [v _set_lower_threshold set_lower_threshold `(uc  1 e 1 0 ]
-"34
+"37
 [v _reset_alarm reset_alarm `(uc  1 e 1 0 ]
 "7 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Button_driver.h
 [v _a a `uc  1 e 1 0 ]
@@ -167,13 +167,15 @@
 [v _qianfen qianfen `uc  1 e 1 0 ]
 "24
 [v _wanfen wanfen `uc  1 e 1 0 ]
-"10 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Threshold_driver.h
+"7 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X/Threshold_driver.h
+[v _heat_counter heat_counter `ui  1 e 2 0 ]
+"11
 [v _buzzer_watcher buzzer_watcher `uc  1 e 1 0 ]
-"12
-[v _count count `i  1 e 2 0 ]
 "13
-[v _heater_state heater_state `uc  1 e 1 0 ]
+[v _count count `i  1 e 2 0 ]
 "14
+[v _heater_state heater_state `uc  1 e 1 0 ]
+"15
 [v _cooler_state cooler_state `uc  1 e 1 0 ]
 "340 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
@@ -267,14 +269,14 @@
 {
 [v set_upper_threshold@upper_val upper_val `i  1 p 2 3 ]
 [v set_upper_threshold@lower_val lower_val `i  1 p 2 5 ]
-"17
+"20
 } 0
-"19
+"22
 [v _set_lower_threshold set_lower_threshold `(uc  1 e 1 0 ]
 {
 [v set_lower_threshold@upper_val upper_val `i  1 p 2 3 ]
 [v set_lower_threshold@lower_val lower_val `i  1 p 2 5 ]
-"32
+"35
 } 0
 "5 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\buzzer_src.c
 [v _set_beep_threshhold set_beep_threshhold `(v  1 e 1 0 ]
@@ -284,10 +286,10 @@
 [v set_beep_threshhold@x x `uc  1 a 1 2 ]
 "19
 } 0
-"34 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\threshold_src.c
+"37 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\threshold_src.c
 [v _reset_alarm reset_alarm `(uc  1 e 1 0 ]
 {
-"49
+"53
 } 0
 "14 C:\Users\scowt\MPLABXProjects\GreenHouseProjectTest.X\LCD_src.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]

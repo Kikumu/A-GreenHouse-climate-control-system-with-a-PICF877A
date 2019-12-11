@@ -1819,7 +1819,8 @@ void delay2();
 
 
 
-
+unsigned int heat_counter;
+unsigned int cold_counter;
 unsigned char upper_t;
 unsigned char lower_t;
 char buzzer_watcher;

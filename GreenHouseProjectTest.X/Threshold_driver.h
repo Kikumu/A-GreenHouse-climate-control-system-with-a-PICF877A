@@ -4,7 +4,8 @@
 #include "Thermometer_driver.h"
 #include "LCD_driver.h"
 #include <pic.h>
-
+unsigned int  heat_counter;
+unsigned int  cold_counter;
 unsigned char upper_t;
 unsigned char lower_t;
 char buzzer_watcher;

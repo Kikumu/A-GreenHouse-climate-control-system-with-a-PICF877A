@@ -3,15 +3,18 @@
 
 char set_upper_threshold(int upper_val,int lower_val){
     if(shi >=  upper_val && ge  >= lower_val ){
-        if(count == 2)
-    buzzer_watcher = 'w';  //alets sounder
+    heat_counter ++;
     heater_state = '0';
     cooler_state = '1';
     write_char('W');
     write_char('A');
     write_char('R');
     write_char('M');
-    
+    if(heat_counter > 100){
+        cooler_state = '-';
+        if(count == 2)
+        buzzer_watcher = 'w';
+    }
     }
     return buzzer_watcher;
 }
@@ -39,6 +42,7 @@ char reset_alarm(){
     if(RC4 == 0){
         count = 0;
         buzzer_watcher = 'x';
+        heat_counter = 0;
         write_char('R');
         write_char('E');
         write_char('S');

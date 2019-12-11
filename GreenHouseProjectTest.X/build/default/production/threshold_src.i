@@ -1765,7 +1765,8 @@ void delay_screen();
 # 5 "./Threshold_driver.h" 2
 
 
-
+unsigned int heat_counter;
+unsigned int cold_counter;
 unsigned char upper_t;
 unsigned char lower_t;
 char buzzer_watcher;
@@ -1782,15 +1783,18 @@ char reset_alarm();
 
 char set_upper_threshold(int upper_val,int lower_val){
     if(shi >= upper_val && ge >= lower_val ){
-        if(count == 2)
-    buzzer_watcher = 'w';
+    heat_counter ++;
     heater_state = '0';
     cooler_state = '1';
     write_char('W');
     write_char('A');
     write_char('R');
     write_char('M');
-
+    if(heat_counter > 100){
+        cooler_state = '-';
+        if(count == 2)
+        buzzer_watcher = 'w';
+    }
     }
     return buzzer_watcher;
 }
@@ -1818,6 +1822,7 @@ char reset_alarm(){
     if(RC4 == 0){
         count = 0;
         buzzer_watcher = 'x';
+        heat_counter = 0;
         write_char('R');
         write_char('E');
         write_char('S');

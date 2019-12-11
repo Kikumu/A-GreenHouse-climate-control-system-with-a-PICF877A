@@ -51,14 +51,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [; ;./Button_driver.h: 30: void time_settings();
 [v _time_settings `(v ~T0 @X0 0 e? ]
-"16 ./Threshold_driver.h
-[; ;./Threshold_driver.h: 16: char set_lower_threshold(int,int);
+"17 ./Threshold_driver.h
+[; ;./Threshold_driver.h: 17: char set_lower_threshold(int,int);
 [v _set_lower_threshold `(uc ~T0 @X0 0 ef2`i`i ]
-"15
-[; ;./Threshold_driver.h: 15: char set_upper_threshold(int,int);
+"16
+[; ;./Threshold_driver.h: 16: char set_upper_threshold(int,int);
 [v _set_upper_threshold `(uc ~T0 @X0 0 ef2`i`i ]
-"17
-[; ;./Threshold_driver.h: 17: char reset_alarm();
+"18
+[; ;./Threshold_driver.h: 18: char reset_alarm();
 [v _reset_alarm `(uc ~T0 @X0 0 e? ]
 "14 ./Buzzer_driver.h
 [; ;./Buzzer_driver.h: 14: void set_beep_threshhold(char x);
@@ -304,26 +304,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./Thermometer_driver.h: 24: unsigned char wanfen;
 [v _wanfen `uc ~T0 @X0 1 e ]
-"8 ./Threshold_driver.h
-[; ;./Threshold_driver.h: 8: unsigned char upper_t;
-[v _upper_t `uc ~T0 @X0 1 e ]
+"7 ./Threshold_driver.h
+[; ;./Threshold_driver.h: 7: unsigned int heat_counter;
+[v _heat_counter `ui ~T0 @X0 1 e ]
+"8
+[; ;./Threshold_driver.h: 8: unsigned int cold_counter;
+[v _cold_counter `ui ~T0 @X0 1 e ]
 "9
-[; ;./Threshold_driver.h: 9: unsigned char lower_t;
-[v _lower_t `uc ~T0 @X0 1 e ]
+[; ;./Threshold_driver.h: 9: unsigned char upper_t;
+[v _upper_t `uc ~T0 @X0 1 e ]
 "10
-[; ;./Threshold_driver.h: 10: char buzzer_watcher;
-[v _buzzer_watcher `uc ~T0 @X0 1 e ]
+[; ;./Threshold_driver.h: 10: unsigned char lower_t;
+[v _lower_t `uc ~T0 @X0 1 e ]
 "11
-[; ;./Threshold_driver.h: 11: char buzzer_watcher1;
-[v _buzzer_watcher1 `uc ~T0 @X0 1 e ]
+[; ;./Threshold_driver.h: 11: char buzzer_watcher;
+[v _buzzer_watcher `uc ~T0 @X0 1 e ]
 "12
-[; ;./Threshold_driver.h: 12: int count;
-[v _count `i ~T0 @X0 1 e ]
+[; ;./Threshold_driver.h: 12: char buzzer_watcher1;
+[v _buzzer_watcher1 `uc ~T0 @X0 1 e ]
 "13
-[; ;./Threshold_driver.h: 13: unsigned char heater_state;
-[v _heater_state `uc ~T0 @X0 1 e ]
+[; ;./Threshold_driver.h: 13: int count;
+[v _count `i ~T0 @X0 1 e ]
 "14
-[; ;./Threshold_driver.h: 14: unsigned char cooler_state;
+[; ;./Threshold_driver.h: 14: unsigned char heater_state;
+[v _heater_state `uc ~T0 @X0 1 e ]
+"15
+[; ;./Threshold_driver.h: 15: unsigned char cooler_state;
 [v _cooler_state `uc ~T0 @X0 1 e ]
 "8 ./Buzzer_driver.h
 [; ;./Buzzer_driver.h: 8: char var1;
