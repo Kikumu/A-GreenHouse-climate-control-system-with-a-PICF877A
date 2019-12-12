@@ -25,6 +25,10 @@ unsigned char prev_hex_hours;  //holds previous hex value for hours variable
 unsigned char prev_hex_mins;   //holds previous hex value for mins variable
 unsigned int d_type;
 unsigned int p;                //holds state for counter variable
+unsigned int night_lower_upper;
+unsigned int night_lower_lower;
+unsigned int day_lower_upper;
+unsigned int day_lower_lower;
 void thermometer_threshhold_settings();
 void date_settings();          //change date settings
 void time_settings();          //change time settings

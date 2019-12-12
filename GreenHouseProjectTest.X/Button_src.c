@@ -29,17 +29,6 @@ void thermometer_threshhold_settings(){
       write_cmd(0x1);
       for(;;){
             write_cmd(0x80);
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            write_char(' ');
-            
-            write_cmd(0x90);
             write_char('T');
             write_char('h');
             write_char('r');
@@ -48,9 +37,9 @@ void thermometer_threshhold_settings(){
             write_char('h');
             write_char('o');
             write_char('l');
-             write_char('d');
-              write_char('s');
-               write_char(':');
+            write_char('d');
+            write_char('s');
+            write_char(':');
             
             //-------------------display current temp---------------------------//
             
@@ -61,22 +50,65 @@ void thermometer_threshhold_settings(){
             RC2 = 1;
             RC3 = 1;
             //--------TEMP----INCREMENTOR---------------------------//
-            if(RC4 == 0 && b =='x'){
-                    a++;//hrs incrementor
+            if(RC7 == 0 && b =='x'){
                     x++ ;
                     x = modulus_func(x,10);
-                    y = incrementor(y,x,'9');
-                    //hrs_limiter = (a + '0');
-                    a = time_date_hex_terminator(a,'T'); //resets hex value to 0 depending on limiter
+                    if (p == 1){
+                        y = incrementor(y,x,'0');
+                        p = 0;
+                    }
+                    if (x == 9){
+                        p = 1;
+                    }
+                    //y = incrementor(y,x,'9');
+                    // a = time_date_hex_terminator(a,'T'); //resets hex value to 0 depending on limiter
                     button_delay();
             }
-            if(RC4==0 && b == 'y'){ 
-                    c++; //mins incrementor
+             RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+            if(RC7==0 && b == 'y'){ 
                     t++;
                     t = modulus_func(t,10);
-                    w = incrementor(w,t,'9');
-                    if(c == (0x59 + 1)){               //different terminator due to hex val
-                        c = 0x00; 
+                   if (p == 1){
+                        w = incrementor(w,t,'0');
+                        p = 0;
+                    }
+                    if (t == 9){
+                        p = 1;
+                    }
+                    button_delay();
+            }
+            RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+            if(RC7==0 && b == 'z'){ 
+                    night_lower_lower++;
+                    night_lower_lower = modulus_func(night_lower_lower,10);
+                   if (p == 1){
+                        night_lower_upper = incrementor(night_lower_upper,night_lower_lower,'0');
+                        p = 0;
+                    }
+                    if (night_lower_lower == 9){
+                        p = 1;
+                    }
+                    button_delay();
+            }
+            RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+            if(RC7==0 && b == 'a'){ 
+                    day_lower_lower++;
+                    day_lower_lower = modulus_func(day_lower_lower,10);
+                   if (p == 1){
+                        day_lower_upper = incrementor(day_lower_upper,day_lower_lower,'0');
+                        p = 0;
+                    }
+                    if (day_lower_lower == 9){
+                        p = 1;
                     }
                     button_delay();
             }
@@ -87,7 +119,7 @@ void thermometer_threshhold_settings(){
             z = modulus_func(z,4);
             if(RC4 == 0 && z ==0){
             z++;
-            write_cmd(0x88);
+            write_cmd(0x90);
             write_char('D');
             write_char('a');
             write_char('y');
@@ -97,18 +129,17 @@ void thermometer_threshhold_settings(){
             write_char(':');
             write_char(' ');
             write_char(' ');
-            write_char(var1 + '0');
-            write_char(var2 + '0');
+           // write_char(var1 + '0');
+           // write_char(var2 + '0');
             b = 'x';
             button_delay();
-           
             }
             RC0 = 1;
             RC1 = 0;
             RC2 = 1;
             RC3 = 1;
             if(RC4 == 0 && z ==1){
-            write_cmd(0x88);
+            write_cmd(0x90);
             write_char('N');
             write_char('i');
             write_char('g');
@@ -118,8 +149,8 @@ void thermometer_threshhold_settings(){
             write_char('U');
             write_char(')');
             write_char(':');
-            write_char(var_night_high + '0');
-            write_char(var_night_low + '0');
+            //write_char(var_night_high + '0');
+            //write_char(var_night_low + '0');
             b = 'y';
             z++;
             button_delay();
@@ -129,7 +160,7 @@ void thermometer_threshhold_settings(){
             RC2 = 1;
             RC3 = 1;
             if(RC4 == 0 && z ==2){
-            write_cmd(0x88);
+            write_cmd(0x90);
             write_char('N');
             write_char('i');
             write_char('g');
@@ -139,15 +170,15 @@ void thermometer_threshhold_settings(){
             write_char('L');
             write_char(')');
             write_char(':');
-            write_char(cold_high_night + '0');
-            write_char(cold_low_night + '0');
-            b = 'y';
+           // write_char(night_lower_upper + '0');
+           // write_char(night_lower_lower + '0');
+            b = 'z';
             z++;
             button_delay();
             }
             if(RC4 == 0 && z ==3){
             z++;
-            write_cmd(0x88);
+            write_cmd(0x90);
             write_char('D');
             write_char('a');
             write_char('y');
@@ -157,19 +188,38 @@ void thermometer_threshhold_settings(){
             write_char(':');
             write_char(' ');
             write_char(' ');
-            write_char(cold_high + '0');
-            write_char(cold_low + '0');
-            b = 'x';
+           // write_char(day_lower_upper + '0');
+           // write_char(day_lower_lower + '0');
+            b = 'a';
             button_delay();
-           
             }
-          
+            write_cmd(0x88);
+            write_char('T');
+            write_char('1');
+            write_char(':');
+            write_char(y + '0');
+            write_char(x + '0');
+            write_char('T');
+            write_char('2');
+            write_char(':');
+            write_char(w + '0');
+            write_char(t + '0');
+            write_char('T');
+            write_char('3');
+            write_char(':');
+            write_char(night_lower_upper + '0');
+            write_char(night_lower_lower + '0');
+            write_cmd(0x98);
+            write_char('T');
+            write_char('4');
+            write_char(':');
+            write_char(day_lower_upper + '0');
+            write_char(day_lower_lower + '0');
 //------------------------------------------------------------------------------            
-            t = 0;     //used for counting down
-            w = 0;     //used for counting down
-            x = 0;     //used for counting tens digit
-            y = 0; //used for counting ones digit
-            x = 0x00;
+//            t = 0;     //used for counting down
+//            w = 0;     //used for counting down
+//            x = 0;     //used for counting tens digit
+//            y = 0; //used for counting ones digit
 //            for(;;){
 //                 RC0 = 1;
 //                 RC1 = 0;

@@ -252,3 +252,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;./Button_driver.h: 27: unsigned int p;
 [v _p `ui ~T0 @X0 1 e ]
+"28
+[; ;./Button_driver.h: 28: unsigned int night_lower_upper;
+[v _night_lower_upper `ui ~T0 @X0 1 e ]
+"29
+[; ;./Button_driver.h: 29: unsigned int night_lower_lower;
+[v _night_lower_lower `ui ~T0 @X0 1 e ]
+"30
+[; ;./Button_driver.h: 30: unsigned int day_lower_upper;
+[v _day_lower_upper `ui ~T0 @X0 1 e ]
+"31
+[; ;./Button_driver.h: 31: unsigned int day_lower_lower;
+[v _day_lower_lower `ui ~T0 @X0 1 e ]

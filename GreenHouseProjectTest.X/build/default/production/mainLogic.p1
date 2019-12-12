@@ -18,8 +18,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;./LCD_driver.h: 13: void lcd_init();
 [v _lcd_init `(v ~T0 @X0 0 e? ]
-"31 ./Button_driver.h
-[; ;./Button_driver.h: 31: void initialise_buttons();
+"35 ./Button_driver.h
+[; ;./Button_driver.h: 35: void initialise_buttons();
 [v _initialise_buttons `(v ~T0 @X0 0 e? ]
 "32 ./Thermometer_driver.h
 [; ;./Thermometer_driver.h: 32: void get_temp();
@@ -42,14 +42,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;./clock_driver.h: 27: void display_clock();
 [v _display_clock `(v ~T0 @X0 0 e? ]
-"28 ./Button_driver.h
-[; ;./Button_driver.h: 28: void thermometer_threshhold_settings();
+"32 ./Button_driver.h
+[; ;./Button_driver.h: 32: void thermometer_threshhold_settings();
 [v _thermometer_threshhold_settings `(v ~T0 @X0 0 e? ]
-"29
-[; ;./Button_driver.h: 29: void date_settings();
+"33
+[; ;./Button_driver.h: 33: void date_settings();
 [v _date_settings `(v ~T0 @X0 0 e? ]
-"30
-[; ;./Button_driver.h: 30: void time_settings();
+"34
+[; ;./Button_driver.h: 34: void time_settings();
 [v _time_settings `(v ~T0 @X0 0 e? ]
 "17 ./Threshold_driver.h
 [; ;./Threshold_driver.h: 17: char set_lower_threshold(int,int);
@@ -448,6 +448,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;./Button_driver.h: 27: unsigned int p;
 [v _p `ui ~T0 @X0 1 e ]
+"28
+[; ;./Button_driver.h: 28: unsigned int night_lower_upper;
+[v _night_lower_upper `ui ~T0 @X0 1 e ]
+"29
+[; ;./Button_driver.h: 29: unsigned int night_lower_lower;
+[v _night_lower_lower `ui ~T0 @X0 1 e ]
+"30
+[; ;./Button_driver.h: 30: unsigned int day_lower_upper;
+[v _day_lower_upper `ui ~T0 @X0 1 e ]
+"31
+[; ;./Button_driver.h: 31: unsigned int day_lower_lower;
+[v _day_lower_lower `ui ~T0 @X0 1 e ]
 "6 ./Day_of_week_driver.h
 [; ;./Day_of_week_driver.h: 6: int day_counter;
 [v _day_counter `i ~T0 @X0 1 e ]
