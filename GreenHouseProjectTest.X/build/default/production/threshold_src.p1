@@ -366,8 +366,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;threshold_src.c: 30:     write_char('D');
 [e ( _write_char (1 -> -> 68 `ui `uc ]
 "31
-[; ;threshold_src.c: 31:     if(cold_counter > 100000){
-[e $ ! > -> _cold_counter `l -> 100000 `l 101  ]
+[; ;threshold_src.c: 31:     if(cold_counter > 1000){
+[e $ ! > _cold_counter -> -> 1000 `i `ui 101  ]
 {
 "32
 [; ;threshold_src.c: 32:         heater_state = '-';
@@ -415,84 +415,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;threshold_src.c: 47:     cooler_state = '0';
 [e = _cooler_state -> -> 48 `ui `uc ]
 "48
-[; ;threshold_src.c: 48:     write_char('O');
-[e ( _write_char (1 -> -> 79 `ui `uc ]
+[; ;threshold_src.c: 48:     heat_counter = 0;
+[e = _heat_counter -> -> 0 `i `ui ]
 "49
-[; ;threshold_src.c: 49:     write_char('K');
-[e ( _write_char (1 -> -> 75 `ui `uc ]
+[; ;threshold_src.c: 49:     cold_counter = 0;
+[e = _cold_counter -> -> 0 `i `ui ]
 "50
-[; ;threshold_src.c: 50:     write_char(' ');
-[e ( _write_char (1 -> -> 32 `ui `uc ]
+[; ;threshold_src.c: 50:     write_char('O');
+[e ( _write_char (1 -> -> 79 `ui `uc ]
 "51
-[; ;threshold_src.c: 51:     write_char(' ');
-[e ( _write_char (1 -> -> 32 `ui `uc ]
+[; ;threshold_src.c: 51:     write_char('K');
+[e ( _write_char (1 -> -> 75 `ui `uc ]
 "52
-[; ;threshold_src.c: 52:     }
+[; ;threshold_src.c: 52:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"53
+[; ;threshold_src.c: 53:     write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"54
+[; ;threshold_src.c: 54:     }
 }
 [e :U 103 ]
-"53
-[; ;threshold_src.c: 53:     return buzzer_watcher;
+"55
+[; ;threshold_src.c: 55:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
 [e $UE 102  ]
-"54
-[; ;threshold_src.c: 54: }
+"56
+[; ;threshold_src.c: 56: }
 [e :UE 102 ]
 }
-"56
-[; ;threshold_src.c: 56: char reset_alarm(){
+"58
+[; ;threshold_src.c: 58: char reset_alarm(){
 [v _reset_alarm `(uc ~T0 @X0 1 ef ]
 {
 [e :U _reset_alarm ]
 [f ]
-"57
-[; ;threshold_src.c: 57:     RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"58
-[; ;threshold_src.c: 58:     RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
 "59
-[; ;threshold_src.c: 59:     RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;threshold_src.c: 59:     RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
 "60
-[; ;threshold_src.c: 60:     RC3 = 0;
-[e = _RC3 -> -> 0 `i `b ]
+[; ;threshold_src.c: 60:     RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "61
-[; ;threshold_src.c: 61:     if(RC4 == 0){
+[; ;threshold_src.c: 61:     RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"62
+[; ;threshold_src.c: 62:     RC3 = 0;
+[e = _RC3 -> -> 0 `i `b ]
+"63
+[; ;threshold_src.c: 63:     if(RC4 == 0){
 [e $ ! == -> _RC4 `i -> 0 `i 105  ]
 {
-"62
-[; ;threshold_src.c: 62:         count = 0;
-[e = _count -> 0 `i ]
-"63
-[; ;threshold_src.c: 63:         buzzer_watcher = 'x';
-[e = _buzzer_watcher -> -> 120 `ui `uc ]
 "64
-[; ;threshold_src.c: 64:         heat_counter = 0;
-[e = _heat_counter -> -> 0 `i `ui ]
+[; ;threshold_src.c: 64:         count = 0;
+[e = _count -> 0 `i ]
 "65
-[; ;threshold_src.c: 65:         write_char('R');
-[e ( _write_char (1 -> -> 82 `ui `uc ]
+[; ;threshold_src.c: 65:         buzzer_watcher = 'x';
+[e = _buzzer_watcher -> -> 120 `ui `uc ]
 "66
-[; ;threshold_src.c: 66:         write_char('E');
-[e ( _write_char (1 -> -> 69 `ui `uc ]
+[; ;threshold_src.c: 66:         heat_counter = 0;
+[e = _heat_counter -> -> 0 `i `ui ]
 "67
-[; ;threshold_src.c: 67:         write_char('S');
-[e ( _write_char (1 -> -> 83 `ui `uc ]
+[; ;threshold_src.c: 67:         write_char('R');
+[e ( _write_char (1 -> -> 82 `ui `uc ]
 "68
 [; ;threshold_src.c: 68:         write_char('E');
 [e ( _write_char (1 -> -> 69 `ui `uc ]
 "69
-[; ;threshold_src.c: 69:         write_char('T');
-[e ( _write_char (1 -> -> 84 `ui `uc ]
+[; ;threshold_src.c: 69:         write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
 "70
-[; ;threshold_src.c: 70:     }
+[; ;threshold_src.c: 70:         write_char('E');
+[e ( _write_char (1 -> -> 69 `ui `uc ]
+"71
+[; ;threshold_src.c: 71:         write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"72
+[; ;threshold_src.c: 72:     }
 }
 [e :U 105 ]
-"71
-[; ;threshold_src.c: 71:     return buzzer_watcher;
+"73
+[; ;threshold_src.c: 73:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
 [e $UE 104  ]
-"72
-[; ;threshold_src.c: 72: }
+"74
+[; ;threshold_src.c: 74: }
 [e :UE 104 ]
 }
