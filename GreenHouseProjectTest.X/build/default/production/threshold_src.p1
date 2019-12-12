@@ -303,12 +303,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;threshold_src.c: 12:     write_char('M');
 [e ( _write_char (1 -> -> 77 `ui `uc ]
 "13
-[; ;threshold_src.c: 13:     if(heat_counter > 10000){
-[e $ ! > _heat_counter -> -> 10000 `i `ui 97  ]
+[; ;threshold_src.c: 13:     if(heat_counter > 1000){
+[e $ ! > _heat_counter -> -> 1000 `i `ui 97  ]
 {
 "14
 [; ;threshold_src.c: 14:         cooler_state = '-';
 [e = _cooler_state -> -> 45 `ui `uc ]
+"15
+[; ;threshold_src.c: 15:         if(count == 2)
+[e $ ! == _count -> 2 `i 98  ]
+"16
+[; ;threshold_src.c: 16:         buzzer_watcher = 'w';
+[e = _buzzer_watcher -> -> 119 `ui `uc ]
+[e :U 98 ]
 "17
 [; ;threshold_src.c: 17:     }
 }
@@ -335,7 +342,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "23
 [; ;threshold_src.c: 23:      if(shi <= upper_val && (ge <= lower_val || ge >= lower_val)){
-[e $ ! && <= -> _shi `i _upper_val || <= -> _ge `i _lower_val >= -> _ge `i _lower_val 99  ]
+[e $ ! && <= -> _shi `i _upper_val || <= -> _ge `i _lower_val >= -> _ge `i _lower_val 100  ]
 {
 "24
 [; ;threshold_src.c: 24:     cold_counter ++;
@@ -360,7 +367,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _write_char (1 -> -> 68 `ui `uc ]
 "31
 [; ;threshold_src.c: 31:     if(cold_counter > 100000){
-[e $ ! > -> _cold_counter `l -> 100000 `l 100  ]
+[e $ ! > -> _cold_counter `l -> 100000 `l 101  ]
 {
 "32
 [; ;threshold_src.c: 32:         heater_state = '-';
@@ -368,18 +375,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35
 [; ;threshold_src.c: 35:     }
 }
-[e :U 100 ]
+[e :U 101 ]
 "36
 [; ;threshold_src.c: 36:     }
 }
-[e :U 99 ]
+[e :U 100 ]
 "37
 [; ;threshold_src.c: 37:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
-[e $UE 98  ]
+[e $UE 99  ]
 "38
 [; ;threshold_src.c: 38: }
-[e :UE 98 ]
+[e :UE 99 ]
 }
 "41
 [; ;threshold_src.c: 41: char set_lower_threshold(int upper_val,int lower_val){
@@ -391,7 +398,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "42
 [; ;threshold_src.c: 42:     if((shi <= upper_val && ge <= lower_val))
-[e $ ! && <= -> _shi `i _upper_val <= -> _ge `i _lower_val 102  ]
+[e $ ! && <= -> _shi `i _upper_val <= -> _ge `i _lower_val 103  ]
 "43
 [; ;threshold_src.c: 43:     {
 {
@@ -422,14 +429,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52
 [; ;threshold_src.c: 52:     }
 }
-[e :U 102 ]
+[e :U 103 ]
 "53
 [; ;threshold_src.c: 53:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
-[e $UE 101  ]
+[e $UE 102  ]
 "54
 [; ;threshold_src.c: 54: }
-[e :UE 101 ]
+[e :UE 102 ]
 }
 "56
 [; ;threshold_src.c: 56: char reset_alarm(){
@@ -451,7 +458,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _RC3 -> -> 0 `i `b ]
 "61
 [; ;threshold_src.c: 61:     if(RC4 == 0){
-[e $ ! == -> _RC4 `i -> 0 `i 104  ]
+[e $ ! == -> _RC4 `i -> 0 `i 105  ]
 {
 "62
 [; ;threshold_src.c: 62:         count = 0;
@@ -480,12 +487,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70
 [; ;threshold_src.c: 70:     }
 }
-[e :U 104 ]
+[e :U 105 ]
 "71
 [; ;threshold_src.c: 71:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
-[e $UE 103  ]
+[e $UE 104  ]
 "72
 [; ;threshold_src.c: 72: }
-[e :UE 103 ]
+[e :UE 104 ]
 }

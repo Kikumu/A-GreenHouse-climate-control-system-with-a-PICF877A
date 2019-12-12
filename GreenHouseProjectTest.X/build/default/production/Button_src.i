@@ -2133,7 +2133,7 @@ void time_settings(){
                     if (t == 9){
                         p = 1;
                     }
-                    w = incrementor(w,t,'9');
+
                     if(c == (0x59 + 1)){
                         c = 0x00;
                     }
@@ -2171,13 +2171,14 @@ void time_settings(){
                   RC3 = 1;
                     if (RC6 == 0 ){
                           write_cmd(0x1);
+                          set_time();
                           a = 0x00;
                           c = 0x00;
                           x = 0;
                           y = 0;
                           w = 0;
                           t = 0;
-                          set_time();
+
                           return;
                             }
                   RC0 = 1;
@@ -2392,6 +2393,7 @@ void date_settings(){
                   RC3 = 1;
 
                     if (RC6 == 0 ){
+                          set_time();
                           a = 0x00;
                           c = 0x00;
                           day_hex = 0x00;
@@ -2402,7 +2404,6 @@ void date_settings(){
                           w = 0;
                           t = 0;
                           write_cmd(0x1);
-                          set_time();
                           return;
                             }
                   RC0 = 0;

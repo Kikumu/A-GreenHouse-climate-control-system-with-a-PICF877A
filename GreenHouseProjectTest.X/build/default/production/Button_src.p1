@@ -1131,9 +1131,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Button_src.c: 301:                     }
 }
 [e :U 123 ]
-"302
-[; ;Button_src.c: 302:                     w = incrementor(w,t,'9');
-[e = _w -> ( _incrementor (3 , , -> _w `i -> _t `i -> -> 57 `ui `uc `ui ]
 "303
 [; ;Button_src.c: 303:                     if(c == (0x59 + 1)){
 [e $ ! == -> _c `i + -> 89 `i -> 1 `i 124  ]
@@ -1242,953 +1239,953 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Button_src.c: 339:                           write_cmd(0x1);
 [e ( _write_cmd (1 -> -> 1 `i `uc ]
 "340
-[; ;Button_src.c: 340:                           a = 0x00;
-[e = _a -> -> 0 `i `uc ]
-"341
-[; ;Button_src.c: 341:                           c = 0x00;
-[e = _c -> -> 0 `i `uc ]
-"342
-[; ;Button_src.c: 342:                           x = 0;
-[e = _x -> -> 0 `i `ui ]
-"343
-[; ;Button_src.c: 343:                           y = 0;
-[e = _y -> -> 0 `i `ui ]
-"344
-[; ;Button_src.c: 344:                           w = 0;
-[e = _w -> -> 0 `i `ui ]
-"345
-[; ;Button_src.c: 345:                           t = 0;
-[e = _t -> -> 0 `i `ui ]
-"346
-[; ;Button_src.c: 346:                           set_time();
+[; ;Button_src.c: 340:                           set_time();
 [e ( _set_time ..  ]
-"347
-[; ;Button_src.c: 347:                           return;
-[e $UE 108  ]
+"341
+[; ;Button_src.c: 341:                           a = 0x00;
+[e = _a -> -> 0 `i `uc ]
+"342
+[; ;Button_src.c: 342:                           c = 0x00;
+[e = _c -> -> 0 `i `uc ]
+"343
+[; ;Button_src.c: 343:                           x = 0;
+[e = _x -> -> 0 `i `ui ]
+"344
+[; ;Button_src.c: 344:                           y = 0;
+[e = _y -> -> 0 `i `ui ]
+"345
+[; ;Button_src.c: 345:                           w = 0;
+[e = _w -> -> 0 `i `ui ]
+"346
+[; ;Button_src.c: 346:                           t = 0;
+[e = _t -> -> 0 `i `ui ]
 "348
-[; ;Button_src.c: 348:                             }
+[; ;Button_src.c: 348:                           return;
+[e $UE 108  ]
+"349
+[; ;Button_src.c: 349:                             }
 }
 [e :U 129 ]
-"349
-[; ;Button_src.c: 349:                   RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
 "350
-[; ;Button_src.c: 350:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 350:                   RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
 "351
-[; ;Button_src.c: 351:                   RC2 = 0;
-[e = _RC2 -> -> 0 `i `b ]
+[; ;Button_src.c: 351:                   RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "352
-[; ;Button_src.c: 352:                   RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 352:                   RC2 = 0;
+[e = _RC2 -> -> 0 `i `b ]
 "353
-[; ;Button_src.c: 353:                   z = modulus_func(z,2);
-[e = _z -> ( _modulus_func (2 , -> _z `i -> 2 `i `ui ]
+[; ;Button_src.c: 353:                   RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
 "354
-[; ;Button_src.c: 354:                   if(RC4 == 0 && z ==0){
+[; ;Button_src.c: 354:                   z = modulus_func(z,2);
+[e = _z -> ( _modulus_func (2 , -> _z `i -> 2 `i `ui ]
+"355
+[; ;Button_src.c: 355:                   if(RC4 == 0 && z ==0){
 [e $ ! && == -> _RC4 `i -> 0 `i == _z -> -> 0 `i `ui 130  ]
 {
-"355
-[; ;Button_src.c: 355:                       write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "356
-[; ;Button_src.c: 356:                       write_char('H');
-[e ( _write_char (1 -> -> 72 `ui `uc ]
+[; ;Button_src.c: 356:                       write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "357
-[; ;Button_src.c: 357:                       write_char('o');
-[e ( _write_char (1 -> -> 111 `ui `uc ]
+[; ;Button_src.c: 357:                       write_char('H');
+[e ( _write_char (1 -> -> 72 `ui `uc ]
 "358
-[; ;Button_src.c: 358:                       write_char('u');
-[e ( _write_char (1 -> -> 117 `ui `uc ]
+[; ;Button_src.c: 358:                       write_char('o');
+[e ( _write_char (1 -> -> 111 `ui `uc ]
 "359
-[; ;Button_src.c: 359:                       write_char('r');
-[e ( _write_char (1 -> -> 114 `ui `uc ]
+[; ;Button_src.c: 359:                       write_char('u');
+[e ( _write_char (1 -> -> 117 `ui `uc ]
 "360
-[; ;Button_src.c: 360:                       write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
+[; ;Button_src.c: 360:                       write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
 "361
-[; ;Button_src.c: 361:                       b = 'x';
-[e = _b -> -> 120 `ui `uc ]
+[; ;Button_src.c: 361:                       write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "362
-[; ;Button_src.c: 362:                       button_delay();
-[e ( _button_delay ..  ]
+[; ;Button_src.c: 362:                       b = 'x';
+[e = _b -> -> 120 `ui `uc ]
 "363
-[; ;Button_src.c: 363:                       z++;
-[e ++ _z -> -> 1 `i `ui ]
+[; ;Button_src.c: 363:                       button_delay();
+[e ( _button_delay ..  ]
 "364
-[; ;Button_src.c: 364:                   }
+[; ;Button_src.c: 364:                       z++;
+[e ++ _z -> -> 1 `i `ui ]
+"365
+[; ;Button_src.c: 365:                   }
 }
 [e :U 130 ]
-"365
-[; ;Button_src.c: 365:                   RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
 "366
-[; ;Button_src.c: 366:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 366:                   RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
 "367
-[; ;Button_src.c: 367:                   RC2 = 0;
-[e = _RC2 -> -> 0 `i `b ]
+[; ;Button_src.c: 367:                   RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "368
-[; ;Button_src.c: 368:                   RC3 = 1;
+[; ;Button_src.c: 368:                   RC2 = 0;
+[e = _RC2 -> -> 0 `i `b ]
+"369
+[; ;Button_src.c: 369:                   RC3 = 1;
 [e = _RC3 -> -> 1 `i `b ]
-"370
-[; ;Button_src.c: 370:                   if(RC4 == 0&& z ==1){
+"371
+[; ;Button_src.c: 371:                   if(RC4 == 0&& z ==1){
 [e $ ! && == -> _RC4 `i -> 0 `i == _z -> -> 1 `i `ui 131  ]
 {
-"371
-[; ;Button_src.c: 371:                     z++;
-[e ++ _z -> -> 1 `i `ui ]
 "372
-[; ;Button_src.c: 372:                     button_delay();
-[e ( _button_delay ..  ]
+[; ;Button_src.c: 372:                     z++;
+[e ++ _z -> -> 1 `i `ui ]
 "373
-[; ;Button_src.c: 373:                     write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
+[; ;Button_src.c: 373:                     button_delay();
+[e ( _button_delay ..  ]
 "374
-[; ;Button_src.c: 374:                     write_char('M');
-[e ( _write_char (1 -> -> 77 `ui `uc ]
+[; ;Button_src.c: 374:                     write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "375
-[; ;Button_src.c: 375:                     write_char('i');
-[e ( _write_char (1 -> -> 105 `ui `uc ]
+[; ;Button_src.c: 375:                     write_char('M');
+[e ( _write_char (1 -> -> 77 `ui `uc ]
 "376
-[; ;Button_src.c: 376:                     write_char('n');
-[e ( _write_char (1 -> -> 110 `ui `uc ]
+[; ;Button_src.c: 376:                     write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
 "377
-[; ;Button_src.c: 377:                     write_char('s');
-[e ( _write_char (1 -> -> 115 `ui `uc ]
+[; ;Button_src.c: 377:                     write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
 "378
-[; ;Button_src.c: 378:                     write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
+[; ;Button_src.c: 378:                     write_char('s');
+[e ( _write_char (1 -> -> 115 `ui `uc ]
 "379
-[; ;Button_src.c: 379:                     b = 'y';
-[e = _b -> -> 121 `ui `uc ]
+[; ;Button_src.c: 379:                     write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "380
-[; ;Button_src.c: 380:                   }
+[; ;Button_src.c: 380:                     b = 'y';
+[e = _b -> -> 121 `ui `uc ]
+"381
+[; ;Button_src.c: 381:                   }
 }
 [e :U 131 ]
-"381
-[; ;Button_src.c: 381:                    write_cmd(0x88);
+"382
+[; ;Button_src.c: 382:                    write_cmd(0x88);
 [e ( _write_cmd (1 -> -> 136 `i `uc ]
-"385
-[; ;Button_src.c: 385:                   RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
 "386
-[; ;Button_src.c: 386:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 386:                   RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
 "387
-[; ;Button_src.c: 387:                   RC2 = 0;
-[e = _RC2 -> -> 0 `i `b ]
-"388
-[; ;Button_src.c: 388:                   RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"390
-[; ;Button_src.c: 390:              write_cmd(0x88);
-[e ( _write_cmd (1 -> -> 136 `i `uc ]
-"391
-[; ;Button_src.c: 391:              write_char('T');
-[e ( _write_char (1 -> -> 84 `ui `uc ]
-"392
-[; ;Button_src.c: 392:              write_char('i');
-[e ( _write_char (1 -> -> 105 `ui `uc ]
-"393
-[; ;Button_src.c: 393:              write_char('m');
-[e ( _write_char (1 -> -> 109 `ui `uc ]
-"394
-[; ;Button_src.c: 394:              write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"395
-[; ;Button_src.c: 395:              write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"396
-[; ;Button_src.c: 396:              write_char(y + '0');
-[e ( _write_char (1 -> + _y -> 48 `ui `uc ]
-"397
-[; ;Button_src.c: 397:              write_char(x + '0');
-[e ( _write_char (1 -> + _x -> 48 `ui `uc ]
-"398
-[; ;Button_src.c: 398:              write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
-"399
-[; ;Button_src.c: 399:              write_char(w + '0');
-[e ( _write_char (1 -> + _w -> 48 `ui `uc ]
-"400
-[; ;Button_src.c: 400:              write_char(t + '0');
-[e ( _write_char (1 -> + _t -> 48 `ui `uc ]
-"402
-[; ;Button_src.c: 402:             RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
-"403
-[; ;Button_src.c: 403:             RC1 = 1;
+[; ;Button_src.c: 387:                   RC1 = 1;
 [e = _RC1 -> -> 1 `i `b ]
-"404
-[; ;Button_src.c: 404:             RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
-"405
-[; ;Button_src.c: 405:             RC3 = 1;
+"388
+[; ;Button_src.c: 388:                   RC2 = 0;
+[e = _RC2 -> -> 0 `i `b ]
+"389
+[; ;Button_src.c: 389:                   RC3 = 1;
 [e = _RC3 -> -> 1 `i `b ]
+"391
+[; ;Button_src.c: 391:              write_cmd(0x88);
+[e ( _write_cmd (1 -> -> 136 `i `uc ]
+"392
+[; ;Button_src.c: 392:              write_char('T');
+[e ( _write_char (1 -> -> 84 `ui `uc ]
+"393
+[; ;Button_src.c: 393:              write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
+"394
+[; ;Button_src.c: 394:              write_char('m');
+[e ( _write_char (1 -> -> 109 `ui `uc ]
+"395
+[; ;Button_src.c: 395:              write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"396
+[; ;Button_src.c: 396:              write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"397
+[; ;Button_src.c: 397:              write_char(y + '0');
+[e ( _write_char (1 -> + _y -> 48 `ui `uc ]
+"398
+[; ;Button_src.c: 398:              write_char(x + '0');
+[e ( _write_char (1 -> + _x -> 48 `ui `uc ]
+"399
+[; ;Button_src.c: 399:              write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"400
+[; ;Button_src.c: 400:              write_char(w + '0');
+[e ( _write_char (1 -> + _w -> 48 `ui `uc ]
+"401
+[; ;Button_src.c: 401:              write_char(t + '0');
+[e ( _write_char (1 -> + _t -> 48 `ui `uc ]
+"403
+[; ;Button_src.c: 403:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"404
+[; ;Button_src.c: 404:             RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
+"405
+[; ;Button_src.c: 405:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "406
-[; ;Button_src.c: 406:             if (RC7 == 0 ){
+[; ;Button_src.c: 406:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"407
+[; ;Button_src.c: 407:             if (RC7 == 0 ){
 [e $ ! == -> _RC7 `i -> 0 `i 132  ]
 {
-"407
-[; ;Button_src.c: 407:             a = 0x00;
-[e = _a -> -> 0 `i `uc ]
 "408
-[; ;Button_src.c: 408:             c = 0x00;
-[e = _c -> -> 0 `i `uc ]
+[; ;Button_src.c: 408:             a = 0x00;
+[e = _a -> -> 0 `i `uc ]
 "409
-[; ;Button_src.c: 409:             x = 0;
-[e = _x -> -> 0 `i `ui ]
+[; ;Button_src.c: 409:             c = 0x00;
+[e = _c -> -> 0 `i `uc ]
 "410
-[; ;Button_src.c: 410:             y = 0;
-[e = _y -> -> 0 `i `ui ]
+[; ;Button_src.c: 410:             x = 0;
+[e = _x -> -> 0 `i `ui ]
 "411
-[; ;Button_src.c: 411:             w = 0;
-[e = _w -> -> 0 `i `ui ]
+[; ;Button_src.c: 411:             y = 0;
+[e = _y -> -> 0 `i `ui ]
 "412
-[; ;Button_src.c: 412:             t = 0;
-[e = _t -> -> 0 `i `ui ]
+[; ;Button_src.c: 412:             w = 0;
+[e = _w -> -> 0 `i `ui ]
 "413
-[; ;Button_src.c: 413:             write_cmd(0x1);
-[e ( _write_cmd (1 -> -> 1 `i `uc ]
+[; ;Button_src.c: 413:             t = 0;
+[e = _t -> -> 0 `i `ui ]
 "414
-[; ;Button_src.c: 414:             break;
-[e $U 111  ]
+[; ;Button_src.c: 414:             write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
 "415
-[; ;Button_src.c: 415:             }
+[; ;Button_src.c: 415:             break;
+[e $U 111  ]
+"416
+[; ;Button_src.c: 416:             }
 }
 [e :U 132 ]
-"416
-[; ;Button_src.c: 416:       }
+"417
+[; ;Button_src.c: 417:       }
 }
 [e $U 110  ]
 [e :U 111 ]
 }
-"417
-[; ;Button_src.c: 417:   }
+"418
+[; ;Button_src.c: 418:   }
 }
 [e :U 109 ]
-"418
-[; ;Button_src.c: 418: }
+"419
+[; ;Button_src.c: 419: }
 [e :UE 108 ]
 }
-"420
-[; ;Button_src.c: 420: void date_settings(){
+"421
+[; ;Button_src.c: 421: void date_settings(){
 [v _date_settings `(v ~T0 @X0 1 ef ]
 {
 [e :U _date_settings ]
 [f ]
-"421
-[; ;Button_src.c: 421:  RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
 "422
-[; ;Button_src.c: 422:  RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 422:  RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "423
-[; ;Button_src.c: 423:  RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 423:  RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "424
-[; ;Button_src.c: 424:  RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 424:  RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "425
-[; ;Button_src.c: 425:   if (RC4 == 0){
+[; ;Button_src.c: 425:  RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"426
+[; ;Button_src.c: 426:   if (RC4 == 0){
 [e $ ! == -> _RC4 `i -> 0 `i 134  ]
 {
-"426
-[; ;Button_src.c: 426:       write_cmd(0x1);
-[e ( _write_cmd (1 -> -> 1 `i `uc ]
 "427
-[; ;Button_src.c: 427:       for(;;){
+[; ;Button_src.c: 427:       write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
+"428
+[; ;Button_src.c: 428:       for(;;){
 {
 [e :U 135 ]
 {
-"428
-[; ;Button_src.c: 428:             write_cmd(0x80);
-[e ( _write_cmd (1 -> -> 128 `i `uc ]
 "429
-[; ;Button_src.c: 429:             write_char('D');
-[e ( _write_char (1 -> -> 68 `ui `uc ]
+[; ;Button_src.c: 429:             write_cmd(0x80);
+[e ( _write_cmd (1 -> -> 128 `i `uc ]
 "430
-[; ;Button_src.c: 430:             write_char('a');
-[e ( _write_char (1 -> -> 97 `ui `uc ]
+[; ;Button_src.c: 430:             write_char('D');
+[e ( _write_char (1 -> -> 68 `ui `uc ]
 "431
-[; ;Button_src.c: 431:             write_char('t');
-[e ( _write_char (1 -> -> 116 `ui `uc ]
+[; ;Button_src.c: 431:             write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
 "432
-[; ;Button_src.c: 432:             write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"433
-[; ;Button_src.c: 433:             write_char('_');
-[e ( _write_char (1 -> -> 95 `ui `uc ]
-"434
-[; ;Button_src.c: 434:             write_char('S');
-[e ( _write_char (1 -> -> 83 `ui `uc ]
-"435
-[; ;Button_src.c: 435:             write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
-"436
-[; ;Button_src.c: 436:             write_char('t');
+[; ;Button_src.c: 432:             write_char('t');
 [e ( _write_char (1 -> -> 116 `ui `uc ]
+"433
+[; ;Button_src.c: 433:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
+"434
+[; ;Button_src.c: 434:             write_char('_');
+[e ( _write_char (1 -> -> 95 `ui `uc ]
+"435
+[; ;Button_src.c: 435:             write_char('S');
+[e ( _write_char (1 -> -> 83 `ui `uc ]
+"436
+[; ;Button_src.c: 436:             write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
 "437
 [; ;Button_src.c: 437:             write_char('t');
 [e ( _write_char (1 -> -> 116 `ui `uc ]
 "438
-[; ;Button_src.c: 438:             write_char('i');
-[e ( _write_char (1 -> -> 105 `ui `uc ]
+[; ;Button_src.c: 438:             write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
 "439
-[; ;Button_src.c: 439:             write_char('n');
-[e ( _write_char (1 -> -> 110 `ui `uc ]
+[; ;Button_src.c: 439:             write_char('i');
+[e ( _write_char (1 -> -> 105 `ui `uc ]
 "440
-[; ;Button_src.c: 440:             write_char('g');
-[e ( _write_char (1 -> -> 103 `ui `uc ]
+[; ;Button_src.c: 440:             write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
 "441
-[; ;Button_src.c: 441:             write_char('s');
-[e ( _write_char (1 -> -> 115 `ui `uc ]
+[; ;Button_src.c: 441:             write_char('g');
+[e ( _write_char (1 -> -> 103 `ui `uc ]
 "442
-[; ;Button_src.c: 442:             RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
+[; ;Button_src.c: 442:             write_char('s');
+[e ( _write_char (1 -> -> 115 `ui `uc ]
 "443
-[; ;Button_src.c: 443:             RC1 = 0;
-[e = _RC1 -> -> 0 `i `b ]
+[; ;Button_src.c: 443:             RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
 "444
-[; ;Button_src.c: 444:             RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 444:             RC1 = 0;
+[e = _RC1 -> -> 0 `i `b ]
 "445
-[; ;Button_src.c: 445:             RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 445:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "446
-[; ;Button_src.c: 446:             if(RC7 == 0 && b =='x'){
+[; ;Button_src.c: 446:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"447
+[; ;Button_src.c: 447:             if(RC7 == 0 && b =='x'){
 [e $ ! && == -> _RC7 `i -> 0 `i == -> _b `ui -> 120 `ui 138  ]
 {
-"447
-[; ;Button_src.c: 447:                 if(stats == 1)
-[e $ ! == _stats -> -> 1 `i `ui 139  ]
 "448
-[; ;Button_src.c: 448:                     a++;
+[; ;Button_src.c: 448:                 if(stats == 1)
+[e $ ! == _stats -> -> 1 `i `ui 139  ]
+"449
+[; ;Button_src.c: 449:                     a++;
 [e ++ _a -> -> 1 `i `uc ]
 [e :U 139 ]
-"449
-[; ;Button_src.c: 449:                 if(stats == 0){
+"450
+[; ;Button_src.c: 450:                 if(stats == 0){
 [e $ ! == _stats -> -> 0 `i `ui 140  ]
 {
-"450
-[; ;Button_src.c: 450:                     stats = 1;
-[e = _stats -> -> 1 `i `ui ]
 "451
-[; ;Button_src.c: 451:                 }
+[; ;Button_src.c: 451:                     stats = 1;
+[e = _stats -> -> 1 `i `ui ]
+"452
+[; ;Button_src.c: 452:                 }
 }
 [e :U 140 ]
-"453
-[; ;Button_src.c: 453:                     x++ ;
-[e ++ _x -> -> 1 `i `ui ]
 "454
-[; ;Button_src.c: 454:                     x = modulus_func(x,10);
-[e = _x -> ( _modulus_func (2 , -> _x `i -> 10 `i `ui ]
+[; ;Button_src.c: 454:                     x++ ;
+[e ++ _x -> -> 1 `i `ui ]
 "455
-[; ;Button_src.c: 455:                      if (p == 1){
+[; ;Button_src.c: 455:                     x = modulus_func(x,10);
+[e = _x -> ( _modulus_func (2 , -> _x `i -> 10 `i `ui ]
+"456
+[; ;Button_src.c: 456:                      if (p == 1){
 [e $ ! == _p -> -> 1 `i `ui 141  ]
 {
-"456
-[; ;Button_src.c: 456:                         y = incrementor(y,x,'0');
-[e = _y -> ( _incrementor (3 , , -> _y `i -> _x `i -> -> 48 `ui `uc `ui ]
 "457
-[; ;Button_src.c: 457:                         p = 0;
-[e = _p -> -> 0 `i `ui ]
+[; ;Button_src.c: 457:                         y = incrementor(y,x,'0');
+[e = _y -> ( _incrementor (3 , , -> _y `i -> _x `i -> -> 48 `ui `uc `ui ]
 "458
-[; ;Button_src.c: 458:                     }
+[; ;Button_src.c: 458:                         p = 0;
+[e = _p -> -> 0 `i `ui ]
+"459
+[; ;Button_src.c: 459:                     }
 }
 [e :U 141 ]
-"459
-[; ;Button_src.c: 459:                     if (x == 9){
+"460
+[; ;Button_src.c: 460:                     if (x == 9){
 [e $ ! == _x -> -> 9 `i `ui 142  ]
 {
-"460
-[; ;Button_src.c: 460:                         p = 1;
-[e = _p -> -> 1 `i `ui ]
 "461
-[; ;Button_src.c: 461:                     }
+[; ;Button_src.c: 461:                         p = 1;
+[e = _p -> -> 1 `i `ui ]
+"462
+[; ;Button_src.c: 462:                     }
 }
 [e :U 142 ]
-"462
-[; ;Button_src.c: 462:                     a = time_date_hex_terminator(a,'C');
+"463
+[; ;Button_src.c: 463:                     a = time_date_hex_terminator(a,'C');
 [e = _a -> ( _time_date_hex_terminator (2 , -> _a `uc -> -> 67 `ui `uc `uc ]
-"464
-[; ;Button_src.c: 464:                     if(y == 1 && x == 3){
+"465
+[; ;Button_src.c: 465:                     if(y == 1 && x == 3){
 [e $ ! && == _y -> -> 1 `i `ui == _x -> -> 3 `i `ui 143  ]
 {
-"465
-[; ;Button_src.c: 465:                         x = 0;
-[e = _x -> -> 0 `i `ui ]
 "466
-[; ;Button_src.c: 466:                         y = 0;
-[e = _y -> -> 0 `i `ui ]
+[; ;Button_src.c: 466:                         x = 0;
+[e = _x -> -> 0 `i `ui ]
 "467
-[; ;Button_src.c: 467:                     }
+[; ;Button_src.c: 467:                         y = 0;
+[e = _y -> -> 0 `i `ui ]
+"468
+[; ;Button_src.c: 468:                     }
 }
 [e :U 143 ]
-"468
-[; ;Button_src.c: 468:                     button_delay();
-[e ( _button_delay ..  ]
 "469
-[; ;Button_src.c: 469:             }
+[; ;Button_src.c: 469:                     button_delay();
+[e ( _button_delay ..  ]
+"470
+[; ;Button_src.c: 470:             }
 }
 [e :U 138 ]
-"470
-[; ;Button_src.c: 470:             if(RC7==0 && b == 'y'){
+"471
+[; ;Button_src.c: 471:             if(RC7==0 && b == 'y'){
 [e $ ! && == -> _RC7 `i -> 0 `i == -> _b `ui -> 121 `ui 144  ]
 {
-"471
-[; ;Button_src.c: 471:                  if(stats == 1)
-[e $ ! == _stats -> -> 1 `i `ui 145  ]
 "472
-[; ;Button_src.c: 472:                     day_hex++;
+[; ;Button_src.c: 472:                  if(stats == 1)
+[e $ ! == _stats -> -> 1 `i `ui 145  ]
+"473
+[; ;Button_src.c: 473:                     day_hex++;
 [e ++ _day_hex -> -> 1 `i `uc ]
 [e :U 145 ]
-"473
-[; ;Button_src.c: 473:                 if(stats == 0){
+"474
+[; ;Button_src.c: 474:                 if(stats == 0){
 [e $ ! == _stats -> -> 0 `i `ui 146  ]
 {
-"474
-[; ;Button_src.c: 474:                     stats = 1;
-[e = _stats -> -> 1 `i `ui ]
 "475
-[; ;Button_src.c: 475:                 }
+[; ;Button_src.c: 475:                     stats = 1;
+[e = _stats -> -> 1 `i `ui ]
+"476
+[; ;Button_src.c: 476:                 }
 }
 [e :U 146 ]
-"477
-[; ;Button_src.c: 477:                     day_low++;
-[e ++ _day_low -> -> 1 `i `ui ]
 "478
-[; ;Button_src.c: 478:                     day_low = modulus_func(day_low,10);
-[e = _day_low -> ( _modulus_func (2 , -> _day_low `i -> 10 `i `ui ]
+[; ;Button_src.c: 478:                     day_low++;
+[e ++ _day_low -> -> 1 `i `ui ]
 "479
-[; ;Button_src.c: 479:                     day_counter = modulus_func(day_low,8);
-[e = _day_counter ( _modulus_func (2 , -> _day_low `i -> 8 `i ]
+[; ;Button_src.c: 479:                     day_low = modulus_func(day_low,10);
+[e = _day_low -> ( _modulus_func (2 , -> _day_low `i -> 10 `i `ui ]
 "480
-[; ;Button_src.c: 480:                     if (p == 1){
+[; ;Button_src.c: 480:                     day_counter = modulus_func(day_low,8);
+[e = _day_counter ( _modulus_func (2 , -> _day_low `i -> 8 `i ]
+"481
+[; ;Button_src.c: 481:                     if (p == 1){
 [e $ ! == _p -> -> 1 `i `ui 147  ]
 {
-"481
-[; ;Button_src.c: 481:                         day_high = incrementor(day_high,day_low,'0');
-[e = _day_high -> ( _incrementor (3 , , -> _day_high `i -> _day_low `i -> -> 48 `ui `uc `ui ]
 "482
-[; ;Button_src.c: 482:                         p = 0;
-[e = _p -> -> 0 `i `ui ]
+[; ;Button_src.c: 482:                         day_high = incrementor(day_high,day_low,'0');
+[e = _day_high -> ( _incrementor (3 , , -> _day_high `i -> _day_low `i -> -> 48 `ui `uc `ui ]
 "483
-[; ;Button_src.c: 483:                     }
+[; ;Button_src.c: 483:                         p = 0;
+[e = _p -> -> 0 `i `ui ]
+"484
+[; ;Button_src.c: 484:                     }
 }
 [e :U 147 ]
-"484
-[; ;Button_src.c: 484:                     if (day_low == 9){
+"485
+[; ;Button_src.c: 485:                     if (day_low == 9){
 [e $ ! == _day_low -> -> 9 `i `ui 148  ]
 {
-"485
-[; ;Button_src.c: 485:                         p = 1;
-[e = _p -> -> 1 `i `ui ]
 "486
-[; ;Button_src.c: 486:                     }
+[; ;Button_src.c: 486:                         p = 1;
+[e = _p -> -> 1 `i `ui ]
+"487
+[; ;Button_src.c: 487:                     }
 }
 [e :U 148 ]
-"487
-[; ;Button_src.c: 487:                     day_hex = time_date_hex_terminator(day_hex,'c');
-[e = _day_hex -> ( _time_date_hex_terminator (2 , -> _day_hex `uc -> -> 99 `ui `uc `uc ]
 "488
-[; ;Button_src.c: 488:                     if(day_high == 3 && day_low==2 ){
+[; ;Button_src.c: 488:                     day_hex = time_date_hex_terminator(day_hex,'c');
+[e = _day_hex -> ( _time_date_hex_terminator (2 , -> _day_hex `uc -> -> 99 `ui `uc `uc ]
+"489
+[; ;Button_src.c: 489:                     if(day_high == 3 && day_low==2 ){
 [e $ ! && == _day_high -> -> 3 `i `ui == _day_low -> -> 2 `i `ui 149  ]
 {
-"489
-[; ;Button_src.c: 489:                         day_high = 0;
-[e = _day_high -> -> 0 `i `ui ]
 "490
-[; ;Button_src.c: 490:                         day_low = 0;
-[e = _day_low -> -> 0 `i `ui ]
+[; ;Button_src.c: 490:                         day_high = 0;
+[e = _day_high -> -> 0 `i `ui ]
 "491
-[; ;Button_src.c: 491:                     }
+[; ;Button_src.c: 491:                         day_low = 0;
+[e = _day_low -> -> 0 `i `ui ]
+"492
+[; ;Button_src.c: 492:                     }
 }
 [e :U 149 ]
-"492
-[; ;Button_src.c: 492:                     button_delay();
-[e ( _button_delay ..  ]
 "493
-[; ;Button_src.c: 493:             }
+[; ;Button_src.c: 493:                     button_delay();
+[e ( _button_delay ..  ]
+"494
+[; ;Button_src.c: 494:             }
 }
 [e :U 144 ]
-"494
-[; ;Button_src.c: 494:             if(RC7==0 && b == 'z'){
+"495
+[; ;Button_src.c: 495:             if(RC7==0 && b == 'z'){
 [e $ ! && == -> _RC7 `i -> 0 `i == -> _b `ui -> 122 `ui 150  ]
 {
-"495
-[; ;Button_src.c: 495:                 if(stats == 1)
-[e $ ! == _stats -> -> 1 `i `ui 151  ]
 "496
-[; ;Button_src.c: 496:                    c++;
+[; ;Button_src.c: 496:                 if(stats == 1)
+[e $ ! == _stats -> -> 1 `i `ui 151  ]
+"497
+[; ;Button_src.c: 497:                    c++;
 [e ++ _c -> -> 1 `i `uc ]
 [e :U 151 ]
-"497
-[; ;Button_src.c: 497:                 if(stats == 0){
+"498
+[; ;Button_src.c: 498:                 if(stats == 0){
 [e $ ! == _stats -> -> 0 `i `ui 152  ]
 {
-"498
-[; ;Button_src.c: 498:                     stats = 1;
-[e = _stats -> -> 1 `i `ui ]
 "499
-[; ;Button_src.c: 499:                 }
+[; ;Button_src.c: 499:                     stats = 1;
+[e = _stats -> -> 1 `i `ui ]
+"500
+[; ;Button_src.c: 500:                 }
 }
 [e :U 152 ]
-"501
-[; ;Button_src.c: 501:                     t++;
-[e ++ _t -> -> 1 `i `ui ]
 "502
-[; ;Button_src.c: 502:                     t = modulus_func(t,10);
-[e = _t -> ( _modulus_func (2 , -> _t `i -> 10 `i `ui ]
+[; ;Button_src.c: 502:                     t++;
+[e ++ _t -> -> 1 `i `ui ]
 "503
-[; ;Button_src.c: 503:                      if (p == 1){
+[; ;Button_src.c: 503:                     t = modulus_func(t,10);
+[e = _t -> ( _modulus_func (2 , -> _t `i -> 10 `i `ui ]
+"504
+[; ;Button_src.c: 504:                      if (p == 1){
 [e $ ! == _p -> -> 1 `i `ui 153  ]
 {
-"504
-[; ;Button_src.c: 504:                         w = incrementor(w,t,'0');
-[e = _w -> ( _incrementor (3 , , -> _w `i -> _t `i -> -> 48 `ui `uc `ui ]
 "505
-[; ;Button_src.c: 505:                         p = 0;
-[e = _p -> -> 0 `i `ui ]
+[; ;Button_src.c: 505:                         w = incrementor(w,t,'0');
+[e = _w -> ( _incrementor (3 , , -> _w `i -> _t `i -> -> 48 `ui `uc `ui ]
 "506
-[; ;Button_src.c: 506:                     }
+[; ;Button_src.c: 506:                         p = 0;
+[e = _p -> -> 0 `i `ui ]
+"507
+[; ;Button_src.c: 507:                     }
 }
 [e :U 153 ]
-"507
-[; ;Button_src.c: 507:                     if (t == 9){
+"508
+[; ;Button_src.c: 508:                     if (t == 9){
 [e $ ! == _t -> -> 9 `i `ui 154  ]
 {
-"508
-[; ;Button_src.c: 508:                         p = 1;
-[e = _p -> -> 1 `i `ui ]
 "509
-[; ;Button_src.c: 509:                     }
+[; ;Button_src.c: 509:                         p = 1;
+[e = _p -> -> 1 `i `ui ]
+"510
+[; ;Button_src.c: 510:                     }
 }
 [e :U 154 ]
-"511
-[; ;Button_src.c: 511:                      if(c == (0x59 + 1)){
+"512
+[; ;Button_src.c: 512:                      if(c == (0x59 + 1)){
 [e $ ! == -> _c `i + -> 89 `i -> 1 `i 155  ]
 {
-"512
-[; ;Button_src.c: 512:                         c = 0x00;
-[e = _c -> -> 0 `i `uc ]
 "513
-[; ;Button_src.c: 513:                     }
+[; ;Button_src.c: 513:                         c = 0x00;
+[e = _c -> -> 0 `i `uc ]
+"514
+[; ;Button_src.c: 514:                     }
 }
 [e :U 155 ]
-"514
-[; ;Button_src.c: 514:                     if(w == 6){
+"515
+[; ;Button_src.c: 515:                     if(w == 6){
 [e $ ! == _w -> -> 6 `i `ui 156  ]
 {
-"515
-[; ;Button_src.c: 515:                         w = 0;
-[e = _w -> -> 0 `i `ui ]
 "516
-[; ;Button_src.c: 516:                         t = 0;
-[e = _t -> -> 0 `i `ui ]
+[; ;Button_src.c: 516:                         w = 0;
+[e = _w -> -> 0 `i `ui ]
 "517
-[; ;Button_src.c: 517:                     }
+[; ;Button_src.c: 517:                         t = 0;
+[e = _t -> -> 0 `i `ui ]
+"518
+[; ;Button_src.c: 518:                     }
 }
 [e :U 156 ]
-"518
-[; ;Button_src.c: 518:                     button_delay();
-[e ( _button_delay ..  ]
 "519
-[; ;Button_src.c: 519:             }
+[; ;Button_src.c: 519:                     button_delay();
+[e ( _button_delay ..  ]
+"520
+[; ;Button_src.c: 520:             }
 }
 [e :U 150 ]
-"525
-[; ;Button_src.c: 525:                     a = time_date_delimiter(a,0x11,'9',1);
+"526
+[; ;Button_src.c: 526:                     a = time_date_delimiter(a,0x11,'9',1);
 [e = _a -> ( _time_date_delimiter (4 , , , -> _a `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 1 `i `uc ]
-"527
-[; ;Button_src.c: 527:                     day_hex = time_date_delimiter(day_hex,0x11,'9',2);
-[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 2 `i `uc ]
 "528
-[; ;Button_src.c: 528:                     day_hex = time_date_delimiter(day_hex,0x21,'J',2);
-[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 2 `i `uc ]
-"529
-[; ;Button_src.c: 529:                     day_hex = time_date_delimiter(day_hex,0x11,'9',2);
+[; ;Button_src.c: 528:                     day_hex = time_date_delimiter(day_hex,0x11,'9',2);
 [e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 2 `i `uc ]
-"530
-[; ;Button_src.c: 530:                     day_hex = time_date_delimiter(day_hex,0x21,'J',2);
+"529
+[; ;Button_src.c: 529:                     day_hex = time_date_delimiter(day_hex,0x21,'J',2);
 [e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 2 `i `uc ]
+"530
+[; ;Button_src.c: 530:                     day_hex = time_date_delimiter(day_hex,0x11,'9',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 2 `i `uc ]
 "531
-[; ;Button_src.c: 531:                     day_hex = time_date_delimiter(day_hex,0x31,'Y',2);
+[; ;Button_src.c: 531:                     day_hex = time_date_delimiter(day_hex,0x21,'J',2);
+[e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 2 `i `uc ]
+"532
+[; ;Button_src.c: 532:                     day_hex = time_date_delimiter(day_hex,0x31,'Y',2);
 [e = _day_hex -> ( _time_date_delimiter (4 , , , -> _day_hex `uc -> -> 49 `i `uc -> -> 89 `ui `uc -> 2 `i `uc ]
-"533
-[; ;Button_src.c: 533:                     c = time_date_delimiter(c,0x11,'9',3);
-[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 3 `i `uc ]
 "534
-[; ;Button_src.c: 534:                     c = time_date_delimiter(c,0x21,'J',3);
-[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 3 `i `uc ]
-"535
-[; ;Button_src.c: 535:                     c = time_date_delimiter(c,0x11,'9',3);
+[; ;Button_src.c: 534:                     c = time_date_delimiter(c,0x11,'9',3);
 [e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 3 `i `uc ]
-"536
-[; ;Button_src.c: 536:                     c = time_date_delimiter(c,0x21,'J',3);
+"535
+[; ;Button_src.c: 535:                     c = time_date_delimiter(c,0x21,'J',3);
 [e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 3 `i `uc ]
+"536
+[; ;Button_src.c: 536:                     c = time_date_delimiter(c,0x11,'9',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 17 `i `uc -> -> 57 `ui `uc -> 3 `i `uc ]
 "537
-[; ;Button_src.c: 537:                     c = time_date_delimiter(c,0x31,'Y',3);
-[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 49 `i `uc -> -> 89 `ui `uc -> 3 `i `uc ]
+[; ;Button_src.c: 537:                     c = time_date_delimiter(c,0x21,'J',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 33 `i `uc -> -> 74 `ui `uc -> 3 `i `uc ]
 "538
-[; ;Button_src.c: 538:                     c = time_date_delimiter(c,0x41,'j',3);
-[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 65 `i `uc -> -> 106 `ui `uc -> 3 `i `uc ]
+[; ;Button_src.c: 538:                     c = time_date_delimiter(c,0x31,'Y',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 49 `i `uc -> -> 89 `ui `uc -> 3 `i `uc ]
 "539
-[; ;Button_src.c: 539:                     c = time_date_delimiter(c,0x51,'z',3);
+[; ;Button_src.c: 539:                     c = time_date_delimiter(c,0x41,'j',3);
+[e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 65 `i `uc -> -> 106 `ui `uc -> 3 `i `uc ]
+"540
+[; ;Button_src.c: 540:                     c = time_date_delimiter(c,0x51,'z',3);
 [e = _c -> ( _time_date_delimiter (4 , , , -> _c `uc -> -> 81 `i `uc -> -> 122 `ui `uc -> 3 `i `uc ]
-"541
-[; ;Button_src.c: 541:               if(stats==0){
+"542
+[; ;Button_src.c: 542:               if(stats==0){
 [e $ ! == _stats -> -> 0 `i `ui 157  ]
 {
-"542
-[; ;Button_src.c: 542:                   table[4] = prev_hex;
-[e = *U + &U _table * -> -> -> 4 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex `uc ]
 "543
-[; ;Button_src.c: 543:                   table[6] = prev_hex_year;
-[e = *U + &U _table * -> -> -> 6 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex_year `uc ]
+[; ;Button_src.c: 543:                   table[4] = prev_hex;
+[e = *U + &U _table * -> -> -> 4 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex `uc ]
 "544
-[; ;Button_src.c: 544:                   table[3] = prev_hex_day;
-[e = *U + &U _table * -> -> -> 3 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex_day `uc ]
+[; ;Button_src.c: 544:                   table[6] = prev_hex_year;
+[e = *U + &U _table * -> -> -> 6 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex_year `uc ]
 "545
-[; ;Button_src.c: 545:               }
+[; ;Button_src.c: 545:                   table[3] = prev_hex_day;
+[e = *U + &U _table * -> -> -> 3 `i `ui `ux -> -> # *U &U _table `ui `ux -> _prev_hex_day `uc ]
+"546
+[; ;Button_src.c: 546:               }
 }
 [e $U 158  ]
-"546
-[; ;Button_src.c: 546:               else if(stats==1)
+"547
+[; ;Button_src.c: 547:               else if(stats==1)
 [e :U 157 ]
 [e $ ! == _stats -> -> 1 `i `ui 159  ]
-"547
-[; ;Button_src.c: 547:               {
-{
 "548
-[; ;Button_src.c: 548:                  table[4]= a;
-[e = *U + &U _table * -> -> -> 4 `i `ui `ux -> -> # *U &U _table `ui `ux -> _a `uc ]
+[; ;Button_src.c: 548:               {
+{
 "549
-[; ;Button_src.c: 549:                  table[6] = c;
-[e = *U + &U _table * -> -> -> 6 `i `ui `ux -> -> # *U &U _table `ui `ux -> _c `uc ]
+[; ;Button_src.c: 549:                  table[4]= a;
+[e = *U + &U _table * -> -> -> 4 `i `ui `ux -> -> # *U &U _table `ui `ux -> _a `uc ]
 "550
-[; ;Button_src.c: 550:                  table[3] = day_hex;
-[e = *U + &U _table * -> -> -> 3 `i `ui `ux -> -> # *U &U _table `ui `ux -> _day_hex `uc ]
+[; ;Button_src.c: 550:                  table[6] = c;
+[e = *U + &U _table * -> -> -> 6 `i `ui `ux -> -> # *U &U _table `ui `ux -> _c `uc ]
 "551
-[; ;Button_src.c: 551:               }
+[; ;Button_src.c: 551:                  table[3] = day_hex;
+[e = *U + &U _table * -> -> -> 3 `i `ui `ux -> -> # *U &U _table `ui `ux -> _day_hex `uc ]
+"552
+[; ;Button_src.c: 552:               }
 }
 [e :U 159 ]
 [e :U 158 ]
-"553
-[; ;Button_src.c: 553:              write_cmd(0x88);
+"554
+[; ;Button_src.c: 554:              write_cmd(0x88);
 [e ( _write_cmd (1 -> -> 136 `i `uc ]
-"555
-[; ;Button_src.c: 555:                   RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
 "556
-[; ;Button_src.c: 556:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 556:                   RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "557
-[; ;Button_src.c: 557:                   RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 557:                   RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "558
-[; ;Button_src.c: 558:                   RC3 = 1;
+[; ;Button_src.c: 558:                   RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
+"559
+[; ;Button_src.c: 559:                   RC3 = 1;
 [e = _RC3 -> -> 1 `i `b ]
-"560
-[; ;Button_src.c: 560:                     if (RC6 == 0 ){
+"561
+[; ;Button_src.c: 561:                     if (RC6 == 0 ){
 [e $ ! == -> _RC6 `i -> 0 `i 160  ]
 {
-"561
-[; ;Button_src.c: 561:                           a = 0x00;
-[e = _a -> -> 0 `i `uc ]
 "562
-[; ;Button_src.c: 562:                           c = 0x00;
-[e = _c -> -> 0 `i `uc ]
-"563
-[; ;Button_src.c: 563:                           day_hex = 0x00;
-[e = _day_hex -> -> 0 `i `uc ]
-"564
-[; ;Button_src.c: 564:                           day_high = 0;
-[e = _day_high -> -> 0 `i `ui ]
-"565
-[; ;Button_src.c: 565:                           day_low = 0;
-[e = _day_low -> -> 0 `i `ui ]
-"566
-[; ;Button_src.c: 566:                           x = 0;
-[e = _x -> -> 0 `i `ui ]
-"567
-[; ;Button_src.c: 567:                           y = 0;
-[e = _y -> -> 0 `i `ui ]
-"568
-[; ;Button_src.c: 568:                           w = 0;
-[e = _w -> -> 0 `i `ui ]
-"569
-[; ;Button_src.c: 569:                           t = 0;
-[e = _t -> -> 0 `i `ui ]
-"570
-[; ;Button_src.c: 570:                           write_cmd(0x1);
-[e ( _write_cmd (1 -> -> 1 `i `uc ]
-"571
-[; ;Button_src.c: 571:                           set_time();
+[; ;Button_src.c: 562:                           set_time();
 [e ( _set_time ..  ]
+"563
+[; ;Button_src.c: 563:                           a = 0x00;
+[e = _a -> -> 0 `i `uc ]
+"564
+[; ;Button_src.c: 564:                           c = 0x00;
+[e = _c -> -> 0 `i `uc ]
+"565
+[; ;Button_src.c: 565:                           day_hex = 0x00;
+[e = _day_hex -> -> 0 `i `uc ]
+"566
+[; ;Button_src.c: 566:                           day_high = 0;
+[e = _day_high -> -> 0 `i `ui ]
+"567
+[; ;Button_src.c: 567:                           day_low = 0;
+[e = _day_low -> -> 0 `i `ui ]
+"568
+[; ;Button_src.c: 568:                           x = 0;
+[e = _x -> -> 0 `i `ui ]
+"569
+[; ;Button_src.c: 569:                           y = 0;
+[e = _y -> -> 0 `i `ui ]
+"570
+[; ;Button_src.c: 570:                           w = 0;
+[e = _w -> -> 0 `i `ui ]
+"571
+[; ;Button_src.c: 571:                           t = 0;
+[e = _t -> -> 0 `i `ui ]
 "572
-[; ;Button_src.c: 572:                           return;
-[e $UE 133  ]
+[; ;Button_src.c: 572:                           write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
 "573
-[; ;Button_src.c: 573:                             }
+[; ;Button_src.c: 573:                           return;
+[e $UE 133  ]
+"574
+[; ;Button_src.c: 574:                             }
 }
 [e :U 160 ]
-"574
-[; ;Button_src.c: 574:                   RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
 "575
-[; ;Button_src.c: 575:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 575:                   RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "576
-[; ;Button_src.c: 576:                   RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 576:                   RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "577
-[; ;Button_src.c: 577:                   RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 577:                   RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "578
-[; ;Button_src.c: 578:                   z = modulus_func(z,3);
-[e = _z -> ( _modulus_func (2 , -> _z `i -> 3 `i `ui ]
+[; ;Button_src.c: 578:                   RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
 "579
-[; ;Button_src.c: 579:                   if(RC4 == 0 && z ==0){
+[; ;Button_src.c: 579:                   z = modulus_func(z,3);
+[e = _z -> ( _modulus_func (2 , -> _z `i -> 3 `i `ui ]
+"580
+[; ;Button_src.c: 580:                   if(RC4 == 0 && z ==0){
 [e $ ! && == -> _RC4 `i -> 0 `i == _z -> -> 0 `i `ui 161  ]
 {
-"580
-[; ;Button_src.c: 580:                       write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "581
-[; ;Button_src.c: 581:                       write_char('D');
-[e ( _write_char (1 -> -> 68 `ui `uc ]
+[; ;Button_src.c: 581:                       write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "582
-[; ;Button_src.c: 582:                       write_char('a');
-[e ( _write_char (1 -> -> 97 `ui `uc ]
+[; ;Button_src.c: 582:                       write_char('D');
+[e ( _write_char (1 -> -> 68 `ui `uc ]
 "583
-[; ;Button_src.c: 583:                       write_char('y');
-[e ( _write_char (1 -> -> 121 `ui `uc ]
+[; ;Button_src.c: 583:                       write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
 "584
-[; ;Button_src.c: 584:                       write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
+[; ;Button_src.c: 584:                       write_char('y');
+[e ( _write_char (1 -> -> 121 `ui `uc ]
 "585
-[; ;Button_src.c: 585:                       write_char(' ');
-[e ( _write_char (1 -> -> 32 `ui `uc ]
+[; ;Button_src.c: 585:                       write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "586
 [; ;Button_src.c: 586:                       write_char(' ');
 [e ( _write_char (1 -> -> 32 `ui `uc ]
 "587
-[; ;Button_src.c: 587:                       b = 'y';
+[; ;Button_src.c: 587:                       write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"588
+[; ;Button_src.c: 588:                       b = 'y';
 [e = _b -> -> 121 `ui `uc ]
-"589
-[; ;Button_src.c: 589:                       button_delay();
-[e ( _button_delay ..  ]
 "590
-[; ;Button_src.c: 590:                       z++;
-[e ++ _z -> -> 1 `i `ui ]
+[; ;Button_src.c: 590:                       button_delay();
+[e ( _button_delay ..  ]
 "591
-[; ;Button_src.c: 591:                   }
+[; ;Button_src.c: 591:                       z++;
+[e ++ _z -> -> 1 `i `ui ]
+"592
+[; ;Button_src.c: 592:                   }
 }
 [e :U 161 ]
-"592
-[; ;Button_src.c: 592:                   RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
 "593
-[; ;Button_src.c: 593:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 593:                   RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "594
-[; ;Button_src.c: 594:                   RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 594:                   RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "595
-[; ;Button_src.c: 595:                   RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 595:                   RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "596
-[; ;Button_src.c: 596:                   if(RC4 == 0&& z ==1){
+[; ;Button_src.c: 596:                   RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"597
+[; ;Button_src.c: 597:                   if(RC4 == 0&& z ==1){
 [e $ ! && == -> _RC4 `i -> 0 `i == _z -> -> 1 `i `ui 162  ]
 {
-"597
-[; ;Button_src.c: 597:                       z++;
-[e ++ _z -> -> 1 `i `ui ]
 "598
-[; ;Button_src.c: 598:                       button_delay();
+[; ;Button_src.c: 598:                       z++;
+[e ++ _z -> -> 1 `i `ui ]
+"599
+[; ;Button_src.c: 599:                       button_delay();
 [e ( _button_delay ..  ]
-"600
-[; ;Button_src.c: 600:                       write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "601
-[; ;Button_src.c: 601:                       write_char('M');
-[e ( _write_char (1 -> -> 77 `ui `uc ]
+[; ;Button_src.c: 601:                       write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "602
-[; ;Button_src.c: 602:                       write_char('o');
-[e ( _write_char (1 -> -> 111 `ui `uc ]
+[; ;Button_src.c: 602:                       write_char('M');
+[e ( _write_char (1 -> -> 77 `ui `uc ]
 "603
-[; ;Button_src.c: 603:                       write_char('n');
-[e ( _write_char (1 -> -> 110 `ui `uc ]
+[; ;Button_src.c: 603:                       write_char('o');
+[e ( _write_char (1 -> -> 111 `ui `uc ]
 "604
-[; ;Button_src.c: 604:                       write_char('t');
-[e ( _write_char (1 -> -> 116 `ui `uc ]
+[; ;Button_src.c: 604:                       write_char('n');
+[e ( _write_char (1 -> -> 110 `ui `uc ]
 "605
-[; ;Button_src.c: 605:                       write_char('h');
-[e ( _write_char (1 -> -> 104 `ui `uc ]
+[; ;Button_src.c: 605:                       write_char('t');
+[e ( _write_char (1 -> -> 116 `ui `uc ]
 "606
-[; ;Button_src.c: 606:                       write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
+[; ;Button_src.c: 606:                       write_char('h');
+[e ( _write_char (1 -> -> 104 `ui `uc ]
 "607
-[; ;Button_src.c: 607:                       b = 'x';
+[; ;Button_src.c: 607:                       write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
+"608
+[; ;Button_src.c: 608:                       b = 'x';
 [e = _b -> -> 120 `ui `uc ]
-"609
-[; ;Button_src.c: 609:                   }
+"610
+[; ;Button_src.c: 610:                   }
 }
 [e :U 162 ]
-"610
-[; ;Button_src.c: 610:                   RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
 "611
-[; ;Button_src.c: 611:                   RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 611:                   RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "612
-[; ;Button_src.c: 612:                   RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 612:                   RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "613
-[; ;Button_src.c: 613:                   RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 613:                   RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "614
-[; ;Button_src.c: 614:                   if(RC4 == 0&& z ==2){
+[; ;Button_src.c: 614:                   RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"615
+[; ;Button_src.c: 615:                   if(RC4 == 0&& z ==2){
 [e $ ! && == -> _RC4 `i -> 0 `i == _z -> -> 2 `i `ui 163  ]
 {
-"615
-[; ;Button_src.c: 615:                       button_delay();
-[e ( _button_delay ..  ]
 "616
-[; ;Button_src.c: 616:                       z++;
+[; ;Button_src.c: 616:                       button_delay();
+[e ( _button_delay ..  ]
+"617
+[; ;Button_src.c: 617:                       z++;
 [e ++ _z -> -> 1 `i `ui ]
-"618
-[; ;Button_src.c: 618:                       write_cmd(0x90);
-[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "619
-[; ;Button_src.c: 619:                       write_char('Y');
-[e ( _write_char (1 -> -> 89 `ui `uc ]
+[; ;Button_src.c: 619:                       write_cmd(0x90);
+[e ( _write_cmd (1 -> -> 144 `i `uc ]
 "620
-[; ;Button_src.c: 620:                       write_char('e');
-[e ( _write_char (1 -> -> 101 `ui `uc ]
+[; ;Button_src.c: 620:                       write_char('Y');
+[e ( _write_char (1 -> -> 89 `ui `uc ]
 "621
-[; ;Button_src.c: 621:                       write_char('a');
-[e ( _write_char (1 -> -> 97 `ui `uc ]
+[; ;Button_src.c: 621:                       write_char('e');
+[e ( _write_char (1 -> -> 101 `ui `uc ]
 "622
-[; ;Button_src.c: 622:                       write_char('r');
-[e ( _write_char (1 -> -> 114 `ui `uc ]
+[; ;Button_src.c: 622:                       write_char('a');
+[e ( _write_char (1 -> -> 97 `ui `uc ]
 "623
-[; ;Button_src.c: 623:                       write_char(':');
-[e ( _write_char (1 -> -> 58 `ui `uc ]
+[; ;Button_src.c: 623:                       write_char('r');
+[e ( _write_char (1 -> -> 114 `ui `uc ]
 "624
-[; ;Button_src.c: 624:                       write_char(' ');
-[e ( _write_char (1 -> -> 32 `ui `uc ]
+[; ;Button_src.c: 624:                       write_char(':');
+[e ( _write_char (1 -> -> 58 `ui `uc ]
 "625
-[; ;Button_src.c: 625:                       b = 'z';
+[; ;Button_src.c: 625:                       write_char(' ');
+[e ( _write_char (1 -> -> 32 `ui `uc ]
+"626
+[; ;Button_src.c: 626:                       b = 'z';
 [e = _b -> -> 122 `ui `uc ]
-"627
-[; ;Button_src.c: 627:                   }
+"628
+[; ;Button_src.c: 628:                   }
 }
 [e :U 163 ]
-"628
-[; ;Button_src.c: 628:               write_cmd(0x88);
-[e ( _write_cmd (1 -> -> 136 `i `uc ]
 "629
-[; ;Button_src.c: 629:               write_char(day_high + '0');
-[e ( _write_char (1 -> + _day_high -> 48 `ui `uc ]
+[; ;Button_src.c: 629:               write_cmd(0x88);
+[e ( _write_cmd (1 -> -> 136 `i `uc ]
 "630
-[; ;Button_src.c: 630:               write_char(day_low + '0');
-[e ( _write_char (1 -> + _day_low -> 48 `ui `uc ]
+[; ;Button_src.c: 630:               write_char(day_high + '0');
+[e ( _write_char (1 -> + _day_high -> 48 `ui `uc ]
 "631
-[; ;Button_src.c: 631:               write_char('/');
-[e ( _write_char (1 -> -> 47 `ui `uc ]
+[; ;Button_src.c: 631:               write_char(day_low + '0');
+[e ( _write_char (1 -> + _day_low -> 48 `ui `uc ]
 "632
-[; ;Button_src.c: 632:               write_char(y + '0');
-[e ( _write_char (1 -> + _y -> 48 `ui `uc ]
-"633
-[; ;Button_src.c: 633:               write_char(x + '0');
-[e ( _write_char (1 -> + _x -> 48 `ui `uc ]
-"634
-[; ;Button_src.c: 634:               write_char('/');
+[; ;Button_src.c: 632:               write_char('/');
 [e ( _write_char (1 -> -> 47 `ui `uc ]
+"633
+[; ;Button_src.c: 633:               write_char(y + '0');
+[e ( _write_char (1 -> + _y -> 48 `ui `uc ]
+"634
+[; ;Button_src.c: 634:               write_char(x + '0');
+[e ( _write_char (1 -> + _x -> 48 `ui `uc ]
 "635
-[; ;Button_src.c: 635:               write_char(w+ '0');
-[e ( _write_char (1 -> + _w -> 48 `ui `uc ]
+[; ;Button_src.c: 635:               write_char('/');
+[e ( _write_char (1 -> -> 47 `ui `uc ]
 "636
-[; ;Button_src.c: 636:               write_char(t+ '0');
+[; ;Button_src.c: 636:               write_char(w+ '0');
+[e ( _write_char (1 -> + _w -> 48 `ui `uc ]
+"637
+[; ;Button_src.c: 637:               write_char(t+ '0');
 [e ( _write_char (1 -> + _t -> 48 `ui `uc ]
-"639
-[; ;Button_src.c: 639:             RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
 "640
-[; ;Button_src.c: 640:             RC1 = 1;
-[e = _RC1 -> -> 1 `i `b ]
+[; ;Button_src.c: 640:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "641
-[; ;Button_src.c: 641:             RC2 = 1;
-[e = _RC2 -> -> 1 `i `b ]
+[; ;Button_src.c: 641:             RC1 = 1;
+[e = _RC1 -> -> 1 `i `b ]
 "642
-[; ;Button_src.c: 642:             RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
+[; ;Button_src.c: 642:             RC2 = 1;
+[e = _RC2 -> -> 1 `i `b ]
 "643
-[; ;Button_src.c: 643:             if (RC7 == 0 ){
+[; ;Button_src.c: 643:             RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"644
+[; ;Button_src.c: 644:             if (RC7 == 0 ){
 [e $ ! == -> _RC7 `i -> 0 `i 164  ]
 {
-"644
-[; ;Button_src.c: 644:             a = 0x00;
-[e = _a -> -> 0 `i `uc ]
 "645
-[; ;Button_src.c: 645:             c = 0x00;
-[e = _c -> -> 0 `i `uc ]
+[; ;Button_src.c: 645:             a = 0x00;
+[e = _a -> -> 0 `i `uc ]
 "646
-[; ;Button_src.c: 646:             day_hex = 0x00;
-[e = _day_hex -> -> 0 `i `uc ]
+[; ;Button_src.c: 646:             c = 0x00;
+[e = _c -> -> 0 `i `uc ]
 "647
-[; ;Button_src.c: 647:             x = 0;
-[e = _x -> -> 0 `i `ui ]
+[; ;Button_src.c: 647:             day_hex = 0x00;
+[e = _day_hex -> -> 0 `i `uc ]
 "648
-[; ;Button_src.c: 648:             y = 0;
-[e = _y -> -> 0 `i `ui ]
+[; ;Button_src.c: 648:             x = 0;
+[e = _x -> -> 0 `i `ui ]
 "649
-[; ;Button_src.c: 649:             w = 0;
-[e = _w -> -> 0 `i `ui ]
+[; ;Button_src.c: 649:             y = 0;
+[e = _y -> -> 0 `i `ui ]
 "650
-[; ;Button_src.c: 650:             t = 0;
-[e = _t -> -> 0 `i `ui ]
+[; ;Button_src.c: 650:             w = 0;
+[e = _w -> -> 0 `i `ui ]
 "651
-[; ;Button_src.c: 651:             day_high = 0;
-[e = _day_high -> -> 0 `i `ui ]
+[; ;Button_src.c: 651:             t = 0;
+[e = _t -> -> 0 `i `ui ]
 "652
-[; ;Button_src.c: 652:             day_low = 0;
-[e = _day_low -> -> 0 `i `ui ]
+[; ;Button_src.c: 652:             day_high = 0;
+[e = _day_high -> -> 0 `i `ui ]
 "653
-[; ;Button_src.c: 653:             write_cmd(0x1);
-[e ( _write_cmd (1 -> -> 1 `i `uc ]
+[; ;Button_src.c: 653:             day_low = 0;
+[e = _day_low -> -> 0 `i `ui ]
 "654
-[; ;Button_src.c: 654:             break;
-[e $U 136  ]
+[; ;Button_src.c: 654:             write_cmd(0x1);
+[e ( _write_cmd (1 -> -> 1 `i `uc ]
 "655
-[; ;Button_src.c: 655:             }
+[; ;Button_src.c: 655:             break;
+[e $U 136  ]
+"656
+[; ;Button_src.c: 656:             }
 }
 [e :U 164 ]
-"656
-[; ;Button_src.c: 656:       }
+"657
+[; ;Button_src.c: 657:       }
 }
 [e $U 135  ]
 [e :U 136 ]
 }
-"657
-[; ;Button_src.c: 657:   }
-}
-[e :U 134 ]
 "658
 [; ;Button_src.c: 658:   }
+}
+[e :U 134 ]
+"659
+[; ;Button_src.c: 659:   }
 [e :UE 133 ]
 }
-"660
-[; ;Button_src.c: 660: void button_delay(){
+"661
+[; ;Button_src.c: 661: void button_delay(){
 [v _button_delay `(v ~T0 @X0 1 ef ]
 {
 [e :U _button_delay ]
 [f ]
-"661
-[; ;Button_src.c: 661:     for(int i=0;i<10000;i++);
+"662
+[; ;Button_src.c: 662:     for(int i=0;i<10000;i++);
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2199,7 +2196,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> 10000 `i 166  ]
 [e :U 167 ]
 }
-"662
-[; ;Button_src.c: 662: }
+"663
+[; ;Button_src.c: 663: }
 [e :UE 165 ]
 }
