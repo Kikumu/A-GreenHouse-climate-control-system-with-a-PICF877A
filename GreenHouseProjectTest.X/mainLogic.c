@@ -21,7 +21,8 @@ void main() {
     var2 = 4;
     var_night_low = 4;
     var_night_high = 2;
-    
+    cold_high = 1;
+    cold_low = 9;
     
     while(1){
     get_temp();                           //get temperature variables from device
@@ -57,13 +58,15 @@ void main() {
     write_cmd(0x98);
     //day_threshhold
      if((temp_high+'0')<= 1 && (temp_low + '0') < 8){
-    alarm__ = set_lower_threshold(var1,var2);
-    alarm__ = set_upper_threshold(var1,var2);
+    alarm__ = set_lower_threshold(var1,var2);     //hot threshold
+    alarm__ = set_upper_threshold(var1,var2);     //normal threshold
+    alarm__ = cold_threshold(cold_high,cold_low);
     }
     //night_threshhold
     if((temp_high+'0') >= 1 && (temp_low + '0') >= 8){
     alarm__ = set_lower_threshold(var_night_high,var_night_low);
     alarm__ = set_upper_threshold(var_night_high,var_night_low);
+    alarm__ = cold_threshold(cold_high_night,cold_low_night);
     }
     alarm__ = reset_alarm();
     set_beep_threshhold(alarm__);

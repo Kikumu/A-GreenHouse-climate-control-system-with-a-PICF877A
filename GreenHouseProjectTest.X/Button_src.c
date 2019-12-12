@@ -29,15 +29,15 @@ void thermometer_threshhold_settings(){
       write_cmd(0x1);
       for(;;){
             write_cmd(0x80);
-            write_char('t');
-            write_char('h');
-            write_char('r');
-            write_char('e');
-            write_char('s');
-            write_char('h');
-            write_char('o');
-            write_char('l');
-            write_char('d');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
+            write_char(' ');
             
             write_cmd(0x90);
             write_char('C');
@@ -48,14 +48,47 @@ void thermometer_threshhold_settings(){
             write_char('n');
             write_char('t');
             write_char(':');
+            
             //-------------------display current temp---------------------------//
             write_char(var1 + '0');
             write_char(var2 + '0');
-//------------------------------------------------------------------------------
+           //------------------------------------------------------------------//
+           //-------PORT_CHANGE------------------------------------------------//
+            RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+            //--------TEMP----INCREMENTOR---------------------------//
+            if(RC4 == 0 && b =='x'){
+                    a++;//hrs incrementor
+                    x++ ;
+                    x = modulus_func(x,10);
+                    y = incrementor(y,x,'9');
+                    //hrs_limiter = (a + '0');
+                    a = time_date_hex_terminator(a,'T'); //resets hex value to 0 depending on limiter
+                    button_delay();
+            }
+            if(RC4==0 && b == 'y'){ 
+                    c++; //mins incrementor
+                    t++;
+                    t = modulus_func(t,10);
+                    w = incrementor(w,t,'9');
+                    if(c == (0x59 + 1)){               //different terminator due to hex val
+                        c = 0x00; 
+                    }
+                    button_delay();
+            }
+            RC0 = 1;
+            RC1 = 0;
+            RC2 = 1;
+            RC3 = 1;
+            z = modulus_func(z,2);
+            if(RC4 == 0 && z ==0){
+            z++;
             write_cmd(0x88);
-            write_char('S');
-            write_char('e');
-            write_char('t');
+            write_char('D');
+            write_char('a');
+            write_char('y');
             write_char('_');
             write_char('t');
             write_char('h');
@@ -67,77 +100,99 @@ void thermometer_threshhold_settings(){
             write_char('l');
             write_char('d');
             write_char(':');
-//------------------------------------------------------------------------------            
-            write_cmd(0x98); 
+            write_char(' ');
+            b = 'x';
+            button_delay();
+           
+            }
             RC0 = 1;
             RC1 = 0;
             RC2 = 1;
             RC3 = 1;
+            if(RC4 == 0 && z ==1){
+            write_cmd(0x88);
+            write_char('N');
+            write_char('i');
+            write_char('g');
+            write_char('h');
+            write_char('t');
+            write_char('_');
+            write_char('h');
+            write_char('r');
+            write_char('e');
+            write_char('s');
+            write_char('h');
+            write_char('o');
+            write_char('l');
+            write_char('d');
+            write_char(':');
+            b = 'y';
+            z++;
+            button_delay();
+            }
+          
+//------------------------------------------------------------------------------            
             t = 0;     //used for counting down
             w = 0;     //used for counting down
             x = 0;     //used for counting tens digit
             y = 0; //used for counting ones digit
             x = 0x00;
-            for(;;){
-                 RC0 = 1;
-                 RC1 = 0;
-                 RC2 = 1;
-                 RC3 = 1;
-                 //-------------INCREMENT------------------------------------//
-                if(RC7==0){
-                    write_cmd(0x98);
-                    x++;
-                    y = (unsigned char )y;
-                    x = (unsigned char )(modulus_func(x,10));
-                    write_char(y + '0');
-                    write_char(x + '0');
-                    y = incrementor(y,x,'9'); //x is lower val, y is upper val to be incremented and 9 is x's limit
-                    t = x;
-                    w = y;
-                    button_delay();
-                }
-                  RC0 = 0;
-                    RC1 = 1;
-                    RC2 = 1;
-                    RC3 = 1;
-                    if(RC6 == 0){ 
-                        var1 = y;
-                        var2 = x;
-                        x = 0;
-                        y = 0;
-                        w = 0;
-                        t = 0;
-                        //set_beep_threshhold(var1,var2);
-                        write_cmd(0x1);
-                        write_char('S');
-                        write_char('A');
-                        write_char('V');
-                        write_char('E');
-                        write_char('D');
-                        for(int i=0;i<30000;i++);
-                        return;
-                    }
-                 RC0 = 1;
-                 RC1 = 1;
-                 RC2 = 0;
-                 RC3 = 1;
-                 //------------DECREMENT-------------------------------------//
-                 if(RC7 == 0){
-                    write_cmd(0x98);
-                      t--;
-                    w = (unsigned char )w;
-                    t = (unsigned char )(modulus_func(t,10));
-                    write_char(w + '0');
-                    write_char(t + '0');
-                    w = decrementor(w,t,'0');
-                    if((t + '0')=='0'){
-                        t = 10;
-                    }
-
-                    x = t;
-                    y = w;
-                    button_delay();
-                 }
+//            for(;;){
+//                 RC0 = 1;
+//                 RC1 = 0;
+//                 RC2 = 1;
+//                 RC3 = 1;
+//                 //-------------INCREMENT------------------------------------//
+//                if(RC7==0){
+//                    write_cmd(0x98);
+//                    x++;
+//                    y = (unsigned char )y;
+//                    x = (unsigned char )(modulus_func(x,10));
+//                    write_char(y + '0');
+//                    write_char(x + '0');
+//                    y = incrementor(y,x,'9'); //x is lower val, y is upper val to be incremented and 9 is x's limit
+//                    t = x;
+//                    w = y;
+//                    button_delay();
+//                }
+//                  RC0 = 0;
+//                    RC1 = 1;
+//                    RC2 = 1;
+//                    RC3 = 1;
+//                    if(RC6 == 0){ 
+//                        var1 = y;
+//                        var2 = x;
+//                        //set_beep_threshhold(var1,var2);
+//                        write_cmd(0x1);
+//                        write_char('S');
+//                        write_char('A');
+//                        write_char('V');
+//                        write_char('E');
+//                        write_char('D');
+//                        for(int i=0;i<30000;i++);
+//                        return;
+//                    }
+//                 RC0 = 1;
+//                 RC1 = 1;
+//                 RC2 = 0;
+//                 RC3 = 1;
+//                 //------------DECREMENT-------------------------------------//
+//                 if(RC7 == 0){
+//                    write_cmd(0x98);
+//                      t--;
+//                    w = (unsigned char )w;
+//                    t = (unsigned char )(modulus_func(t,10));
+//                    write_char(w + '0');
+//                    write_char(t + '0');
+//                    w = decrementor(w,t,'0');
+//                    if((t + '0')=='0'){
+//                        t = 10;
+//                    }
+//
+//                    x = t;
+//                    y = w;
+//                    button_delay();
+//                 }
                 RC0 = 0;
                 RC1 = 1;
                 RC2 = 1;
@@ -145,9 +200,9 @@ void thermometer_threshhold_settings(){
                     if(RC6 == 0){
                         var1 = w;
                         var2 = t;
-                        x = 0;
-                        y = 0;
                         w = 0;
+                        t = 0;
+                        x = 0;
                         t = 0;
                         //set_beep_threshhold(var1,var2);
                         write_cmd(0x1);
@@ -164,17 +219,16 @@ void thermometer_threshhold_settings(){
             RC2 = 1;
             RC3 = 1;
             if (RC7 == 0 ){
-                        x = 0;
-                        y = 0;
-                        w = 0;
-                        t = 0;
             write_cmd(0x1);
+             w = 0;
+                        t = 0;
+                        x = 0;
+                        t = 0;
             return;   
             }
             }
       }
   }
-}
 
 void time_settings(){
  RC0 = 1;

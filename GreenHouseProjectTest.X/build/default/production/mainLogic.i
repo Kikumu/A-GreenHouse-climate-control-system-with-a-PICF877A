@@ -1798,6 +1798,7 @@ unsigned char heater_state;
 unsigned char cooler_state;
 char set_upper_threshold(int,int);
 char set_lower_threshold(int,int);
+char cold_threshold(int,int);
 char reset_alarm();
 # 7 "./clock_driver.h" 2
 
@@ -1813,11 +1814,15 @@ char var1;
 char var2;
 unsigned int var_night_low;
 unsigned int var_night_high;
+unsigned int cold_high;
+unsigned int cold_low;
+unsigned int cold_high_night;
+unsigned int cold_low_night;
 unsigned char alarm__;
 
 void set_beep_threshhold(char x);
 # 8 "./clock_driver.h" 2
-# 23 "./clock_driver.h"
+# 18 "./clock_driver.h"
 char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
 char table1[7];
 char temp_low;
@@ -1908,7 +1913,8 @@ void main() {
     var2 = 4;
     var_night_low = 4;
     var_night_high = 2;
-
+    cold_high = 1;
+    cold_low = 9;
 
     while(1){
     get_temp();
@@ -1946,11 +1952,13 @@ void main() {
      if((temp_high+'0')<= 1 && (temp_low + '0') < 8){
     alarm__ = set_lower_threshold(var1,var2);
     alarm__ = set_upper_threshold(var1,var2);
+    alarm__ = cold_threshold(cold_high,cold_low);
     }
 
     if((temp_high+'0') >= 1 && (temp_low + '0') >= 8){
     alarm__ = set_lower_threshold(var_night_high,var_night_low);
     alarm__ = set_upper_threshold(var_night_high,var_night_low);
+    alarm__ = cold_threshold(cold_high_night,cold_low_night);
     }
     alarm__ = reset_alarm();
     set_beep_threshhold(alarm__);

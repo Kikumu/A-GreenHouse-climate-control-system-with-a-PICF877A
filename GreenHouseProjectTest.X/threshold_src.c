@@ -10,17 +10,36 @@ char set_upper_threshold(int upper_val,int lower_val){
     write_char('A');
     write_char('R');
     write_char('M');
-    if(heat_counter > 100){
+    if(heat_counter > 10000){
         cooler_state = '-';
-        if(count == 2)
-        buzzer_watcher = 'w';
+        //if(count == 2)
+       // buzzer_watcher = 'w';
     }
     }
     return buzzer_watcher;
 }
 
+char cold_threshold(int upper_val,int lower_val){
+     if(shi <=  upper_val && (ge  <= lower_val  || ge >= lower_val)){
+    cold_counter ++;
+    heater_state = '1';
+    cooler_state = '0';
+    write_char('C');
+    write_char('O');
+    write_char('L');
+    write_char('D');
+    if(cold_counter > 100000){
+        heater_state = '-';
+        //if(count == 2)
+       // buzzer_watcher = 'w';
+    }
+    }
+    return buzzer_watcher;
+}
+
+
 char set_lower_threshold(int upper_val,int lower_val){
-    if((shi <= upper_val && ge  < lower_val))
+    if((shi <= upper_val && ge  <= lower_val))
     {
     count = 2;
     buzzer_watcher = 'x'; //silence sounder
@@ -52,4 +71,3 @@ char reset_alarm(){
     return buzzer_watcher;
 }
 
-//3 states, upper, lower, persistance

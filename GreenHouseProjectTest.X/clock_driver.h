@@ -15,11 +15,6 @@
 
 //define the time: sec,min,hour,day,month,week,year,control word.
 //------------NEEDS EDITING-----------------------------------------------------
-//const char a = '1';
-//const char b = '3';
-//const char c = 'x';
-//const char d = '0';
-//const char my_string[] = { '0','x','1', '3', '\0' };
 char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00}; //date time set up
 char table1[7];
 char temp_low;

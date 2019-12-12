@@ -3,8 +3,8 @@
 
 #include "LCD_driver.h"
 
-int day_counter;
-void display_day(int);
+int day_counter;          //monitor day
+void display_day(int);    //display day
 
 
 

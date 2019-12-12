@@ -5,11 +5,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2689
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2689: extern volatile __bit RB5 __attribute__((address(0x35)));
 [v _RB5 `Vb ~T0 @X0 0 e@53 ]
-"34 ./clock_driver.h
-[; ;./clock_driver.h: 34: void time_write_1(unsigned char time_tx);
+"29 ./clock_driver.h
+[; ;./clock_driver.h: 29: void time_write_1(unsigned char time_tx);
 [v _time_write_1 `(v ~T0 @X0 0 ef1`uc ]
-"35
-[; ;./clock_driver.h: 35: unsigned char time_read_1();
+"30
+[; ;./clock_driver.h: 30: unsigned char time_read_1();
 [v _time_read_1 `(uc ~T0 @X0 0 e? ]
 "2677 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2677: extern volatile __bit RB1 __attribute__((address(0x31)));
@@ -288,10 +288,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Buzzer_driver.h: 11: unsigned int var_night_high;
 [v _var_night_high `ui ~T0 @X0 1 e ]
 "12
-[; ;./Buzzer_driver.h: 12: unsigned char alarm__;
+[; ;./Buzzer_driver.h: 12: unsigned int cold_high;
+[v _cold_high `ui ~T0 @X0 1 e ]
+"13
+[; ;./Buzzer_driver.h: 13: unsigned int cold_low;
+[v _cold_low `ui ~T0 @X0 1 e ]
+"14
+[; ;./Buzzer_driver.h: 14: unsigned int cold_high_night;
+[v _cold_high_night `ui ~T0 @X0 1 e ]
+"15
+[; ;./Buzzer_driver.h: 15: unsigned int cold_low_night;
+[v _cold_low_night `ui ~T0 @X0 1 e ]
+"16
+[; ;./Buzzer_driver.h: 16: unsigned char alarm__;
 [v _alarm__ `uc ~T0 @X0 1 e ]
-"23 ./clock_driver.h
-[; ;./clock_driver.h: 23: char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
+"18 ./clock_driver.h
+[; ;./clock_driver.h: 18: char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
 [v _table `uc ~T0 @X0 -> 8 `i e ]
 [i _table
 :U ..
@@ -305,14 +317,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"24
-[; ;./clock_driver.h: 24: char table1[7];
+"19
+[; ;./clock_driver.h: 19: char table1[7];
 [v _table1 `uc ~T0 @X0 -> 7 `i e ]
-"25
-[; ;./clock_driver.h: 25: char temp_low;
+"20
+[; ;./clock_driver.h: 20: char temp_low;
 [v _temp_low `uc ~T0 @X0 1 e ]
-"26
-[; ;./clock_driver.h: 26: char temp_high;
+"21
+[; ;./clock_driver.h: 21: char temp_high;
 [v _temp_high `uc ~T0 @X0 1 e ]
 "3 clock_src.c
 [; ;clock_src.c: 3: void ds1302_init()

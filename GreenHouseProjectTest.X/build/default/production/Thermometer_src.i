@@ -1772,6 +1772,10 @@ char var1;
 char var2;
 unsigned int var_night_low;
 unsigned int var_night_high;
+unsigned int cold_high;
+unsigned int cold_low;
+unsigned int cold_high_night;
+unsigned int cold_low_night;
 unsigned char alarm__;
 
 void set_beep_threshhold(char x);

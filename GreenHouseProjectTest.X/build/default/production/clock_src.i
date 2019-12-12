@@ -1782,6 +1782,7 @@ unsigned char heater_state;
 unsigned char cooler_state;
 char set_upper_threshold(int,int);
 char set_lower_threshold(int,int);
+char cold_threshold(int,int);
 char reset_alarm();
 # 7 "./clock_driver.h" 2
 
@@ -1797,11 +1798,15 @@ char var1;
 char var2;
 unsigned int var_night_low;
 unsigned int var_night_high;
+unsigned int cold_high;
+unsigned int cold_low;
+unsigned int cold_high_night;
+unsigned int cold_low_night;
 unsigned char alarm__;
 
 void set_beep_threshhold(char x);
 # 8 "./clock_driver.h" 2
-# 23 "./clock_driver.h"
+# 18 "./clock_driver.h"
 char table[]={0,0x18,0x00,0x12,0x12,0x06,0x19,0x00};
 char table1[7];
 char temp_low;
