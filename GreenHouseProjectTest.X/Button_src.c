@@ -129,8 +129,8 @@ void thermometer_threshhold_settings(){
             write_char(':');
             write_char(' ');
             write_char(' ');
-           // write_char(var1 + '0');
-           // write_char(var2 + '0');
+           write_char(var1 + '0');
+           write_char(var2 + '0');
             b = 'x';
             button_delay();
             }
@@ -149,8 +149,8 @@ void thermometer_threshhold_settings(){
             write_char('U');
             write_char(')');
             write_char(':');
-            //write_char(var_night_high + '0');
-            //write_char(var_night_low + '0');
+            write_char(cold_high + '0');
+            write_char(cold_low + '0');
             b = 'y';
             z++;
             button_delay();
@@ -170,8 +170,8 @@ void thermometer_threshhold_settings(){
             write_char('L');
             write_char(')');
             write_char(':');
-           // write_char(night_lower_upper + '0');
-           // write_char(night_lower_lower + '0');
+           write_char(cold_high_night + '0');
+           write_char(cold_low_night + '0');
             b = 'z';
             z++;
             button_delay();
@@ -188,8 +188,8 @@ void thermometer_threshhold_settings(){
             write_char(':');
             write_char(' ');
             write_char(' ');
-           // write_char(day_lower_upper + '0');
-           // write_char(day_lower_lower + '0');
+           write_char(var1 + '0');
+           write_char(var2 + '0');
             b = 'a';
             button_delay();
             }

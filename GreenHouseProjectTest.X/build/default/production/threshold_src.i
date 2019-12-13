@@ -1791,7 +1791,7 @@ char set_upper_threshold(int upper_val,int lower_val){
     write_char('A');
     write_char('R');
     write_char('M');
-    if(heat_counter > 1000){
+    if(heat_counter > 100){
         cooler_state = '-';
         if(count == 2)
         buzzer_watcher = 'w';
@@ -1811,8 +1811,8 @@ char cold_threshold(int upper_val,int lower_val){
     write_char('D');
     if(cold_counter > 1000){
         heater_state = '-';
-
-
+        if(count == 2)
+        buzzer_watcher = 'w';
     }
     }
     return buzzer_watcher;

@@ -812,6 +812,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "131
 [; ;Button_src.c: 131:             write_char(' ');
 [e ( _write_char (1 -> -> 32 `ui `uc ]
+"132
+[; ;Button_src.c: 132:            write_char(var1 + '0');
+[e ( _write_char (1 -> + -> _var1 `ui -> 48 `ui `uc ]
+"133
+[; ;Button_src.c: 133:            write_char(var2 + '0');
+[e ( _write_char (1 -> + -> _var2 `ui -> 48 `ui `uc ]
 "134
 [; ;Button_src.c: 134:             b = 'x';
 [e = _b -> -> 120 `ui `uc ]
@@ -868,6 +874,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "151
 [; ;Button_src.c: 151:             write_char(':');
 [e ( _write_char (1 -> -> 58 `ui `uc ]
+"152
+[; ;Button_src.c: 152:             write_char(cold_high + '0');
+[e ( _write_char (1 -> + _cold_high -> 48 `ui `uc ]
+"153
+[; ;Button_src.c: 153:             write_char(cold_low + '0');
+[e ( _write_char (1 -> + _cold_low -> 48 `ui `uc ]
 "154
 [; ;Button_src.c: 154:             b = 'y';
 [e = _b -> -> 121 `ui `uc ]
@@ -927,6 +939,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "172
 [; ;Button_src.c: 172:             write_char(':');
 [e ( _write_char (1 -> -> 58 `ui `uc ]
+"173
+[; ;Button_src.c: 173:            write_char(cold_high_night + '0');
+[e ( _write_char (1 -> + _cold_high_night -> 48 `ui `uc ]
+"174
+[; ;Button_src.c: 174:            write_char(cold_low_night + '0');
+[e ( _write_char (1 -> + _cold_low_night -> 48 `ui `uc ]
 "175
 [; ;Button_src.c: 175:             b = 'z';
 [e = _b -> -> 122 `ui `uc ]
@@ -977,6 +995,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "190
 [; ;Button_src.c: 190:             write_char(' ');
 [e ( _write_char (1 -> -> 32 `ui `uc ]
+"191
+[; ;Button_src.c: 191:            write_char(var1 + '0');
+[e ( _write_char (1 -> + -> _var1 `ui -> 48 `ui `uc ]
+"192
+[; ;Button_src.c: 192:            write_char(var2 + '0');
+[e ( _write_char (1 -> + -> _var2 `ui -> 48 `ui `uc ]
 "193
 [; ;Button_src.c: 193:             b = 'a';
 [e = _b -> -> 97 `ui `uc ]

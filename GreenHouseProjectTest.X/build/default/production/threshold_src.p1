@@ -303,8 +303,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;threshold_src.c: 12:     write_char('M');
 [e ( _write_char (1 -> -> 77 `ui `uc ]
 "13
-[; ;threshold_src.c: 13:     if(heat_counter > 1000){
-[e $ ! > _heat_counter -> -> 1000 `i `ui 97  ]
+[; ;threshold_src.c: 13:     if(heat_counter > 100){
+[e $ ! > _heat_counter -> -> 100 `i `ui 97  ]
 {
 "14
 [; ;threshold_src.c: 14:         cooler_state = '-';
@@ -372,6 +372,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;threshold_src.c: 32:         heater_state = '-';
 [e = _heater_state -> -> 45 `ui `uc ]
+"33
+[; ;threshold_src.c: 33:         if(count == 2)
+[e $ ! == _count -> 2 `i 102  ]
+"34
+[; ;threshold_src.c: 34:         buzzer_watcher = 'w';
+[e = _buzzer_watcher -> -> 119 `ui `uc ]
+[e :U 102 ]
 "35
 [; ;threshold_src.c: 35:     }
 }
@@ -398,7 +405,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "42
 [; ;threshold_src.c: 42:     if((shi <= upper_val && ge <= lower_val))
-[e $ ! && <= -> _shi `i _upper_val <= -> _ge `i _lower_val 103  ]
+[e $ ! && <= -> _shi `i _upper_val <= -> _ge `i _lower_val 104  ]
 "43
 [; ;threshold_src.c: 43:     {
 {
@@ -435,14 +442,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;threshold_src.c: 54:     }
 }
-[e :U 103 ]
+[e :U 104 ]
 "55
 [; ;threshold_src.c: 55:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
-[e $UE 102  ]
+[e $UE 103  ]
 "56
 [; ;threshold_src.c: 56: }
-[e :UE 102 ]
+[e :UE 103 ]
 }
 "58
 [; ;threshold_src.c: 58: char reset_alarm(){
@@ -464,7 +471,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _RC3 -> -> 0 `i `b ]
 "63
 [; ;threshold_src.c: 63:     if(RC4 == 0){
-[e $ ! == -> _RC4 `i -> 0 `i 105  ]
+[e $ ! == -> _RC4 `i -> 0 `i 106  ]
 {
 "64
 [; ;threshold_src.c: 64:         count = 0;
@@ -493,12 +500,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72
 [; ;threshold_src.c: 72:     }
 }
-[e :U 105 ]
+[e :U 106 ]
 "73
 [; ;threshold_src.c: 73:     return buzzer_watcher;
 [e ) _buzzer_watcher ]
-[e $UE 104  ]
+[e $UE 105  ]
 "74
 [; ;threshold_src.c: 74: }
-[e :UE 104 ]
+[e :UE 105 ]
 }
