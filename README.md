@@ -7,4 +7,4 @@ The features include:
 ## Requirements
 PICF877A Development board, buzzer, MPLABS IDE, QL_PROG
 
-Program manual is included in the report. More detailscan be found at: https://kikumu.github.io/portfolio/Embedded_Systems.html
+Program manual is included in the report. More details can be found at: https://kikumu.github.io/portfolio/Embedded_Systems.html
